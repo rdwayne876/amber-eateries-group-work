@@ -1,0 +1,29 @@
+.form {
+  box-shadow: 0 0 0.5rem #2c2c2e;
+  margin: 10rem auto 0 auto;
+  background: #edf7ee;
+  padding: 20px;
+  width: 350px;
+}
+
+.form input,
+.form textarea {
+  padding: 10px 8px;
+  color: #2c2c2e;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1.5px solid black;
+}
+
+.form button {
+  padding: 5px 8px;
+  background: #04aa6d;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.form button:hover {
+  opacity: 0.5;
+}

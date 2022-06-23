@@ -1,0 +1,64 @@
+<main>
+  <div class="form-container">
+    <form
+      #editProduct="ngForm"
+      *ngIf="product; else missing"
+      (ngSubmit)="editProductForm()"
+    >
+      <div class="form-control-group">
+        <label>Product Name</label>
+        <input
+          type="text"
+          [(ngModel)]="product.name"
+          name="name"
+          placeholder="Product Name"
+        />
+      </div>
+      <div class="form-control-group">
+        <label>Description</label>
+        <textarea
+          [(ngModel)]="product.description"
+          name="description"
+          placeholder="Description"
+          matInput
+          cols="45"
+          rows="5 "
+        ></textarea>
+      </div>
+      <div class="form-control-group">
+        <label>Price</label>
+        <input
+          type="number"
+          [(ngModel)]="product.price"
+          name="price"
+          placeholder="Price"
+        />
+      </div>
+      <div class="form-control-group">
+        <label>Image</label>
+        <input
+          type="url"
+          [(ngModel)]="product.imageUrl"
+          name="imageUrl"
+          placeholder="ImageUrl"
+        />
+      </div>
+      <div class="form-control-group">
+        <label>Quantity</label>
+        <input
+          type="number"
+          [(ngModel)]="product.quantity"
+          name="quantity"
+          placeholder="Quantity"
+        />
+      </div>
+      <div class="form-control-group">
+        <button>Update Product</button>
+      </div>
+    </form>
+
+    <ng-template #missing>
+      <h1>No Product Available</h1>
+    </ng-template>
+  </div>
+</main>
