@@ -1,3 +1,4 @@
+import { SafePipe } from './../safe.pipe';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

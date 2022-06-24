@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "name": "Buscuits",
+      "name": "Very basic Button",
       "description": "Consequatur",
       "price": 24,
       "imageUrl": "https://source.unsplash.com/1600x900/?food",
@@ -442,11 +442,11 @@
     },
     {
       "id": 56,
-      "name": "fish head",
-      "description": "fish head in stew",
-      "price": 12.23,
+      "name": "beans",
+      "description": "beans",
+      "price": 12,
       "imageUrl": "https://source.unsplash.com/1600x900/?food",
-      "quantity": 122
+      "quantity": 12344
     }
   ]
 }

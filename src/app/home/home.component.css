@@ -13,7 +13,10 @@ section {
   height: auto;
   padding: 0 1rem;
 }
-
+.qty {
+  color: grey;
+  margin-right: 20px;
+}
 
 .hero {
   display: grid;
@@ -66,7 +69,7 @@ section {
 }
 
 .notice div {
-  display:  flex;
+  display: flex;
   align-items: center;
 }
 
@@ -75,16 +78,16 @@ section {
   align-items: center;
   font-weight: 500;
   font-size: 20px;
-  color: #FF0000;
+  color: #ff0000;
 }
 
 .notice div span svg {
   width: 22px;
   margin-right: 1rem;
-  fill: #FF0000;
+  fill: #ff0000;
 }
 
-.meal-section{
+.meal-section {
   width: 100%;
   height: auto;
   display: none;
@@ -104,7 +107,7 @@ section {
 .meal-card {
   width: 100%;
   height: 240px;
-  background-color: #FFF;
+  background-color: #fff;
   border: 1px solid rgb(231, 231, 231);
   border-radius: 5px;
   display: flex;
@@ -151,10 +154,12 @@ section {
 }
 
 .meal-price {
+  margin-bottom: 4px;
+}
+.m-price {
   font-weight: 700;
   color: #c94a30;
   line-height: 2;
-  margin-bottom: 4px;
 }
 
 .control-section {
@@ -162,26 +167,25 @@ section {
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
-
 }
 .control-section input {
   height: 37.2px;
   width: 42px;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
   margin-right: 8px;
-  border: 0 ;
+  border: 0;
   border: 1px solid #c3c4c5;
 }
 .control-section input:focus {
   outline: 0;
 }
 
-.control-section button{
+.control-section button {
   background: #fd935c;
   border: 0;
   border-bottom: 2px solid #cf7e3b;
   border-radius: 3px;
-  color: #FFF;
+  color: #fff;
   padding: 8px 10px;
   display: flex;
   align-items: center;
@@ -189,8 +193,7 @@ section {
 }
 
 .control-section button span svg {
-  fill: #FFF;
+  fill: #fff;
   width: 16px;
   margin-right: 8px;
 }
-
