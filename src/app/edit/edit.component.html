@@ -1,64 +1,84 @@
 <main>
-  <div class="form-container">
-    <form
-      #editProduct="ngForm"
-      *ngIf="product; else missing"
-      (ngSubmit)="editProductForm()"
-    >
-      <div class="form-control-group">
-        <label>Product Name</label>
-        <input
-          type="text"
-          [(ngModel)]="product.name"
-          name="name"
-          placeholder="Product Name"
-        />
-      </div>
-      <div class="form-control-group">
-        <label>Description</label>
-        <textarea
-          [(ngModel)]="product.description"
-          name="description"
-          placeholder="Description"
-          matInput
-          cols="45"
-          rows="5 "
-        ></textarea>
-      </div>
-      <div class="form-control-group">
-        <label>Price</label>
-        <input
-          type="number"
-          [(ngModel)]="product.price"
-          name="price"
-          placeholder="Price"
-        />
-      </div>
-      <div class="form-control-group">
-        <label>Image</label>
-        <input
-          type="url"
-          [(ngModel)]="product.imageUrl"
-          name="imageUrl"
-          placeholder="ImageUrl"
-        />
-      </div>
-      <div class="form-control-group">
-        <label>Quantity</label>
-        <input
-          type="number"
-          [(ngModel)]="product.quantity"
-          name="quantity"
-          placeholder="Quantity"
-        />
-      </div>
-      <div class="form-control-group">
+  <div class="left">
+    <div class="form-container">
+      <form
+        #editProduct="ngForm"
+        *ngIf="product; else missing"
+        (ngSubmit)="editProductForm()"
+      >
+        <mat-form-field class="form-control-group">
+          <mat-label>Product Name</mat-label>
+          <input
+            type="text"
+            [(ngModel)]="product.name"
+            name="name"
+            placeholder="Product Name"
+            matInput
+          />
+        </mat-form-field>
+        <mat-form-field class="form-control-group">
+          <mat-label>Description</mat-label>
+          <textarea
+            [(ngModel)]="product.description"
+            name="description"
+            placeholder="Description"
+            cols="45"
+            rows="5"
+            matInput
+          ></textarea>
+        </mat-form-field>
+        <mat-form-field class="form-control-group">
+          <mat-label>Price</mat-label>
+          <input
+            type="number"
+            [(ngModel)]="product.price"
+            name="price"
+            placeholder="Price"
+            matInput
+          />
+        </mat-form-field>
+        <mat-form-field class="form-control-group">
+          <mat-label>Image</mat-label>
+          <input
+            type="url"
+            [(ngModel)]="product.imageUrl"
+            name="imageUrl"
+            placeholder="ImageUrl"
+            matInput
+          />
+        </mat-form-field>
+        <mat-form-field class="form-control-group">
+          <mat-label>Quantity</mat-label>
+          <input
+            type="number"
+            [(ngModel)]="product.quantity"
+            name="quantity"
+            placeholder="Quantity"
+            matInput
+          />
+        </mat-form-field>
         <button>Update Product</button>
-      </div>
-    </form>
+      </form>
 
-    <ng-template #missing>
-      <h1>No Product Available</h1>
-    </ng-template>
+      <ng-template #missing>
+        <h1>No Product Available</h1>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="right">
+    <div *ngIf="randomProducts.length">
+      <a
+        *ngFor="let product of randomProducts"
+        (click)="goToProduct(product.id)"
+      >
+        <p>{{ product.name }}</p>
+        <img
+          style="height: 100px"
+          [src]="product.imageUrl"
+          [alt]="product.name"
+        />
+      </a>
+    </div>
   </div>
 </main>
