@@ -1,9 +1,11 @@
 <div class="form-container">
+
   <form
     class="form"
     #addProduct="ngForm"
     (ngSubmit)="getProductForm(addProduct.value)"
   >
+  <h1 class="head-text">Add a product</h1>
     <input type="text" hidden="true" ngModel name="id" /><br />
     <input type="text" ngModel name="name" placeholder="Product Name" /><br />
     <textarea
