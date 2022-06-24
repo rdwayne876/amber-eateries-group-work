@@ -1,9 +1,27 @@
+
+.form-container {
+  background: rgb(204, 220, 253);
+  padding-top: 3rem;
+  height: calc(100vh - 64px);
+}
+
+.head-text {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 25px;
+  margin: 1rem 0;
+  color: #3F51B5;
+}
+
 .form {
-  box-shadow: 0 0 0.5rem #2c2c2e;
-  margin: 10rem auto 0 auto;
-  background: #edf7ee;
+  box-shadow: 0 0 0.2rem #2c2c2e;
+  margin: 0 auto;
+  /* background: #edf7ee; */
+  /* background: rgb(204, 220, 253); */
+  background: #fff;
   padding: 20px;
   width: 350px;
+  border-radius: 5px;
 }
 
 .form input,
@@ -19,7 +37,8 @@
 
 .form button {
   padding: 5px 8px;
-  background: #04aa6d;
+  /* background: #04aa6d; */
+  background: #3F51B5;
   color: #fff;
   border-radius: 5px;
 }
@@ -27,3 +46,4 @@
 .form button:hover {
   opacity: 0.5;
 }
+
