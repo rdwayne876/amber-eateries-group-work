@@ -19,3 +19,18 @@ select,
 textarea {
   font: inherit;
 }
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #757a8f;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}

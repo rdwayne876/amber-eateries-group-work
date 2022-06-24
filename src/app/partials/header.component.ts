@@ -51,7 +51,7 @@ import { Component, OnInit } from '@angular/core';
 }
 
 .main-container {
-  width: 75%;
+  width: 78%;
   margin: 0 auto;
 }
 
