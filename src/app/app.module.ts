@@ -13,11 +13,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { OrderComponent } from './order/order.component';
 import { SafePipe } from './safe.pipe';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
+import { HeaderComponent } from './partials/header.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { EditComponent } from './edit/edit.component';
     SafePipe,
     AddproductComponent,
     EditComponent,
+    HeaderComponent,
   ],
 
   imports: [
@@ -40,6 +43,7 @@ import { EditComponent } from './edit/edit.component';
     MatIconModule,
     MatCardModule,
     MatButtonModule,
+    MatPaginatorModule,
     MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
