@@ -144,13 +144,26 @@ section {
   color: #212529;
 }
 
+.meal-info {
+margin-top: auto;
+}
+
 .meal-desc {
   color: rgb(118, 118, 118);
   font-size: 13px;
   line-height: 1.5;
-  height: 105px;
+  /* height: 105px; */
   padding: 0 4px;
   overflow: auto;
+
+   text-overflow:ellipsis;
+  overflow:hidden;
+  /* // Addition lines for 2 line or multiline ellipsis */
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+
 }
 
 .meal-price {

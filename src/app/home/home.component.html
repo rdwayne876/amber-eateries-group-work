@@ -45,7 +45,7 @@
     <div class="content">
       <div class="meal-section active">
         <mat-spinner *ngIf="products.length === 0"></mat-spinner>
-        <div class="meal-card-container" *ngFor="let product of products">
+        <div class="meal-card-container" *ngFor="let product of products | slice:(currentPage * pageLimit):(currentPage * pageLimit) + pageLimit ">
           <div class="meal-card">
             <div class="meal-details-section">
               <div class="meal-details">
@@ -53,8 +53,10 @@
                   <span>{{ product.name }}</span>
                 </div>
                 <div class="meal-desc">
-                  <span>{{ product.description }}</span>
+                  <span>{{ product.description | slice: 0: 255 }}</span>
                 </div>
+
+<div class="meal-info">
                 <div class="meal-price">
                   <span class="m-price">{{ product.price | currency }}</span>
 
@@ -87,6 +89,7 @@
                   </button>
                 </div>
               </div>
+              </div>
             </div>
             <div class="meal-picture">
               <img src="{{ product.imageUrl }}" alt="" />
@@ -115,8 +118,9 @@
       </mat-card> -->
       <mat-paginator
         [length]="products.length"
-        [pageSize]="10"
-        [pageSizeOptions]="[5, 10, 25, 100]"
+        [pageSize]="pageLimit"
+        [pageSizeOptions]="[9, 15, 30, 50]"
+        (page)="changePage($event)"
         aria-label="Select page"
       >
         <mat-spinner *ngIf="products.length === 0"></mat-spinner>
