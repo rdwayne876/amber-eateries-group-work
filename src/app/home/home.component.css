@@ -1,6 +1,194 @@
+section {
+  width: 100%;
+  height: auto;
+}
+
+.main-container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  padding: 0 1rem;
+}
+
+
 .hero {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
 }
+
+.hero-section {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+.hero-section img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transform: translateZ(0px);
+}
+
+.hero-information {
+  margin-top: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e4e7eb;
+}
+.info-group {
+  margin-top: 0.25rem;
+  color: #212529;
+}
+
+.open-span {
+  color: #008000;
+}
+
+/** STYLING FOR MENU CATEGORY AREA**/
+
+.menu-category {
+  width: 100%;
+  height: auto;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e4e7eb;
+}
+
+.notice {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice div {
+  display:  flex;
+  align-items: center;
+}
+
+.notice div span {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 20px;
+  color: #FF0000;
+}
+
+.notice div span svg {
+  width: 22px;
+  margin-right: 1rem;
+  fill: #FF0000;
+}
+
+.meal-section{
+  width: 100%;
+  height: auto;
+  display: none;
+  flex-wrap: wrap;
+}
+.meal-section.active {
+  display: flex;
+}
+
+.meal-card-container {
+  width: 33.33%;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.meal-card {
+  width: 100%;
+  height: 240px;
+  background-color: #FFF;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.meal-details-section {
+  flex: 1;
+  padding: 16px 5px 16px 16px;
+}
+
+.meal-details {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-picture {
+  width: 130px;
+  height: 100%;
+}
+
+.meal-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meal-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #212529;
+}
+
+.meal-desc {
+  color: rgb(118, 118, 118);
+  font-size: 13px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.meal-price {
+  font-weight: 700;
+  color: #c94a30;
+  line-height: 2;
+  margin-bottom: 4px;
+}
+
+.control-section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+.control-section input {
+  height: 37.2px;
+  width: 42px;
+  padding-left: .5rem;
+  margin-right: 8px;
+  border: 0 ;
+  border: 1px solid #c3c4c5;
+}
+.control-section input:focus {
+  outline: 0;
+}
+
+.control-section button{
+  background: #fd935c;
+  border: 0;
+  border-bottom: 2px solid #cf7e3b;
+  border-radius: 3px;
+  color: #FFF;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.control-section button span svg {
+  fill: #FFF;
+  width: 16px;
+  margin-right: 8px;
+}
+
