@@ -4,12 +4,14 @@
     </iframe>
   </div>
 
-  <div class="right">
-    <h3>Contact Us</h3>
-    <form action="">
+  <div class="right form-container">
+    <form action="" class="about-form">
+      <h3>Contact Us</h3>
+      <div class="form-name">
+        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="Last Name" />
+      </div>
       <input type="email" placeholder="Email" />
-      <input type="text" placeholder="First Name" />
-      <input type="text" placeholder="Last Name" />
       <textarea
         name="address"
         id=""
@@ -17,8 +19,9 @@
         rows="10"
         placeholder="Address"
       ></textarea>
+      <button>Submit</button>
     </form>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="mattoolbar">
       <h1>Amber Eateries</h1>
       &nbsp; &nbsp; &nbsp;
       <h2>1 305-420-6361</h2>
