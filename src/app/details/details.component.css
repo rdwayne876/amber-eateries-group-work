@@ -1,0 +1,38 @@
+/* card */
+.card-container {
+    box-shadow: 0 0 0.5rem #00B5AD;
+    width: 300px;
+}
+/* -------------------- */
+
+
+/* img */
+.img-container {
+    width: max-content;
+    height: 200px;
+    overflow: hidden;
+    margin: 1.5rem auto;
+    border-radius: 5px;
+}
+
+.img-container img {
+    width: 250px;
+}
+/* -------------------- */
+
+
+/* buttons */
+.btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-btn {
+    background: #00B5AD;
+}
+
+.edit-btn {
+    box-shadow: 0 0 0.2rem #00B5AD;
+}
+
+/* -------------------- */
