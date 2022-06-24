@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Product } from './product';
 
 @Injectable({
@@ -14,6 +14,22 @@ export class DataService {
   public sendGetRequest() {
     return this.httpClient.get<any[]>(this.REST_API_SERVER);
   }
+
+  public getRandomProducts(
+    excludeID: number,
+    limit: number = 5
+  ): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.REST_API_SERVER).pipe(
+      map((products: Product[]) => {
+        let filteredProducts = products.filter((p) => p.id !== excludeID);
+
+        filteredProducts.sort(() => Math.random() - 0.5);
+
+        return filteredProducts.slice(0, limit);
+      })
+    );
+  }
+
   public fetchItem(id: number) {
     return this.httpClient.get<Product>(`${this.REST_API_SERVER}/${id}`);
   }
