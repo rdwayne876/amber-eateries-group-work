@@ -1,0 +1,41 @@
+/* card */
+.card-container {
+    box-shadow: 0 0 0.5rem #00B5AD;
+    width: 300px;
+    margin: 4rem auto;
+}
+/* -------------------- */
+
+
+/* img */
+.img-container {
+    width: 250px;
+    height: 200px;
+    overflow: hidden;
+    margin: 1rem auto;
+    border-radius: 5px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+}
+/* -------------------- */
+
+
+/* buttons */
+.btns {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.order-btn {
+    background: #00B5AD;
+}
+
+.edit-btn {
+    box-shadow: 0 0 0.2rem #00B5AD;
+}
+
+/* -------------------- */

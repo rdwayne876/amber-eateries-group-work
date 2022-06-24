@@ -1,21 +1,23 @@
-<div class="hero" style="padding: 13px">
-  <mat-card *ngIf="product; else spinner" style="margin-top: 12px">
+<div class="hero main-container">
+  <mat-card *ngIf="product; else spinner" class="card-container">
     <mat-card-header>
-      <mat-card-subtitle>{{ product.id }} </mat-card-subtitle>
+      <!-- <mat-card-subtitle>{{ product.id }} </mat-card-subtitle> -->
       <mat-card-title>{{ product.name }}</mat-card-title>
       <mat-card-subtitle
-        >$/{{ product.price }} {{ product.quantity }}
+        >{{ product.price | currency }} / {{ product.quantity | number }}
       </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <p>
         {{ product.description }}
       </p>
-      <img style="height: 100px; width: 100px" src="{{ product.imageUrl }}" />
+      <div class="img-container">
+        <img src="{{ product.imageUrl }}" />
+      </div>
     </mat-card-content>
-    <mat-card-actions>
-      <button routerLink="/order" mat-button>Order Now</button>
-      <button [routerLink]="'/edit/' + product.id" mat-button>
+    <mat-card-actions class="btns">
+      <button routerLink="/order" mat-button class="order-btn">Order Now</button>
+      <button [routerLink]="'/edit/' + product.id" mat-button class="edit-btn">
         Edit Product
       </button>
     </mat-card-actions>
