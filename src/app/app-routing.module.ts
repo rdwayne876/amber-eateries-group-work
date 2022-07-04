@@ -6,19 +6,25 @@ import { DetailsComponent } from './details/details.component';
 import { OrderComponent } from './order/order.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import { EditComponent } from './edit/edit.component';
+import { MenuComponent } from './menu/menu.component';
+import { AddmenuComponent } from './addmenu/addmenu.component';
+import { MenuDetailsComponent } from './menu-details/menu-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'details/:id', component: DetailsComponent },
-  { path: 'order', component: OrderComponent },
-  { path: 'addproduct', component: AddproductComponent },
-  { path: 'edit/:id', component: EditComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'menu', component: MenuComponent },
+    { path: 'addmenu', component: AddmenuComponent },
+    { path: 'details/menu/:id', component: MenuDetailsComponent },
+    { path: 'about', component: AboutComponent },
+    { path: 'details/:id', component: DetailsComponent },
+    { path: 'order', component: OrderComponent },
+    { path: 'addproduct', component: AddproductComponent },
+    { path: 'edit/:id', component: EditComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

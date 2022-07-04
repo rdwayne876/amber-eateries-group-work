@@ -1,0 +1,18 @@
+<div class="heading">
+    <h1>The Menu</h1>
+    <a routerLink="/addmenu" mat-button>Add New Menu</a>
+</div>
+
+<mat-grid-list cols="3" rowHeight="10:5">
+    <mat-grid-tile *ngFor="let menu of menus">
+        <div>
+            <img class="tile-image" src="{{menu.imageUrl}}">
+
+            <div class="content">
+                <h1>{{menu.menu_name}}</h1>
+
+                <a [routerLink]="['/details', 'menu', menu.id]" mat-raised-button>View Details</a>
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
