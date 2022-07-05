@@ -1,0 +1,39 @@
+<main>
+    <div class="main-container">
+
+        <h2>Edit Menu</h2>
+        <div class="left">
+
+            <div class="form-container">
+                <form #editMenu="ngForm" *ngIf="data; else missing" (ngSubmit)="editMenu.valid && updateMenuItem()">
+                    <mat-form-field class="form-control-group">
+                        <mat-label>Menu Name</mat-label>
+                        <input type="text" [(ngModel)]="data.menu_name" name="name" required matInput />
+                    </mat-form-field>
+                    <mat-form-field class="form-control-group">
+                        <mat-label>Description</mat-label>
+                        <textarea [(ngModel)]="data.menu_description" name="description" placeholder="Description"
+                            cols="45" rows="5" matInput></textarea>
+                    </mat-form-field>
+                    <mat-form-field class="form-control-group">
+                        <mat-label>Cost</mat-label>
+                        <input type="number" [(ngModel)]="data.cost" name="cost" placeholder="Price" matInput />
+                    </mat-form-field>
+                    <mat-form-field class="form-control-group">
+                        <mat-label>Image URL</mat-label>
+                        <input type="url" [(ngModel)]="data.imageUrl" name="imageUrl" placeholder="ImageUrl" matInput />
+                    </mat-form-field>
+                    <!-- <mat-form-field class="form-control-group">
+                    <mat-label>Quantity</mat-label>
+                </mat-form-field> -->
+                    <button type="submit" mat-flat-button color="primary">Update Menu</button>
+                </form>
+
+                <ng-template #missing>
+                    <h1>No Menu Available</h1>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+</main>

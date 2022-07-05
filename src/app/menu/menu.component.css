@@ -6,22 +6,17 @@
   align-items: center;
 }
 
-mat-grid-list {
-  overflow-x: hidden;
-}
-
-mat-grid-tile {
-  transition: transform 0.4s ease;
-}
-mat-grid-tile:hover {
-  z-index: 1;
-  transform: scale(1.05);
-  cursor: pointer;
+.menu-section-title {
+  width: 100%;
 }
 
 mat-grid-tile > div {
   position: relative;
   isolation: isolate;
+}
+
+mat-grid-tile:hover .tile-image {
+  transform: scale(1.05);
 }
 
 .tile-image {
@@ -32,6 +27,8 @@ mat-grid-tile > div {
   position: absolute;
   inset: 0;
   z-index: -1;
+
+  transition: transform 0.4s ease;
 }
 
 .content {

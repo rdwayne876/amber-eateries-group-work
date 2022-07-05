@@ -5,17 +5,19 @@
         </div>
         <div class="detail-info-container">
             <h1>{{menu.menu_name}}</h1>
-            <mat-chip-list aria-label="Fish selection">
-                <mat-chip *ngFor="let size of menu.menu_size" (click)="selectSize(size)">{{size.type}}</mat-chip>
-            </mat-chip-list>
+            <div class="center">
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip *ngFor="let size of menu.menu_size" (click)="selectSize(size)">{{size.type}}</mat-chip>
+                </mat-chip-list>
+            </div>
             <div class="size-cost">
                 <p>{{menu.cost | currency}}</p>
             </div>
             <p class="item-desc">{{menu.menu_description}}</p>
             <div class="detail-action">
-                <button class="order" routerLink="/order">Order</button>
-                <button class=" edit">Edit</button>
-                <button class="delete" (click)="confirmDelete()">Delete</button>
+                <button class="order" routerLink="/order" mat-flat-button color="primary">Order</button>
+                <button [routerLink]="['/edit', 'menu', menu.id]" mat-flat-button class="edit">Edit</button>
+                <button class="delete" mat-flat-button color="warn" (click)="confirmDelete()">Delete</button>
             </div>
         </div>
     </div>

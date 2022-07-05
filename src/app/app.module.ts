@@ -31,6 +31,7 @@ import { AddmenuComponent } from './addmenu/addmenu.component';
 import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { MenuEditComponent } from './menu-edit/menu-edit.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
         AddmenuComponent,
         MenuDetailsComponent,
         ConfirmComponent,
+        MenuEditComponent,
     ],
 
     imports: [

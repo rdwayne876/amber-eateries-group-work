@@ -20,7 +20,6 @@ textarea {
   font: inherit;
 }
 
-
 ::-webkit-scrollbar {
   width: 6px;
   height: 5px;
@@ -33,4 +32,9 @@ textarea {
 ::-webkit-scrollbar-track {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
+}
+
+.main-container {
+  width: 78%;
+  margin: 0 auto;
 }

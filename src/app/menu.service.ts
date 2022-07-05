@@ -7,7 +7,7 @@ import { Menu } from './menu';
     providedIn: 'root'
 })
 export class MenuService {
-    private REST_API_SERVER = 'http://localhost:3000/menus/';
+    private REST_API_SERVER = 'http://localhost:3000/menus';
 
     constructor(private http: HttpClient) { }
 

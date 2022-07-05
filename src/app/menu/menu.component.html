@@ -1,7 +1,11 @@
-<div class="heading">
-    <h1>The Menu</h1>
-    <a routerLink="/addmenu" mat-button>Add New Menu</a>
-</div>
+<section class="menu-section-title">
+    <div class="main-container">
+        <div class="heading">
+            <h1>The Menu</h1>
+            <a routerLink="/addmenu" mat-button>Add New Menu</a>
+        </div>
+    </div>
+</section>
 
 <mat-grid-list cols="3" rowHeight="10:5">
     <mat-grid-tile *ngFor="let menu of menus">

@@ -490,7 +490,7 @@
       "id": 7,
       "menu_name": "Stewed Peas",
       "menu_description": "Niceness",
-      "cost": 130,
+      "cost": 150,
       "imageUrl": "https://ayouniquejourney.com/wp-content/uploads/2019/04/Jamaican-Stew-Peas-Recipe-8.png",
       "menu_size": [
         {
@@ -548,27 +548,6 @@
       "cost": 200,
       "imageUrl": "https://www.seriouseats.com/thmb/qthunTiko9OuNGKP2rqnfsYGidM=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2013__07__20130715-jerk-chicken-final-food-lab-38-7dad87a78a7a4e089cc9a46472d89350.jpg",
       "id": 9
-    },
-    {
-      "menu_name": "Grung Salad",
-      "menu_description": "Salad from the earth",
-      "menu_size": [
-        {
-          "type": "lg",
-          "ratio": 1.5
-        },
-        {
-          "type": "md",
-          "ratio": 1.2
-        },
-        {
-          "type": "sm",
-          "ratio": 1
-        }
-      ],
-      "cost": 95,
-      "imageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
-      "id": 10
     }
   ]
 }

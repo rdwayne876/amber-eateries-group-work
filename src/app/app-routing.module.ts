@@ -9,6 +9,7 @@ import { EditComponent } from './edit/edit.component';
 import { MenuComponent } from './menu/menu.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
 import { MenuDetailsComponent } from './menu-details/menu-details.component';
+import { MenuEditComponent } from './menu-edit/menu-edit.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'menu', component: MenuComponent },
     { path: 'addmenu', component: AddmenuComponent },
     { path: 'details/menu/:id', component: MenuDetailsComponent },
+    { path: 'edit/menu/:id', component: MenuEditComponent },
     { path: 'about', component: AboutComponent },
     { path: 'details/:id', component: DetailsComponent },
     { path: 'order', component: OrderComponent },
