@@ -67,17 +67,19 @@
   </div>
 
   <div class="right">
-    <div *ngIf="randomProducts.length">
+    <div *ngIf="randomProducts.length" class="side-item-container">
       <a
         *ngFor="let product of randomProducts"
         (click)="goToProduct(product.id)"
       >
-        <p>{{ product.name }}</p>
-        <img
-          style="height: 100px"
-          [src]="product.imageUrl"
-          [alt]="product.name"
-        />
+        <div class="img-n-name">
+          <p>{{ product.name }}</p>
+          <img
+            style="height: 100px"
+            [src]="product.imageUrl"
+            [alt]="product.name"
+          />
+        </div>
       </a>
     </div>
   </div>

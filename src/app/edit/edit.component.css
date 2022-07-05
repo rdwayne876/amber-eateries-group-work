@@ -23,9 +23,13 @@ main {
   background-color: #fff;
   width: 380px;
   padding: 2rem 2rem;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, */
+    /* rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
+    box-shadow: 0 0 0.3rem #00B5AD;
+    border-radius: 5px;
 }
+
+
 
 form {
   width: 100%;
@@ -68,7 +72,8 @@ form {
 } */
 
 button {
-  background-color: #219ebc;
+  /* background-color: #219ebc; */
+  background-color: #00B5AD;
   border: 1px solid transparent;
   border-radius: 3px;
   box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
@@ -96,3 +101,26 @@ button {
 button:hover {
   background-color: #1c90ac;
 }
+
+
+/* side items */
+/* .side-item-container {
+  background: #00B5AD;
+} */
+
+.img-n-name {
+  box-shadow: 0 0 0.2rem #00B5AD;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.img-n-name img { 
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.img-n-name p {
+  text-align: center;
+  padding: 10px 5px 0 5px;
+}
+
