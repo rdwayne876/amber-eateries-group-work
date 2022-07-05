@@ -1,0 +1,52 @@
+<div class="main-container">
+    <form class="" #addMenu="ngForm" (ngSubmit)="addMenu.valid && addNewMenu()">
+        <h1 class="head-text">Add a menu</h1>
+
+        <div class="grid">
+            <mat-form-field>
+                <mat-label>Menu Name</mat-label>
+                <input type="text" name="menu_name" [(ngModel)]="menu.menu_name" matInput required />
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Menu Description</mat-label>
+                <textarea name="menu_description" rows="5" [(ngModel)]="menu.menu_description" matInput
+                    required></textarea>
+            </mat-form-field>
+
+            <div>
+                <mat-label>Menu Size</mat-label>
+                <br />
+                <section>
+                    <p>
+                        <mat-checkbox name="menu_size" color="primary" [(ngModel)]="menu.menu_size['lg']">
+                            Large
+                        </mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox name="menu_size" color="primary" [(ngModel)]="menu.menu_size['md']">
+                            Medium
+                        </mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox name="menu_size" color="primary" [(ngModel)]="menu.menu_size['sm']">
+                            Small
+                        </mat-checkbox>
+                    </p>
+                </section>
+            </div>
+
+            <mat-form-field>
+                <mat-label>Cost</mat-label>
+                <input type="number" name="cost" [(ngModel)]="menu.cost" matInput required />
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Menu Image</mat-label>
+                <input type="url" name="imageUrl" [(ngModel)]="menu.imageUrl" matInput required />
+            </mat-form-field>
+        </div>
+
+        <button type=" submit" mat-raised-button color="primary">Add Product</button>
+    </form>
+</div>

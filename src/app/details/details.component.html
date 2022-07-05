@@ -1,29 +1,21 @@
-<div class="hero main-container">
-  <mat-card *ngIf="product; else spinner" class="card-container">
-    <mat-card-header>
-      <!-- <mat-card-subtitle>{{ product.id }} </mat-card-subtitle> -->
-      <mat-card-title>{{ product.name }}</mat-card-title>
-      <mat-card-subtitle
-        >{{ product.price | currency }} / {{ product.quantity | number }}
-      </mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        {{ product.description }}
-      </p>
-      <div class="img-container">
-        <img src="{{ product.imageUrl }}" />
-      </div>
-    </mat-card-content>
-    <mat-card-actions class="btns">
-      <button routerLink="/order" mat-button class="order-btn">Order Now</button>
-      <button [routerLink]="'/edit/' + product.id" mat-button class="edit-btn">
-        Edit Product
-      </button>
-    </mat-card-actions>
-  </mat-card>
-
-  <ng-template #spinner>
-    <mat-spinner></mat-spinner>
-  </ng-template>
+<div class="hero">
+    <mat-card *ngIf="product; else spinner">
+        <mat-card-header>
+            <mat-card-title>{{ product.name }}</mat-card-title>
+            <mat-card-subtitle>{{ product.price | currency }} / {{ product.quantity | number }}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="card-image" src="{{ product.imageUrl }}" />
+        <mat-card-content>
+            <p>
+                {{ product.description }}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button routerLink="/order" mat-flat-button color="primary">Order Now</button>
+            <button [routerLink]="'/edit/' + product.id" mat-button>
+                Edit Product
+            </button>
+        </mat-card-actions>
+    </mat-card>
 </div>

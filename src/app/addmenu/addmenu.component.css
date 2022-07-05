@@ -1,0 +1,12 @@
+.main-container {
+  padding: 3rem 0;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+mat-form-field {
+  width: min(100%, 20rem);
+}

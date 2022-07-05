@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  template: `
+    selector: 'app-header',
+    template: `
 <header>
   <div class="header">
     <div class="secondary-header">
@@ -29,6 +29,7 @@ import { Component, OnInit } from '@angular/core';
           </div>
           <div class="navigation">
             <button mat-button routerLink="/">Home</button>
+            <button mat-button routerLink="/menu">Menus</button>
             <button mat-button routerLink="/about">About</button>
             <button mat-button routerLink="/addproduct">Add New Product</button>
           </div>
@@ -41,8 +42,8 @@ import { Component, OnInit } from '@angular/core';
 
 </header>
   `,
-  styles: [
-    `
+    styles: [
+        `
     @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600&display=swap');
 .header {
   width: 100%;
@@ -127,13 +128,13 @@ import { Component, OnInit } from '@angular/core';
 }
 
     `
-  ]
+    ]
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }
