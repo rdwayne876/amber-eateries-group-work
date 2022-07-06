@@ -32,7 +32,7 @@ import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
-
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
     declarations: [
@@ -51,6 +51,7 @@ import { MenuEditComponent } from './menu-edit/menu-edit.component';
         MenuDetailsComponent,
         ConfirmComponent,
         MenuEditComponent,
+        ShoppingCartComponent,
     ],
 
     imports: [
@@ -71,9 +72,9 @@ import { MenuEditComponent } from './menu-edit/menu-edit.component';
         ReactiveFormsModule,
         MatCheckboxModule,
         MatChipsModule,
-        MatDialogModule
+        MatDialogModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

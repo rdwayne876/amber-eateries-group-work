@@ -65,8 +65,7 @@ export class CartService {
             // Updating the cart in localStorage with the new information
             this.updateCart(currentCart);
 
-            //* Cart Notification function goes here
-            alert('Cart updated successfully');
+            // Cart Notification function goes here
         });
     }
 
