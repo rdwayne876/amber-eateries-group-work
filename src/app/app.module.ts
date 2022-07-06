@@ -32,48 +32,51 @@ import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
-
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HomeComponent,
-        AboutComponent,
-        DetailsComponent,
-        OrderComponent,
-        SafePipe,
-        AddproductComponent,
-        EditComponent,
-        HeaderComponent,
-        FooterComponent,
-        MenuComponent,
-        AddmenuComponent,
-        MenuDetailsComponent,
-        ConfirmComponent,
-        MenuEditComponent,
-    ],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    DetailsComponent,
+    OrderComponent,
+    SafePipe,
+    AddproductComponent,
+    EditComponent,
+    HeaderComponent,
+    FooterComponent,
+    MenuComponent,
+    AddmenuComponent,
+    MenuDetailsComponent,
+    ConfirmComponent,
+    MenuEditComponent,
+    CheckoutComponent,
+  ],
 
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatInputModule,
-        MatCardModule,
-        MatButtonModule,
-        MatPaginatorModule,
-        MatProgressSpinnerModule,
-        MatSnackBarModule,
-        MatGridListModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatCheckboxModule,
-        MatChipsModule,
-        MatDialogModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatGridListModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatStepperModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

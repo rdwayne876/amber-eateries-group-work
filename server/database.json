@@ -1,31 +1,35 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "name": "Unbranded Metal Chair",
-            "description": "Temporibus est non beatae perspiciatis doloremque voluptatem in tenetur sint. Voluptas ut dolorum aperiam minima in dolorem suscipit. Eos totam at et sunt ad architecto sint.",
-            "price": "122.00",
-            "category": "beverage",
-            "imageUrl": "https://source.unsplash.com/1600x900/?food",
-            "quantity": 9806
-        },
-        {
-            "id": 2,
-            "name": "Awesome Plastic Bacon",
-            "description": "In vitae quia accusamus. Aut rerum reiciendis quia velit aut. Dolorem dolor rerum eaque nostrum dignissimos repudiandae repellendus ipsum. Deserunt dolor ut quis. Et repellat maxime dicta neque laudantium qui. Consequatur vitae quia ex reprehenderit.",
-            "price": "872.00",
-            "category": "side",
-            "imageUrl": "https://source.unsplash.com/1600x900/?food",
-            "quantity": 65877
-        },
-        {
-            "id": 3,
-            "name": "Intelligent Frozen Shoes",
-            "description": "Quisquam autem soluta. Dolores et delectus incidunt fugiat nisi illum maxime et officia. Velit sed cum. Odit et omnis rerum est.",
-            "price": "477.00",
-            "category": "main",
-            "imageUrl": "https://source.unsplash.com/1600x900/?food",
-            "quantity": 88962
-        }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "name": "Unbranded Metal Chair",
+      "description": "Temporibus est non beatae perspiciatis doloremque voluptatem in tenetur sint. Voluptas ut dolorum aperiam minima in dolorem suscipit. Eos totam at et sunt ad architecto sint.",
+      "price": 122.0,
+      "category": "beverage",
+      "imageUrl": "https://source.unsplash.com/1600x900/?food",
+      "quantity": 9806
+    },
+    {
+      "id": 2,
+      "name": "Awesome Plastic Bacon",
+      "description": "In vitae quia accusamus. Aut rerum reiciendis quia velit aut. Dolorem dolor rerum eaque nostrum dignissimos repudiandae repellendus ipsum. Deserunt dolor ut quis. Et repellat maxime dicta neque laudantium qui. Consequatur vitae quia ex reprehenderit.",
+      "price": 872.0,
+      "category": "side",
+      "imageUrl": "https://source.unsplash.com/1600x900/?food",
+      "quantity": 65877
+    },
+    {
+      "id": 3,
+      "name": "Intelligent Frozen Shoes",
+      "description": "Quisquam autem soluta. Dolores et delectus incidunt fugiat nisi illum maxime et officia. Velit sed cum. Odit et omnis rerum est.",
+      "price": 477.0,
+      "category": "main",
+      "imageUrl": "https://source.unsplash.com/1600x900/?food",
+      "quantity": 88962
+    }
+  ],
+
+  "user": [],
+  "orders": [],
+  "transactions": []
 }
