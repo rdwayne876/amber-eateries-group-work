@@ -52,6 +52,10 @@ import { Component, OnInit } from '@angular/core';
         </div>
       </div>
     </div>
+
+    <div class="text-8xl text-blue-500 bg-blue-500">
+      hello
+    </div>
 </footer>
     `,
     styles: [`
