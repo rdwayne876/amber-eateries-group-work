@@ -1,5 +1,7 @@
 export enum Category {
-  MAIN = 'main',
+  APPETIZER = 'appetizer',
+  ENTREE = 'entree',
+  DESSERT = 'dessert',
   SIDE = 'side',
   BEVERAGE = 'beverage',
 }
