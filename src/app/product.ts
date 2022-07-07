@@ -1,10 +1,12 @@
-enum Category {
-    MAIN = 'main',
+export enum Category {
+    APPETIZER = 'appetizer',
+    ENTREE = 'entree',
+    DESSERT = 'dessert',
     SIDE = 'side',
     BEVERAGE = 'beverage',
-}
-
-export interface Product {
+  }
+  
+  export interface Product {
     id: number;
     name: string;
     description: string;
@@ -12,4 +14,5 @@ export interface Product {
     imageUrl: string;
     price: number;
     quantity: number;
-}
+    ratings: number[];
+  }
