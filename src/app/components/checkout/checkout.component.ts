@@ -29,7 +29,7 @@ export class CheckoutComponent implements OnInit {
         street_address2: new FormControl(''),
         city: new FormControl('', [Validators.required]),
         parish: new FormControl('', [Validators.required]),
-    }).addValidators([mapValidator(this.Map)]);
+    });
     paymentTypeForm = new FormGroup({
         payment_method: new FormControl('', [
             Validators.required,
@@ -56,7 +56,9 @@ export class CheckoutComponent implements OnInit {
         private userService: UserService
     ) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.addressForm.addValidators([mapValidator(this.Map)]);
+    }
 }
 
 function mapValidator(map: {latitude: number, longitude: number}): AsyncValidatorFn {
