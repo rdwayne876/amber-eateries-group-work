@@ -1,63 +1,212 @@
-<app-header></app-header>
-
 <main>
-  <mat-stepper [linear]="true" #stepper>
-    <mat-step [stepControl]="userTypeForm">
-      <ng-template matStepLabel>User Type</ng-template>
-      <form [formGroup]="userTypeForm">
-        <mat-form-field appearance="fill">
-          <mat-label>Name</mat-label>
-          <input
-            matInput
-            placeholder="Last name, First name"
-            formControlName="firstCtrl"
-            required
-          />
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
+    <mat-stepper [linear]="true" #stepper>
+        <mat-step [stepControl]="userTypeForm">
+            <ng-template matStepLabel>Checkout Service</ng-template>
 
-    <mat-step [stepControl]="deliveryTypeForm" label="Fill out your address">
-      <ng-template matStepLabel>How will you get your food?</ng-template>
-      <form [formGroup]="deliveryTypeForm">
-        <mat-form-field appearance="fill">
-          <mat-label>Address</mat-label>
-          <input
-            matInput
-            formControlName="secondCtrl"
-            placeholder="Ex. 1 Main St, New York, NY"
-            required
-          />
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
+            <form [formGroup]="userTypeForm">
+                <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    formControlName="type"
+                >
+                    <mat-radio-button
+                        class="example-radio-button"
+                        value="account"
+                    >
+                        Account Pay
+                    </mat-radio-button>
+                    <mat-radio-button
+                        class="example-radio-button"
+                        value="direct"
+                    >
+                        Direct Pay
+                    </mat-radio-button>
+                </mat-radio-group>
 
-    <mat-step [stepControl]="paymentTypeForm">
-      <ng-template matStepLabel>Done</ng-template>
-      <form [formGroup]="paymentTypeForm">
-        <mat-form-field appearance="fill">
-          <mat-label>Address</mat-label>
-          <input
-            matInput
-            formControlName="secondCtrl"
-            placeholder="Ex. 1 Main St, New York, NY"
-            required
-          />
-        </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-  </mat-stepper>
+                <button mat-button matStepperNext>Next</button>
+            </form>
+        </mat-step>
+
+        <mat-step
+            [stepControl]="accountTypeForm"
+            *ngIf="userTypeForm.controls['type'].value === 'account'"
+        >
+            <ng-template matStepLabel>Account</ng-template>
+
+            <form [formGroup]="accountTypeForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Email Address</mat-label>
+                    <input
+                        type="email"
+                        matInput
+                        placeholder="eg. john@email.com"
+                        formControlName="email"
+                    />
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious type="button">
+                        Back
+                    </button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="deliveryTypeForm">
+            <ng-template matStepLabel>How will you get your food?</ng-template>
+
+            <form [formGroup]="deliveryTypeForm">
+                <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    formControlName="type"
+                >
+                    <mat-radio-button
+                        class="example-radio-button"
+                        value="delivery"
+                    >
+                        Delivery
+                    </mat-radio-button>
+                    <mat-radio-button
+                        class="example-radio-button"
+                        value="pickup"
+                    >
+                        Pick Up
+                    </mat-radio-button>
+                </mat-radio-group>
+
+                <button mat-button matStepperNext>Next</button>
+            </form>
+        </mat-step>
+
+        <mat-step
+            [stepControl]="addressForm"
+            *ngIf="deliveryTypeForm.controls['type'].value === 'delivery'"
+        >
+            <ng-template matStepLabel>Enter Address</ng-template>
+            <form [formGroup]="addressForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Street Address</mat-label>
+                    <input
+                        matInput
+                        formControlName="street_address"
+                        placeholder="1 Main St"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input
+                        matInput
+                        formControlName="city"
+                        placeholder="Jones Town"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Parish</mat-label>
+                    <input
+                        matInput
+                        formControlName="parish"
+                        placeholder="Kingston"
+                    />
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="paymentTypeForm">
+            <ng-template matStepLabel>How would you like to Pay?</ng-template>
+            <form [formGroup]="paymentTypeForm">
+                <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    formControlName="payment_method"
+                >
+                    <mat-radio-button class="example-radio-button" value="cash">
+                        Cash
+                    </mat-radio-button>
+                    <mat-radio-button class="example-radio-button" value="card">
+                        Card
+                    </mat-radio-button>
+                </mat-radio-group>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step
+            [stepControl]="cardForm"
+            *ngIf="paymentTypeForm.controls['payment_method'].value === 'card'"
+        >
+            <ng-template matStepLabel>How would you like to Pay?</ng-template>
+            <form [formGroup]="cardForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Card Holder Name</mat-label>
+                    <input
+                        matInput
+                        formControlName="cardholder"
+                        placeholder="1 Main St"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Card Number</mat-label>
+                    <input
+                        matInput
+                        formControlName="card_no"
+                        placeholder="1 Main St"
+                        Fname
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Expiry Date</mat-label>
+                    <input
+                        matInput
+                        formControlName="expiry_date"
+                        placeholder="1 Main St"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>CVV</mat-label>
+                    <input
+                        matInput
+                        formControlName="cvv"
+                        placeholder="1 Main St"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Street Address</mat-label>
+                    <input
+                        matInput
+                        formControlName="street1"
+                        placeholder="1 Main St"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input
+                        matInput
+                        formControlName="city_town"
+                        placeholder="1 Main St"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Parish</mat-label>
+                    <input
+                        matInput
+                        formControlName="parish"
+                        placeholder="Kingston"
+                    />
+                </mat-form-field>
+
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+    </mat-stepper>
 </main>
-
-<app-footer></app-footer>

@@ -10,10 +10,13 @@ import { MenuComponent } from './menu/menu.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
 import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
+    { path: 'cart', component: ShoppingCartComponent },
     { path: 'menu', component: MenuComponent },
     { path: 'addmenu', component: AddmenuComponent },
     { path: 'details/menu/:id', component: MenuDetailsComponent },
@@ -23,10 +26,11 @@ const routes: Routes = [
     { path: 'order', component: OrderComponent },
     { path: 'addproduct', component: AddproductComponent },
     { path: 'edit/:id', component: EditComponent },
+    { path: 'checkout', component: CheckoutComponent },
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
