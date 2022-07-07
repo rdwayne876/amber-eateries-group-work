@@ -1,3 +1,4 @@
+import { HeroComponent } from './hero/hero.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: 'order', component: OrderComponent },
     { path: 'addproduct', component: AddproductComponent },
     { path: 'edit/:id', component: EditComponent },
+    { path: 'hero', component: HeroComponent },
 ];
 
 @NgModule({
