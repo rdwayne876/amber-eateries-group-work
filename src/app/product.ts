@@ -12,4 +12,5 @@ export interface Product {
   imageUrl: string;
   price: number;
   quantity: number;
+  ratings: number[];
 }

@@ -1,5 +1,5 @@
 import { Order, Transaction, User } from '../src/app/interfaces/checkout';
-import { Product } from '../src/app/product';
+import { Product, Category } from '../src/app/product';
 
 let database: {
   products: Product[];
@@ -8,7 +8,7 @@ let database: {
   users: User[];
 } = { products: [], orders: [], transactions: [], users: [] };
 
-//Data Entry Begin
+// Data Entry Begin
 database.products = [
   // {
   //     id: number;
@@ -18,6 +18,7 @@ database.products = [
   //     imageUrl: string;
   //     price: number;
   //     quantity: number;
+  //     ratings: [3, 1, 5]
   // }
 ];
 database.orders = [
@@ -45,6 +46,6 @@ database.users = [
   //     card: Card;
   // }
 ];
-//Data Entry End
+// Data Entry End
 
 console.log(JSON.stringify(database));

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { CheckoutService } from 'src/app/services/checkout.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -8,30 +9,11 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent implements OnInit {
-  firstFormGroup = new FormGroup (
-    
-  )
+  userTypeForm = new FormGroup({});
 
-fries  
-x3               450
+  deliveryTypeForm = new FormGroup({});
 
-fries  
-x3               450
-
-fries  
-x3               450
-
-fries  
-x3               450
-
-fries  
-x3               450
-
-fries  
-x3               450
-
-=========================
-TOTAL            222
+  paymentTypeForm = new FormGroup({});
 
   constructor(
     private checkoutService: CheckoutService,

@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generate": "node ./server/fakergen.js > ./server/database.json",
+    "generate2": "tsc ./server/database.ts && node ./server/database.js > ./server/database.json",
     "server": "json-server --watch ./server/database.json"
   },
   "private": true,
