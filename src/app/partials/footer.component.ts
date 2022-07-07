@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-footer',
   template: `
     <footer class="site-footer">
-<!------ CONTAINER-1 ------>
       <div class="container-1">
 
 <!------ CONTAINER-1 / LEFT ------>
