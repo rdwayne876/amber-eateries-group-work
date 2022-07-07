@@ -14,12 +14,23 @@ database.products = [
   //     id: number;
   //     name: string;
   //     description: string;
-  //     category: 'main'|'side'|'beverage';
+  //     category: 'appetizer' | 'entree' | 'dessert' | 'side' | 'beverage'
   //     imageUrl: "https://source.unsplash.com/1600x900/?food";
   //     price: number;
   //     quantity: number;
   //     ratings: []
   // }
+    
+    {
+        id: 1,
+        name: "JAMAICAN JERK CHICKEN",
+        description: "Jamaican jerk chicken is famous for its spicy, smoky taste. Recreate this dish at home using a blend of traditional herbs and spices. If you can handle it, turn it up a notch with some authentic scotch bonnet pepper sauce.",
+        category: 'entree',
+        imageURL: "https://izzycooking.com/wp-content/uploads/2021/03/Jerk-Chicken-683x1024.jpg",
+        price: 1200,
+        quantity: 100,
+        ratings: [] 
+    }
 ];
 database.orders = [
   // {
