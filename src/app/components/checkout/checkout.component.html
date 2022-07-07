@@ -1,6 +1,12 @@
 <main>
     <mat-stepper [linear]="true" #stepper>
-        <mat-step [stepControl]="userTypeForm">
+        <mat-step
+            [stepControl]="
+                userTypeForm.controls['type'].value !== 'account'
+                    ? userTypeForm
+                    : accountTypeForm
+            "
+        >
             <ng-template matStepLabel>Checkout Service</ng-template>
 
             <form [formGroup]="userTypeForm">
@@ -8,6 +14,7 @@
                     aria-labelledby="example-radio-group-label"
                     class="example-radio-group"
                     formControlName="type"
+                    (change)="enableAccountForm($event)"
                 >
                     <mat-radio-button
                         class="example-radio-button"
@@ -23,15 +30,10 @@
                     </mat-radio-button>
                 </mat-radio-group>
 
-                <button mat-button matStepperNext>Next</button>
+                <div *ngIf="userTypeForm.controls['type'].value === 'direct'">
+                    <button mat-button matStepperNext>Next</button>
+                </div>
             </form>
-        </mat-step>
-
-        <mat-step
-            [stepControl]="accountTypeForm"
-            *ngIf="userTypeForm.controls['type'].value === 'account'"
-        >
-            <ng-template matStepLabel>Account</ng-template>
 
             <form [formGroup]="accountTypeForm">
                 <mat-form-field appearance="fill">
@@ -43,16 +45,20 @@
                         formControlName="email"
                     />
                 </mat-form-field>
-                <div>
-                    <button mat-button matStepperPrevious type="button">
-                        Back
-                    </button>
+
+                <div *ngIf="userTypeForm.controls['type'].value === 'account'">
                     <button mat-button matStepperNext>Next</button>
                 </div>
             </form>
         </mat-step>
 
-        <mat-step [stepControl]="deliveryTypeForm">
+        <mat-step
+            [stepControl]="
+                deliveryTypeForm.controls['type'].value === 'pickup'
+                    ? deliveryTypeForm
+                    : addressForm
+            "
+        >
             <ng-template matStepLabel>How will you get your food?</ng-template>
 
             <form [formGroup]="deliveryTypeForm">
@@ -60,6 +66,7 @@
                     aria-labelledby="example-radio-group-label"
                     class="example-radio-group"
                     formControlName="type"
+                    (change)="enableAddressForm($event)"
                 >
                     <mat-radio-button
                         class="example-radio-button"
@@ -74,16 +81,14 @@
                         Pick Up
                     </mat-radio-button>
                 </mat-radio-group>
-
-                <button mat-button matStepperNext>Next</button>
+                <div
+                    *ngIf="deliveryTypeForm.controls['type'].value === 'pickup'"
+                >
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
             </form>
-        </mat-step>
 
-        <mat-step
-            [stepControl]="addressForm"
-            *ngIf="deliveryTypeForm.controls['type'].value === 'delivery'"
-        >
-            <ng-template matStepLabel>Enter Address</ng-template>
             <form [formGroup]="addressForm">
                 <mat-form-field appearance="fill">
                     <mat-label>Street Address</mat-label>
@@ -117,20 +122,31 @@
                         placeholder="Kingston"
                     />
                 </mat-form-field>
-                <div>
+                <div
+                    *ngIf="
+                        deliveryTypeForm.controls['type'].value === 'delivery'
+                    "
+                >
                     <button mat-button matStepperPrevious>Back</button>
                     <button mat-button matStepperNext>Next</button>
                 </div>
             </form>
         </mat-step>
 
-        <mat-step [stepControl]="paymentTypeForm">
-            <ng-template matStepLabel>How would you like to Pay?</ng-template>
+        <mat-step
+            [stepControl]="
+                paymentTypeForm.controls['type'].value !== 'card'
+                    ? paymentTypeForm
+                    : cardForm
+            "
+        >
+            <ng-template matStepLabel>How would you like to pay?</ng-template>
             <form [formGroup]="paymentTypeForm">
                 <mat-radio-group
                     aria-labelledby="example-radio-group-label"
                     class="example-radio-group"
-                    formControlName="payment_method"
+                    formControlName="type"
+                    (change)="enableCardForm($event)"
                 >
                     <mat-radio-button class="example-radio-button" value="cash">
                         Cash
@@ -139,18 +155,12 @@
                         Card
                     </mat-radio-button>
                 </mat-radio-group>
-                <div>
+                <div *ngIf="paymentTypeForm.controls['type'].value === 'cash'">
                     <button mat-button matStepperPrevious>Back</button>
                     <button mat-button matStepperNext>Next</button>
                 </div>
             </form>
-        </mat-step>
 
-        <mat-step
-            [stepControl]="cardForm"
-            *ngIf="paymentTypeForm.controls['payment_method'].value === 'card'"
-        >
-            <ng-template matStepLabel>How would you like to Pay?</ng-template>
             <form [formGroup]="cardForm">
                 <mat-form-field appearance="fill">
                     <mat-label>Card Holder Name</mat-label>
@@ -166,7 +176,6 @@
                         matInput
                         formControlName="card_no"
                         placeholder="1 Main St"
-                        Fname
                     />
                 </mat-form-field>
                 <mat-form-field appearance="fill">
@@ -210,9 +219,9 @@
                     />
                 </mat-form-field>
 
-                <div>
+                <div *ngIf="paymentTypeForm.controls['type'].value === 'card'">
                     <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext (click)="dataCollect()">Next</button>
+                    <button mat-button matStepperNext>Next</button>
                 </div>
             </form>
         </mat-step>
