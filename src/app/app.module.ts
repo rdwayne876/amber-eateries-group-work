@@ -17,6 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatChipsModule } from '@angular/material/chips';
 import { OrderComponent } from './order/order.component';
 import { SafePipe } from './safe.pipe';
@@ -75,6 +76,7 @@ import { HeroComponent } from './hero/hero.component';
         MatCheckboxModule,
         MatChipsModule,
         MatDialogModule,
+        MatTabsModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
