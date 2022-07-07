@@ -8,12 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   private API = 'http://localhost:3000/';
+  last_user_created!: number;
 
   //Create
   createUser(user: User) {
     let obs = new Observable<boolean>((observer) => {
-      this.http.post(`${this.API}users`, user).subscribe({
+      this.http.post<User>(`${this.API}users`, user).subscribe({
         next: (data) => {
+          this.last_user_created = data.id;
           observer.next(true);
         },
         error: (err) => {
