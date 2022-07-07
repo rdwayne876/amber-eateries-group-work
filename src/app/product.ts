@@ -1,7 +1,9 @@
-enum Category {
-    MAIN = 'main',
-    SIDE = 'side',
-    BEVERAGE = 'beverage',
+export enum Category {
+  APPETIZER = 'appetizer',
+  ENTREE = 'entree',
+  DESSERT = 'dessert',
+  SIDE = 'side',
+  BEVERAGE = 'beverage',
 }
 
 export interface Product {
