@@ -53,11 +53,14 @@ export class CartService {
                 // Add the product found to the cart with `amount` set to `1` if duplicate not found
                 // This needs to be updated to accomodate the side orders
                 currentCart.push({
-                    id: product.id,
+                    id: parseInt(product.id),
                     name: product.name,
                     description: product.description,
-                    price: product.price,
+                    category: product.category,
                     imageUrl: product.imageUrl,
+                    price: parseFloat(product.price),
+                    quantity: parseInt(product.quantity) - 1,
+                    rating: [],
                     amount: 1,
                 });
             }

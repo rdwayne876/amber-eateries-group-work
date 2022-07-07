@@ -31,13 +31,8 @@ export class ShoppingCartComponent implements OnInit, AfterViewInit {
     }
 
     deleteProduct(product_id: number) {
-        let cart = this.cartService.getCart();
-
-        let productID = cart.findIndex(
-            (product: any) => product.id == product_id
-        );
-
-        cart.splice(productID, 1);
+        let cart = this.cartService.getCart() ?? [];
+        this.cartService.removeCartItem(product_id);
         this.cartService.updateCart(cart);
         this.cart = this.getCartItems();
 
