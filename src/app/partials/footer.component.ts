@@ -6,7 +6,19 @@ import { Component, OnInit } from '@angular/core';
     <footer class="site-footer">
     <div class="container c-1">
       <div class="row">
-        <div class="col-1">
+        <div class="col-lg">
+        <h6>Find Us</h6>
+        <span>
+            51 Hope Road, Kingston
+        </span>
+        <br>
+        <span>
+        Email: ambereats@domain.com
+        Telephone: (876) 438 - 3478
+        </span>
+
+        </div>
+        <div class="col-sml">
         <h6>For You</h6>
         <ul class="footer-links">
           <li><a href="#">Terms of Use</a></li>
@@ -14,17 +26,7 @@ import { Component, OnInit } from '@angular/core';
           <li><a href="#">Contact</a></li>
         </ul>
         </div>
-
-        <div class="col-2">
-          <h6>Accepted Cards</h6>
-          <ul class="footer-links">
-          <img alt="Visa" src="https://www.7krave.com/img/cards/visa.png" width="60px">
-          <img alt="Mastercard" src="https://www.7krave.com/img/cards/mastercard.png" data-src="/img/cards/mastercard.png" width="60px">
-          <img alt="Mastercard" src="https://www.7krave.com/img/cards/keycard.png" width="60px">
-          </ul>
-        </div>
-
-        <div class="col-3">
+        <div class="col-sml">
           <h6>Quick Links</h6>
           <ul class="footer-links">
             <li><a href="/">Home</a></li>
@@ -33,13 +35,22 @@ import { Component, OnInit } from '@angular/core';
             <li><a href="/addproduct">Add New Product</a></li>
           </ul>
         </div>
+
+        <div class="col-sml">
+          <h6>Accepted Cards</h6>
+          <ul class="footer-links">
+          <img alt="Visa" src="https://www.7krave.com/img/cards/visa.png" width="60px">
+          <img alt="Mastercard" src="https://www.7krave.com/img/cards/mastercard.png" data-src="/img/cards/mastercard.png" width="60px">
+          <img alt="Mastercard" src="https://www.7krave.com/img/cards/keycard.png" width="60px">
+          </ul>
+        </div>
       </div>
       <hr>
     </div>
     <div class="container c-2">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+          <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by
        <a href="#">Amber Eateries</a>.
           </p>
         </div>
@@ -47,7 +58,7 @@ import { Component, OnInit } from '@angular/core';
         <div class="col-md-4 col-sm-6 col-xs-12">
           <ul class="social-icons">
             <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>  
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
           </ul>
         </div>
       </div>
@@ -70,7 +81,7 @@ import { Component, OnInit } from '@angular/core';
     font-size: 28px;
     color: #212529;
     }
-    
+
     .container{
       width: 78%;
       margin: 0 auto;
@@ -85,11 +96,11 @@ import { Component, OnInit } from '@angular/core';
       align-items: center;
     }
 
-    .col-1 {
+    .col-lg {
       flex: 1;
     }
-    .col-2 {
-      width: 250px;
+    .col-sml {
+      width: 220px;
     }
 
     .col-2 img {
@@ -157,7 +168,7 @@ import { Component, OnInit } from '@angular/core';
 }
 
 .social-icons {
-  margin-right: 100px; 
+  margin-right: 100px;
 }
 .site-footer .social-icons
 {
@@ -267,7 +278,7 @@ import { Component, OnInit } from '@angular/core';
     font-weight:600
   }
 }
-    
+
     `]
 })
 export class FooterComponent implements OnInit {

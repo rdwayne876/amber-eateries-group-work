@@ -30,6 +30,7 @@ import { Component, OnInit } from '@angular/core';
           <div class="navigation">
             <button mat-button routerLink="/">Home</button>
             <button mat-button routerLink="/menu">Menus</button>
+            <button mat-button routerLink="/cart">Cart</button>
             <button mat-button routerLink="/about">About</button>
             <button mat-button routerLink="/addproduct">Add New Product</button>
           </div>

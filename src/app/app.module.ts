@@ -17,6 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatChipsModule } from '@angular/material/chips';
 import { OrderComponent } from './order/order.component';
 import { SafePipe } from './safe.pipe';
@@ -32,7 +33,7 @@ import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
-
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
     declarations: [
@@ -51,6 +52,7 @@ import { MenuEditComponent } from './menu-edit/menu-edit.component';
         MenuDetailsComponent,
         ConfirmComponent,
         MenuEditComponent,
+        ShoppingCartComponent,
     ],
 
     imports: [
@@ -71,9 +73,10 @@ import { MenuEditComponent } from './menu-edit/menu-edit.component';
         ReactiveFormsModule,
         MatCheckboxModule,
         MatChipsModule,
-        MatDialogModule
+        MatDialogModule,
+        MatTabsModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
