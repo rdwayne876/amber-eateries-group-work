@@ -8,9 +8,10 @@ database.products = [
 //     name: string;
 //     description: string;
 //     category: 'main'|'side'|'beverage';
-//     imageUrl: string;
+//     imageUrl: "https://source.unsplash.com/1600x900/?food";
 //     price: number;
 //     quantity: number;
+//     ratings: []
 // }
 ];
 database.orders = [

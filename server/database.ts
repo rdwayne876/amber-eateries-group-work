@@ -15,10 +15,10 @@ database.products = [
   //     name: string;
   //     description: string;
   //     category: 'main'|'side'|'beverage';
-  //     imageUrl: string;
+  //     imageUrl: "https://source.unsplash.com/1600x900/?food";
   //     price: number;
   //     quantity: number;
-  //     ratings: [3, 1, 5]
+  //     ratings: []
   // }
 ];
 database.orders = [
