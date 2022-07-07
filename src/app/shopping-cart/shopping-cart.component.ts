@@ -12,7 +12,7 @@ export class ShoppingCartComponent implements OnInit, AfterViewInit {
     grandTotal: number = 0;
 
     ngOnInit(): void {
-        this.cart = this.getCartItems();
+        this.cart = this.cartService.getCart();
     }
 
     ngAfterViewInit(): void {
@@ -23,23 +23,15 @@ export class ShoppingCartComponent implements OnInit, AfterViewInit {
         this.cart.find((item) => item.id == cItemID).amount = parseInt(
             event.target.value
         );
+
         this.calculateCartTotals(this.cart);
     }
 
-    getCartItems() {
-        return this.cartService.getCart();
-    }
-
     deleteProduct(product_id: number) {
-        let cart = this.cartService.getCart();
-
-        let productID = cart.findIndex(
-            (product: any) => product.id == product_id
+        this.cartService.updateCart(
+            this.cartService.removeCartItem(product_id)
         );
-
-        cart.splice(productID, 1);
-        this.cartService.updateCart(cart);
-        this.cart = this.getCartItems();
+        this.cart = this.cartService.getCart() ?? [];
 
         this.calculateCartTotals(this.cart);
     }
