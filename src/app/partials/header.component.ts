@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
     template: `
         <header>
             <div
-                class="header shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048]"
+                class="header shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048] "
                 id="main-nav"
             >
                 <div class="secondary-header p-2 ">
@@ -49,7 +49,7 @@ import { Component, OnInit } from '@angular/core';
                                     ></a
                                 >
                             </div>
-                            <div class="navigation ">
+                            <div class="navigation  ">
                                 <button mat-button routerLink="/">Home</button>
                                 <button mat-button routerLink="/menu">
                                     Menus
