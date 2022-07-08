@@ -9,14 +9,37 @@ export class CartService {
 
     /**
      * Converts the cart in `localStorage` to an array
-     * @returns {any[]} Cart from local storage as an array
+     * @returns The `cart` item from local storage as an array
      */
     getCart(): any[] {
         return JSON.parse(localStorage.getItem('cart') as string);
     }
 
+    /**
+     * Removes all items from the cart
+     */
     clearCart(): void {
         localStorage.setItem('cart', JSON.stringify([]));
+    }
+
+    /**
+     * Calculates the amount of items in the cart
+     * @returns The amount of products in the cart
+     */
+    getCartCount(): number {
+        return this.getCart().length ?? 0;
+    }
+
+    getCartTotal(cart: any[]): number {
+        let subTotals = 0;
+
+        // Calculates subtotal for each item in cart
+        cart.forEach((product) => {
+            subTotals += parseInt(product.price) * parseInt(product.amount);
+        });
+
+        // Sets the cart total to the calculated value
+        return subTotals;
     }
 
     /**
@@ -75,9 +98,10 @@ export class CartService {
     /**
      * Removes and item from the cart using it's id
      * @param itemId The id of the product/cart item to be removed
+     * @returns The modified array of `cart` items with the specified product removed.
      */
     removeCartItem(itemId: number): any[] {
-        const cart = this.getCart();
+        let cart = this.getCart();
         const productId = cart.findIndex(
             (product: any) => product.id == itemId
         );
