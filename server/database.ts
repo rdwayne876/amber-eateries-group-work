@@ -587,5 +587,5 @@ database.users = [
 ];
 // Data Entry End
 
-console.log(JSON.stringify(database));
+console.log(JSON.stringify(database, undefined, 2));
 
