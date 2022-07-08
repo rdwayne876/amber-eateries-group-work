@@ -33,6 +33,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { SliderComponent } from './slider/slider.component';
 
 @NgModule({
     declarations: [
@@ -52,6 +53,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
         ConfirmComponent,
         MenuEditComponent,
         ShoppingCartComponent,
+        SliderComponent,
     ],
 
     imports: [
