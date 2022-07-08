@@ -52,38 +52,56 @@ export class CheckoutService {
     }
 
     executeOrder(
-        orders: Product[],
+        orders: any[],
         payment_method: PaymentMethod,
         payment_amount: number,
         address?: Address,
         user_id?: number
     ) {
         let obs = new Observable<boolean>((observer) => {
-            this.http.post<User>(`${this.API}orders`, {orders: orders}).subscribe({
-                next: (data) => {
-                    this.executeTransaction(
-                        payment_method,
-                        payment_amount,
-                        data.id,
-                        address,
-                        user_id
-                    ).subscribe((data) => {
-                        if (data) {
-                            orders.forEach((e) => {
-                              --e.quantity;
-                              this.products.editproduct(e.id, e).subscribe(() => {});
-                            });
-                            observer.next(data)
-                        } else {
-                            observer.next(data);
-                        }
-                    });
-                },
-                error: (err) => {
-                    console.log(err);
-                    observer.next(false);
-                },
+            let list: any[] = [];
+            orders.forEach((e) => {
+              list.push({name: e.name, description: e.description, category: e.category, imageUrl: e.imageUrl, price: e.price});
             });
+            this.http
+                .post<User>(`${this.API}orders`, { orders: list })
+                .subscribe({
+                    next: (data) => {
+                        this.executeTransaction(
+                            payment_method,
+                            payment_amount,
+                            data.id,
+                            address,
+                            user_id
+                        ).subscribe((data) => {
+                            if (data) {
+                                orders.forEach((e) => {
+                                    this.products.fetchItem(e.id).subscribe({
+                                        next: (data) => {  
+                                          for (let i = 0; i < e.amount; i++) --data.quantity;                               
+                                            this.products
+                                                .editproduct(e.id, {
+                                                    quantity: data.quantity,
+                                                })
+                                                .subscribe(() => {});
+                                        },
+                                        error: (err) => {
+                                            console.log(err);
+                                            observer.next(false);
+                                        },
+                                    });
+                                });
+                                observer.next(data);
+                            } else {
+                                observer.next(data);
+                            }
+                        });
+                    },
+                    error: (err) => {
+                        console.log(err);
+                        observer.next(false);
+                    },
+                });
         });
         return obs;
     }
