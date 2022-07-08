@@ -16,9 +16,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
+    { path: 'home', component: HeroComponent },
+    { path: 'menu', component: HomeComponent },
     { path: 'cart', component: ShoppingCartComponent },
-    { path: 'menu', component: MenuComponent },
     { path: 'addmenu', component: AddmenuComponent },
     { path: 'details/menu/:id', component: MenuDetailsComponent },
     { path: 'edit/menu/:id', component: MenuEditComponent },
@@ -28,7 +28,6 @@ const routes: Routes = [
     { path: 'addproduct', component: AddproductComponent },
     { path: 'edit/:id', component: EditComponent },
     { path: 'checkout', component: CheckoutComponent },
-    { path: 'hero', component: HeroComponent },
 ];
 
 @NgModule({
