@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../data.service';
 import { MatPaginator } from '@angular/material/paginator';
+
 import { Product } from '../product';
 
 @Component({
