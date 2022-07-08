@@ -25,6 +25,7 @@ export class CheckoutComponent implements OnInit {
     Cart!: any[]; //Placeholder
     paymentAmount = 0; //Placeholder
     user_id!: number;
+    orderTotal = 5000;
 
     //Form Groups
     userTypeForm = new FormGroup({
