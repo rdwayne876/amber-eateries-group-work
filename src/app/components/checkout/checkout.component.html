@@ -110,7 +110,7 @@
                     <mat-label>City</mat-label>
                     <input
                         matInput
-                        formControlName="city"
+                        formControlName="city_town"
                         placeholder="Jones Town"
                     />
                 </mat-form-field>
@@ -226,4 +226,33 @@
             </form>
         </mat-step>
     </mat-stepper>
+
+
+
+
+
+
+
+<div class="h-max">
+    <div class="flex justify-between">
+        <h5>Order Summary</h5> 
+        <a routerLink="/cart"> <img src="" alt="Cart Icon"> </a>
+    </div>
+    <div>
+        <div *ngFor="let data of Cart">
+            <img [src]="data.imageUrl" alt="">
+        <p>{{data.name}}</p>
+        <button (click)="onMinus(data.id)">&minus;</button> <span>x{{data.amount}}</span> <button (click)="onAdd(data.id)">&plus;</button>
+        <p>{{data.price | currency}}</p>
+        
+
+
+        <p>=========================</p>
+        <p> Total </p> = ${{paymentAmount}}
+        <a (click)="dataCollect()">Final Checkout</a>
+    </div>
+</div>
+</div>
+
+
 </main>

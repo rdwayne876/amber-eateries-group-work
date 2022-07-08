@@ -13,6 +13,7 @@ import { AsyncValidatorFn } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Address } from 'src/app/interfaces/checkout';
 import { MatRadioChange } from '@angular/material/radio';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-checkout',
@@ -38,7 +39,7 @@ export class CheckoutComponent implements OnInit {
     addressForm = new FormGroup({
         street_address: new FormControl('', [Validators.required]),
         street_address2: new FormControl(''),
-        city: new FormControl('', [Validators.required]),
+        city_town: new FormControl('', [Validators.required]),
         parish: new FormControl('', [Validators.required]),
     });
     paymentTypeForm = new FormGroup({
@@ -79,16 +80,13 @@ export class CheckoutComponent implements OnInit {
     constructor(
         private checkoutService: CheckoutService,
         private userService: UserService,
-        private cartService: CartService
-    ) {
-        // let {array, price} = this.Cart = cartService.getCart();
-        // this.paymentAmount = price;
-        // this.Cart = array;
-    }
+        private cartService: CartService,
+        private router: Router
+    ) {}
 
     ngOnInit(): void {
-        this.addressForm.addValidators([mapValidator(this.Map)]);
-        console.log(this.cartService.getCart());
+        this.Cart = this.cartService.getCart();
+        this.paymentAmount = this.cartService.getCartTotal(this.Cart);
 
         this.accountTypeForm.disable();
         this.addressForm.disable();
@@ -96,93 +94,128 @@ export class CheckoutComponent implements OnInit {
     }
 
     dataCollect() {
-        this.userService
-            .getUser(this.accountTypeForm.controls['email'].value)
-            .subscribe((data) => {
-                if (!data) {
-                    this.userService
-                        .createUser({
-                            id: 0,
-                            email: this.accountTypeForm.controls['email'].value,
-                            delivery_address: {
-                                street_address:
-                                    this.addressForm.controls['street_address']
-                                        .value,
-                                street_address2:
-                                    this.addressForm.controls['street_address2']
-                                        .value,
-                                city_town:
-                                    this.addressForm.controls['city_town']
-                                        .value,
-                                parish: this.addressForm.controls['parish']
-                                    .value,
-                            },
-                            card: {
-                                _no: this.cardForm.controls['card_no'].value,
-                                cardholder:
-                                    this.cardForm.controls['cardholder'].value,
-                                expiry_date:
-                                    this.cardForm.controls['expiry_date'].value,
-                                address: {
+        if (!this.accountTypeForm.controls['email'].value) {
+            this.dataTransact(0);
+        } else {
+            this.userService
+                .getUser(this.accountTypeForm.controls['email'].value)
+                .subscribe((data) => {               
+                    if (!data) {
+                        this.userService
+                            .createUser({
+                                id: 1,
+                                email:
+                                    this.accountTypeForm.controls['email']?.value ?? '',
+                                delivery_address: {
                                     street_address:
-                                        this.cardForm.controls['street_address']
-                                            .value,
+                                        this.addressForm.controls[
+                                            'street_address'
+                                        ]?.value ?? '',
                                     street_address2:
-                                        this.cardForm.controls[
+                                        this.addressForm.controls[
                                             'street_address2'
-                                        ].value,
+                                        ]?.value ?? '',
                                     city_town:
-                                        this.cardForm.controls['city_town']
-                                            .value,
-                                    parish: this.cardForm.controls['parish']
-                                        .value,
+                                        this.addressForm.controls['city_town']?.value ?? '',
+                                    parish:
+                                        this.addressForm.controls['parish']?.value ?? '',
                                 },
-                            },
-                        })
-                        .subscribe((data) => {
-                            if (data) {
-                                this.dataTransact(
-                                    this.userService.last_user_created
-                                );
-                            } else {
-                                //Error Handling
-                            }
-                        });
-                } else {
-                    this.dataTransact(data.id);
-                }
-            });
+                                card: {
+                                    _no:
+                                        this.cardForm.controls['card_no']?.value ?? 0,
+                                    cardholder:
+                                        this.cardForm.controls['cardholder']?.value ?? '',
+                                    expiry_date:
+                                        this.cardForm.controls['expiry_date']?.value ?? '',
+                                    address: {
+                                        street_address:
+                                            this.cardForm.controls[
+                                                'street_address'
+                                            ]?.value ?? '',
+                                        street_address2:
+                                            this.cardForm.controls[
+                                                'street_address2'
+                                            ]?.value ?? '',
+                                        city_town:
+                                            this.cardForm.controls['city_town']?.value ?? '',
+                                        parish:
+                                            this.cardForm.controls['parish']?.value ?? '',
+                                    },
+                                },
+                            })
+                            .subscribe((data) => {
+                                if (data) {
+                                    this.dataTransact(
+                                        this.userService.last_user_created
+                                    );
+                                } else {
+                                    //Error Handling
+                                }
+                            });
+                    } else {
+                        this.dataTransact(data.id);
+                    }
+                });
+        }
     }
 
-    dataTransact(user_id: number) {
-        let list: any[] = [];
-        this.Cart.forEach(e => {
-            for(let i = 0; i < e.amount; i++){
-                list.push(e);
-            }
-        });
+    private dataTransact(user_id: number) {
         this.checkoutService
             .executeOrder(
-                list,
-                this.paymentTypeForm.controls['payment_method'].value,
+                this.Cart,
+                this.paymentTypeForm.controls['type']?.value,
                 this.paymentAmount,
                 {
                     street_address:
-                        this.addressForm.controls['street_address'].value,
+                        this.addressForm.controls['street_address']?.value ?? '',
                     street_address2:
-                        this.addressForm.controls['street_address2'].value,
-                    city_town: this.addressForm.controls['city_town'].value,
-                    parish: this.addressForm.controls['parish'].value,
+                        this.addressForm.controls['street_address2']?.value ??
+                        '',
+                    city_town:
+                        this.addressForm.controls['city_town']?.value ?? '',
+                    parish: this.addressForm.controls['parish']?.value ?? '',
                 },
                 user_id
             )
             .subscribe((data) => {
-                if (data) {
-                    //Successful trnsaction logic
+                if (data) {                   
+                    // Successful transaction logic
+                    console.log({
+                        transaction: this.checkoutService.reciept,
+                        order: this.Cart,
+                    });                    
+                    this.router.navigateByUrl('/receipt', {
+                        state: {
+                            transaction: this.checkoutService.reciept,
+                            order: this.Cart,
+                        },
+                    });
                 } else {
-                    //Error handling
+                    // Error handling
                 }
             });
+    }
+
+    onMinus(id: number) {
+        this.Cart.find((item) => item.id == id).amount--;
+        if (this.Cart.find((item) => item.id == id).amount <= 0) {
+            this.Cart.find((item) => item.id == id).amount++;
+            return;
+        } else {
+            this.cartService.updateCart(this.Cart);
+        }
+        this.paymentAmount = this.cartService.getCartTotal(this.Cart);
+    }
+
+    onAdd(id: number) {
+        this.Cart.find((item) => item.id == id).amount++;
+        if (this.Cart.find((item) => item.id == id).amount > 10) {
+            this.Cart.find((item) => item.id == id).amount--;
+            return;
+        } else {
+            this.cartService.updateCart(this.Cart);
+        }
+        this.paymentAmount = this.cartService.getCartTotal(this.Cart);
     }
 }
 

@@ -16,6 +16,7 @@ import { DataService } from '../data.service';
 })
 export class CheckoutService {
     private API = 'http://localhost:3000/';
+    reciept!: Transaction;
 
     //Create
     private executeTransaction(
@@ -27,7 +28,7 @@ export class CheckoutService {
     ) {
         let obs = new Observable<boolean>((observer) => {
             this.http
-                .post(`${this.API}transactions`, {
+                .post<Transaction>(`${this.API}transactions`, {
                     address,
                     delivery: !!address,
                     user_id,
@@ -37,6 +38,7 @@ export class CheckoutService {
                 })
                 .subscribe({
                     next: (data) => {
+                        this.reciept = data;
                         observer.next(true);
                     },
                     error: (err) => {
@@ -56,7 +58,7 @@ export class CheckoutService {
         user_id?: number
     ) {
         let obs = new Observable<boolean>((observer) => {
-            this.http.post<User>(`${this.API}orders`, orders).subscribe({
+            this.http.post<User>(`${this.API}orders`, {orders: orders}).subscribe({
                 next: (data) => {
                     this.executeTransaction(
                         payment_method,
@@ -70,6 +72,7 @@ export class CheckoutService {
                               --e.quantity;
                               this.products.editproduct(e.id, e).subscribe(() => {});
                             });
+                            observer.next(data)
                         } else {
                             observer.next(data);
                         }
