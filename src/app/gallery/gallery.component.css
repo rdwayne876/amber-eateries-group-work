@@ -3,9 +3,7 @@
     margin: 10vw auto 10vw auto;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     flex-wrap: wrap;
-    /* border: 1px solid red; */
 }
 
 .gallery-contain .img-bx{
