@@ -12,50 +12,31 @@ export class ShoppingCartComponent implements OnInit, AfterViewInit {
     grandTotal: number = 0;
 
     ngOnInit(): void {
-        this.cart = this.getCartItems();
+        this.cart = this.cartService.getCart();
     }
 
     ngAfterViewInit(): void {
-        this.calculateCartTotals(this.cart);
+        setTimeout(
+            () => (this.grandTotal = this.cartService.getCartTotal(this.cart)),
+            0
+        );
     }
 
     amountChanged(event: any, cItemID: number): void {
         this.cart.find((item) => item.id == cItemID).amount = parseInt(
             event.target.value
         );
-        this.calculateCartTotals(this.cart);
-    }
 
-    getCartItems() {
-        return this.cartService.getCart();
+        this.cartService.updateCart(this.cart);
+        this.grandTotal = this.cartService.getCartTotal(this.cart);
     }
 
     deleteProduct(product_id: number) {
-        let cart = this.cartService.getCart();
-
-        let productID = cart.findIndex(
-            (product: any) => product.id == product_id
+        this.cartService.updateCart(
+            this.cartService.removeCartItem(product_id)
         );
 
-        cart.splice(productID, 1);
-        this.cartService.updateCart(cart);
-        this.cart = this.getCartItems();
-
-        this.calculateCartTotals(this.cart);
-    }
-
-    calculateCartTotals(cart: any[]) {
-        // Patch the NG0100 detection change error
-        setTimeout(() => {
-            let subTotals = 0;
-
-            // Calculates subtotal for each item in cart
-            cart.forEach((product) => {
-                subTotals += parseInt(product.price) * parseInt(product.amount);
-            });
-
-            // Sets the cart total to the calculated value
-            this.grandTotal = subTotals;
-        }, 0);
+        this.cart = this.cartService.getCart() ?? [];
+        this.grandTotal = this.cartService.getCartTotal(this.cart);
     }
 }
