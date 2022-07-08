@@ -34,6 +34,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { HeroComponent } from './hero/hero.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
     declarations: [
@@ -54,6 +55,7 @@ import { HeroComponent } from './hero/hero.component';
         MenuEditComponent,
         ShoppingCartComponent,
         HeroComponent,
+        GalleryComponent,
     ],
 
     imports: [
