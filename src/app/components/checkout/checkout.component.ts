@@ -227,6 +227,8 @@ export class CheckoutComponent implements OnInit {
             .subscribe((data) => {
                 if (data) {
                     // Successful transaction logic
+                    this.cartService.clearCart();
+
                     this.router.navigateByUrl('/receipt', {
                         state: {
                             reciept: {

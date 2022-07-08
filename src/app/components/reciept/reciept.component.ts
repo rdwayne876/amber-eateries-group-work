@@ -12,8 +12,7 @@ export class RecieptComponent implements OnInit {
     transaction: Transaction;
     order: Order;
 
-    constructor(private router: Router, private cartService: CartService) {
-      cartService.clearCart();
+    constructor(private router: Router) {
       let data = this.router.getCurrentNavigation()?.extras.state?.['reciept'];
       this.transaction = data.transaction;
       this.order = data.order;
