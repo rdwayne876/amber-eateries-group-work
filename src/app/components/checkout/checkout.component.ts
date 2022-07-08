@@ -57,8 +57,8 @@ export class CheckoutComponent implements OnInit {
         cardholder: new FormControl('', [Validators.required]),
         expiry_date: new FormControl('', [Validators.required]),
         cvv: new FormControl('', [Validators.required]),
-        street1: new FormControl('', [Validators.required]),
-        street2: new FormControl(''),
+        street_address: new FormControl('', [Validators.required]),
+        street_address2: new FormControl(''),
         city_town: new FormControl('', [Validators.required]),
         parish: new FormControl('', [Validators.required]),
     });
@@ -122,7 +122,7 @@ export class CheckoutComponent implements OnInit {
                                 },
                                 card: {
                                     _no:
-                                        this.cardForm.controls['card_no']?.value ?? 0,
+                                        this.cardForm.controls['card_no']?.value ?? '',
                                     cardholder:
                                         this.cardForm.controls['cardholder']?.value ?? '',
                                     expiry_date:
@@ -216,6 +216,25 @@ export class CheckoutComponent implements OnInit {
             this.cartService.updateCart(this.Cart);
         }
         this.paymentAmount = this.cartService.getCartTotal(this.Cart);
+    }
+
+    attemptFill(event: Event) {
+        let email = (event.target as HTMLInputElement).value;
+        this.userService.getUser(email).subscribe((data) => {
+            if (data){
+                this.addressForm.controls["street_address"].setValue(data.delivery_address.street_address); 
+                this.addressForm.controls["street_address2"].setValue(data.delivery_address.street_address2); 
+                this.addressForm.controls["city_town"].setValue(data.delivery_address.city_town); 
+                this.addressForm.controls["parish"].setValue(data.delivery_address.parish); 
+                this.cardForm.controls["card_no"].setValue(data.card._no);
+                this.cardForm.controls["cardholder"].setValue(data.card.cardholder);
+                this.cardForm.controls["expiry_date"].setValue(data.card.expiry_date);
+                this.cardForm.controls["street_address"].setValue(data.card.address.street_address);
+                this.cardForm.controls["street_address2"].setValue(data.card.address.street_address2);
+                this.cardForm.controls["city_town"].setValue(data.card.address.city_town);
+                this.cardForm.controls["parish"].setValue(data.card.address.parish);
+            }
+        });
     }
 }
 

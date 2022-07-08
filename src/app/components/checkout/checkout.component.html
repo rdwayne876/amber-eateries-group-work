@@ -43,6 +43,7 @@
                         matInput
                         placeholder="eg. john@email.com"
                         formControlName="email"
+                        (change)="attemptFill($event)"
                     />
                 </mat-form-field>
 
@@ -54,9 +55,9 @@
 
         <mat-step
             [stepControl]="
-                deliveryTypeForm.controls['type'].value === 'pickup'
-                    ? deliveryTypeForm
-                    : addressForm
+                deliveryTypeForm.controls['type'].value === 'delivery'
+                    ? addressForm
+                    : deliveryTypeForm
             "
         >
             <ng-template matStepLabel>How will you get your food?</ng-template>
@@ -135,9 +136,9 @@
 
         <mat-step
             [stepControl]="
-                paymentTypeForm.controls['type'].value !== 'card'
-                    ? paymentTypeForm
-                    : cardForm
+                paymentTypeForm.controls['type'].value === 'card'
+                    ? cardForm
+                    : paymentTypeForm
             "
         >
             <ng-template matStepLabel>How would you like to pay?</ng-template>
@@ -198,8 +199,16 @@
                     <mat-label>Street Address</mat-label>
                     <input
                         matInput
-                        formControlName="street1"
+                        formControlName="street_address"
                         placeholder="1 Main St"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Street Address 2</mat-label>
+                    <input
+                        matInput
+                        formControlName="street_address2"
+                        placeholder="Cedar Grove"
                     />
                 </mat-form-field>
                 <mat-form-field appearance="fill">
@@ -207,7 +216,7 @@
                     <input
                         matInput
                         formControlName="city_town"
-                        placeholder="1 Main St"
+                        placeholder="Jones Town"
                     />
                 </mat-form-field>
                 <mat-form-field appearance="fill">
