@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { DetailsComponent } from './details/details.component';
+
 import { OrderComponent } from './order/order.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
@@ -80,8 +81,10 @@ import { SafePipe } from './safe.pipe';
         MatCheckboxModule,
         MatChipsModule,
         MatDialogModule,
+        MatTabsModule,
         MatStepperModule,
         MatRadioModule,
+
     ],
     providers: [],
     bootstrap: [AppComponent],
