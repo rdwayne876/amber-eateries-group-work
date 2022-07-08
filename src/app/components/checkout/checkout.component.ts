@@ -21,7 +21,7 @@ import { MatRadioChange } from '@angular/material/radio';
 })
 export class CheckoutComponent implements OnInit {
     Map = { latitude: 0, longitude: 0 };
-    Cart = []; //Placeholder
+    Cart!: any[]; //Placeholder
     paymentAmount = 0; //Placeholder
     user_id!: number;
 
@@ -80,7 +80,11 @@ export class CheckoutComponent implements OnInit {
         private checkoutService: CheckoutService,
         private userService: UserService,
         private cartService: CartService
-    ) {}
+    ) {
+        // let {array, price} = this.Cart = cartService.getCart();
+        // this.paymentAmount = price;
+        // this.Cart = array;
+    }
 
     ngOnInit(): void {
         this.addressForm.addValidators([mapValidator(this.Map)]);
@@ -151,9 +155,15 @@ export class CheckoutComponent implements OnInit {
     }
 
     dataTransact(user_id: number) {
+        let list: any[] = [];
+        this.Cart.forEach(e => {
+            for(let i = 0; i < e.amount; i++){
+                list.push(e);
+            }
+        });
         this.checkoutService
             .executeOrder(
-                this.Cart,
+                list,
                 this.paymentTypeForm.controls['payment_method'].value,
                 this.paymentAmount,
                 {
