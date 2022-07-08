@@ -12,6 +12,7 @@ import { AddmenuComponent } from './addmenu/addmenu.component';
 import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
     { path: 'order', component: OrderComponent },
     { path: 'addproduct', component: AddproductComponent },
     { path: 'edit/:id', component: EditComponent },
+    { path: 'checkout', component: CheckoutComponent },
     { path: 'hero', component: HeroComponent },
 ];
 
