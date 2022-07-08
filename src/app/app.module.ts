@@ -1,3 +1,4 @@
+import { SliderComponent } from './slider/slider.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -60,6 +61,7 @@ import { SafePipe } from './safe.pipe';
         ShoppingCartComponent,
         CheckoutComponent,
         HeroComponent,
+        SliderComponent,
     ],
 
     imports: [
