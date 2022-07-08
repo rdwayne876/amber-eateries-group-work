@@ -13,11 +13,13 @@ import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { RecieptComponent } from './components/reciept/reciept.component';
+import { CheckoutGuard } from './guards/checkout.guard'
+import { RecieptGuard } from './guards/reciept.guard'
 
 const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
-    { path: 'cart', component: ShoppingCartComponent },
+    { path: 'cart', component: ShoppingCartComponent, canActivate: [CheckoutGuard] },
     { path: 'menu', component: MenuComponent },
     { path: 'addmenu', component: AddmenuComponent },
     { path: 'details/menu/:id', component: MenuDetailsComponent },
@@ -28,7 +30,11 @@ const routes: Routes = [
     { path: 'addproduct', component: AddproductComponent },
     { path: 'edit/:id', component: EditComponent },
     { path: 'checkout', component: CheckoutComponent },
+    { path: 'receipt', component: RecieptComponent, canActivate: [RecieptGuard] },
     { path: 'hero', component: HeroComponent },
+
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '**', redirectTo: 'home'}
 ];
 
 @NgModule({
