@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
     selector: 'app-header',
@@ -60,8 +61,9 @@ import { Component, OnInit } from '@angular/core';
                                 <button mat-button routerLink="/about">
                                     About
                                 </button>
-                                <button mat-button routerLink="/addproduct">
+                                <button mat-button routerLink="/cart">
                                     <i class="fa-solid fa-cart-shopping"></i>
+                                    <div style="font-size: 10px;" class="badge bg-danger">{{cartService.getCartCount()}}</div>
                                 </button>
                             </div>
                         </div>
@@ -159,7 +161,7 @@ import { Component, OnInit } from '@angular/core';
     ],
 })
 export class HeaderComponent implements OnInit {
-    constructor() {}
+    constructor(public cartService: CartService) {}
 
     ngOnInit(): void {}
 }
