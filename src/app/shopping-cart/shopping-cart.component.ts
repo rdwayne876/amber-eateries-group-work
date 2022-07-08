@@ -16,7 +16,10 @@ export class ShoppingCartComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.calculateCartTotals(this.cart);
+        setTimeout(
+            () => (this.grandTotal = this.cartService.getCartTotal(this.cart)),
+            0
+        );
     }
 
     amountChanged(event: any, cItemID: number): void {
@@ -24,30 +27,16 @@ export class ShoppingCartComponent implements OnInit, AfterViewInit {
             event.target.value
         );
 
-        this.calculateCartTotals(this.cart);
+        this.cartService.updateCart(this.cart);
+        this.grandTotal = this.cartService.getCartTotal(this.cart);
     }
 
     deleteProduct(product_id: number) {
         this.cartService.updateCart(
             this.cartService.removeCartItem(product_id)
         );
+
         this.cart = this.cartService.getCart() ?? [];
-
-        this.calculateCartTotals(this.cart);
-    }
-
-    calculateCartTotals(cart: any[]) {
-        // Patch the NG0100 detection change error
-        setTimeout(() => {
-            let subTotals = 0;
-
-            // Calculates subtotal for each item in cart
-            cart.forEach((product) => {
-                subTotals += parseInt(product.price) * parseInt(product.amount);
-            });
-
-            // Sets the cart total to the calculated value
-            this.grandTotal = subTotals;
-        }, 0);
+        this.grandTotal = this.cartService.getCartTotal(this.cart);
     }
 }
