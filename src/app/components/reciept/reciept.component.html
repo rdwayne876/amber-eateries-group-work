@@ -1,0 +1,35 @@
+<div>
+    <!-- Back Button -->
+    <div>
+        <button>&leftarrow;</button>
+    </div>
+
+    <!-- Order info -->
+    <div>
+        <h3>Transaction ID #{{ transaction.id.toString().padStart(3, '0') }}</h3>
+        <p>{{ transaction.date | date }}</p>
+    </div>
+
+    <div>
+        <h2>Your order is on its way</h2>
+
+        <img src="" alt="">
+    </div>
+
+    <h2>Here's your receipt</h2>
+
+    <div class="max-h-[20rem] overflow-y-auto">
+        <div *ngFor="let item of order.orders">
+            <p>{{item.name}}</p>
+            <div>
+                <p>{{item.quantity | number}}</p>
+                <p>{{item.price | currency}}</p>    
+            </div>
+        </div>
+    </div>
+    <h3>Total:<span>{{transaction.payment_amount | currency}}</span></h3>
+
+    <button type="submit">Track Your Order</button>
+
+    <p>Have any troubles? please contact<span><a href="">the support</a></span></p>
+</div>

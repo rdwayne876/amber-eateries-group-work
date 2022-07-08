@@ -37,9 +37,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { SafePipe } from './safe.pipe';
 import { MapComponent } from './map/map.component';
+import { RecieptComponent } from './components/reciept/reciept.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -61,6 +63,7 @@ import { MapComponent } from './map/map.component';
         CheckoutComponent,
         HeroComponent,
         MapComponent,
+        RecieptComponent,
     ],
 
     imports: [
@@ -84,6 +87,7 @@ import { MapComponent } from './map/map.component';
         MatDialogModule,
         MatStepperModule,
         MatRadioModule,
+        MatBadgeModule
     ],
     providers: [],
     bootstrap: [AppComponent],
