@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-footer',
   template: `
     <footer class="site-footer">
-
+<!------ CONTAINER-1 ------>
       <div class="container-1">
 
 <!------ CONTAINER-1 / LEFT ------>
@@ -49,19 +49,8 @@ import { Component, OnInit } from '@angular/core';
               <img alt="Mastercard" src="https://www.7krave.com/img/cards/keycard.png" width="60px">
             </div>
           </div>
-
-        </div>
-
-        <div class="col-sml">
-          <h6>Accepted Cards</h6>
-          <ul class="footer-links">
-          <img alt="Visa" src="https://www.7krave.com/img/cards/visa.png" width="60px">
-          <img alt="Mastercard" src="https://www.7krave.com/img/cards/mastercard.png" data-src="/img/cards/mastercard.png" width="60px">
-          <img alt="Mastercard" src="https://www.7krave.com/img/cards/keycard.png" width="60px">
-          </ul>
         </div>
       </div>
-
 
 <!------ CONTAINER-2 ------>
       <div class="container-2">
@@ -90,12 +79,10 @@ import { Component, OnInit } from '@angular/core';
       list-style: none;
     }
 
-
     .site-footer{
       width: 100%;
       background-color: #5F462B;
       color: white;
-
     }
 
     .site-footer .container-1{
@@ -112,7 +99,6 @@ import { Component, OnInit } from '@angular/core';
       display: flex;
       justify-content: space-between;
     }
-
 
     .left-col .footer-links-header{
       font-size: 1.3vw;
@@ -135,7 +121,6 @@ import { Component, OnInit } from '@angular/core';
       margin-top: 5vw;
       font-size: 1.5vw;
     }
-
 
     .card-opts .img-bx img{
       width: 5vw;
