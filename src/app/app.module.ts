@@ -37,6 +37,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { SafePipe } from './safe.pipe';
 @NgModule({
@@ -82,6 +83,7 @@ import { SafePipe } from './safe.pipe';
         MatDialogModule,
         MatStepperModule,
         MatRadioModule,
+        MatBadgeModule
     ],
     providers: [],
     bootstrap: [AppComponent],
