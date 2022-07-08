@@ -30,6 +30,18 @@ export class CartService {
         return this.getCart().length ?? 0;
     }
 
+    getCartTotal(cart: any[]): number {
+        let subTotals = 0;
+
+        // Calculates subtotal for each item in cart
+        cart.forEach((product) => {
+            subTotals += parseInt(product.price) * parseInt(product.amount);
+        });
+
+        // Sets the cart total to the calculated value
+        return subTotals;
+    }
+
     /**
      * Inserts and item to the cart array
      * @param itemId An object that represents a product/cart item
