@@ -39,6 +39,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 
 import { SafePipe } from './safe.pipe';
+import { MapComponent } from './map/map.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -59,6 +60,7 @@ import { SafePipe } from './safe.pipe';
         ShoppingCartComponent,
         CheckoutComponent,
         HeroComponent,
+        MapComponent,
     ],
 
     imports: [
