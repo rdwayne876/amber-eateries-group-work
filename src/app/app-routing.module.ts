@@ -14,11 +14,12 @@ import { MenuEditComponent } from './menu-edit/menu-edit.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RecieptComponent } from './components/reciept/reciept.component';
+import { CheckoutGuard } from './guards/checkout.guard'
 import { RecieptGuard } from './guards/reciept.guard'
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
-    { path: 'cart', component: ShoppingCartComponent },
+    { path: 'cart', component: ShoppingCartComponent, canActivate: [CheckoutGuard] },
     { path: 'menu', component: MenuComponent },
     { path: 'addmenu', component: AddmenuComponent },
     { path: 'details/menu/:id', component: MenuDetailsComponent },
