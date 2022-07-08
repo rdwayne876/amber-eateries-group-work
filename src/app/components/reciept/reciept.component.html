@@ -6,8 +6,8 @@
 
     <!-- Order info -->
     <div>
-        <h3>Transaction ID #{{ orderNum }}</h3>
-        <p>{{ orderDate | date }}</p>
+        <h3>Transaction ID #{{ transaction.id.toString().padStart(3, '0') }}</h3>
+        <p>{{ transaction.date | date }}</p>
     </div>
 
     <div>
@@ -19,15 +19,15 @@
     <h2>Here's your receipt</h2>
 
     <div class="max-h-[20rem] overflow-y-auto">
-        <div>
-            <p>item name</p>
+        <div *ngFor="let item of order.orders">
+            <p>{{item.name}}</p>
             <div>
-                <p>qty.2</p>
-                <p>$ Price</p>
+                <p>{{item.quantity | number}}</p>
+                <p>{{item.price | currency}}</p>    
             </div>
         </div>
     </div>
-    <h3>Total:<span>$$$</span></h3>
+    <h3>Total:<span>{{transaction.payment_amount | currency}}</span></h3>
 
     <button type="submit">Track Your Order</button>
 

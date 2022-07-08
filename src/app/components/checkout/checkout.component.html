@@ -67,7 +67,7 @@
                     aria-labelledby="example-radio-group-label"
                     class="example-radio-group"
                     formControlName="type"
-                    (change)="enableAddressForm($event);deliveryFill($event);"
+                    (change)="enableAddressForm($event); deliveryFill($event)"
                 >
                     <mat-radio-button
                         class="example-radio-button"
@@ -123,6 +123,13 @@
                         placeholder="Kingston"
                     />
                 </mat-form-field>
+
+                <div *ngIf="userTypeForm.controls['type'].value === 'account'">
+                    <mat-checkbox formControlName="saveAddressInfo"
+                        >Save information</mat-checkbox
+                    >
+                </div>
+
                 <div
                     *ngIf="
                         deliveryTypeForm.controls['type'].value === 'delivery'
@@ -148,13 +155,13 @@
                     class="example-radio-group"
                     formControlName="type"
                     #paymentType
-                    (change)="enableCardForm($event);paymentFill($event);"
+                    (change)="enableCardForm($event); paymentFill($event)"
                 >
-                    <mat-radio-button class="example-radio-button" value="cash">
-                        Cash
-                    </mat-radio-button>
                     <mat-radio-button class="example-radio-button" value="card">
                         Card
+                    </mat-radio-button>
+                    <mat-radio-button class="example-radio-button" value="cash">
+                        Cash
                     </mat-radio-button>
                 </mat-radio-group>
                 <div *ngIf="paymentTypeForm.controls['type'].value === 'cash'">
@@ -176,7 +183,6 @@
                     <mat-label>Card Number</mat-label>
                     <input
                         matInput
-                        type="password"
                         formControlName="card_no"
                         placeholder="1 Main St"
                     />
@@ -193,7 +199,6 @@
                     <mat-label>CVV</mat-label>
                     <input
                         matInput
-                        type="password"
                         formControlName="cvv"
                         placeholder="1 Main St"
                     />
@@ -231,40 +236,75 @@
                     />
                 </mat-form-field>
 
+                <div *ngIf="userTypeForm.controls['type'].value === 'account'">
+                    <mat-checkbox formControlName="saveCardInfo"
+                        >Save information</mat-checkbox
+                    >
+                </div>
+
                 <div *ngIf="paymentTypeForm.controls['type'].value === 'card'">
                     <button mat-button matStepperPrevious>Back</button>
                     <button mat-button matStepperNext>Next</button>
                 </div>
             </form>
         </mat-step>
+
+        <mat-step>
+            <ng-template matStepLabel>Confirm your order</ng-template>
+            <div>
+                <p>
+                    Account Type:
+                    {{ userTypeForm.controls["type"].value | titlecase }}
+                </p>
+
+                <p>
+                    Delivery Type:
+                    {{ deliveryTypeForm.controls["type"].value | titlecase }}
+                </p>
+
+                <p *ngIf="addressForm.enabled">
+                    Delivery Address:
+                    {{
+                        [
+                            addressForm.controls["street_address"]?.value +
+                                addressForm.controls["street_address2"]?.value,
+                            addressForm.controls["city_town"]?.value,
+                            addressForm.controls["parish"]?.value
+                        ].join(", ") | titlecase
+                    }}
+                </p>
+
+                <p>
+                    Payment Type:
+                    {{ paymentTypeForm.controls["type"].value | titlecase }}
+                </p>
+            </div>
+
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button (click)="dataCollect()">Confirm Order</button>
+            </div>
+        </mat-step>
     </mat-stepper>
 
+    <div class="h-max">
+        <div class="flex justify-between">
+            <h5>Order Summary</h5>
+            <a routerLink="/cart"> <img src="" alt="Cart Icon" /> </a>
+        </div>
+        <div>
+            <div *ngFor="let data of Cart">
+                <img [src]="data.imageUrl" alt="" />
+                <p>{{ data.name }}</p>
+                <button (click)="onMinus(data.id)">&minus;</button>
+                <span>x{{ data.amount }}</span>
+                <button (click)="onAdd(data.id)">&plus;</button>
+                <p>{{ data.price | currency }}</p>
 
-
-
-
-
-
-<div class="h-max">
-    <div class="flex justify-between">
-        <h5>Order Summary</h5> 
-        <a routerLink="/cart"> <img src="" alt="Cart Icon"> </a>
+                <p>=========================</p>
+                <p>Total</p>
+                = ${{ paymentAmount }}
+            </div>
+        </div>
     </div>
-    <div>
-        <div *ngFor="let data of Cart">
-            <img [src]="data.imageUrl" alt="">
-        <p>{{data.name}}</p>
-        <button (click)="onMinus(data.id)">&minus;</button> <span>x{{data.amount}}</span> <button (click)="onAdd(data.id)">&plus;</button>
-        <p>{{data.price | currency}}</p>
-        
-
-
-        <p>=========================</p>
-        <p> Total </p> = ${{paymentAmount}}
-        <a (click)="dataCollect()">Final Checkout</a>
-    </div>
-</div>
-</div>
-
-
 </main>

@@ -1,18 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { CartService } from 'src/app/cart.service';
+import { Order, Transaction } from 'src/app/interfaces/checkout';
 
 @Component({
-  selector: 'app-reciept',
-  templateUrl: './reciept.component.html',
-  styleUrls: ['./reciept.component.css']
+    selector: 'app-reciept',
+    templateUrl: './reciept.component.html',
+    styleUrls: ['./reciept.component.css'],
 })
 export class RecieptComponent implements OnInit {
-  orderNum = 123;
-  orderDate = new Date();
+    transaction: Transaction;
+    order: Order;
 
-  constructor() { }
+    constructor(private router: Router, private cartService: CartService) {
+      cartService.clearCart();
+      let data = this.router.getCurrentNavigation()?.extras.state?.['reciept'];
+      this.transaction = data.transaction;
+      this.order = data.order;
+    }
 
-  ngOnInit(): void {
-  }
-
+    ngOnInit(): void {}
 }

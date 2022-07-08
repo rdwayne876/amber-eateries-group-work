@@ -41,6 +41,8 @@ export class CheckoutComponent implements OnInit {
         street_address2: new FormControl(''),
         city_town: new FormControl('', [Validators.required]),
         parish: new FormControl('', [Validators.required]),
+
+        saveAddressInfo: new FormControl(false),
     });
     paymentTypeForm = new FormGroup({
         type: new FormControl('', [
@@ -61,6 +63,11 @@ export class CheckoutComponent implements OnInit {
         street_address2: new FormControl(''),
         city_town: new FormControl('', [Validators.required]),
         parish: new FormControl('', [Validators.required]),
+        saveCardInfo: new FormControl(false),
+    });
+
+    confirmForm = new FormGroup({
+        confirmed: new FormControl(false),
     });
 
     //Event Handlers
@@ -85,16 +92,19 @@ export class CheckoutComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
+        // Get cart info
         this.Cart = this.cartService.getCart();
         this.paymentAmount = this.cartService.getCartTotal(this.Cart);
 
+        // Disable forms initially
         this.accountTypeForm.disable();
         this.addressForm.disable();
         this.cardForm.disable();
     }
 
     @ViewChild('paymentType') paymentTypeElement!: ElementRef<HTMLInputElement>;
-    @ViewChild('deliveryType') deliveryTypeElement!: ElementRef<HTMLInputElement>;
+    @ViewChild('deliveryType')
+    deliveryTypeElement!: ElementRef<HTMLInputElement>;
 
     dataCollect() {
         if (!this.accountTypeForm.controls['email'].value) {
@@ -110,49 +120,74 @@ export class CheckoutComponent implements OnInit {
                                 email:
                                     this.accountTypeForm.controls['email']
                                         ?.value ?? '',
-                                delivery_address: {
-                                    street_address:
-                                        this.addressForm.controls[
-                                            'street_address'
-                                        ]?.value ?? '',
-                                    street_address2:
-                                        this.addressForm.controls[
-                                            'street_address2'
-                                        ]?.value ?? '',
-                                    city_town:
-                                        this.addressForm.controls['city_town']
-                                            ?.value ?? '',
-                                    parish:
-                                        this.addressForm.controls['parish']
-                                            ?.value ?? '',
-                                },
-                                card: {
-                                    _no:
-                                        this.cardForm.controls['card_no']
-                                            ?.value ?? '',
-                                    cardholder:
-                                        this.cardForm.controls['cardholder']
-                                            ?.value ?? '',
-                                    expiry_date:
-                                        this.cardForm.controls['expiry_date']
-                                            ?.value ?? '',
-                                    address: {
-                                        street_address:
-                                            this.cardForm.controls[
-                                                'street_address'
-                                            ]?.value ?? '',
-                                        street_address2:
-                                            this.cardForm.controls[
-                                                'street_address2'
-                                            ]?.value ?? '',
-                                        city_town:
-                                            this.cardForm.controls['city_town']
-                                                ?.value ?? '',
-                                        parish:
-                                            this.cardForm.controls['parish']
-                                                ?.value ?? '',
-                                    },
-                                },
+                                delivery_address: this.addressForm.controls["saveAddressInfo"].value
+                                    ? {
+                                          street_address:
+                                              this.addressForm.controls[
+                                                  'street_address'
+                                              ]?.value ?? '',
+                                          street_address2:
+                                              this.addressForm.controls[
+                                                  'street_address2'
+                                              ]?.value ?? '',
+                                          city_town:
+                                              this.addressForm.controls[
+                                                  'city_town'
+                                              ]?.value ?? '',
+                                          parish:
+                                              this.addressForm.controls[
+                                                  'parish'
+                                              ]?.value ?? '',
+                                      }
+                                    : {
+                                          street_address: '',
+                                          street_address2: '',
+                                          city_town: '',
+                                          parish: '',
+                                      },
+                                card: this.cardForm.controls["saveCardInfo"].value
+                                    ? {
+                                          _no:
+                                              this.cardForm.controls['card_no']
+                                                  ?.value ?? '',
+                                          cardholder:
+                                              this.cardForm.controls[
+                                                  'cardholder'
+                                              ]?.value ?? '',
+                                          expiry_date:
+                                              this.cardForm.controls[
+                                                  'expiry_date'
+                                              ]?.value ?? '',
+                                          address: {
+                                              street_address:
+                                                  this.cardForm.controls[
+                                                      'street_address'
+                                                  ]?.value ?? '',
+                                              street_address2:
+                                                  this.cardForm.controls[
+                                                      'street_address2'
+                                                  ]?.value ?? '',
+                                              city_town:
+                                                  this.cardForm.controls[
+                                                      'city_town'
+                                                  ]?.value ?? '',
+                                              parish:
+                                                  this.cardForm.controls[
+                                                      'parish'
+                                                  ]?.value ?? '',
+                                          },
+                                      }
+                                    : {
+                                          _no: '',
+                                          cardholder: '',
+                                          expiry_date: '',
+                                          address: {
+                                              street_address: '',
+                                              street_address2: '',
+                                              city_town: '',
+                                              parish: '',
+                                          },
+                                      },
                             })
                             .subscribe((data) => {
                                 if (data) {
@@ -160,7 +195,7 @@ export class CheckoutComponent implements OnInit {
                                         this.userService.last_user_created
                                     );
                                 } else {
-                                    //Error Handling
+                                    // Error Handling
                                 }
                             });
                     } else {
@@ -192,14 +227,12 @@ export class CheckoutComponent implements OnInit {
             .subscribe((data) => {
                 if (data) {
                     // Successful transaction logic
-                    console.log({
-                        transaction: this.checkoutService.reciept,
-                        order: this.Cart,
-                    });
                     this.router.navigateByUrl('/receipt', {
                         state: {
-                            transaction: this.checkoutService.reciept,
-                            order: this.Cart,
+                            reciept: {
+                                transaction: this.checkoutService.reciept,
+                                order: this.Cart,
+                            },
                         },
                     });
                 } else {
@@ -230,7 +263,7 @@ export class CheckoutComponent implements OnInit {
         this.paymentAmount = this.cartService.getCartTotal(this.Cart);
     }
 
-    setFill(event: Event) {        
+    setFill(event: Event) {
         let email = (event.target as HTMLInputElement).value;
         this.userService.getUser(email).subscribe((data) => {
             if (data) {
@@ -283,8 +316,8 @@ export class CheckoutComponent implements OnInit {
         });
     }
 
-    deliveryFill = (event: MatRadioChange) => {}
-    paymentFill = (event: MatRadioChange) => {}
+    deliveryFill = (event: MatRadioChange) => {};
+    paymentFill = (event: MatRadioChange) => {};
 }
 
 function mapValidator(map: {
