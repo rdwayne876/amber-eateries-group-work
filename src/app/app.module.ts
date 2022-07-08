@@ -23,6 +23,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HeroComponent } from './hero/hero.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -61,6 +62,7 @@ import { SafePipe } from './safe.pipe';
         ShoppingCartComponent,
         CheckoutComponent,
         HeroComponent,
+        GalleryComponent,
         SliderComponent,
     ],
 
