@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+// slider related
 interface sliderImage {
     imageSrc: string;
     imageAlt: string;

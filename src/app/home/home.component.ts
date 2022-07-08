@@ -11,6 +11,7 @@ import { Product } from '../product';
 export class HomeComponent implements OnInit {
     products: Product[] = [];
 
+    // slider images array start
     images = [
         {
             imageSrc:
@@ -33,6 +34,7 @@ export class HomeComponent implements OnInit {
             imageAlt: 'person2',
         },
     ];
+    // slider images array end
 
     currentPage = 0;
     pageLimit = 9;
