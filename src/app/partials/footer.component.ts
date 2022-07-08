@@ -12,20 +12,20 @@ import { Component, OnInit } from '@angular/core';
           <div class="col">
               <h1 class="footer-links-header">Quick Links</h1>
               <ul class="footer-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/menu">Menu</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/gallery">Gallary</a></li>
-                <li><a href="/addproduct">Add New Product</a></li>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/menu">Menu</a></li>
+                <li><a routerLink="/about">About Us</a></li>
+                <li><a routerLink="/gallery">Gallary</a></li>
+                <li><a routerLink="/addproduct">Add New Product</a></li>
               </ul>
           </div>
 
           <div class="col">
             <h4 class="footer-links-header">For You</h4>
             <ul class="footer-links">
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Fequently Asked Questions</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a routerLink="#">Terms of Use</a></li>
+              <li><a routerLink="#">Fequently Asked Questions</a></li>
+              <li><a routerLink="#">Contact</a></li>
             </ul>
           </div>
 
@@ -56,13 +56,13 @@ import { Component, OnInit } from '@angular/core';
       <div class="container-2">
         <p class="copyright-text">
           Copyright &copy; 2022 All Rights Reserved by 
-          <a href="#">Amber Eateries</a>.
+          <a routerLink="#">Amber Eateries</a>.
         </p>
 
         <div class="social-icons-contain">
-          <a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a class="twitter" href="#"><i class="fa fa-twitter"></i></a> 
-          <a class="insta" href="#"><i class="fa-brands fa-instagram"></i></a> 
+          <a class="facebook" routerLink="#"><i class="fa-brands fa-facebook"></i></a>
+          <a class="twitter" routerLink="#"><i class="fa fa-twitter"></i></a> 
+          <a class="insta" routerLink="#"><i class="fa-brands fa-instagram"></i></a> 
         </div>
       </div>
     </footer>
