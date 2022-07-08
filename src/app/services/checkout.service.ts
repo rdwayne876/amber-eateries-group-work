@@ -30,6 +30,7 @@ export class CheckoutService {
             this.http
                 .post<Transaction>(`${this.API}transactions`, {
                     address,
+                    date: new Date().toISOString(),
                     delivery: !!address,
                     user_id,
                     payment_method,
