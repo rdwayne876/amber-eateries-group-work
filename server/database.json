@@ -37,8 +37,9 @@
       "category": "entree",
       "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Beef-Patties-683x1024.jpg",
       "price": 300,
-      "quantity": 100,
-      "ratings": []
+      "quantity": 98,
+      "rating": [],
+      "amount": 2
     },
     {
       "id": 5,
@@ -67,8 +68,9 @@
       "category": "entree",
       "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Oxtail-683x1024.jpg",
       "price": 1900,
-      "quantity": 100,
-      "ratings": []
+      "quantity": 98,
+      "rating": [],
+      "amount": 2
     },
     {
       "id": 8,
@@ -87,8 +89,9 @@
       "category": "appetizer",
       "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Fried-Dumplings-768x1152.jpg",
       "price": 100,
-      "quantity": 500,
-      "ratings": []
+      "quantity": 498,
+      "rating": [],
+      "amount": 4
     },
     {
       "id": 10,
@@ -501,7 +504,49 @@
       "ratings": []
     }
   ],
-  "orders": [],
-  "transactions": [],
-  "users": []
+  "orders": [
+    {
+      "id": 0,
+      "orders": []
+    }
+  ],
+  "transactions": [
+    {
+      "id": 0,
+      "address": {
+        "street_address": "",
+        "street_address2": "",
+        "city_town": "",
+        "parish": ""
+      },
+      "delivery": true,
+      "user_id": 0,
+      "payment_method": "",
+      "payment_amount": 0,
+      "order_id": 0
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "email": "",
+      "delivery_address": {
+        "street_address": "",
+        "street_address2": "",
+        "city_town": "",
+        "parish": ""
+      },
+      "card": {
+        "_no": "",
+        "cardholder": "",
+        "expiry_date": "",
+        "address": {
+          "street_address": "",
+          "street_address2": "",
+          "city_town": "",
+          "parish": ""
+        }
+      }
+    }
+  ]
 }
