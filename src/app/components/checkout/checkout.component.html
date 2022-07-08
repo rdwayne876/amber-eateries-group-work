@@ -43,7 +43,7 @@
                         matInput
                         placeholder="eg. john@email.com"
                         formControlName="email"
-                        (change)="attemptFill($event)"
+                        (change)="setFill($event)"
                     />
                 </mat-form-field>
 
@@ -67,7 +67,7 @@
                     aria-labelledby="example-radio-group-label"
                     class="example-radio-group"
                     formControlName="type"
-                    (change)="enableAddressForm($event)"
+                    (change)="enableAddressForm($event);deliveryFill($event);"
                 >
                     <mat-radio-button
                         class="example-radio-button"
@@ -147,7 +147,8 @@
                     aria-labelledby="example-radio-group-label"
                     class="example-radio-group"
                     formControlName="type"
-                    (change)="enableCardForm($event)"
+                    #paymentType
+                    (change)="enableCardForm($event);paymentFill($event);"
                 >
                     <mat-radio-button class="example-radio-button" value="cash">
                         Cash
@@ -175,6 +176,7 @@
                     <mat-label>Card Number</mat-label>
                     <input
                         matInput
+                        type="password"
                         formControlName="card_no"
                         placeholder="1 Main St"
                     />
@@ -191,6 +193,7 @@
                     <mat-label>CVV</mat-label>
                     <input
                         matInput
+                        type="password"
                         formControlName="cvv"
                         placeholder="1 Main St"
                     />

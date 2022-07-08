@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {
     FormGroup,
     FormControl,
@@ -12,7 +12,7 @@ import { CartService } from 'src/app/cart.service';
 import { AsyncValidatorFn } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Address } from 'src/app/interfaces/checkout';
-import { MatRadioChange } from '@angular/material/radio';
+import { MatRadioChange, MatRadioGroup } from '@angular/material/radio';
 import { Router } from '@angular/router';
 
 @Component({
@@ -93,19 +93,23 @@ export class CheckoutComponent implements OnInit {
         this.cardForm.disable();
     }
 
+    @ViewChild('paymentType') paymentTypeElement!: ElementRef<HTMLInputElement>;
+    @ViewChild('deliveryType') deliveryTypeElement!: ElementRef<HTMLInputElement>;
+
     dataCollect() {
         if (!this.accountTypeForm.controls['email'].value) {
             this.dataTransact(0);
         } else {
             this.userService
                 .getUser(this.accountTypeForm.controls['email'].value)
-                .subscribe((data) => {               
+                .subscribe((data) => {
                     if (!data) {
                         this.userService
                             .createUser({
                                 id: 1,
                                 email:
-                                    this.accountTypeForm.controls['email']?.value ?? '',
+                                    this.accountTypeForm.controls['email']
+                                        ?.value ?? '',
                                 delivery_address: {
                                     street_address:
                                         this.addressForm.controls[
@@ -116,17 +120,22 @@ export class CheckoutComponent implements OnInit {
                                             'street_address2'
                                         ]?.value ?? '',
                                     city_town:
-                                        this.addressForm.controls['city_town']?.value ?? '',
+                                        this.addressForm.controls['city_town']
+                                            ?.value ?? '',
                                     parish:
-                                        this.addressForm.controls['parish']?.value ?? '',
+                                        this.addressForm.controls['parish']
+                                            ?.value ?? '',
                                 },
                                 card: {
                                     _no:
-                                        this.cardForm.controls['card_no']?.value ?? '',
+                                        this.cardForm.controls['card_no']
+                                            ?.value ?? '',
                                     cardholder:
-                                        this.cardForm.controls['cardholder']?.value ?? '',
+                                        this.cardForm.controls['cardholder']
+                                            ?.value ?? '',
                                     expiry_date:
-                                        this.cardForm.controls['expiry_date']?.value ?? '',
+                                        this.cardForm.controls['expiry_date']
+                                            ?.value ?? '',
                                     address: {
                                         street_address:
                                             this.cardForm.controls[
@@ -137,9 +146,11 @@ export class CheckoutComponent implements OnInit {
                                                 'street_address2'
                                             ]?.value ?? '',
                                         city_town:
-                                            this.cardForm.controls['city_town']?.value ?? '',
+                                            this.cardForm.controls['city_town']
+                                                ?.value ?? '',
                                         parish:
-                                            this.cardForm.controls['parish']?.value ?? '',
+                                            this.cardForm.controls['parish']
+                                                ?.value ?? '',
                                     },
                                 },
                             })
@@ -167,7 +178,8 @@ export class CheckoutComponent implements OnInit {
                 this.paymentAmount,
                 {
                     street_address:
-                        this.addressForm.controls['street_address']?.value ?? '',
+                        this.addressForm.controls['street_address']?.value ??
+                        '',
                     street_address2:
                         this.addressForm.controls['street_address2']?.value ??
                         '',
@@ -178,12 +190,12 @@ export class CheckoutComponent implements OnInit {
                 user_id
             )
             .subscribe((data) => {
-                if (data) {                   
+                if (data) {
                     // Successful transaction logic
                     console.log({
                         transaction: this.checkoutService.reciept,
                         order: this.Cart,
-                    });                    
+                    });
                     this.router.navigateByUrl('/receipt', {
                         state: {
                             transaction: this.checkoutService.reciept,
@@ -218,24 +230,61 @@ export class CheckoutComponent implements OnInit {
         this.paymentAmount = this.cartService.getCartTotal(this.Cart);
     }
 
-    attemptFill(event: Event) {
+    setFill(event: Event) {        
         let email = (event.target as HTMLInputElement).value;
         this.userService.getUser(email).subscribe((data) => {
-            if (data){
-                this.addressForm.controls["street_address"].setValue(data.delivery_address.street_address); 
-                this.addressForm.controls["street_address2"].setValue(data.delivery_address.street_address2); 
-                this.addressForm.controls["city_town"].setValue(data.delivery_address.city_town); 
-                this.addressForm.controls["parish"].setValue(data.delivery_address.parish); 
-                this.cardForm.controls["card_no"].setValue(data.card._no);
-                this.cardForm.controls["cardholder"].setValue(data.card.cardholder);
-                this.cardForm.controls["expiry_date"].setValue(data.card.expiry_date);
-                this.cardForm.controls["street_address"].setValue(data.card.address.street_address);
-                this.cardForm.controls["street_address2"].setValue(data.card.address.street_address2);
-                this.cardForm.controls["city_town"].setValue(data.card.address.city_town);
-                this.cardForm.controls["parish"].setValue(data.card.address.parish);
+            if (data) {
+                this.deliveryFill = (event: MatRadioChange) => {
+                    if (event.value === 'delivery') {
+                        this.addressForm.controls['street_address'].setValue(
+                            data.delivery_address.street_address
+                        );
+                        this.addressForm.controls['street_address2'].setValue(
+                            data.delivery_address.street_address2
+                        );
+                        this.addressForm.controls['city_town'].setValue(
+                            data.delivery_address.city_town
+                        );
+                        this.addressForm.controls['parish'].setValue(
+                            data.delivery_address.parish
+                        );
+                    } else {
+                        this.addressForm.reset();
+                    }
+                };
+                this.paymentFill = (event: MatRadioChange) => {
+                    if (event.value === 'card') {
+                        this.cardForm.controls['card_no'].setValue(
+                            data.card._no
+                        );
+                        this.cardForm.controls['cardholder'].setValue(
+                            data.card.cardholder
+                        );
+                        this.cardForm.controls['expiry_date'].setValue(
+                            data.card.expiry_date
+                        );
+                        this.cardForm.controls['street_address'].setValue(
+                            data.card.address.street_address
+                        );
+                        this.cardForm.controls['street_address2'].setValue(
+                            data.card.address.street_address2
+                        );
+                        this.cardForm.controls['city_town'].setValue(
+                            data.card.address.city_town
+                        );
+                        this.cardForm.controls['parish'].setValue(
+                            data.card.address.parish
+                        );
+                    } else {
+                        this.cardForm.reset();
+                    }
+                };
             }
         });
     }
+
+    deliveryFill = (event: MatRadioChange) => {}
+    paymentFill = (event: MatRadioChange) => {}
 }
 
 function mapValidator(map: {

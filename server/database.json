@@ -508,22 +508,6 @@
     {
       "id": 0,
       "orders": []
-    },
-    {
-      "orders": [
-        {
-          "id": 4,
-          "name": "Jamaican Beef Patties",
-          "description": "When in Jamaica, a visit to a patty shop is a must. Jamaican beef patties are made with a crispy, golden flaky pastry filled with seasoned meat.",
-          "category": "entree",
-          "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Beef-Patties-683x1024.jpg",
-          "price": 300,
-          "quantity": 99,
-          "rating": [],
-          "amount": 2
-        }
-      ],
-      "id": 1
     }
   ],
   "transactions": [
@@ -540,20 +524,6 @@
       "payment_method": "",
       "payment_amount": 0,
       "order_id": 0
-    },
-    {
-      "address": {
-        "street_address": "4 Elm Place",
-        "street_address2": "Ebony Vale",
-        "city_town": "Spanish Town",
-        "parish": "St Catherine"
-      },
-      "delivery": true,
-      "user_id": 1,
-      "payment_method": "card",
-      "payment_amount": 600,
-      "order_id": 1,
-      "id": 1
     }
   ],
   "users": [
@@ -591,8 +561,8 @@
         "cardholder": "Simon",
         "expiry_date": "10/26",
         "address": {
-          "street_address": "",
-          "street_address2": "",
+          "street_address": "4 Elm Place",
+          "street_address2": "Ebony Vale",
           "city_town": "Spanish Town",
           "parish": "St Catherine"
         }
