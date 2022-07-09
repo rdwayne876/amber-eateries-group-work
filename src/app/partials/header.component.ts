@@ -51,6 +51,9 @@ import { Component, OnInit } from '@angular/core';
                                 <button mat-button routerLink="/about">
                                     About
                                 </button>
+                                <button mat-button routerLink="/gallery">
+                                    Gallery
+                                </button>
                                 <button mat-button routerLink="/addproduct">
                                     Add New Product
                                 </button>

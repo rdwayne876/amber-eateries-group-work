@@ -1,9 +1,11 @@
 .gallery-contain{
     width: 60%;
-    margin: 10vw auto 10vw auto;
+    margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
+    padding: 5rem 0 5rem ;
 }
 
 .gallery-contain .img-bx{
