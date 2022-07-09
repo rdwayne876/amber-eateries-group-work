@@ -56,10 +56,12 @@ export class MapComponent implements AfterViewInit {
         } else {
             return false;
         }
-        this.mapService.getMap().subscribe((data: any[]) => {
+        this.mapService.getMap().subscribe((data: any) => {
             this.data = data;
             this.lat = this.data.data[0].latitude ?? 17.96795;
             this.lon = this.data.data[0].longitude ?? -76.87128;
+            // this.lat = this.data[0].lat ?? 17.96795;
+            // this.lon = this.data[0].lon ?? -76.87128;
 
             this.addMarker();
         });
