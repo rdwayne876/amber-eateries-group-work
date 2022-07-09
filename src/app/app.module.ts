@@ -40,8 +40,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { SafePipe } from './safe.pipe';
+import { MapComponent } from './components/map/map.component';
+import { RecieptComponent } from './components/reciept/reciept.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -64,6 +67,8 @@ import { SafePipe } from './safe.pipe';
         HeroComponent,
         GalleryComponent,
         SliderComponent,
+        MapComponent,
+        RecieptComponent,
     ],
 
     imports: [
@@ -88,6 +93,7 @@ import { SafePipe } from './safe.pipe';
         MatTabsModule,
         MatStepperModule,
         MatRadioModule,
+        MatBadgeModule
     ],
     providers: [],
     bootstrap: [AppComponent],
