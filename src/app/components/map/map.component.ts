@@ -1,4 +1,4 @@
-import { Component, AfterViewInit,Input  } from '@angular/core';
+import { Component, AfterViewInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import * as L from 'leaflet';
 import { CheckoutService } from 'src/app/services/checkout.service';
@@ -16,6 +16,7 @@ export class MapComponent implements AfterViewInit {
     lat: any;
     lon: any;
     private marker: any;
+    rateLimiter = false;
 
     // @Input('appMap') set refresh(value: boolean) {
     //   this.setMapLocation();
@@ -25,10 +26,7 @@ export class MapComponent implements AfterViewInit {
     constructor(
         private mapService: MapService,
         public checkoutService: CheckoutService
-    ) {
-      
-    }
-    
+    ) {}
 
     initMap(): void {
         this.map = L.map('map', {
@@ -49,7 +47,15 @@ export class MapComponent implements AfterViewInit {
         this.setMapLocation();
     }
 
-    setMapLocation() {
+    setMapLocation(): boolean {    
+        if (!this.rateLimiter) {
+            this.rateLimiter = true;
+            setTimeout(() => {
+                this.rateLimiter = false;
+            }, 1000);
+        } else {
+            return false;
+        }
         this.mapService.getMap().subscribe((data: any[]) => {
             this.data = data;
             this.lat = this.data.data[0].latitude ?? 17.96795;
@@ -57,6 +63,7 @@ export class MapComponent implements AfterViewInit {
 
             this.addMarker();
         });
+        return true;
     }
 
     private addMarker(): void {

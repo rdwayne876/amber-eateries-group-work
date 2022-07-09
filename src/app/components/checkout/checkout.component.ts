@@ -15,6 +15,7 @@ import { Address } from 'src/app/interfaces/checkout';
 import { MatRadioChange, MatRadioGroup } from '@angular/material/radio';
 import { Router } from '@angular/router';
 import { MapService } from 'src/app/map.service';
+import { MapComponent } from '../map/map.component';
 
 @Component({
     selector: 'app-checkout',
@@ -26,6 +27,7 @@ export class CheckoutComponent implements OnInit {
     paymentAmount = 0; //Placeholder
     user_id!: number;
     orderTotal = 5000;
+    update_lock = false;
 
     //Form Groups
     userTypeForm = new FormGroup({
@@ -104,6 +106,7 @@ export class CheckoutComponent implements OnInit {
         this.cardForm.disable();
     }
 
+    @ViewChild('map') map!: MapComponent;
     @ViewChild('paymentType') paymentTypeElement!: ElementRef<HTMLInputElement>;
     @ViewChild('deliveryType')
     deliveryTypeElement!: ElementRef<HTMLInputElement>;
@@ -325,7 +328,8 @@ export class CheckoutComponent implements OnInit {
         });
     }
 
-    updateMap(form: FormGroup) {             
+    updateMap(form: FormGroup) { 
+        this.update_lock = true;            
         this.mapService.address = {
             street_address:
                 form.controls['street_address'].value,
@@ -334,6 +338,11 @@ export class CheckoutComponent implements OnInit {
             city_town: form.controls['city_town'].value,
             parish: form.controls['parish'].value,
         };
+        if (!this.map.setMapLocation()) {
+            //Rate limit message
+            console.log("Rate limited. Try again");
+            
+        }
     }
 
     deliveryFill = (event: MatRadioChange) => {};
