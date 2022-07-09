@@ -61,6 +61,9 @@ import { CartService } from '../cart.service';
                                 <button mat-button routerLink="/about">
                                     About
                                 </button>
+                                <button mat-button routerLink="/gallery">
+                                    Gallery
+                                </button>
                                 <button mat-button routerLink="/cart">
                                     <i class="fa-solid fa-cart-shopping"></i>
                                     <div style="font-size: 10px;" class="badge bg-danger">{{cartService.getCartCount()}}</div>
