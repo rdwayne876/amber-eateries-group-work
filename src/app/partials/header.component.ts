@@ -8,37 +8,6 @@ import { Component, OnInit } from '@angular/core';
                 class="header transition-all shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048]"
                 id="main-nav"
             >
-                <div class="secondary-header p-2 ">
-                    <div class="main-container">
-                        <div class="s-h-inner">
-                            <div class="header-location">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    version="1.1"
-                                    id="Capa_1"
-                                    x="0px"
-                                    y="0px"
-                                    viewBox="0 0 297 297"
-                                    style="enable-background:new 0 0 297 297;"
-                                    xml:space="preserve"
-                                >
-                                    <g>
-                                        <path
-                                            d="M148.5,0C87.43,0,37.747,49.703,37.747,110.797c0,91.026,99.729,179.905,103.976,183.645   c1.936,1.705,4.356,2.559,6.777,2.559c2.421,0,4.841-0.853,6.778-2.559c4.245-3.739,103.975-92.618,103.975-183.645   C259.253,49.703,209.57,0,148.5,0z M148.5,272.689c-22.049-21.366-90.243-93.029-90.243-161.892   c0-49.784,40.483-90.287,90.243-90.287s90.243,40.503,90.243,90.287C238.743,179.659,170.549,251.322,148.5,272.689z"
-                                        />
-                                        <path
-                                            d="M148.5,59.183c-28.273,0-51.274,23.154-51.274,51.614c0,28.461,23.001,51.614,51.274,51.614   c28.273,0,51.274-23.153,51.274-51.614C199.774,82.337,176.773,59.183,148.5,59.183z M148.5,141.901   c-16.964,0-30.765-13.953-30.765-31.104c0-17.15,13.801-31.104,30.765-31.104c16.964,0,30.765,13.953,30.765,31.104   C179.265,127.948,165.464,141.901,148.5,141.901z"
-                                        />
-                                    </g>
-                                </svg>
-                                <span class="text-2xl"
-                                    >Kingston & St. Andrew</span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <mat-toolbar>
                     <div class="main-container">
                         <div class="m-h-inner flex flex-wrap ">
@@ -78,7 +47,7 @@ import { Component, OnInit } from '@angular/core';
                 height: auto;
                 position: fixed;
                 top: 0;
-                z-index: 1;
+                z-index: 999;
             }
             .main-container {
                 width: 78%;
