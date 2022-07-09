@@ -82,8 +82,8 @@ import { CartService } from '../cart.service';
             .header {
                 width: 100%;
                 height: auto;
-                position: fixed;
-                z-index: 1;
+                /* position: fixed; */
+                z-index: 999;
             }
             .main-container {
                 width: 78%;
