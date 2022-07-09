@@ -1,33 +1,42 @@
+*{
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+}
+.main-cont{
+  padding: 15%;
+}
+.map{
+  background-image: url(https://www.acouplecooks.com/wp-content/uploads/2020/04/Sidecar-Cocktail-006s.jpg) ;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5%;
+  
+}
 .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
+
 form {
   display: grid;
   width: 30%;
+  height: 90%;
+  
 }
 
 
-.form-container {
-  background: rgb(204, 220, 253);
-}
 
-.form-container h3 {
-  margin: 0 0 1rem 0;
-  text-transform: uppercase;
-  text-align: center;
-  color: #3F51B5;
-}
+
+
 
 .about-form {
-  box-shadow: 0 0 0.2rem;
-  padding: 20px;
+  padding: 20px 50px;
   background: #fff;
   /* background: rgb(204, 220, 253); */
   width: 400px;
   margin: 3.7rem auto 0 auto;
-  border-radius: 5px;
 }
 
 .about-form input, .about-form textarea {
@@ -37,12 +46,12 @@ form {
 }
 
 .about-form button {
+  background: rgba(251, 252, 253, 0.65);
+  border: 1px solid #BBBBBB;
+
   padding: 5px;
-  background: #3F51B5;
-  color: #fff;
   text-transform: uppercase;
   font-size: 16px;
-  border-radius: 5px;
 }
 
 .form-name {
@@ -51,7 +60,8 @@ form {
   
 }
 
-.mattoolbar {
+/* .mattoolbar {
   position: absolute;
   bottom: 0;
-}
+  width: 100%;
+} */
