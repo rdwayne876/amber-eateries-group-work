@@ -14,7 +14,7 @@ export class RecieptGuard implements CanActivate {
       // Prevents navigation to the reciept page unless through checkout
       let data = this.router.getCurrentNavigation()?.extras.state?.['reciept'];
       
-      if (!data) return this.router.parseUrl('/home');
+      if (this.router.getCurrentNavigation()?.trigger !== 'imperative' || !data) return this.router.parseUrl('/home');
       return true;
   }
   

@@ -40,6 +40,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import {MatBadgeModule} from '@angular/material/badge';
 
 import { SafePipe } from './safe.pipe';
+import { MapComponent } from './map/map.component';
 import { RecieptComponent } from './components/reciept/reciept.component';
 @NgModule({
     declarations: [
@@ -61,6 +62,7 @@ import { RecieptComponent } from './components/reciept/reciept.component';
         ShoppingCartComponent,
         CheckoutComponent,
         HeroComponent,
+        MapComponent,
         RecieptComponent,
     ],
 

@@ -19,7 +19,7 @@ import { RecieptGuard } from './guards/reciept.guard'
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent },
-    { path: 'cart', component: ShoppingCartComponent, canActivate: [CheckoutGuard] },
+    { path: 'cart', component: ShoppingCartComponent },
     { path: 'menu', component: MenuComponent },
     { path: 'addmenu', component: AddmenuComponent },
     { path: 'details/menu/:id', component: MenuDetailsComponent },
@@ -29,7 +29,7 @@ const routes: Routes = [
     { path: 'order', component: OrderComponent },
     { path: 'addproduct', component: AddproductComponent },
     { path: 'edit/:id', component: EditComponent },
-    { path: 'checkout', component: CheckoutComponent },
+    { path: 'checkout', component: CheckoutComponent, canActivate: [CheckoutGuard] },
     { path: 'receipt', component: RecieptComponent, canActivate: [RecieptGuard] },
     { path: 'hero', component: HeroComponent },
 
