@@ -1,9 +1,15 @@
 import { Product } from '../product';
 
-interface Address {
-    street_address1: string;
+export enum PaymentMethod {
+    CASH = 'cash',
+    CARD = 'card',
+}
+
+export interface Address {
+    street_address: string;
     street_address2: string;
     city_town: string;
+    parish: string;
 }
 
 interface Card {
@@ -16,14 +22,15 @@ interface Card {
 export interface Order {
     id: number;
     orders: Product[];
-    order_note: string;
 }
 
 export interface Transaction {
     id: number;
-    user_id: string;
-    payment_method: string;
+    user_id: number;
+    order_id: number;
+    payment_method: PaymentMethod;
     payment_amount: number;
+    date: string;
     delivery: boolean;
     address: Address;
 }
