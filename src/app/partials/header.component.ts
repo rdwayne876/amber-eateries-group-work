@@ -4,8 +4,11 @@ import { Component, OnInit } from '@angular/core';
     selector: 'app-header',
     template: `
         <header>
-            <div class="header">
-                <div class="secondary-header">
+            <div
+                class="header transition-all shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048]"
+                id="main-nav"
+            >
+                <div class="secondary-header p-2 ">
                     <div class="main-container">
                         <div class="s-h-inner">
                             <div class="header-location">
@@ -29,18 +32,20 @@ import { Component, OnInit } from '@angular/core';
                                         />
                                     </g>
                                 </svg>
-                                <span>Kingston & St. Andrew</span>
+                                <span class="text-2xl"
+                                    >Kingston & St. Andrew</span
+                                >
                             </div>
                         </div>
                     </div>
                 </div>
                 <mat-toolbar>
                     <div class="main-container">
-                        <div class="m-h-inner">
+                        <div class="m-h-inner flex flex-wrap ">
                             <div class="logo">
                                 <a href="/"><span>Amber Eateries</span></a>
                             </div>
-                            <div class="navigation">
+                            <div class="navigation  ">
                                 <button mat-button routerLink="/">Home</button>
                                 <button mat-button routerLink="/menu">
                                     Menus
@@ -55,7 +60,7 @@ import { Component, OnInit } from '@angular/core';
                                     Gallery
                                 </button>
                                 <button mat-button routerLink="/addproduct">
-                                    Add New Product
+                                    <i class="fa-solid fa-cart-shopping"></i>
                                 </button>
                             </div>
                         </div>
@@ -67,12 +72,14 @@ import { Component, OnInit } from '@angular/core';
     styles: [
         `
             @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600&display=swap');
+
             .header {
                 width: 100%;
                 height: auto;
-                border-bottom: 1px solid #e4e7eb;
+                position: fixed;
+                top: 0;
+                z-index: 1;
             }
-
             .main-container {
                 width: 78%;
                 margin: 0 auto;
@@ -81,7 +88,7 @@ import { Component, OnInit } from '@angular/core';
             .secondary-header {
                 width: 100%;
                 height: auto;
-                background-color: #00b5ad;
+                background-color: #231942;
                 font-size: 14px;
                 color: #fff;
             }
@@ -119,7 +126,7 @@ import { Component, OnInit } from '@angular/core';
                 height: 88px;
                 justify-content: space-between;
                 padding: 0 !important;
-                background-color: #fff;
+                background-color: transparent;
             }
 
             ::ng-deep .mat-button:last-child {
@@ -133,11 +140,11 @@ import { Component, OnInit } from '@angular/core';
             .logo span {
                 font-family: 'Permanent Marker', cursive;
                 font-size: 28px;
-                color: #212529;
+                color: white;
             }
 
             .navigation ::ng-deep .mat-button {
-                color: #2b2b2b;
+                color: white;
             }
 
             .navigation ::ng-deep .mat-button:hover {
@@ -148,11 +155,32 @@ import { Component, OnInit } from '@angular/core';
             ::ng-deep .mat-button-ripple.mat-ripple {
                 display: none !important;
             }
+
+            .sticky-nav {
+                background: white !important;
+                color: black !important;
+            }
+
+            .sticky-nav .logo span,
+            .sticky-nav .navigation ::ng-deep .mat-button {
+                color: black;
+            }
         `,
     ],
 })
 export class HeaderComponent implements OnInit {
     constructor() {}
 
-    ngOnInit(): void {}
+    ngOnInit() {
+        window.onscroll = () => {
+            let navMenu = document.querySelector('.header');
+            let body = document.querySelector('body') as HTMLBodyElement;
+            if (window.pageYOffset > 100) {
+                navMenu?.classList.add('sticky-nav');
+            } else {
+                navMenu?.classList.remove('sticky-nav');
+                body.style.margin = '0';
+            }
+        };
+    }
 }
