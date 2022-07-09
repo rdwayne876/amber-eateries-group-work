@@ -1,125 +1,44 @@
-<div class="bg-white">
-    <div
-        class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
-    >
-        <div class="flex items-center justify-between w-[43rem]">
-            <p
-                class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
-            >
-                Products Cart
-            </p>
-            <button mat-raised-button color="primary" routerLink="/">
-                <div class="flex items-center space-x-3">
-                    <div>Continue Shopping</div>
-                    <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M5 4H19C19.5523 4 20 4.44771 20 5V19C20 19.5523 19.5523 20 19 20H5C4.44772 20 4 19.5523 4 19V5C4 4.44772 4.44771 4 5 4ZM2 5C2 3.34315 3.34315 2 5 2H19C20.6569 2 22 3.34315 22 5V19C22 20.6569 20.6569 22 19 22H5C3.34315 22 2 20.6569 2 19V5ZM12 12C9.23858 12 7 9.31371 7 6H9C9 8.56606 10.6691 10 12 10C13.3309 10 15 8.56606 15 6H17C17 9.31371 14.7614 12 12 12Z"
-                            fill="currentColor"
-                        />
-                    </svg>
-                </div>
-            </button>
-        </div>
+<div class="bg-[#F5F5F5]">
+    <div class="flex justify-between mx-32 py-24 gap-10">
+        <table class="w-full">
+            <thead class="bg-[#5F462B] text-white uppercase font-medium tracking-widest">
+                <th class="p-10">Products</th>
+                <th class="p-10">Price</th>
+                <th class="p-10">Quantity</th>
+                <th class="p-10">Total</th>
+            </thead>
 
-        <form
-            class="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start xl:gap-x-16"
-        >
-            <section class="lg:col-span-7">
-                <p class="sr-only">Items in your cart</p>
-
-                <ul
-                    role="list"
-                    class="border-t border-b border-gray-200 divide-y divide-gray-200"
-                    *ngFor="let cItem of cart"
-                >
-                    <li class="flex py-6 sm:py-10">
-                        <div class="flex-shrink-0">
+            <tbody>
+                <tr *ngFor="let cItem of cart" class="border-b-2">
+                    <td class="flex my-4 gap-10">
+                        <div class="w-96">
                             <img
+                                class="object-cover w-full h-[180px]"
                                 src="{{ cItem.imageUrl }}"
                                 alt=""
-                                class="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48"
                             />
                         </div>
-
-                        <div
-                            class="ml-4 flex-1 flex flex-col justify-between sm:ml-6"
-                        >
-                            <div
-                                class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0"
-                            >
-                                <div>
-                                    <div class="flex justify-between">
-                                        <p class="text-sm">
-                                            <a
-                                                href="#"
-                                                class="font-medium text-gray-700 hover:text-gray-800"
-                                            >
-                                                Product Name
-                                            </a>
-                                        </p>
-                                    </div>
-
-                                    <p
-                                        class="mt-1 text-sm font-medium text-gray-900"
-                                    >
-                                        {{ cItem.name }}
-                                    </p>
-                                </div>
-
-                                <div class="mt-4 sm:mt-0 sm:pr-9">
-                                    <label for="quantity" class="ml-3"
-                                        >Quantity</label
-                                    ><br />
-                                    <input
-                                        type="number"
-                                        id="quantity"
-                                        name="quantity"
-                                        class="w-20 text-center rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                        value="{{ cItem.amount }}"
-                                        (change)="
-                                            amountChanged($event, cItem.id)
-                                        "
-                                    />
-
-                                    <div class="absolute top-0 right-0">
-                                        <button
-                                            type="button"
-                                            class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
-                                            (click)="deleteProduct(cItem.id)"
-                                        >
-                                            <span class="sr-only">Remove</span>
-                                            <svg
-                                                class="h-5 w-5"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                                aria-hidden="true"
-                                            >
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
+                        <div class="w-[31rem] space-y-10 pr-32">
+                            <div>
+                                <h3 class="text-3xl font-semibold">
+                                    {{ cItem.name }}
+                                </h3>
                             </div>
-
-                            <div class="flex items-center space-x-44">
-                                <div
-                                    class="flex text-sm text-gray-700 space-x-2"
+                            <div>
+                                <p class="text-lg prose">
+                                    {{ cItem.description }}
+                                </p>
+                            </div>
+                            <div>
+                                <button
+                                    class="underline font-medium"
+                                    type="button"
+                                    class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
+                                    (click)="deleteProduct(cItem.id)"
                                 >
+                                    Remove
                                     <svg
-                                        class="flex-shrink-0 h-5 w-5 text-green-500"
+                                        class="h-5 w-5"
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
@@ -127,66 +46,116 @@
                                     >
                                         <path
                                             fill-rule="evenodd"
-                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                                             clip-rule="evenodd"
                                         />
                                     </svg>
-                                    <span>In stock</span>
-                                </div>
-                                <div class="font-medium" #itemUnitPrices>
-                                    {{ cItem.price | currency }}
-                                </div>
+                                </button>
                             </div>
                         </div>
-                    </li>
-                </ul>
-            </section>
+                    </td>
 
-            <!-- Order summary -->
+                    <td class="text-center">
+                        <div class="font-medium">
+                            <div class="font-medium" #itemUnitPrices>
+                                {{ cItem.price | currency }}
+                            </div>
+                        </div>
+                    </td>
 
-            <section
-                class="mt-16 bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5"
-            >
-                <p class="text-lg font-medium text-gray-900">Order summary</p>
+                    <td>
+                        <div class="font-medium m-auto flex justify-center items-center">
+                            <input
+                                class="w-16 text-center border-none bg-transparent"
+                                type="number"
+                                id="quantity"
+                                name="quantity"
+                                value="{{ cItem.amount }}"
+                                (change)="amountChanged($event, cItem.id)"
+                            />
+                        </div>
+                    </td>
 
-                <dl class="mt-6 space-y-4">
-                    <div
-                        class="flex items-center justify-between"
-                        *ngFor="let cItem of cart"
-                    >
-                        <dt class="text-sm text-gray-600">
-                            {{ cItem.name }} | x{{ cItem.amount }}
-                        </dt>
-                        <dd
-                            class="text-sm font-medium text-gray-900"
-                            #itemPrices
-                        >
+                    <td>
+                        <div class="font-bold">
                             {{ cItem.price * cItem.amount | currency }}
-                        </dd>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- purchase summary -->
+        <div>
+            <div
+                class="bg-[#5F462B] w-[35rem] flex-flex-col space-y-8 text-white px-12 pb-10"
+            >
+                <div class="border-b border-white mb-12 w-64 mx-auto">
+                    <div class="text-center font-medium pt-6">
+                        Purchase Summary
                     </div>
-
-                    <div
-                        class="border-t border-gray-200 pt-4 flex items-center justify-between"
-                    >
-                        <dt class="text-base font-medium text-gray-900">
-                            Order total
-                        </dt>
-                        <dd class="text-base font-medium text-gray-900">
-                            {{ grandTotal | currency }}
-                        </dd>
-                    </div>
-                </dl>
-
-                <div class="mt-6">
-                    <button
-                        type="submit"
-                        class="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
-                        routerLink="/checkout"
-                    >
-                        Checkout
-                    </button>
                 </div>
-            </section>
-        </form>
+
+                <div
+                    class="flex justify-between items-center border-b border-white"
+                >
+                    <div>Subtotal</div>
+                    <div>
+                        {{ grandTotal | currency }}
+                    </div>
+                </div>
+                <div
+                    class="flex justify-between items-center border-b border-white"
+                >
+                    <div>Sales Tax(1.5%)</div>
+                    <div>{{ (grandTotal / 100) * 1.5 | currency }}</div>
+                </div>
+                <div
+                    class="flex justify-between items-center border-b border-white"
+                >
+                    <div>Total Due</div>
+                    <div>{{ grandTotal | currency }}</div>
+                </div>
+
+                <button
+                    class="flex justify-center mx-auto py-2 uppercase bg-[#EF4F43] text-white text-center w-64"
+                >
+                    check out
+                </button>
+            </div>
+            <!-- cards -->
+            <div>
+                <div
+                    class="border-b-2 flex justify-center text-center mx-auto border-black mt-10 w-96"
+                >
+                    <div class="uppercase font-medium text-4xl w-[35rem] mb-2">
+                        Accepted Cards
+                    </div>
+                </div>
+
+                <div class="justify-between flex items-center px-20">
+                    <div>
+                        <img
+                            class="w-24"
+                            src="https://www.7krave.com/img/cards/visa.png"
+                            alt=""
+                        />
+                    </div>
+                    <div>
+                        <img
+                            class="w-24"
+                            src="https://www.7krave.com/img/cards/mastercard.png"
+                            alt=""
+                        />
+                    </div>
+                    <div>
+                        <img
+                            class="w-24"
+                            src="https://www.7krave.com/img/cards/keycard.png"
+                            alt=""
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,0 +1,37 @@
+<section class="slider-container">
+    <div class="overlay">
+        <h1>Welcome <br> To <br> Amber Eats</h1>
+    </div>
+    <div *ngIf="images && images.length > 0" >
+        <img
+            *ngFor="let image of images; let i = index"
+            [src]="image.imageSrc"
+            [alt]="image.imageAlt"
+            [ngClass]="{ 'image-active': selectedIndex === i }"
+            class="fade"
+        />
+    
+        <div *ngIf="indicators" class="slider-dot-container">
+            <span
+                *ngFor="let dot of images; let i = index"
+                class="dot"
+                [ngClass]="{ active: selectedIndex === i }"
+                (click)="selectImage(i)"
+            >
+            </span>
+        </div>
+    
+        <button *ngIf="controls" class="btn-slider btn-prev">
+            <i
+                class="fas fa-arrow-circle-left icon-slider icon-prev"
+                (click)="onPrevClick()"
+            ></i>
+        </button>
+        <button *ngIf="controls" class="btn-slider btn-next">
+            <i
+                class="fas fa-arrow-circle-right icon-slider icon-next"
+                (click)="onNextClick()"
+            ></i>
+        </button>
+    </div>
+</section>
