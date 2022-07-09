@@ -27,7 +27,7 @@ export class CheckoutComponent implements OnInit {
     paymentAmount = 0; //Placeholder
     user_id!: number;
     orderTotal = 5000;
-    update_lock = false;
+    rateLimitRetry: any;
 
     //Form Groups
     userTypeForm = new FormGroup({
@@ -329,7 +329,7 @@ export class CheckoutComponent implements OnInit {
     }
 
     updateMap(form: FormGroup) { 
-        this.update_lock = true;            
+        clearTimeout(this.rateLimitRetry);          
         this.mapService.address = {
             street_address:
                 form.controls['street_address'].value,
@@ -339,9 +339,11 @@ export class CheckoutComponent implements OnInit {
             parish: form.controls['parish'].value,
         };
         if (!this.map.setMapLocation()) {
-            //Rate limit message
+            //Rate limit response logic
             console.log("Rate limited. Try again");
-            
+            this.rateLimitRetry = setTimeout(() => {
+                this.map.setMapLocation();
+            }, 1000);
         }
     }
 
