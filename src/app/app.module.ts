@@ -40,7 +40,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import {MatBadgeModule} from '@angular/material/badge';
 
 import { SafePipe } from './safe.pipe';
-import { MapComponent } from './map/map.component';
+import { MapComponent } from './components/map/map.component';
 import { RecieptComponent } from './components/reciept/reciept.component';
 @NgModule({
     declarations: [
