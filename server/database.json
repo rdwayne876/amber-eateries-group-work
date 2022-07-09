@@ -551,8 +551,8 @@
     {
       "email": "simon.dominic.maxwell@gmail.com",
       "delivery_address": {
-        "street_address": "4 Elm Place",
-        "street_address2": "Ebony Vale",
+        "street_address": "4 Elm Place, Ebony Vale",
+        "street_address2": "St John's Road",
         "city_town": "Spanish Town",
         "parish": "St Catherine"
       },
