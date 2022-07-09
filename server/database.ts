@@ -553,10 +553,12 @@ database.products = [
       description: "The crab rangoon is filled with cream cheese but has all the complicated flavors of Asian spices to give it a unique and addicting taste.",
       category: Category.ENTREE,
       imageUrl: "https://thekitchencommunity.org/wp-content/uploads/2022/02/15_chinese-recipes-500x750.jpg",
-      price: 1500,
-      quantity: 30,
+      price: 900,
+      quantity: 50,
       ratings:[]
      },
+ 
+
 ];
 database.orders = [
   // {
