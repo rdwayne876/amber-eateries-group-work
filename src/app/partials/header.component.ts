@@ -75,10 +75,9 @@ import { Component, OnInit } from '@angular/core';
 
             .header {
                 width: 100%;
-                height: auto;
                 position: fixed;
-                top: 0;
                 z-index: 1;
+                top: 0;
             }
             .main-container {
                 width: 78%;
