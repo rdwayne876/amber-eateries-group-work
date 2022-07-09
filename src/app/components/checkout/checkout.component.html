@@ -93,7 +93,7 @@
                                 <div
                                     *ngIf="deliveryTypeForm.controls['type'].value === 'pickup'"
                                 >
-                                <button mat-raised-button  matStepperPrevious>Go Back</button>
+                                    <button mat-raised-button  matStepperPrevious>Go Back</button>
                                     <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
                                 </div>
                             </form>
@@ -241,7 +241,8 @@
                 <div class="summary-section">
                     <div class="summary-header">
                         <span>Order Summary</span>
-                        <mat-icon matBadge="15" matBadgeColor="warn">add_shopping_cart</mat-icon>
+                        <a href="#"><mat-icon matBadge="15" matBadgeColor="warn">add_shopping_cart</mat-icon></a>
+
                     </div>
                     <div class="orders">
                         <div class="summary-product-image">
