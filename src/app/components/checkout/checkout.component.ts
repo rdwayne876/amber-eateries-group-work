@@ -14,6 +14,7 @@ import { Observable } from 'rxjs';
 import { Address } from 'src/app/interfaces/checkout';
 import { MatRadioChange, MatRadioGroup } from '@angular/material/radio';
 import { Router } from '@angular/router';
+import { MapService } from 'src/app/map.service';
 
 @Component({
     selector: 'app-checkout',
@@ -21,7 +22,6 @@ import { Router } from '@angular/router';
     styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent implements OnInit {
-    Map = { latitude: 0, longitude: 0 };
     Cart!: any[]; //Placeholder
     paymentAmount = 0; //Placeholder
     user_id!: number;
@@ -89,6 +89,7 @@ export class CheckoutComponent implements OnInit {
         private checkoutService: CheckoutService,
         private userService: UserService,
         private cartService: CartService,
+        private mapService: MapService,
         private router: Router
     ) {}
 
@@ -121,7 +122,9 @@ export class CheckoutComponent implements OnInit {
                                 email:
                                     this.accountTypeForm.controls['email']
                                         ?.value ?? '',
-                                delivery_address: this.addressForm.controls["saveAddressInfo"].value
+                                delivery_address: this.addressForm.controls[
+                                    'saveAddressInfo'
+                                ].value
                                     ? {
                                           street_address:
                                               this.addressForm.controls[
@@ -146,7 +149,8 @@ export class CheckoutComponent implements OnInit {
                                           city_town: '',
                                           parish: '',
                                       },
-                                card: this.cardForm.controls["saveCardInfo"].value
+                                card: this.cardForm.controls['saveCardInfo']
+                                    .value
                                     ? {
                                           _no:
                                               this.cardForm.controls['card_no']
@@ -284,6 +288,8 @@ export class CheckoutComponent implements OnInit {
                         this.addressForm.controls['parish'].setValue(
                             data.delivery_address.parish
                         );
+
+                        this.updateMap(this.addressForm);
                     } else {
                         this.addressForm.reset();
                     }
@@ -317,6 +323,17 @@ export class CheckoutComponent implements OnInit {
                 };
             }
         });
+    }
+
+    updateMap(form: FormGroup) {             
+        this.mapService.address = {
+            street_address:
+                form.controls['street_address'].value,
+            street_address2:
+                form.controls['street_address2'].value,
+            city_town: form.controls['city_town'].value,
+            parish: form.controls['parish'].value,
+        };
     }
 
     deliveryFill = (event: MatRadioChange) => {};
