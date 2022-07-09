@@ -1,9 +1,8 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
 
 html,
 body {
@@ -12,7 +11,7 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #EAEAE6;
+    background-color: #eaeae6;
 }
 
 * {
