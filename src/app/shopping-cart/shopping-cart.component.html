@@ -1,45 +1,43 @@
-<div class="bg-[#F5F5F5]">
-    <div class="flex justify-between mx-32 py-24 gap-10">
-        <table class="w-full">
-            <thead class="bg-[#5F462B] text-white uppercase font-medium tracking-widest">
-                <th class="p-10">Products</th>
-                <th class="p-10">Price</th>
-                <th class="p-10">Quantity</th>
-                <th class="p-10">Total</th>
-            </thead>
+<section class="bg-[#F5F5F5]">
+    <div class="w-[80%] m-auto py-10">
+        <div
+            class="flex justify-center items-center w-full h-[400px] capitalize bg-[url('https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1493775538141-BLDK7ZNSG5KNXEQLQJPY/sepia-1-16-1517116rt.jpg?format=1500w')] bg-cover bg-center bg-no-repeat"
+        >
+            <h1 class="text-white text-center text-8xl pb-3">Your Cart</h1>
+        </div>
+    </div>
 
-            <tbody>
-                <tr *ngFor="let cItem of cart" class="border-b-2">
-                    <td class="flex my-4 gap-10">
-                        <div class="w-96">
-                            <img
-                                class="object-cover w-full h-[180px]"
-                                src="{{ cItem.imageUrl }}"
-                                alt=""
-                            />
-                        </div>
-                        <div
-                            class="ml-4 flex-1 flex flex-col justify-between sm:ml-6"
-                        >
-                            <div
-                                class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0"
-                            >
+    <div class="w-[85%] m-auto">
+        <div class="grid grid-cols-[6fr_4fr] mx-32 py-24 gap-10">
+            <table class="w-full">
+                <thead
+                    class="bg-[#5F462B] text-white uppercase font-medium tracking-widest"
+                >
+                    <th class="p-10">Products</th>
+                    <th class="p-10 text-center">Price</th>
+                    <th class="p-10 text-center">Quantity</th>
+                    <th class="p-10 text-center">Total</th>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let cItem of cart" class="border-b-2">
+                        <td class="flex my-4 gap-10">
+                            <div class="w-96">
+                                <img
+                                    class="object-cover w-full h-[180px]"
+                                    src="{{ cItem.imageUrl }}"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="w-[31rem] space-y-10 pr-32">
                                 <div>
-                                    <div class="flex justify-between">
-                                        <p class="text-sm">
-                                            <a
-                                                href="#"
-                                                class="font-medium text-gray-700 hover:text-gray-800"
-                                            >
-                                                Product Name
-                                            </a>
-                                        </p>
-                                    </div>
-
-                                    <p
-                                        class="mt-1 text-sm font-medium text-gray-900"
-                                    >
+                                    <h3 class="text-3xl font-semibold">
                                         {{ cItem.name }}
+                                    </h3>
+                                </div>
+                                <div>
+                                    <p class="text-lg prose">
+                                        {{ cItem.description }}
                                     </p>
                                 </div>
 
@@ -66,14 +64,7 @@
                                             class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
                                             (click)="deleteProduct(cItem.id)"
                                         >
-                                            <span class="sr-only">Remove</span>
-                                            <svg
-                                                class="h-5 w-5"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                                aria-hidden="true"
-                                            >
+                                            <svg>
                                                 <path
                                                     fill-rule="evenodd"
                                                     d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -84,138 +75,119 @@
                                     </div>
                                 </div>
                             </div>
-                            <div>
-                                <p class="text-lg prose">
-                                    {{ cItem.description }}
-                                </p>
+                        </td>
+
+                        <td class="text-center">
+                            <div class="font-medium">
+                                <div class="font-medium" #itemUnitPrices>
+                                    {{ cItem.price | currency }}
+                                </div>
                             </div>
-                            <div>
-                                <button
-                                    class="underline font-medium"
-                                    type="button"
-                                    class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
-                                    (click)="deleteProduct(cItem.id)"
-                                >
-                                    Remove
-                                    <svg
-                                        class="h-5 w-5"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                        aria-hidden="true"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"
-                                        />
-                                    </svg>
-                                </button>
+                        </td>
+
+                        <td>
+                            <div
+                                class="font-medium m-auto flex justify-center items-center"
+                            >
+                                <input
+                                    class="w-16 text-center border-none bg-transparent"
+                                    type="number"
+                                    id="quantity"
+                                    name="quantity"
+                                    value="{{ cItem.amount }}"
+                                    (change)="amountChanged($event, cItem.id)"
+                                />
                             </div>
-                        </div>
-                    </td>
+                        </td>
 
-                    <td class="text-center">
-                        <div class="font-medium">
-                            <div class="font-medium" #itemUnitPrices>
-                                {{ cItem.price | currency }}
+                        <td>
+                            <div
+                                class="font-bold flex justify-center items-center"
+                            >
+                                {{ cItem.price * cItem.amount | currency }}
                             </div>
-                        </div>
-                    </td>
-
-                    <td>
-                        <div class="font-medium m-auto flex justify-center items-center">
-                            <input
-                                class="w-16 text-center border-none bg-transparent"
-                                type="number"
-                                id="quantity"
-                                name="quantity"
-                                value="{{ cItem.amount }}"
-                                (change)="amountChanged($event, cItem.id)"
-                            />
-                        </div>
-                    </td>
-
-                    <td>
-                        <div class="font-bold flex justify-center items-center">
-                            {{ cItem.price * cItem.amount | currency }}
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- purchase summary -->
-        <div>
-            <div
-                class="bg-[#5F462B] w-[35rem] flex-flex-col space-y-8 text-white px-12 pb-10"
-            >
-                <div class="border-b border-white mb-12 w-64 mx-auto">
-                    <div class="text-center font-medium pt-6">
-                        Purchase Summary
-                    </div>
-                </div>
-
-                <div
-                    class="flex justify-between items-center border-b border-white"
-                >
-                    <div>Subtotal</div>
-                    <div>
-                        {{ grandTotal | currency }}
-                    </div>
-                </div>
-                <div
-                    class="flex justify-between items-center border-b border-white"
-                >
-                    <div>Sales Tax(1.5%)</div>
-                    <div>{{ (grandTotal / 100) * 1.5 | currency }}</div>
-                </div>
-                <div
-                    class="flex justify-between items-center border-b border-white"
-                >
-                    <div>Total Due</div>
-                    <div>{{ grandTotal | currency }}</div>
-                </div>
-
-                <button
-                    class="flex justify-center mx-auto py-2 uppercase bg-[#EF4F43] text-white text-center w-64"
-                >
-                    check out
-                </button>
-            </div>
-            <!-- cards -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- purchase summary -->
             <div>
                 <div
-                    class="border-b-2 flex justify-center text-center mx-auto border-black mt-10 w-96"
+                    class="bg-[#5F462B] w-full flex-flex-col space-y-8 text-white px-12 pb-10"
                 >
-                    <div class="uppercase font-medium text-4xl w-[35rem] mb-2">
-                        Accepted Cards
+                    <div class="border-b border-white mb-12 w-64 mx-auto">
+                        <div class="text-center font-medium pt-6">
+                            Purchase Summary
+                        </div>
                     </div>
-                </div>
 
-                <div class="justify-between flex items-center px-20">
-                    <div>
-                        <img
-                            class="w-24"
-                            src="https://www.7krave.com/img/cards/visa.png"
-                            alt=""
-                        />
+                    <div
+                        class="flex justify-between items-center border-b border-white"
+                    >
+                        <div>Subtotal</div>
+                        <div>
+                            {{
+                                grandTotal - (grandTotal / 100) * 1.5 | currency
+                            }}
+                        </div>
                     </div>
-                    <div>
-                        <img
-                            class="w-24"
-                            src="https://www.7krave.com/img/cards/mastercard.png"
-                            alt=""
-                        />
+                    <div
+                        class="flex justify-between items-center border-b border-white"
+                    >
+                        <div>Sales Tax(1.5%)</div>
+                        <div>{{ (grandTotal / 100) * 1.5 | currency }}</div>
                     </div>
-                    <div>
-                        <img
-                            class="w-24"
-                            src="https://www.7krave.com/img/cards/keycard.png"
-                            alt=""
-                        />
+                    <div
+                        class="flex justify-between items-center border-b border-white"
+                    >
+                        <div>Total Due</div>
+                        <div>{{ grandTotal | currency }}</div>
+                    </div>
+
+                    <button
+                        routerLink="/checkout"
+                        class="flex justify-center mx-auto py-2 uppercase bg-[#EF4F43] text-white text-center w-64"
+                    >
+                        check out
+                    </button>
+                </div>
+                <!-- cards -->
+                <div>
+                    <div
+                        class="border-b-2 flex justify-center text-center mx-auto border-black mt-10 w-96"
+                    >
+                        <div
+                            class="uppercase font-medium text-4xl w-[35rem] mb-2"
+                        >
+                            Accepted Cards
+                        </div>
+                    </div>
+
+                    <div class="justify-between flex items-center px-20">
+                        <div>
+                            <img
+                                class="w-24"
+                                src="https://www.7krave.com/img/cards/visa.png"
+                                alt=""
+                            />
+                        </div>
+                        <div>
+                            <img
+                                class="w-24"
+                                src="https://www.7krave.com/img/cards/mastercard.png"
+                                alt=""
+                            />
+                        </div>
+                        <div>
+                            <img
+                                class="w-24"
+                                src="https://www.7krave.com/img/cards/keycard.png"
+                                alt=""
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>

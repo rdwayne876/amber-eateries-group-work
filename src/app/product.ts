@@ -4,15 +4,16 @@ export enum Category {
     DESSERT = 'dessert',
     SIDE = 'side',
     BEVERAGE = 'beverage',
-  }
-  
-  export interface Product {
+}
+
+export interface Product {
     id: number;
     name: string;
     description: string;
     category: Category;
     imageUrl: string;
     price: number;
+    amount?: number;
     quantity: number;
     ratings: number[];
-  }
+}

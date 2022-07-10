@@ -15,6 +15,7 @@ import { Address } from 'src/app/interfaces/checkout';
 import { MatRadioChange, MatRadioGroup } from '@angular/material/radio';
 import { Router } from '@angular/router';
 import { MapService } from 'src/app/map.service';
+import { MapComponent } from '../map/map.component';
 
 @Component({
     selector: 'app-checkout',
@@ -26,7 +27,8 @@ export class CheckoutComponent implements OnInit {
     paymentAmount = 0; //Placeholder
     user_id!: number;
     orderTotal = 5000;
-
+    rateLimitRetry: any;
+    
     //Form Groups
     userTypeForm = new FormGroup({
         type: new FormControl('', [Validators.required]),
@@ -103,6 +105,8 @@ export class CheckoutComponent implements OnInit {
         this.addressForm.disable();
         this.cardForm.disable();
     }
+
+    @ViewChild('map') map!: MapComponent;
 
     @ViewChild('paymentType') paymentTypeElement!: ElementRef<HTMLInputElement>;
     @ViewChild('deliveryType')
@@ -325,7 +329,9 @@ export class CheckoutComponent implements OnInit {
         });
     }
 
-    updateMap(form: FormGroup) {             
+    updateMap(form: FormGroup) { 
+        clearTimeout(this.rateLimitRetry);          
+
         this.mapService.address = {
             street_address:
                 form.controls['street_address'].value,
@@ -334,6 +340,15 @@ export class CheckoutComponent implements OnInit {
             city_town: form.controls['city_town'].value,
             parish: form.controls['parish'].value,
         };
+
+        if (!this.map.setMapLocation()) {
+            //Rate limit response logic
+            console.log("Rate limited. Try again");
+            this.rateLimitRetry = setTimeout(() => {
+                this.map.setMapLocation();
+            }, 1000);
+        }
+
     }
 
     deliveryFill = (event: MatRadioChange) => {};

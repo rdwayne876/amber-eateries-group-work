@@ -33,7 +33,6 @@ const routes: Routes = [
     { path: 'order', component: OrderComponent },
     { path: 'addproduct', component: AddproductComponent },
     { path: 'edit/:id', component: EditComponent },
-
     { path: 'checkout', component: CheckoutComponent, canActivate: [CheckoutGuard] },
     { path: 'receipt', component: RecieptComponent, canActivate: [RecieptGuard] },
     { path: 'hero', component: HeroComponent },

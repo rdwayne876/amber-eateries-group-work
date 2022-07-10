@@ -1,13 +1,13 @@
 .slider-container {
     position: relative;
-    margin: auto;
+    /* margin: auto; */
     text-align: center;
     width: 100%;
     border-radius: 15px;
     box-shadow: 0 8px 16px #dce1e1;
 }
-.overlay {
-    /* content: 'Welcome /n To Amber Eats'; */
+/* .overlay {
+    content: 'Welcome /n To Amber Eats';
     position: absolute;
     width: 100%;
     height: 100%;
@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
-}
+}  */
 .slider-container img {
     display: none;
 }
@@ -28,20 +28,16 @@
 .slider-container img.image-active {
     display: block;
     width: 100%;
-    height: 90vh;
+    /* height: 100%; */
 }
 
 /* dots/indicators */
 .slider-dot-container {
     position: absolute;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin-bottom: 1rem;
-    z-index: 20;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
 
 .dot {
@@ -64,12 +60,12 @@
 /* fade effect */
 .fade {
     animation-name: fade;
-    animation-duration: 3s;
+    animation-duration: 3.5s;
 }
 
 @keyframes fade {
     from {
-        opacity: 0.4;
+        opacity: 0.9;
     }
     to {
         opacity: 1;
