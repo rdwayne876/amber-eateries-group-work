@@ -28,7 +28,7 @@ export class CheckoutComponent implements OnInit {
     user_id!: number;
     orderTotal = 5000;
     rateLimitRetry: any;
-
+    
     //Form Groups
     userTypeForm = new FormGroup({
         type: new FormControl('', [Validators.required]),
@@ -107,6 +107,7 @@ export class CheckoutComponent implements OnInit {
     }
 
     @ViewChild('map') map!: MapComponent;
+
     @ViewChild('paymentType') paymentTypeElement!: ElementRef<HTMLInputElement>;
     @ViewChild('deliveryType')
     deliveryTypeElement!: ElementRef<HTMLInputElement>;
@@ -330,6 +331,7 @@ export class CheckoutComponent implements OnInit {
 
     updateMap(form: FormGroup) { 
         clearTimeout(this.rateLimitRetry);          
+
         this.mapService.address = {
             street_address:
                 form.controls['street_address'].value,
@@ -338,6 +340,7 @@ export class CheckoutComponent implements OnInit {
             city_town: form.controls['city_town'].value,
             parish: form.controls['parish'].value,
         };
+
         if (!this.map.setMapLocation()) {
             //Rate limit response logic
             console.log("Rate limited. Try again");
@@ -345,6 +348,7 @@ export class CheckoutComponent implements OnInit {
                 this.map.setMapLocation();
             }, 1000);
         }
+
     }
 
     deliveryFill = (event: MatRadioChange) => {};

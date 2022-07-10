@@ -22,6 +22,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HeroComponent },
     { path: 'menu', component: HomeComponent },
+
     { path: 'cart', component: ShoppingCartComponent },
     { path: 'gallery', component: GalleryComponent },
     { path: 'addmenu', component: AddmenuComponent },
