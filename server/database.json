@@ -38,8 +38,7 @@
       "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Beef-Patties-683x1024.jpg",
       "price": 300,
       "quantity": 98,
-      "rating": [],
-      "amount": 2
+      "rating": []
     },
     {
       "id": 5,
@@ -69,8 +68,7 @@
       "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Oxtail-683x1024.jpg",
       "price": 1900,
       "quantity": 98,
-      "rating": [],
-      "amount": 2
+      "rating": []
     },
     {
       "id": 8,
@@ -90,8 +88,7 @@
       "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Fried-Dumplings-768x1152.jpg",
       "price": 100,
       "quantity": 498,
-      "rating": [],
-      "amount": 4
+      "rating": []
     },
     {
       "id": 10,
