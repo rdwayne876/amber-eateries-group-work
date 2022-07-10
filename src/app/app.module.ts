@@ -1,3 +1,4 @@
+import { SliderComponent } from './slider/slider.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +23,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HeroComponent } from './hero/hero.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -32,6 +34,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
@@ -62,6 +65,8 @@ import { RecieptComponent } from './components/reciept/reciept.component';
         ShoppingCartComponent,
         CheckoutComponent,
         HeroComponent,
+        GalleryComponent,
+        SliderComponent,
         MapComponent,
         RecieptComponent,
     ],
@@ -85,6 +90,7 @@ import { RecieptComponent } from './components/reciept/reciept.component';
         MatCheckboxModule,
         MatChipsModule,
         MatDialogModule,
+        MatTabsModule,
         MatStepperModule,
         MatRadioModule,
         MatBadgeModule

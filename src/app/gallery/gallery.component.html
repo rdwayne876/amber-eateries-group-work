@@ -1,0 +1,16 @@
+
+<section class="bg-[#EAEAE6]">
+    <div class="relative w-[80%] m-auto py-10">
+        <div class="absolute z-10 flex justify-center items-center w-full h-full capitalize">
+            <div class="border-b-4 border-b-white w-[60%] m-auto">
+                <h1 class="text-white text-center text-8xl pb-3">Our Gallery</h1>
+            </div>
+        </div>
+        <img class="w-full h-[250px] object-cover" src="https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1583509946458-BUMR8FC3JOY0BEU04U6X/sepia_crw2020_winepairings2.jpg?format=1500w" alt="" />
+    </div>
+    <div class="gallery-contain">
+        <div class="img-bx" *ngFor="let pics of picsArray">
+            <img [src]="pics.imgSrc" alt="">
+        </div>
+    </div>
+</section>
