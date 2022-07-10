@@ -14,6 +14,7 @@ export class MapService {
   private get apiUrl() : string {
     // return `http://api.positionstack.com/v1/forward?access_key=${this.mapkey}&query=${this.address.street_address + ", " + this.address.street_address2 + ", " + this.address.city_town + ", " + this.address.parish + ", Jamaica" }`;
     return `https://us1.locationiq.com/v1/search?key=${this.token}&street=${this.address.street_address + ", " + this.address.street_address2}&city=${this.address.city_town}&state=${this.address.parish}&country=Jamaica&format=json`;
+
   }
   
 
