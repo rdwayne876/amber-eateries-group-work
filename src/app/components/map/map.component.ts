@@ -62,8 +62,6 @@ export class MapComponent implements AfterViewInit {
             // this.lon = data.data[0].longitude ?? -76.87128;
             this.lat = data[0].lat ?? 17.96795;
             this.lon = data[0].lon ?? -76.87128;
-
-
             this.addMarker();
         });
         return true;

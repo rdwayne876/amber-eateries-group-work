@@ -1,316 +1,362 @@
 <main>
-    <mat-stepper [linear]="true" #stepper>
-        <mat-step
-            [stepControl]="
-                userTypeForm.controls['type'].value !== 'account'
-                    ? userTypeForm
-                    : accountTypeForm
-            "
-        >
-            <ng-template matStepLabel>Checkout Service</ng-template>
+    <div class="main-container">
+        <div class="main-content">
+            <div class="col-1">
+                <div class="form-section">
+                    <mat-stepper [linear]="true" #stepper>
+                        <mat-step
+                            [stepControl]="
+                                userTypeForm.controls['type'].value !== 'account'
+                                    ? userTypeForm
+                                    : accountTypeForm
+                            "
+                        >
+                            <ng-template matStepLabel>Checkout Service</ng-template>
 
-            <form [formGroup]="userTypeForm">
-                <mat-radio-group
-                    aria-labelledby="example-radio-group-label"
-                    class="example-radio-group"
-                    formControlName="type"
-                    (change)="enableAccountForm($event)"
-                >
-                    <mat-radio-button
-                        class="example-radio-button"
-                        value="account"
-                    >
-                        Account Pay
-                    </mat-radio-button>
-                    <mat-radio-button
-                        class="example-radio-button"
-                        value="direct"
-                    >
-                        Direct Pay
-                    </mat-radio-button>
-                </mat-radio-group>
+                            <form [formGroup]="userTypeForm">
+                                <mat-radio-group
+                                    aria-labelledby="example-radio-group-label"
+                                    class="example-radio-group"
+                                    formControlName="type"
+                                    (change)="enableAccountForm($event)"
+                                >
+                                    <mat-radio-button
+                                        class="example-radio-button"
+                                        value="account"
+                                    >
+                                        Account Pay
+                                    </mat-radio-button>
+                                    <mat-radio-button
+                                        class="example-radio-button"
+                                        value="direct"
+                                    >
+                                        Direct Pay
+                                    </mat-radio-button>
+                                </mat-radio-group>
 
-                <div *ngIf="userTypeForm.controls['type'].value === 'direct'">
-                    <button mat-button matStepperNext>Next</button>
+                                <div *ngIf="userTypeForm.controls['type'].value === 'direct'">
+                                    <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
+                                </div>
+                            </form>
+
+                            <form [formGroup]="accountTypeForm" *ngIf="userTypeForm.controls['type'].value === 'account'">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Email Address</mat-label>
+                                    <input
+                                        type="email"
+                                        matInput
+                                        placeholder="eg. john@email.com"
+                                        formControlName="email"
+                                        (change)="setFill($event)"
+                                    />
+                                </mat-form-field>
+
+                                <div *ngIf="userTypeForm.controls['type'].value === 'account'">
+                                    <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
+                                </div>
+                            </form>
+                        </mat-step>
+
+                        <mat-step
+                            [stepControl]="
+                                deliveryTypeForm.controls['type'].value === 'delivery'
+                                    ? addressForm
+                                    : deliveryTypeForm
+                            "
+                        >
+                            <ng-template matStepLabel>How will you get your food?</ng-template>
+
+                            <form [formGroup]="deliveryTypeForm">
+                                <mat-radio-group
+                                    aria-labelledby="example-radio-group-label"
+                                    class="example-radio-group"
+                                    formControlName="type"
+                                    (change)="enableAddressForm($event); deliveryFill($event)"
+                                >
+                                    <mat-radio-button
+                                        class="example-radio-button"
+                                        value="delivery"
+                                    >
+                                        Delivery
+                                    </mat-radio-button>
+                                    <mat-radio-button
+                                        class="example-radio-button"
+                                        value="pickup"
+                                    >
+                                        Pick Up
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div
+                                    *ngIf="deliveryTypeForm.controls['type'].value === 'pickup'"
+                                >
+                                <button mat-raised-button  matStepperPrevious>Go Back</button>
+                                <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
+                                </div>
+                            </form>
+
+                            <form [formGroup]="addressForm" *ngIf="deliveryTypeForm.controls['type'].value === 'delivery'">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Street Address</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="street_address"
+                                        placeholder="1 Main St"
+                                        (input)="updateMap(addressForm)"
+                                    />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Street Address 2</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="street_address2"
+                                        placeholder="Cedar Grove"
+                                        (input)="updateMap(addressForm)"
+                                    />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>City</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="city_town"
+                                        placeholder="Jones Town"
+                                        (input)="updateMap(addressForm)"
+                                    />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Parish</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="parish"
+                                        placeholder="Kingston"
+                                        (input)="updateMap(addressForm)"
+                                    />
+                                </mat-form-field>
+
+                                <div *ngIf="userTypeForm.controls['type'].value === 'account'">
+                                    <mat-checkbox formControlName="saveAddressInfo"
+                                        >Save information</mat-checkbox
+                                    >
+                                </div>
+
+                                <app-map #map></app-map>
+
+                                <div
+                                    *ngIf="
+                                        deliveryTypeForm.controls['type'].value === 'delivery'
+                                    "
+                                >
+                                <button mat-raised-button  matStepperPrevious>Go Back</button>
+                                <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
+                                </div>
+                            </form>
+                        </mat-step>
+
+                        <mat-step
+                            [stepControl]="
+                                paymentTypeForm.controls['type'].value === 'card'
+                                    ? cardForm
+                                    : paymentTypeForm
+                            "
+                        >
+                            <ng-template matStepLabel>How would you like to pay?</ng-template>
+                            <form [formGroup]="paymentTypeForm">
+                                <mat-radio-group
+                                    aria-labelledby="example-radio-group-label"
+                                    class="example-radio-group"
+                                    formControlName="type"
+                                    #paymentType
+                                    (change)="enableCardForm($event); paymentFill($event)"
+                                >
+                                    <mat-radio-button class="example-radio-button" value="card">
+                                        Card
+                                    </mat-radio-button>
+                                    <mat-radio-button class="example-radio-button" value="cash">
+                                        Cash
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div *ngIf="paymentTypeForm.controls['type'].value === 'cash'">
+                                    <button mat-raised-button  matStepperPrevious>Go Back</button>
+                                    <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
+                                </div>
+                            </form>
+
+                            <form [formGroup]="cardForm" *ngIf="paymentTypeForm.controls['type'].value === 'card'">
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Card Holder Name</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="cardholder"
+                                        placeholder="1 Main St"
+                                    />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Card Number</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="card_no"
+                                        placeholder="1 Main St"
+                                    />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Expiry Date</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="expiry_date"
+                                        placeholder="1 Main St"
+                                    />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>CVV</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="cvv"
+                                        placeholder="1 Main St"
+                                    />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Street Address</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="street_address"
+                                        placeholder="1 Main St"
+                                    />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Street Address 2</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="street_address2"
+                                        placeholder="Cedar Grove"
+                                    />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>City</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="city_town"
+                                        placeholder="Jones Town"
+                                    />
+                                </mat-form-field>
+                                <mat-form-field appearance="fill">
+                                    <mat-label>Parish</mat-label>
+                                    <input
+                                        matInput
+                                        formControlName="parish"
+                                        placeholder="Kingston"
+                                    />
+                                </mat-form-field>
+
+                                <div *ngIf="userTypeForm.controls['type'].value === 'account'">
+                                    <mat-checkbox formControlName="saveCardInfo"
+                                        >Save information</mat-checkbox
+                                    >
+                                </div>
+
+                                <div *ngIf="paymentTypeForm.controls['type'].value === 'card'">
+                                    <button mat-raised-button  matStepperPrevious>Go Back</button>
+                                    <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
+                                </div>
+                            </form>
+                        </mat-step>
+
+                        <mat-step>
+                            <ng-template matStepLabel>Confirm your order</ng-template>
+                            <div>
+                                <p>
+                                    Account Type:
+                                    {{ userTypeForm.controls["type"].value | titlecase }}
+                                </p>
+
+                                <p>
+                                    Delivery Type:
+                                    {{ deliveryTypeForm.controls["type"].value | titlecase }}
+                                </p>
+
+                                <p *ngIf="addressForm.enabled">
+                                    Delivery Address:
+                                    {{
+                                        [
+                                            addressForm.controls["street_address"]?.value +
+                                                addressForm.controls["street_address2"]?.value,
+                                            addressForm.controls["city_town"]?.value,
+                                            addressForm.controls["parish"]?.value
+                                        ].join(", ") | titlecase
+                                    }}
+                                </p>
+
+                                <p>
+                                    Payment Type:
+                                    {{ paymentTypeForm.controls["type"].value | titlecase }}
+                                </p>
+                            </div>
+
+                            <div>
+                                <button mat-button matStepperPrevious >Go Back</button>
+                                <button mat-raised-button class="nextbtn" matStepperNext (click)="dataCollect()">Confirm Order</button>
+                                <button >Confirm Order</button>
+                            </div>
+                        </mat-step>
+                    </mat-stepper>
                 </div>
-            </form>
+            </div>
+            <div class="col-2">
+                <div class="summary-section">
+                        <div class="summary-header">
+                            <span>Order Summary</span>
+                            <a href="#"><mat-icon matBadge="15" matBadgeColor="warn">add_shopping_cart</mat-icon></a>
+                        </div>
+                        <div class="orders"  *ngFor="let data of Cart">
+                            <div class="summary-product-image">
+                             <img [src]="data.imageUrl">
+                            </div>
+                            <div class="summary-meal-details-section">
+                                <div class="summary-meal-details">
+                                    <div class="summary-meal-title">
+                                        <span>{{ data.name }}</span>
+                                    </div>
+                                    <div class="summary-meal-price">
+                                        <span>{{ data.price | currency }}</span>
+                                    </div>
+                                </div>
+                                <div class="summary-meal-quantity">
+                                    <div class="qty-control">
+                                        <button (click)="onMinus(data.id)">&minus;</button>
+                                        <span>{{ data.amount }}</span>
+                                        <button (click)="onAdd(data.id)">&plus;</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-total-section">
+                        <div class="order-total-header">
+                            <span>Total Amount</span>
+                            <span>{{paymentAmount | currency}}</span>
+                        </div>
+                    </div>
+            </div>
 
-            <form [formGroup]="accountTypeForm">
-                <mat-form-field appearance="fill">
-                    <mat-label>Email Address</mat-label>
-                    <input
-                        type="email"
-                        matInput
-                        placeholder="eg. john@email.com"
-                        formControlName="email"
-                        (change)="setFill($event)"
-                    />
-                </mat-form-field>
 
-                <div *ngIf="userTypeForm.controls['type'].value === 'account'">
-                    <button mat-button matStepperNext>Next</button>
-                </div>
-            </form>
-        </mat-step>
-
-        <mat-step
-            [stepControl]="
-                deliveryTypeForm.controls['type'].value === 'delivery'
-                    ? addressForm
-                    : deliveryTypeForm
-            "
-        >
-            <ng-template matStepLabel>How will you get your food?</ng-template>
-
-            <form [formGroup]="deliveryTypeForm">
-                <mat-radio-group
-                    aria-labelledby="example-radio-group-label"
-                    class="example-radio-group"
-                    formControlName="type"
-                    (change)="enableAddressForm($event); deliveryFill($event)"
-                >
-                    <mat-radio-button
-                        class="example-radio-button"
-                        value="delivery"
-                    >
-                        Delivery
-                    </mat-radio-button>
-                    <mat-radio-button
-                        class="example-radio-button"
-                        value="pickup"
-                    >
-                        Pick Up
-                    </mat-radio-button>
-                </mat-radio-group>
-                <div
-                    *ngIf="deliveryTypeForm.controls['type'].value === 'pickup'"
-                >
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
-                </div>
-            </form>
-
-            <form [formGroup]="addressForm">
-                <mat-form-field appearance="fill">
-                    <mat-label>Street Address</mat-label>
-                    <input
-                        matInput
-                        formControlName="street_address"
-                        placeholder="1 Main St"
-                        (input)="updateMap(addressForm)"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Street Address 2</mat-label>
-                    <input
-                        matInput
-                        formControlName="street_address2"
-                        placeholder="Cedar Grove"
-                        (input)="updateMap(addressForm)"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>City</mat-label>
-                    <input
-                        matInput
-                        formControlName="city_town"
-                        placeholder="Jones Town"
-                        (input)="updateMap(addressForm)"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Parish</mat-label>
-                    <input
-                        matInput
-                        formControlName="parish"
-                        placeholder="Kingston"
-                        (input)="updateMap(addressForm)"
-                    />
-                </mat-form-field>
-
-                <div *ngIf="userTypeForm.controls['type'].value === 'account'">
-                    <mat-checkbox formControlName="saveAddressInfo"
-                        >Save information</mat-checkbox
-                    >
-                </div>
-
-                <app-map #map></app-map>
-
-                <div
-                    *ngIf="
-                        deliveryTypeForm.controls['type'].value === 'delivery'
-                    "
-                >
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
-                </div>
-            </form>
-        </mat-step>
-
-        <mat-step
-            [stepControl]="
-                paymentTypeForm.controls['type'].value === 'card'
-                    ? cardForm
-                    : paymentTypeForm
-            "
-        >
-            <ng-template matStepLabel>How would you like to pay?</ng-template>
-            <form [formGroup]="paymentTypeForm">
-                <mat-radio-group
-                    aria-labelledby="example-radio-group-label"
-                    class="example-radio-group"
-                    formControlName="type"
-                    #paymentType
-                    (change)="enableCardForm($event); paymentFill($event)"
-                >
-                    <mat-radio-button class="example-radio-button" value="card">
-                        Card
-                    </mat-radio-button>
-                    <mat-radio-button class="example-radio-button" value="cash">
-                        Cash
-                    </mat-radio-button>
-                </mat-radio-group>
-                <div *ngIf="paymentTypeForm.controls['type'].value === 'cash'">
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
-                </div>
-            </form>
-
-            <form [formGroup]="cardForm">
-                <mat-form-field appearance="fill">
-                    <mat-label>Card Holder Name</mat-label>
-                    <input
-                        matInput
-                        formControlName="cardholder"
-                        placeholder="1 Main St"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Card Number</mat-label>
-                    <input
-                        matInput
-                        formControlName="card_no"
-                        placeholder="1 Main St"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Expiry Date</mat-label>
-                    <input
-                        matInput
-                        formControlName="expiry_date"
-                        placeholder="1 Main St"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>CVV</mat-label>
-                    <input
-                        matInput
-                        formControlName="cvv"
-                        placeholder="1 Main St"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Street Address</mat-label>
-                    <input
-                        matInput
-                        formControlName="street_address"
-                        placeholder="1 Main St"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Street Address 2</mat-label>
-                    <input
-                        matInput
-                        formControlName="street_address2"
-                        placeholder="Cedar Grove"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>City</mat-label>
-                    <input
-                        matInput
-                        formControlName="city_town"
-                        placeholder="Jones Town"
-                    />
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Parish</mat-label>
-                    <input
-                        matInput
-                        formControlName="parish"
-                        placeholder="Kingston"
-                    />
-                </mat-form-field>
-
-                <div *ngIf="userTypeForm.controls['type'].value === 'account'">
-                    <mat-checkbox formControlName="saveCardInfo"
-                        >Save information</mat-checkbox
-                    >
-                </div>
-
-                <div *ngIf="paymentTypeForm.controls['type'].value === 'card'">
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
-                </div>
-            </form>
-        </mat-step>
-
-        <mat-step>
-            <ng-template matStepLabel>Confirm your order</ng-template>
+        <!-- <div class="h-max">
+            <div class="flex justify-between">
+                <h5>Order Summary</h5>
+                <a routerLink="/cart"> <img src="" alt="Cart Icon" /> </a>
+            </div>
             <div>
-                <p>
-                    Account Type:
-                    {{ userTypeForm.controls["type"].value | titlecase }}
-                </p>
+                <div *ngFor="let data of Cart">
+                    <img [src]="data.imageUrl" alt="" />
+                    <p>{{ data.name }}</p>
+                    <button (click)="onMinus(data.id)">&minus;</button>
+                    <span>x{{ data.amount }}</span>
+                    <button (click)="onAdd(data.id)">&plus;</button>
+                    <p>{{ data.price | currency }}</p>
 
-                <p>
-                    Delivery Type:
-                    {{ deliveryTypeForm.controls["type"].value | titlecase }}
-                </p>
-
-                <p *ngIf="addressForm.enabled">
-                    Delivery Address:
-                    {{
-                        [
-                            addressForm.controls["street_address"]?.value +
-                                addressForm.controls["street_address2"]?.value,
-                            addressForm.controls["city_town"]?.value,
-                            addressForm.controls["parish"]?.value
-                        ].join(", ") | titlecase
-                    }}
-                </p>
-
-                <p>
-                    Payment Type:
-                    {{ paymentTypeForm.controls["type"].value | titlecase }}
-                </p>
+                    <p>=========================</p>
+                    <p>Total</p>
+                    = ${{ paymentAmount }}
+                </div>
             </div>
-
-            <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="dataCollect()">Confirm Order</button>
-            </div>
-        </mat-step>
-    </mat-stepper>
-
-    <div class="h-max">
-        <div class="flex justify-between">
-            <h5>Order Summary</h5>
-            <a routerLink="/cart"> <img src="" alt="Cart Icon" /> </a>
-        </div>
-        <div>
-            <div *ngFor="let data of Cart">
-                <img [src]="data.imageUrl" alt="" />
-                <p>{{ data.name }}</p>
-                <button (click)="onMinus(data.id)">&minus;</button>
-                <span>x{{ data.amount }}</span>
-                <button (click)="onAdd(data.id)">&plus;</button>
-                <p>{{ data.price | currency }}</p>
-
-                <p>=========================</p>
-                <p>Total</p>
-                = ${{ paymentAmount }}
-            </div>
+        </div> -->
         </div>
     </div>
 </main>

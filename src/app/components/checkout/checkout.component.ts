@@ -329,8 +329,8 @@ export class CheckoutComponent implements OnInit {
         });
     }
 
-    updateMap(form: FormGroup) { 
-        clearTimeout(this.rateLimitRetry);          
+    updateMap(form: FormGroup) {
+        clearTimeout(this.rateLimitRetry);
 
         this.mapService.address = {
             street_address:
