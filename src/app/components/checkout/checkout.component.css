@@ -137,15 +137,34 @@
 }
 
 .summary-meal-details-section{
+    padding-top: 1rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
+
 .summary-meal-details{
     display: flex;
     flex-direction: column;
 }
 .summary-meal-title {
-    padding: 2rem 0 .5rem 0;
     color: #2b2b2b;
     font-weight: 500;
+}
+
+.summary-meal-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.summary-meal-quantity button {
+    background-color: #fd935c;
+    color: #FFF;
+    padding: 2px 9px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.summary-meal-quantity span {
+    margin: 0 .5rem;
 }
