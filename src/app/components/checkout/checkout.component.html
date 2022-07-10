@@ -303,7 +303,7 @@
                 <div class="summary-section">
                         <div class="summary-header">
                             <span>Order Summary</span>
-                            <a href="#"><mat-icon matBadge="15" matBadgeColor="warn">add_shopping_cart</mat-icon></a>
+                            <a href="#"><mat-icon [matBadge]="Cart.length" matBadgeColor="warn">add_shopping_cart</mat-icon></a>
                         </div>
                         <div class="orders"  *ngFor="let data of Cart">
                             <div class="summary-product-image">

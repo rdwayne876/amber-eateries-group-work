@@ -30,7 +30,7 @@ import { CartService } from '../cart.service';
 
                                 <button mat-button routerLink="/cart">
                                     <i class="fa-solid fa-cart-shopping "></i>
-                                    <span class="badge bg-danger">
+                                    <span *ngIf="cartService.getCartCount() > 0" class="badge bg-danger">
                                         {{ cartService.getCartCount() }}
                                     </span>
                                 </button>
