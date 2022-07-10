@@ -1,270 +1,166 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-footer',
-    template: `
-    <footer class="site-footer">
-    <div class="container c-1">
-      <div class="row">
-        <div class="col-1">
-        <h6>For You</h6>
-        <ul class="footer-links">
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Fequently Asked Questions</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+  selector: 'app-footer',
+  template: `
+    <footer class="bg-[#5F462B] text-white p-20">
+<!------ CONTAINER-1 ------>
+  <div class="flex justify-between">
+
+<!------ CONTAINER-1 / LEFT ------>
+        <div class="flex gap-20 w-full">
+          <div class="w-full">
+              <h1 class="text-4xl font-bold">Quick Links</h1>
+              <ul class="w-full">
+                <li class="py-2 my-2 text-2xl"><a class="hover:border-b-2 hover:border-b-white hover:text-white" routerLink="/">Home</a></li>
+                <li class="py-2 my-2 text-2xl"><a class="hover:border-b-2 hover:border-b-white hover:text-white" routerLink="/menu">Menu</a></li>
+                <li class="py-2 my-2 text-2xl"><a class="hover:border-b-2 hover:border-b-white hover:text-white" routerLink="/about">About Us and more</a></li>
+                <li class="py-2 my-2 text-2xl"><a class="hover:border-b-2 hover:border-b-white hover:text-white" routerLink="/gallery">Gallary</a></li>
+                <li class="py-2 my-2 text-2xl"><a class="hover:border-b-2 hover:border-b-white hover:text-white" routerLink="/addproduct">Add New Product</a></li>
+              </ul>
+          </div>
+
+          <div class="w-full">
+            <h4 class="text-4xl font-bold">For You</h4>
+            <ul class="footer-links">
+              <li class="py-2 my-2 text-2xl"><a class="hover:border-b-2 hover:border-b-white hover:text-white" routerLink="#">Terms of Use</a></li>
+              <li class="py-2 my-2 text-2xl"><a class="hover:border-b-2 hover:border-b-white hover:text-white" routerLink="#">Fequently Asked Questions</a></li>
+              <li class="py-2 my-2 text-2xl"><a class="hover:border-b-2 hover:border-b-white hover:text-white" routerLink="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="w-full">
+            <h5 class="text-4xl font-bold">Find Us</h5>
+            <ul class="footer-links">
+              <li class="py-2 my-2 text-2xl">123 Nowhere Street<br>Somewhere City<br>Jamaica W.I.</li>
+              <li class="py-2 my-2 text-2xl">Email: ambereats@domain.com</li>
+              <li class="py-2 my-2 text-2xl">Telephone: (876) 478 - 9423</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="col-2">
-          <h6>Accepted Cards</h6>
-          <ul class="footer-links">
-          <img alt="Visa" src="https://www.7krave.com/img/cards/visa.png" width="60px">
-          <img alt="Mastercard" src="https://www.7krave.com/img/cards/mastercard.png" data-src="/img/cards/mastercard.png" width="60px">
-          <img alt="Mastercard" src="https://www.7krave.com/img/cards/keycard.png" width="60px">
-          </ul>
-        </div>
-
-        <div class="col-3">
-          <h6>Quick Links</h6>
-          <ul class="footer-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/menu">Menu</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/addproduct">Add New Product</a></li>
-          </ul>
+<!------ CONTAINER-1 /RIGHT ------>
+        <div class="w-full flex justify-center items-center">
+          <div class="w-[30%]">
+            <h1 class="text-center text-3xl py-2 border-b-2 border-b-white">Accepted Cards</h1>
+            <div class="flex gap-5 justify-center">
+              <img alt="Visa" src="https://www.7krave.com/img/cards/visa.png" width="60px">
+              <img alt="Mastercard" src="https://www.7krave.com/img/cards/mastercard.png" data-src="/img/cards/mastercard.png" width="60px">
+              <img alt="Mastercard" src="https://www.7krave.com/img/cards/keycard.png" class="px-2 object-contain">
+            </div>
+          </div>
         </div>
       </div>
-      <hr>
-    </div>
-    <div class="container c-2">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
-       <a href="#">Amber Eateries</a>.
-          </p>
-        </div>
 
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <ul class="social-icons">
-            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>  
-          </ul>
+<!------ CONTAINER-2 ------>
+      <div class="flex justify-between mt-10 pt-10 px-20 border-t-2 border-t-white">
+        <p class="copyright-text">
+          Copyright &copy; 2022 All Rights Reserved by 
+          <a routerLink="#">Amber Eateries</a>.
+        </p>
+
+        <div class="flex gap-20 text-5xl">
+          <a class="facebook" routerLink="#"><i class="fa-brands fa-facebook"></i></a>
+          <a class="twitter" routerLink="#"><i class="fa fa-twitter"></i></a> 
+          <a class="insta" routerLink="#"><i class="fa-brands fa-instagram"></i></a> 
         </div>
       </div>
-    </div>
-</footer>
-    `,
-    styles: [`
+    </footer>
+  `,
+  // styles: [`
 
-    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600&display=swap');
-    .logo a {
-    text-decoration: none;
-    }
-
-    .logo span {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 28px;
-    color: #212529;
-    }
+  //   @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600&display=swap');
     
-    .container{
-      width: 78%;
-      margin: 0 auto;
-    }
+  //   *{
+  //     padding: 0;
+  //     margin: 0;
+  //     box-sizing: border-box;
+  //     text-decoration: none;
+  //     list-style: none;
+  //   }
 
-    .c-1 .row, .c-2 .row {
-      display: flex;
-    }
+  //   .site-footer{
+  //     width: 100%;
+  //     background-color: #5F462B;
+  //     color: white;
+  //   }
 
-    .c-2 .row {
-      justify-content: space-between;
-      align-items: center;
-    }
+  //   .site-footer .container-1{
+  //     width: 90%;
+  //     margin: auto;
+  //     display: flex;
+  //     justify-content: space-between;
+  //     padding: 2vw 5vw 6vw 5vw;
+  //     border-bottom: 3px solid white;
+  //   }
 
-    .col-1 {
-      flex: 1;
-    }
-    .col-2 {
-      width: 250px;
-    }
+  //   .container-1 .left-col{
+  //     width: 60%;
+  //     display: flex;
+  //     justify-content: space-between;
+  //   }
 
-    .col-2 img {
-      margin: 0.5rem;
-    }
-    .col-3 {
-      width: 200px;
-    }
-    .site-footer
-{
-  width: 100%;
-  background-color:#FFF;
-  border-top: 1px solid #e4e7eb;
-  padding:45px 0 20px;
-  font-size:15px;
-  line-height:24px;
-  color: rgb(105, 105, 105);;
-}
-.site-footer hr
-{
-  border-top-color: #e4e7eb;
-}
-.site-footer hr.small
-{
-  margin:20px 0
-}
-.site-footer h6
-{
-  color:#212529;
-  font-size:16px;
-  text-transform:uppercase;
-  margin-top:5px;
-  letter-spacing:2px
-}
-.site-footer a
-{
-  color:#737373;
-}
-.site-footer a:hover
-{
-  color:#00b5ad;
-  text-decoration:none;
-}
-.footer-links
-{
-  padding-left:0;
-  list-style:none
-}
-.footer-links li
-{
-  display:block
-}
-.footer-links a
-{
-  color:#737373
-}
-.footer-links a:active,.footer-links a:focus,.footer-links a:hover
-{
-  color:#00b5ad;
-  text-decoration:none;
-}
-.footer-links.inline li
-{
-  display:inline-block
-}
+  //   .left-col .footer-links-header{
+  //     font-size: 1.3vw;
+  //     font-weight: 500;
+  //     margin-bottom: 0.7vw
+  //   }
 
-.social-icons {
-  margin-right: 100px; 
-}
-.site-footer .social-icons
-{
-  text-align:right
-}
-.site-footer .social-icons a
-{
-  width:40px;
-  height:40px;
-  line-height:40px;
-  margin-left:6px;
-  margin-right:0;
-  border-radius:100%;
-  background-color:#FFF;
-}
-.copyright-text
-{
-  margin:0
-}
-@media (max-width:991px)
-{
-  .site-footer [class^=col-]
-  {
-    margin-bottom:30px
-  }
-}
-@media (max-width:767px)
-{
-  .site-footer
-  {
-    padding-bottom:0
-  }
-  .site-footer .copyright-text,.site-footer .social-icons
-  {
-    text-align:center
-  }
-}
-.social-icons
-{
-  padding-left:0;
-  margin-bottom:0;
-  list-style:none
-}
-.social-icons li
-{
-  display:inline-block;
-  margin-bottom:4px
-}
-.social-icons li.title
-{
-  margin-right:15px;
-  text-transform:uppercase;
-  color:#96a2b2;
-  font-weight:700;
-  font-size:13px
-}
-.social-icons a{
-  background-color:#FFF;
-  color: #212529;
-  font-size:16px;
-  display:inline-block;
-  line-height:44px;
-  width:44px;
-  height:44px;
-  text-align:center;
-  margin-right:8px;
-  border-radius:100%;
-  border: 1px solid #e4e7eb;
-  -webkit-transition:all .2s linear;
-  -o-transition:all .2s linear;
-  transition:all .2s linear
-}
-.social-icons a:active,.social-icons a:focus,.social-icons a:hover
-{
-  color:#fff;
-  background-color:#FFF;
-}
-.social-icons.size-sm a
-{
-  line-height:34px;
-  height:34px;
-  width:34px;
-  font-size:14px
-}
-.social-icons a.facebook:hover
-{
-  background-color:#3b5998
-}
-.social-icons a.twitter:hover
-{
-  background-color:#00aced
-}
-.social-icons a.linkedin:hover
-{
-  background-color:#007bb6
-}
-.social-icons a.dribbble:hover
-{
-  background-color:#ea4c89
-}
-@media (max-width:767px)
-{
-  .social-icons li.title
-  {
-    display:block;
-    margin-right:0;
-    font-weight:600
-  }
-}
+  //   .left-col .col ul li{
+  //     margin-bottom: 0.8vw;
+  //     font-size: 1vw;
+  //   }
+
+  //   .container-1 .right-col{
+  //     width: 40%;
+  //   }
+
+  //   .container-1 .right-col .card-opts{
+  //     width: 60%;
+  //     float: right;
+  //     margin-top: 5vw;
+  //     font-size: 1.5vw;
+  //   }
+
+  //   .card-opts .img-bx img{
+  //     width: 5vw;
+  //     /* height: 3vw */
+  //   }
     
-    `]
+  //  .card-opts .card-opts-header{
+  //     text-align: center;
+  //     font-size: 2vw;
+  //     line-height: 2;
+  //   }
+    
+  //  .card-opts .img-bx{
+  //     width: 100%;
+  //     margin: auto;
+  //     display: flex;
+  //     justify-content: space-between;
+  //     align-items: center;
+  //     border-top: 1px solid white
+  //   }
+
+  //   .site-footer .container-2{
+  //     width: 90%;
+  //     margin: auto;
+  //     display: flex;
+  //     justify-content: space-between;
+  //     align-items: center;
+  //     padding: 0.5vw 2vw;
+  //   }
+
+  //   .container-2 .copyright-text{
+  //     font-size: 1vw;
+  //   }
+
+  //   .container-2 .social-icons-contain a{
+  //     font-size: 2vw;
+  //     margin-right: 2vw;
+  //   }
+    
+  // `]
 })
 export class FooterComponent implements OnInit {
 
