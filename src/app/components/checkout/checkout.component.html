@@ -286,6 +286,11 @@
                                     Payment Type:
                                     {{ paymentTypeForm.controls["type"].value | titlecase }}
                                 </p>
+
+                                <p>
+                                    Amount Owed:
+                                    {{paymentAmount | currency}}
+                                </p>
                             </div>
 
                             <div>
