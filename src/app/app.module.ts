@@ -45,6 +45,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { SafePipe } from './safe.pipe';
 import { MapComponent } from './components/map/map.component';
 import { RecieptComponent } from './components/reciept/reciept.component';
+import { RatingComponent } from './rating/rating.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -69,6 +70,7 @@ import { RecieptComponent } from './components/reciept/reciept.component';
         SliderComponent,
         MapComponent,
         RecieptComponent,
+        RatingComponent,
     ],
 
     imports: [
