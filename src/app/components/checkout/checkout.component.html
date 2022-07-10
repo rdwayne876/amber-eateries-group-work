@@ -39,7 +39,7 @@
                                 </div>
                             </form>
 
-                            <form [formGroup]="accountTypeForm" *ngIf="userTypeForm.controls['type'].value === 'account'">
+                            <form [formGroup]="accountTypeForm">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Email Address</mat-label>
                                     <input
@@ -94,7 +94,7 @@
                                 </div>
                             </form>
 
-                            <form [formGroup]="addressForm" *ngIf="deliveryTypeForm.controls['type'].value === 'delivery'">
+                            <form [formGroup]="addressForm">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Street Address</mat-label>
                                     <input
@@ -180,7 +180,7 @@
                                 </div>
                             </form>
 
-                            <form [formGroup]="cardForm" *ngIf="paymentTypeForm.controls['type'].value === 'card'">
+                            <form [formGroup]="cardForm">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Card Holder Name</mat-label>
                                     <input
