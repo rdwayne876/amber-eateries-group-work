@@ -38,7 +38,7 @@ export class DataService {
     return this.httpClient.post(this.REST_API_SERVER, data);
   }
 
-  public editproduct(id: number, data: Product): Observable<void> {
-    return this.httpClient.put<void>(`${this.REST_API_SERVER}/${id}`, data);
+  public editproduct(id: number, data: any): Observable<void> {
+    return this.httpClient.patch<void>(`${this.REST_API_SERVER}/${id}`, data);
   }
 }

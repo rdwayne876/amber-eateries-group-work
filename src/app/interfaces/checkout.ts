@@ -30,6 +30,7 @@ export interface Transaction {
     order_id: number;
     payment_method: PaymentMethod;
     payment_amount: number;
+    date: string;
     delivery: boolean;
     address: Address;
 }
