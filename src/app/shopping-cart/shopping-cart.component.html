@@ -115,7 +115,9 @@
                     >
                         <div>Subtotal</div>
                         <div>
-                            {{ grandTotal | currency }}
+                            {{
+                                grandTotal - (grandTotal / 100) * 1.5 | currency
+                            }}
                         </div>
                     </div>
                     <div

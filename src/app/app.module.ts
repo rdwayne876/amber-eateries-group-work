@@ -42,6 +42,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 
 import { SafePipe } from './safe.pipe';
+import { SideOrderModalComponent } from './side-order-modal/side-order-modal.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -64,6 +65,7 @@ import { SafePipe } from './safe.pipe';
         HeroComponent,
         GalleryComponent,
         SliderComponent,
+        SideOrderModalComponent,
     ],
 
     imports: [

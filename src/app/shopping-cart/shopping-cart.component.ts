@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -6,20 +6,14 @@ import { CartService } from '../cart.service';
     templateUrl: './shopping-cart.component.html',
     styleUrls: ['./shopping-cart.component.css'],
 })
-export class ShoppingCartComponent implements OnInit, AfterViewInit {
+export class ShoppingCartComponent implements OnInit {
     constructor(private cartService: CartService) {}
     cart!: any[];
     grandTotal: number = 0;
 
     ngOnInit(): void {
         this.cart = this.cartService.getCart();
-    }
-
-    ngAfterViewInit(): void {
-        setTimeout(
-            () => (this.grandTotal = this.cartService.getCartTotal(this.cart)),
-            0
-        );
+        this.grandTotal = this.cartService.getCartTotal(this.cart);
     }
 
     amountChanged(event: any, cItemID: number): void {

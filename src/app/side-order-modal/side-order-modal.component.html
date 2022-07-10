@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Would you like a side?</h2>
+<mat-dialog-content class="mat-typography">
+    <h3>Develop across all platforms</h3>
+    <p>
+        Learn one way to build applications with Angular and reuse your code and
+        abilities to build apps for any deployment target. For web, mobile web,
+        native mobile and native desktop.
+    </p>
+
+    <div>
+        <div class="meal-card-container" *ngFor="let product of products">
+            <div class="meal-card">
+                <div class="meal-details-section">
+                    <div class="meal-details">
+                        <div class="meal-title">
+                            <span>{{ product.name }}</span>
+                        </div>
+                        <div class="meal-desc">
+                            <span>{{
+                                product.description | slice: 0:255
+                            }}</span>
+                        </div>
+
+                        <div class="meal-info">
+                            <div class="meal-price">
+                                <span class="m-price">{{
+                                    product.price | currency
+                                }}</span>
+
+                                <span class="qty"
+                                    >/{{ product.quantity | number }}</span
+                                >
+                            </div>
+
+                            <div
+                                class="control-section bg-blue-700 text-white px-10 py-6"
+                            >
+                                <button
+                                    class="atc-btn"
+                                    (click)="addSide(product.id)"
+                                >
+                                    <span>Add To Cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
