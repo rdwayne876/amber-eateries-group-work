@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
-import { Product } from './product';
+
 
 @Injectable({
     providedIn: 'root',
 })
 export class CartService {
     constructor(private api: DataService) {}
+
     public SALES_TAX = 1.5;
+
 
     /**
      * Converts the cart in `localStorage` to an array
      * @returns The `cart` item from local storage as an array
      */
-    getCart(): Product[] {
+    getCart(): any[] {
+
         return JSON.parse(localStorage.getItem('cart') as string);
     }
 
@@ -32,31 +35,31 @@ export class CartService {
         return this.getCart().length ?? 0;
     }
 
-    getCartTotal(cart?: Product[]): number {
+    getCartTotal(cart: any[]): number {
         let subTotals = 0;
-        let _cart: Product[] = cart ?? this.getCart();
 
         // Calculates subtotal for each item in cart
-        _cart.forEach((product) => {
-            subTotals +=
-                parseInt(product.price.toString()) *
-                parseInt((product.amount as number).toString());
+        cart.forEach((product) => {
+            subTotals += parseInt(product.price) * parseInt(product.amount);
         });
 
         // Sets the cart total to the calculated value
-        return subTotals * this.SALES_TAX;
+        return subTotals;
+
     }
 
     /**
      * Inserts and item to the cart array
      * @param itemId An object that represents a product/cart item
      */
+
     addCartItem(itemId: number): void {
         // Get all the products
         this.api.sendGetRequest().subscribe((resp: any[]) => {
             let products = resp;
 
-            let currentCart: Product[] = [];
+            let currentCart: any[] = [];
+
 
             // If `cart` is found in localStorage we store it in `currentCart`
             if (!!localStorage.getItem('cart')) {
@@ -65,7 +68,8 @@ export class CartService {
 
             // Search for duplicate cart item
             let duplicateCartItem: any = currentCart.find(
-                (cartItem: Product) => cartItem.id == itemId
+                (cartItem: any) => cartItem.id == itemId
+
             );
 
             // If duplicate cart item is found we increment the amount instead of inserting a new product to the cart
@@ -74,21 +78,24 @@ export class CartService {
                 duplicateCartItem.amount = amt += 1;
             } else {
                 // Finding the product being added to the cart
-                let product: Product = products.find(
-                    (product: Product) => product.id == itemId
+                let product: any = products.find(
+                    (product: any) => product.id == itemId
+
                 );
 
                 // Add the product found to the cart with `amount` set to `1` if duplicate not found
                 // This needs to be updated to accomodate the side orders
                 currentCart.push({
-                    id: parseInt(product.id.toString()),
+                    id: parseInt(product.id),
+
                     name: product.name,
                     description: product.description,
                     category: product.category,
                     imageUrl: product.imageUrl,
-                    price: parseFloat(product.price.toString()),
-                    quantity: parseInt(product.quantity.toString()) - 1,
-                    ratings: [],
+                    price: parseFloat(product.price),
+                    quantity: parseInt(product.quantity) - 1,
+                    rating: [],
+
                     amount: 1,
                 });
             }
@@ -108,7 +115,8 @@ export class CartService {
     removeCartItem(itemId: number): any[] {
         let cart = this.getCart();
         const productId = cart.findIndex(
-            (product: Product) => product.id == itemId
+            (product: any) => product.id == itemId
+
         );
 
         cart.splice(productId, 1);
@@ -121,7 +129,8 @@ export class CartService {
      * Updates the cart in the `localStorage`
      * @param cart The array of objects you would like to be the new cartin storage
      */
-    updateCart(cart: Product[]): void {
+    updateCart(cart: any[]): void {
+
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 }

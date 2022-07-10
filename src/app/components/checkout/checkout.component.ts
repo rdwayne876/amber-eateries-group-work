@@ -28,7 +28,7 @@ export class CheckoutComponent implements OnInit {
     user_id!: number;
     orderTotal = 5000;
     rateLimitRetry: any;
-    
+
     //Form Groups
     userTypeForm = new FormGroup({
         type: new FormControl('', [Validators.required]),

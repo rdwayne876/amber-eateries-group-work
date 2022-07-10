@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { MatPaginator } from '@angular/material/paginator';
+
 
 import { Product } from '../product';
 import { CartService } from '../cart.service';
@@ -17,6 +19,7 @@ export class HomeComponent implements OnInit {
     products: Product[] = [];
     currentPage = 0;
     pageLimit = 9;
+    
     cart: any[] = [];
     tabChangeEvent?: MatTabChangeEvent;
 
@@ -37,6 +40,7 @@ export class HomeComponent implements OnInit {
         this.currentPage = event.pageIndex;
         this.pageLimit = event.pageSize;
     }
+
 
     tabChangeEventHandler(event: MatTabChangeEvent): void {
         this.tabChangeEvent = event;

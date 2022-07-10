@@ -20,7 +20,8 @@
                 </thead>
 
                 <tbody>
-                    <tr *ngFor="let cItem of cart" class="border-b-2">
+                    <tr *ngFor="let cItem of cart" class="relative border-b-2">
+
                         <td class="flex my-4 gap-10">
                             <div class="w-96">
                                 <img
@@ -42,35 +43,20 @@
                                 </div>
 
                                 <div class="mt-4 sm:mt-0 sm:pr-9">
-                                    <label for="quantity" class="ml-3"
-                                        >Quantity</label
-                                    ><br />
-                                    <input
-                                        type="number"
-                                        min="1"
-                                        max="10"
-                                        id="quantity"
-                                        name="quantity"
-                                        class="w-20 text-center rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                        value="{{ cItem.amount }}"
-                                        (change)="
-                                            amountChanged($event, cItem.id)
-                                        "
-                                    />
+                                    <button
+                                        type="button"
+                                        class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
+                                        (click)="deleteProduct(cItem.id)"
+                                    >Remove</button>
+                                    <div class="absolute top-0 right-0 m-4">
 
-                                    <div class="absolute top-0 right-0">
                                         <button
                                             type="button"
                                             class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
                                             (click)="deleteProduct(cItem.id)"
                                         >
-                                            <svg>
-                                                <path
-                                                    fill-rule="evenodd"
-                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                    clip-rule="evenodd"
-                                                />
-                                            </svg>
+                                            <i class="fa-solid fa-x"></i>
+
                                         </button>
                                     </div>
                                 </div>
@@ -126,6 +112,7 @@
                     >
                         <div>Subtotal</div>
                         <div>
+
                             {{
                                 grandTotal - (grandTotal / 100) * 1.5 | currency
                             }}
@@ -191,3 +178,4 @@
         </div>
     </div>
 </section>
+

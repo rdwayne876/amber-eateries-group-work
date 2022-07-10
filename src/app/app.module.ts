@@ -41,13 +41,12 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatBadgeModule} from '@angular/material/badge';
-
 import { SafePipe } from './safe.pipe';
-import { SideOrderModalComponent } from './side-order-modal/side-order-modal.component';
-
 import { MapComponent } from './components/map/map.component';
 import { RecieptComponent } from './components/reciept/reciept.component';
+import { SideOrderModalComponent } from './side-order-modal/side-order-modal.component';
 import { RatingComponent } from './rating/rating.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -71,10 +70,10 @@ import { RatingComponent } from './rating/rating.component';
         GalleryComponent,
         SliderComponent,
         SideOrderModalComponent,
-
         MapComponent,
         RecieptComponent,
         RatingComponent,
+
     ],
 
     imports: [
