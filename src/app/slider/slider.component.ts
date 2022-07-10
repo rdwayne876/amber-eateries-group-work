@@ -18,7 +18,7 @@ export class SliderComponent implements OnInit {
     @Input() indicators = true;
     @Input() controls = true;
     @Input() autoSlide = false;
-    @Input() slideInterval = 3000; //default to 3 seconds
+    @Input() slideInterval = 3500; //default to 5 seconds
 
     selectedIndex = 0;
 

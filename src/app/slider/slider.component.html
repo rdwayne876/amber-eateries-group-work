@@ -8,10 +8,13 @@
             [src]="image.imageSrc"
             [alt]="image.imageAlt"
             [ngClass]="{ 'image-active': selectedIndex === i }"
-            class="fade object-cover "
+            class="fade object-cover"
         />
 
-        <div *ngIf="indicators" class="slider-dot-container">
+        <div
+            *ngIf="indicators"
+            class="slider-dot-container flex justify-center"
+        >
             <span
                 *ngFor="let dot of images; let i = index"
                 class="dot"

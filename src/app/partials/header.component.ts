@@ -6,11 +6,11 @@ import { CartService } from '../cart.service';
     template: `
         <header>
             <div
-                class="header shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048]"
+                class="header transition-all shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048]"
                 id="main-nav"
             >
                 <div class="secondary-header p-2 ">
-                    <div class="main-container">
+                    <div class="main-container ">
                         <div class="s-h-inner">
                             <div class="header-location">
                                 <svg
@@ -41,32 +41,29 @@ import { CartService } from '../cart.service';
                     </div>
                 </div>
                 <mat-toolbar>
-                    <div class="main-container">
+                    <div class="main-container p-10">
                         <div class="m-h-inner flex flex-wrap ">
                             <div class="logo">
-                                <a href="/"
-                                    ><span style="color:white;"
-                                        >Amber Eateries</span
-                                    ></a
-                                >
+                                <a href="/"><span>Amber Eateries</span></a>
                             </div>
-                            <div class="navigation ">
+                            <div class="navigation  ">
                                 <button mat-button routerLink="/">Home</button>
                                 <button mat-button routerLink="/menu">
                                     Menus
                                 </button>
-                                <button mat-button routerLink="/cart">
-                                    Cart
+
+                                <button mat-button routerLink="/gallery">
+                                    Gallery
                                 </button>
                                 <button mat-button routerLink="/about">
                                     About
                                 </button>
-                                <button mat-button routerLink="/gallery">
-                                    Gallery
-                                </button>
+
                                 <button mat-button routerLink="/cart">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <div style="font-size: 10px;" class="badge bg-danger">{{cartService.getCartCount()}}</div>
+                                    <i class="fa-solid fa-cart-shopping "></i>
+                                    <span class="badge bg-danger">
+                                        {{ cartService.getCartCount() }}
+                                    </span>
                                 </button>
                             </div>
                         </div>
@@ -82,7 +79,7 @@ import { CartService } from '../cart.service';
             .header {
                 width: 100%;
                 position: fixed;
-                z-index: 1;
+                z-index: 999;
                 top: 0;
             }
             .main-container {
@@ -145,7 +142,7 @@ import { CartService } from '../cart.service';
             .logo span {
                 font-family: 'Permanent Marker', cursive;
                 font-size: 28px;
-                color: #212529;
+                color: white;
             }
 
             .navigation ::ng-deep .mat-button {
@@ -160,11 +157,32 @@ import { CartService } from '../cart.service';
             ::ng-deep .mat-button-ripple.mat-ripple {
                 display: none !important;
             }
+
+            .sticky-nav {
+                background: white !important;
+                color: black !important;
+            }
+
+            .sticky-nav .logo span,
+            .sticky-nav .navigation ::ng-deep .mat-button {
+                color: black;
+            }
         `,
     ],
 })
 export class HeaderComponent implements OnInit {
     constructor(public cartService: CartService) {}
 
-    ngOnInit(): void {}
+    ngOnInit() {
+        window.onscroll = () => {
+            let navMenu = document.querySelector('.header');
+            let body = document.querySelector('body') as HTMLBodyElement;
+            if (window.pageYOffset > 600) {
+                navMenu?.classList.add('sticky-nav');
+            } else {
+                navMenu?.classList.remove('sticky-nav');
+                body.style.margin = '0';
+            }
+        };
+    }
 }
