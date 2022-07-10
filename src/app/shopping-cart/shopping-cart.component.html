@@ -21,6 +21,7 @@
 
                 <tbody>
                     <tr *ngFor="let cItem of cart" class="relative border-b-2">
+
                         <td class="flex my-4 gap-10">
                             <div class="w-96">
                                 <img
@@ -48,12 +49,14 @@
                                         (click)="deleteProduct(cItem.id)"
                                     >Remove</button>
                                     <div class="absolute top-0 right-0 m-4">
+
                                         <button
                                             type="button"
                                             class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
                                             (click)="deleteProduct(cItem.id)"
                                         >
                                             <i class="fa-solid fa-x"></i>
+
                                         </button>
                                     </div>
                                 </div>
@@ -109,7 +112,10 @@
                     >
                         <div>Subtotal</div>
                         <div>
-                            {{ grandTotal | currency }}
+
+                            {{
+                                grandTotal - (grandTotal / 100) * 1.5 | currency
+                            }}
                         </div>
                     </div>
                     <div
@@ -172,3 +178,4 @@
         </div>
     </div>
 </section>
+

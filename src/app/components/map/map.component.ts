@@ -17,6 +17,7 @@ export class MapComponent implements AfterViewInit {
     private marker: any;
     rateLimiter = false;
 
+
     // @Input('appMap') set refresh(value: boolean) {
     //   this.setMapLocation();
     //   // this.refresh = value;
@@ -26,6 +27,7 @@ export class MapComponent implements AfterViewInit {
         private mapService: MapService,
         public checkoutService: CheckoutService
     ) {}
+
 
     initMap(): void {
         this.map = L.map('map', {
@@ -60,10 +62,10 @@ export class MapComponent implements AfterViewInit {
             // this.lon = data.data[0].longitude ?? -76.87128;
             this.lat = data[0].lat ?? 17.96795;
             this.lon = data[0].lon ?? -76.87128;
-
             this.addMarker();
         });
         return true;
+
     }
 
     private addMarker(): void {

@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="list-inline rating-list" *ngFor="let star of stars; let i= index">
+        <li 
+         (click)="countStar(star)"
+         [ngClass]="{selected: star <= selectedValue}"
+         (mouseover)="addClass(star)"
+         (mouseleave)="removeClass()">
+         <mat-icon>star</mat-icon>
+        </li>
+    </div>
+</div>
