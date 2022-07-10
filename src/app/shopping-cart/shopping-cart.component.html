@@ -40,28 +40,39 @@
                                         {{ cItem.description }}
                                     </p>
                                 </div>
-                                <div>
-                                    <button
-                                        class="underline font-medium"
-                                        type="button"
-                                        class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
-                                        (click)="deleteProduct(cItem.id)"
-                                    >
-                                        Remove
-                                        <svg
-                                            class="h-5 w-5"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                            aria-hidden="true"
+
+                                <div class="mt-4 sm:mt-0 sm:pr-9">
+                                    <label for="quantity" class="ml-3"
+                                        >Quantity</label
+                                    ><br />
+                                    <input
+                                        type="number"
+                                        min="1"
+                                        max="10"
+                                        id="quantity"
+                                        name="quantity"
+                                        class="w-20 text-center rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                        value="{{ cItem.amount }}"
+                                        (change)="
+                                            amountChanged($event, cItem.id)
+                                        "
+                                    />
+
+                                    <div class="absolute top-0 right-0">
+                                        <button
+                                            type="button"
+                                            class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
+                                            (click)="deleteProduct(cItem.id)"
                                         >
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                clip-rule="evenodd"
-                                            />
-                                        </svg>
-                                    </button>
+                                            <svg>
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd"
+                                                />
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </td>
@@ -134,6 +145,7 @@
                     </div>
 
                     <button
+                        routerLink="/checkout"
                         class="flex justify-center mx-auto py-2 uppercase bg-[#EF4F43] text-white text-center w-64"
                     >
                         check out
