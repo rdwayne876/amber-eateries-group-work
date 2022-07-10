@@ -12,7 +12,6 @@ import { MapService } from '../../map.service';
 })
 export class MapComponent implements AfterViewInit {
     private map: any;
-    private data: any = [];
     lat: any;
     lon: any;
     private marker: any;
@@ -57,11 +56,10 @@ export class MapComponent implements AfterViewInit {
             return false;
         }
         this.mapService.getMap().subscribe((data: any) => {
-            this.data = data;
-            this.lat = this.data.data[0].latitude ?? 17.96795;
-            this.lon = this.data.data[0].longitude ?? -76.87128;
-            // this.lat = this.data[0].lat ?? 17.96795;
-            // this.lon = this.data[0].lon ?? -76.87128;
+            this.lat = data.data[0].latitude ?? 17.96795;
+            this.lon = data.data[0].longitude ?? -76.87128;
+            // this.lat = data[0].lat ?? 17.96795;
+            // this.lon = data[0].lon ?? -76.87128;
 
             this.addMarker();
         });
