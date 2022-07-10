@@ -1,13 +1,43 @@
 <h2 mat-dialog-title>Would you like a side?</h2>
 <mat-dialog-content class="mat-typography">
-    <h3>Develop across all platforms</h3>
-    <p>
-        Learn one way to build applications with Angular and reuse your code and
-        abilities to build apps for any deployment target. For web, mobile web,
-        native mobile and native desktop.
-    </p>
+    <div class="grid grid-cols-3 gap-10 pt-10 pb-32 px-10">
+        <div
+            class="max-w-sm bg-white rounded-lg shadow-md"
+            *ngFor="let product of products"
+        >
+            <a href="#">
+                <div class="w-[25rem] h-[17rem]">
+                    <img
+                        class="p-8 rounded-t-lg w-full h-full object-cover"
+                        [src]="product.imageUrl"
+                        alt="product image"
+                    />
+                </div>
+            </a>
+            <div class="px-5 pb-5">
+                <a href="#">
+                    <h5
+                        class="text-xl font-semibold tracking-tight text-gray-900"
+                    >
+                        {{ product.name | slice: 0:50 }}
+                    </h5>
+                </a>
 
-    <div>
+                <div class="flex justify-between items-center">
+                    <span class="text-3xl font-bold text-gray-900">
+                        {{ product.price | currency }}
+                    </span>
+                    <button
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center :bg-blue-700 :ring-blue-800"
+                        (click)="addSide(product.id)"
+                    >
+                        Add Side to cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div>
         <div class="meal-card-container" *ngFor="let product of products">
             <div class="meal-card">
                 <div class="meal-details-section">
@@ -47,8 +77,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button color="warn" mat-dialog-close>Cancel</button>
+    <button mat-button mat-dialog-close color="primary">Done</button>
 </mat-dialog-actions>
