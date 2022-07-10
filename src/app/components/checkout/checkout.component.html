@@ -38,7 +38,6 @@
                                     <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
                                 </div>
                             </form>
-
                             <form [formGroup]="accountTypeForm">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Email Address</mat-label>
@@ -314,28 +313,47 @@
                             </div>
                             <div class="summary-meal-details-section">
                                 <div class="summary-meal-details">
-                                    <div class="summary-meal-title">
-                                        <span>{{ data.name }}</span>
+                                    <div class="details-header">
+                                        <div class="summary-meal-title">
+                                            <span>{{ data.name }}</span>
+                                        </div>
+                                        <div class="summary-meal-quantity">
+                                            <div class="qty-control">
+                                                <button (click)="onMinus(data.id)">&minus;</button>
+                                                <span>{{ data.amount }}</span>
+                                                <button (click)="onAdd(data.id)">&plus;</button>
+                                            </div>
+                                        </div>
                                     </div>
+
                                     <div class="summary-meal-price">
                                         <span>{{ data.price | currency }}</span>
                                     </div>
                                 </div>
-                                <div class="summary-meal-quantity">
-                                    <div class="qty-control">
-                                        <button (click)="onMinus(data.id)">&minus;</button>
-                                        <span>{{ data.amount }}</span>
-                                        <button (click)="onAdd(data.id)">&plus;</button>
-                                    </div>
-                                </div>
+                            </div>
+                        </div>
+                        <div class="total-section">
+                            <div class="rrow">
+                                <span>Sub Total</span>
+                                <span>$300</span>
+                            </div>
+                            <div class="rrow">
+                                <span>Tax</span>
+                                <span>$300</span>
+                            </div>
+                            <div class="rrow">
+                                <span>Shipping</span>
+                                <span>Free</span>
+                            </div>
+                            <div class="order-total-header">
+                                <span>Total Amount</span>
+                                <span>{{paymentAmount | currency}}</span>
                             </div>
                         </div>
                     </div>
                     <div class="order-total-section">
-                        <div class="order-total-header">
-                            <span>Total Amount</span>
-                            <span>{{paymentAmount | currency}}</span>
-                        </div>
+
+
                     </div>
             </div>
 
