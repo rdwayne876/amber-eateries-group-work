@@ -7,6 +7,7 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <div class="w-[85%] m-auto">
         <div class="grid grid-cols-[6fr_4fr] mx-32 py-24 gap-10">
             <table class="w-full">
@@ -30,6 +31,24 @@
                                 />
                             </div>
                             <div class="w-[31rem] space-y-10 pr-32">
+=======
+            <tbody>
+                <tr *ngFor="let cItem of cart" class="border-b-2">
+                    <td class="flex my-4 gap-10">
+                        <div class="w-96">
+                            <img
+                                class="object-cover w-full h-[180px]"
+                                src="{{ cItem.imageUrl }}"
+                                alt=""
+                            />
+                        </div>
+                        <div
+                            class="ml-4 flex-1 flex flex-col justify-between sm:ml-6"
+                        >
+                            <div
+                                class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0"
+                            >
+>>>>>>> f05817cfb54d32b097cb60f21ae31eadead3b5b6
                                 <div>
                                     <h3 class="text-3xl font-semibold">
                                         {{ cItem.name }}
@@ -74,6 +93,14 @@
                                         </button>
                                     </div>
                                 </div>
+<<<<<<< HEAD
+=======
+                            </div>
+                            <div>
+                                <p class="text-lg prose">
+                                    {{ cItem.description }}
+                                </p>
+>>>>>>> f05817cfb54d32b097cb60f21ae31eadead3b5b6
                             </div>
                         </td>
 

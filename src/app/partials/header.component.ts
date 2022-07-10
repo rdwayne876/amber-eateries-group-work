@@ -47,9 +47,15 @@ import { CartService } from '../cart.service';
 
             .header {
                 width: 100%;
+<<<<<<< HEAD
                 position: fixed;
                 z-index: 999;
                 top: 0;
+=======
+                height: auto;
+                /* position: fixed; */
+                z-index: 999;
+>>>>>>> f05817cfb54d32b097cb60f21ae31eadead3b5b6
             }
             .main-container {
                 width: 78%;

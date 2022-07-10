@@ -4,7 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f05817cfb54d32b097cb60f21ae31eadead3b5b6
 html,
 body {
     height: 100%;
@@ -12,7 +15,7 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #EAEAE6;
+    background-color: #eaeae6;
 }
 
 * {
