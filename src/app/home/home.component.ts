@@ -43,26 +43,29 @@ export class HomeComponent implements OnInit {
     }
 
     addProduct(id: number): void {
-        // DO NOT DELETE - Roshane
-        // TODO Create feature to limit sides modal popup on selected tabs
-        // const event = this.tabChangeEvent;
-
-        // if (
-        //     event &&
-        //     event.tab.isActive &&
-        //     // If starters is the original tab this check is valid
-        //     event.tab.origin == -1 &&
-        //     // Hard coded to match the starter tab
-        //     event.tab.textLabel.match(/starters/i)
-        // ) {
-        //     this.dialog.open(SideOrderModalComponent);
-        // }
-
-        // if (!event) {
-        //     this.dialog.open(SideOrderModalComponent);
-        // }
+        this.snackBar.open('Product added to cart', undefined, {
+            duration: 2000,
+        });
 
         this.cartService.addCartItem(id);
-        this.snackBar.open('Product added to cart', 'ok', { duration: 2000 });
+
+        // DO NOT DELETE - Roshane
+        // TODO Create feature to limit sides modal popup on selected tabs
+        const event = this.tabChangeEvent;
+
+        if (
+            event &&
+            event.tab.isActive &&
+            // If starters is the original tab this check is valid
+            event.tab.origin == -1 &&
+            // Hard coded to match the starter tab
+            event.tab.textLabel.match(/starters/i)
+        ) {
+            this.dialog.open(SideOrderModalComponent);
+        }
+
+        if (!event) {
+            this.dialog.open(SideOrderModalComponent);
+        }
     }
 }
