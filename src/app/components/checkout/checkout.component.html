@@ -39,8 +39,8 @@
                                 </div>
                             </form>
 
-                            <form [formGroup]="accountTypeForm" *ngIf="userTypeForm.controls['type'].value === 'account'">
-                                <mat-form-field appearance="outline">
+                            <form [formGroup]="accountTypeForm">
+                                <mat-form-field appearance="fill">
                                     <mat-label>Email Address</mat-label>
                                     <input
                                         type="email"
@@ -93,9 +93,8 @@
                                 <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
                                 </div>
                             </form>
-
-                            <form [formGroup]="addressForm" *ngIf="deliveryTypeForm.controls['type'].value === 'delivery'">
-                                <mat-form-field appearance="outline">
+                            <form [formGroup]="addressForm">
+                                <mat-form-field appearance="fill">
                                     <mat-label>Street Address</mat-label>
                                     <input
                                         matInput
@@ -179,9 +178,8 @@
                                     <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
                                 </div>
                             </form>
-
-                            <form [formGroup]="cardForm" *ngIf="paymentTypeForm.controls['type'].value === 'card'">
-                                <mat-form-field appearance="outline">
+                            <form [formGroup]="cardForm">
+                                <mat-form-field appearance="fill">
                                     <mat-label>Card Holder Name</mat-label>
                                     <input
                                         matInput
