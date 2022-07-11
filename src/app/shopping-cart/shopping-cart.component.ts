@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 
@@ -7,7 +6,6 @@ import { CartService } from '../cart.service';
     templateUrl: './shopping-cart.component.html',
     styleUrls: ['./shopping-cart.component.css'],
 })
-
 export class ShoppingCartComponent implements OnInit {
     constructor(private cartService: CartService) {}
     cart!: any[];
@@ -15,8 +13,7 @@ export class ShoppingCartComponent implements OnInit {
 
     ngOnInit(): void {
         this.cart = this.cartService.getCart();
-
-        this.grandTotal = this.cartService.getCartTotal(this.cart);
+        this.grandTotal = this.cartService.getCartTotal();
     }
 
     deleteProduct(product_id: number) {
@@ -25,7 +22,7 @@ export class ShoppingCartComponent implements OnInit {
         );
 
         this.cart = this.cartService.getCart() ?? [];
-        this.grandTotal = this.cartService.getCartTotal(this.cart);
+        this.grandTotal = this.cartService.getCartTotal();
     }
 
     onQuantity(id: number, value: number) {
@@ -34,12 +31,20 @@ export class ShoppingCartComponent implements OnInit {
         if (item.amount <= 0) {
             item.amount -= value;
             return;
-        } else if (item.amount > 10) {
-            item.amount--;
+        } else {
+            this.cartService.updateCart(this.cart);
+        }
+        this.grandTotal = this.cartService.getCartTotal();
+    }
+
+    onAdd(id: number) {
+        this.cart.find((item) => item.id == id).amount++;
+        if (this.cart.find((item) => item.id == id).amount > 10) {
+            this.cart.find((item) => item.id == id).amount--;
             return;
         } else {
             this.cartService.updateCart(this.cart);
         }
-        this.grandTotal = this.cartService.getCartTotal(this.cart);
+        this.grandTotal = this.cartService.getCartTotal();
     }
 }
