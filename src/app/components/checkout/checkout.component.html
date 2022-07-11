@@ -370,11 +370,11 @@
                         <div class="total-section">
                             <div class="rrow">
                                 <span>Sub Total</span>
-                                <span>$300</span>
+                                <span>{{paymentAmount - (paymentAmount / 100) * 1.5 | currency}}</span>
                             </div>
                             <div class="rrow">
                                 <span>Tax</span>
-                                <span>$300</span>
+                                <span>{{ (paymentAmount / 100) * 1.5 | currency }}</span>
                             </div>
                             <div class="rrow">
                                 <span>Shipping</span>
