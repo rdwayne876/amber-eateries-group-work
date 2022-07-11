@@ -21,9 +21,9 @@ import { CartService } from '../cart.service';
                 <mat-toolbar>
                     <div class="main-container p-10">
                         <div class="m-h-inner flex flex-wrap ">
-                            <div class="logo">
+                            <div class="logo relative">
                                 <a href="/"
-                                    ><span class="text-[50px] "
+                                    ><span class="text-[50px] absolute"
                                         >Amber Eats</span
                                     ></a
                                 >
@@ -121,6 +121,10 @@ import { CartService } from '../cart.service';
                 padding-right: 8px !important;
             }
 
+            .logo {
+                width: fit-content;
+            }
+
             .logo a {
                 text-decoration: none;
             }
@@ -128,6 +132,8 @@ import { CartService } from '../cart.service';
             .logo span {
                 font-family: 'Sacramento', cursive;
                 color: white;
+                bottom: 0;
+                transform: translate(0, 65%);
             }
             .navigation button {
                 font-size: 16px;
