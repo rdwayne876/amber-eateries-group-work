@@ -79,7 +79,10 @@ export class HomeComponent implements OnInit {
         if (this.tabChangeEvent == undefined) {
             // Use here to select the products category to upsell for the first tab
             this.dialog.open(SideOrderModalComponent, {
-                data: Category.ENTREE,
+                data: Category.SIDE,
+                panelClass: 'modal',
+                height:'fit-content',
+                width:'60%'
             });
         }
 
@@ -92,6 +95,10 @@ export class HomeComponent implements OnInit {
                 case 'appetizers':
                     this.dialog.open(SideOrderModalComponent, {
                         data: Category.ENTREE,
+                        panelClass: 'modal',
+                        height:'fit-content',
+                        width:'60%',
+
                     });
                     break;
                 case 'entrees':
@@ -102,6 +109,9 @@ export class HomeComponent implements OnInit {
                 case 'desserts':
                     this.dialog.open(SideOrderModalComponent, {
                         data: Category.BEVERAGE,
+                        panelClass: 'modal',
+                        height:'fit-content',
+                        width:'60%',
                     });
                     break;
                 default:
