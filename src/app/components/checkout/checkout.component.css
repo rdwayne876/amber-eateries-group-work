@@ -21,7 +21,7 @@
 
 .col-2 {
     padding-left: 1rem;
-    width: 330px!important;
+    width: 275px!important;
 }
 ::ng-deep .mat-step-header .mat-step-icon-selected, ::ng-deep .mat-horizontal-stepper-header .mat-step-icon {
     background-color: #fd935c;
