@@ -154,12 +154,11 @@ import { CartService } from '../cart.service';
 
             .sticky-nav {
                 background: white !important;
-                color: black !important;
             }
 
             .sticky-nav .logo span,
             .sticky-nav .navigation ::ng-deep .mat-button {
-                color: black;
+                color: #463420;
             }
             .header-change {
                 background: #5f462b;
