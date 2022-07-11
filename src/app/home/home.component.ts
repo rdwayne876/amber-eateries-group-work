@@ -89,17 +89,17 @@ export class HomeComponent implements OnInit {
                 // Use above where `this.tabChangeEvent == undefined` is for the first tab.
                 case 'sides':
                 case 'beverages':
-                case 'appetizer':
+                case 'appetizers':
                     this.dialog.open(SideOrderModalComponent, {
                         data: Category.ENTREE,
                     });
                     break;
-                case 'entree':
+                case 'entrees':
                     this.dialog.open(SideOrderModalComponent, {
                         data: Category.SIDE,
                     });
                     break;
-                case 'dessert':
+                case 'desserts':
                     this.dialog.open(SideOrderModalComponent, {
                         data: Category.BEVERAGE,
                     });
