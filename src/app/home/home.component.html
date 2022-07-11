@@ -192,12 +192,9 @@
                                             {{product.name | lowercase}}
                                         </div>
 
-                                                <div class="meal-info">
-                                                    <div class="meal-price">
-                                                        <span class="m-price">{{
-                                                            product.price
-                                                                | currency
-                                                        }}</span>
+                                        <p class="px-8 text-[#5F462B]">
+                                            {{product.description | slice: 0:130}}<span *ngIf="product.description.length > 130">...</span>
+                                        </p>
 
                                         
                                         <div class="mt-auto">
@@ -226,14 +223,14 @@
                             </div>
 
                             <mat-paginator
-                                [length]="desserts.length"
-                                [pageSize]="desserts_pageLimit"
+                                [length]="entrees.length"
+                                [pageSize]="entrees_pageLimit"
                                 [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event, 'desserts')"
+                                (page)="changePage($event, 'entrees')"
                                 aria-label="Select page"
                             >
                                 <mat-spinner
-                                    *ngIf="desserts.length === 0"
+                                    *ngIf="entrees.length === 0"
                                 ></mat-spinner>
                             </mat-paginator>
                         </mat-tab>
