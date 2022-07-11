@@ -5,7 +5,7 @@
     <div
         class="relative w-full min-h-[691px] flex justify-center items-center overflow-hidden"
     >
-        <div class="absolute w-full h-full bottom-0">
+        <div class="absolute w-full h-full top-0 bottom-0 left-0">
             <app-slider
                 [images]="images"
                 [autoSlide]="true"
@@ -28,9 +28,9 @@
 <main class="p-14">
     <!-- order-section -->
     <section
-        class="grid grid-flow-row justify-center text-center bg-[#463420] text-[#fff3b0] font-bold h-full mb-20"
+        class="grid grid-flow-row text-center bg-[#463420] text-[#fff3b0] font-bold h-full mb-20"
     >
-        <div>
+        <div class="w-4/5 mx-auto">
             <p
                 class="border-b-[6px] border-white pt-[40px] text-[40px] m-auto text-white"
             >
@@ -47,16 +47,16 @@
     <!-- order-section-end -->
 
     <!-- view-menu -->
-    <section class="grid grid-flow-col min-h-min">
-        <div class="grid grid-flow-row gap-10">
-            <div class="flex items-center justify-around">
-                <p class="text-[#463420] text-6xl text-justify">
+    <section class="grid grid-cols-2">
+        <div class="grid grid-flow-row gap-10 items-center justify-center">
+            <div class="flex items-center justify-between">
+                <p class="text-[#463420] text-6xl">
                     WHAT'S ON <br />
                     <span class="font-bold">OUR MENU</span>
                 </p>
-                <div class="w-[272px] h-3 bg-[#463420]"></div>
+                <div class="w-[300px] h-3 bg-[#463420]"></div>
             </div>
-            <br />
+
             <div>
                 <p class="max-w-[570px] text-[15px] font-semibold">
                     “<span class="text-4xl italic">The Fastest Treat</span>, as
@@ -70,28 +70,34 @@
                 VIEW MENU
             </button>
         </div>
-        <div class="w-[650px] h-[500px]">
+        <div class="max-w-[700px] mx-auto">
             <img
                 src="https://s3-alpha-sig.figma.com/img/2922/1f95/bb95a4a7e1a3fd1ad00feb7274898a6a?Expires=1658102400&Signature=PQEQ~3KQ~~dy8ggDI1DiC03xbUm9xDiHqA1EM8BC~ok-IIqzJZiSnj4UJaErN8mJbhASRMyTpOpXhNnaRfkFjrqHD9ANirirHHIE0MClEGbmMkYdl31cenm7qee8zOGCIJjKKYUOx~rhS8BiVwW6O30hdXlRAqTPZbDj08I~QR7dEfEMuDJkI2gWA6CbcUjpRE2rycjz5auBdf0KNO-rH7jIVbezdgxH~I6k5TGyde440zAbCnn7l19Bfm5LiAajQSHj2zNmOq2lnK7OqKL68t8mq21fB469ZkM07IbNOAtPl5dpkYytZ9Cgk0sd7Ap-wydMBZm~PLpSWzpA9qu4Cg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
                 alt=""
                 class="w-full h-full object-cover"
             />
         </div>
-        <div class="grid grid-flow-row gap-10">
-            <div class="flex items-center justify-around">
+        <div class="max-w-[700px] mx-auto">
+            <img
+                src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+                class="w-full h-full object-cover"
+            />
+        </div>
+        <div class="grid grid-flow-row gap-10 items-center justify-center">
+            <div class="flex items-center flex-row-reverse justify-between">
                 <p class="text-[#463420] text-6xl">
-                    CONTACT <br />
-                    <span class="font-bold">US</span>
+                    CONTACT
+                    <span class="font-bold"> US</span>
                 </p>
-                <div class="w-[272px] h-3 bg-[#463420]"></div>
+                <div class="w-[300px] h-3 bg-[#463420]"></div>
             </div>
-            <br />
+
             <div>
                 <p class="max-w-[570px] text-[15px] font-semibold">
-                    “Great food is what we do” and we do it like no one else
-                    can. From our fine dining dishes to the most tastiest of
-                    street style foods, amber eats have a menu just for your
-                    cravings.
+                    “<span class="text-4xl italic">The Fastest Treat</span>, as
+                    you order you seet". Feelin for an exquisite dishes or urban
+                    style street foods? Amber eats has a menu just for you.
                 </p>
             </div>
             <button
@@ -99,13 +105,6 @@
             >
                 CONTACT US
             </button>
-        </div>
-        <div class="w-[650px] h-[500px]">
-            <img
-                src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-                class="w-full h-full object-cover"
-            />
         </div>
     </section>
     <!-- view-menu-end -->

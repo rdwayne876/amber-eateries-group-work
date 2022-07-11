@@ -29,18 +29,18 @@ import { CartService } from '../cart.service';
                                 >
                             </div>
                             <div class="navigation">
-                                <button mat-button routerLink="/">Home</button>
-                                <button mat-button routerLink="/menu">
+                                <button mat-button class="no-hover-effect" routerLink="/">Home</button>
+                                <button mat-button class="no-hover-effect" routerLink="/menu">
                                     Menu
                                 </button>
-                                <button mat-button routerLink="/gallery">
+                                <button mat-button class="no-hover-effect" routerLink="/gallery">
                                     Gallery
                                 </button>
-                                <button mat-button routerLink="/about">
+                                <button mat-button class="no-hover-effect" routerLink="/about">
                                     About
                                 </button>
 
-                                <button mat-button routerLink="/cart">
+                                <button mat-button class="no-hover-effect text-center" routerLink="/cart">
                                     <mat-icon
                                         [matBadge]=" cartService.getCartCount() > 0 ? cartService.getCartCount() : null"
                                         >shopping_cart</mat-icon
@@ -114,10 +114,6 @@ import { CartService } from '../cart.service';
                 background-color: transparent;
             }
 
-            ::ng-deep .mat-button:last-child {
-                padding-right: 8px !important;
-            }
-
             .logo {
                 width: fit-content;
             }
@@ -143,8 +139,7 @@ import { CartService } from '../cart.service';
             }
 
             .navigation ::ng-deep .mat-button:hover {
-                color: #00b5ad;
-                background-color: transparent !important;
+                color: #e0a04f;
             }
 
             ::ng-deep .mat-button-ripple.mat-ripple {
