@@ -1,35 +1,48 @@
-<div>
-    <!-- Back Button -->
+<div
+    class="min-h-[298px] max-w-[1596px] bg-[url('https://s3-alpha-sig.figma.com/img/e37a/7dba/2fefd2de31983b05a50b86548ac61770?Expires=1658707200&Signature=Nz2GkxivatiPCBEXwHxDUE9qFN03utsVwnNbwiucQM~xixjGG1QIZ~LVPsKs3ZEiiDTSGVQYT72kehCf5vDOGo-49oaV9XQqmgikslTc2ipyDHO1MGXVxECNd~sGfDawwkrNS9SO6Pw-O8cIDzIzP8g1hwQl5CWlnHVqGiudU1jcnyvmjcH55tHrdNPKxcM86X3~0x798bWhk382Akhxf5u-ChDaRMuPALe2upS6qGnX6cQ-Y98LRWWAvCOxLNYzyelPSmDTFJW75M9~SUoh39LKGSargcX5PlTSXYoro6ZTcMewYi7dRFopkrqhAxwiLlBsEaNp4jyBGwL7gKs9jg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA')]"
+></div>
+<div class="h-screen">
     <div>
-        <button>&leftarrow;</button>
-    </div>
+        <!-- Back Button -->
+        <div>
+            <button>&leftarrow;</button>
+        </div>
 
-    <!-- Order info -->
-    <div>
-        <h3>Transaction ID #{{ transaction.id.toString().padStart(3, '0') }}</h3>
-        <p>{{ transaction.date | date }}</p>
-    </div>
+        <!-- Order info -->
+        <div>
+            <h3>
+                Transaction ID #{{ transaction.id.toString().padStart(3, "0") }}
+            </h3>
+            <p>{{ transaction.date | date }}</p>
+        </div>
 
-    <div>
-        <h2>Your order is on its way</h2>
+        <div>
+            <h2>Your order is on its way</h2>
 
-        <img src="" alt="">
-    </div>
+            <img src="" alt="" />
+        </div>
 
-    <h2>Here's your receipt</h2>
+        <h2>Here's your receipt</h2>
 
-    <div class="max-h-[20rem] overflow-y-auto">
-        <div *ngFor="let item of order.orders">
-            <p>{{item.name}}</p>
-            <div>
-                <p>{{item.quantity | number}}</p>
-                <p>{{item.price | currency}}</p>    
+        <div class="max-h-[20rem] overflow-y-auto">
+            <div *ngFor="let item of order.orders">
+                <p>{{ item.name }}</p>
+                <div>
+                    <p>{{ item.quantity | number }}</p>
+                    <p>{{ item.price | currency }}</p>
+                </div>
             </div>
         </div>
+        <h3>
+            Total:<span>{{ transaction.payment_amount | currency }}</span>
+        </h3>
+
+        <button type="submit">Track Your Order</button>
+
+        <p>
+            Have any troubles? please contact<span
+                ><a href="">the support</a></span
+            >
+        </p>
     </div>
-    <h3>Total:<span>{{transaction.payment_amount | currency}}</span></h3>
-
-    <button type="submit">Track Your Order</button>
-
-    <p>Have any troubles? please contact<span><a href="">the support</a></span></p>
 </div>

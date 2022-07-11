@@ -1,5 +1,5 @@
 import { HeroComponent } from './hero/hero.component';
-import { NgModule } from '@angular/core';
+import { Input, NgModule, OnChanges, SimpleChanges } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -44,4 +44,5 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
