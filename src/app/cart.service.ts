@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
-
+import { Product } from './product';
 
 @Injectable({
     providedIn: 'root',
@@ -10,13 +10,11 @@ export class CartService {
 
     public SALES_TAX = 1.5;
 
-
     /**
      * Converts the cart in `localStorage` to an array
      * @returns The `cart` item from local storage as an array
      */
-    getCart(): any[] {
-
+    getCart(): Product[] {
         return JSON.parse(localStorage.getItem('cart') as string);
     }
 
@@ -35,17 +33,21 @@ export class CartService {
         return this.getCart().length ?? 0;
     }
 
-    getCartTotal(cart: any[]): number {
+    /**
+     * Calculates the grand total of all items in the cart
+     * @returns The sum of all products subtotal in the cart
+     */
+    getCartTotal(): number {
         let subTotals = 0;
+        const cart = this.getCart();
 
         // Calculates subtotal for each item in cart
-        cart.forEach((product) => {
-            subTotals += parseInt(product.price) * parseInt(product.amount);
+        cart.forEach((product: Product) => {
+            subTotals += product.price * (product.amount as number);
         });
 
         // Sets the cart total to the calculated value
         return subTotals;
-
     }
 
     /**
@@ -60,7 +62,6 @@ export class CartService {
 
             let currentCart: any[] = [];
 
-
             // If `cart` is found in localStorage we store it in `currentCart`
             if (!!localStorage.getItem('cart')) {
                 currentCart = this.getCart();
@@ -69,7 +70,6 @@ export class CartService {
             // Search for duplicate cart item
             let duplicateCartItem: any = currentCart.find(
                 (cartItem: any) => cartItem.id == itemId
-
             );
 
             // If duplicate cart item is found we increment the amount instead of inserting a new product to the cart
@@ -80,7 +80,6 @@ export class CartService {
                 // Finding the product being added to the cart
                 let product: any = products.find(
                     (product: any) => product.id == itemId
-
                 );
 
                 // Add the product found to the cart with `amount` set to `1` if duplicate not found
@@ -116,7 +115,6 @@ export class CartService {
         let cart = this.getCart();
         const productId = cart.findIndex(
             (product: any) => product.id == itemId
-
         );
 
         cart.splice(productId, 1);
@@ -130,7 +128,6 @@ export class CartService {
      * @param cart The array of objects you would like to be the new cartin storage
      */
     updateCart(cart: any[]): void {
-
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 }
