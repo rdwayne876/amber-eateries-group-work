@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     sides: Product[] = [];
     sides_currentPage = 0;
     sides_pageLimit = 9;
-    beverages: Product[] = [];    
+    beverages: Product[] = [];
     beverages_currentPage = 0;
     beverages_pageLimit = 9;
     desserts: Product[] = [];
@@ -44,25 +44,25 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         this.dataService.sendGetRequest().subscribe((data: Product[]) => {
             this.appetizers = data.filter((value) => {
-                return value.category == Category.APPETIZER
+                return value.category == Category.APPETIZER;
             });
             this.entrees = data.filter((value) => {
-                return value.category == Category.ENTREE
+                return value.category == Category.ENTREE;
             });
             this.sides = data.filter((value) => {
-                return value.category == Category.SIDE
+                return value.category == Category.SIDE;
             });
             this.desserts = data.filter((value) => {
-                return value.category == Category.DESSERT
+                return value.category == Category.DESSERT;
             });
             this.beverages = data.filter((value) => {
-                return value.category == Category.BEVERAGE
+                return value.category == Category.BEVERAGE;
             });
         });
     }
     changePage(event: any, property: string) {
-        this[property + "_currentPage" as keyof this] = event.pageIndex;
-        this[property + "_pageLimit" as keyof this] = event.pageSize;
+        this[(property + '_currentPage') as keyof this] = event.pageIndex;
+        this[(property + '_pageLimit') as keyof this] = event.pageSize;
     }
 
     tabChangeEventHandler(event: MatTabChangeEvent): void {
@@ -76,27 +76,30 @@ export class HomeComponent implements OnInit {
             panelClass: ['hazel-snackbar'],
         });
 
-        if (
-            this.tabChangeEvent == undefined ||
-            this.tabChangeEvent.tab.origin == -1
-        ) {
+        if (this.tabChangeEvent == undefined) {
             // Use here to select the products category to upsell for the first tab
             this.dialog.open(SideOrderModalComponent, {
-                data: Category.SIDE,
+                data: Category.ENTREE,
             });
         }
 
         if (this.tabChangeEvent) {
+            console.log(this.tabChangeEvent.tab.textLabel);
             switch (this.tabChangeEvent.tab.textLabel.toLowerCase()) {
-                // Use above where `this.tabChangeEvent.tab.origin == -1` is for the first tab.
+                // Use above where `this.tabChangeEvent == undefined` is for the first tab.
                 case 'sides':
-                case 'beverage':
-                case 'apptezier':
+                case 'beverages':
+                case 'appetizers':
                     this.dialog.open(SideOrderModalComponent, {
                         data: Category.ENTREE,
                     });
                     break;
-                case 'desert':
+                case 'entrees':
+                    this.dialog.open(SideOrderModalComponent, {
+                        data: Category.SIDE,
+                    });
+                    break;
+                case 'desserts':
                     this.dialog.open(SideOrderModalComponent, {
                         data: Category.BEVERAGE,
                     });
