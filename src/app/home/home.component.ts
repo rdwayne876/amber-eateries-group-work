@@ -3,7 +3,7 @@ import { DataService } from '../data.service';
 
 import { Category, Product } from '../product';
 import { CartService } from '../cart.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { SideOrderModalComponent } from '../side-order-modal/side-order-modal.component';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -71,52 +71,58 @@ export class HomeComponent implements OnInit {
 
     addProduct(id: number): void {
         this.cartService.addCartItem(id);
-
         this.succcessPopup.open('Added to cart', 'ok', {
             panelClass: ['hazel-snackbar'],
+            duration: 2000,
         });
 
-        if (this.tabChangeEvent == undefined) {
-            // Use here to select the products category to upsell for the first tab
-            this.dialog.open(SideOrderModalComponent, {
-                data: Category.SIDE,
+        this.dataService.fetchItem(id).subscribe((product: Product) => {
+            let dialogConfig: MatDialogConfig = {
                 panelClass: 'modal',
-                height:'fit-content',
-                width:'60%'
-            });
-        }
+                height: 'max-content',
+                width: '70%',
+            };
 
-        if (this.tabChangeEvent) {
-            console.log(this.tabChangeEvent.tab.textLabel);
-            switch (this.tabChangeEvent.tab.textLabel.toLowerCase()) {
-                // Use above where `this.tabChangeEvent == undefined` is for the first tab.
-                case 'sides':
-                case 'beverages':
-                case 'appetizers':
-                    this.dialog.open(SideOrderModalComponent, {
-                        data: Category.ENTREE,
-                        panelClass: 'modal',
-                        height:'fit-content',
-                        width:'60%',
-
-                    });
-                    break;
-                case 'entrees':
-                    this.dialog.open(SideOrderModalComponent, {
-                        data: Category.SIDE,
-                    });
-                    break;
-                case 'desserts':
-                    this.dialog.open(SideOrderModalComponent, {
-                        data: Category.BEVERAGE,
-                        panelClass: 'modal',
-                        height:'fit-content',
-                        width:'60%',
-                    });
-                    break;
-                default:
-                    break;
+            if (this.tabChangeEvent == undefined) {
+                // Use here to select the products category to upsell for the first tab
+                this.dialog.open(SideOrderModalComponent, {
+                    data: { category: Category.SIDE, product },
+                    ...dialogConfig,
+                });
             }
-        }
+
+            if (this.tabChangeEvent) {
+                console.log(this.tabChangeEvent.tab.textLabel);
+                switch (this.tabChangeEvent.tab.textLabel.toLowerCase()) {
+                    // Use above where `this.tabChangeEvent == undefined` is for the first tab.
+                    case 'sides':
+                    case 'beverages':
+                    case 'appetizers':
+                        this.dialog.open(SideOrderModalComponent, {
+                            data: { category: Category.ENTREE, product },
+                            ...dialogConfig,
+                        });
+                        break;
+                    case 'entrees':
+                        this.dialog.open(SideOrderModalComponent, {
+                            data: { category: Category.SIDE, product },
+                            ...dialogConfig,
+                        });
+                        break;
+                    case 'desserts':
+                        this.dialog.open(SideOrderModalComponent, {
+                            data: { category: Category.BEVERAGE, product },
+                            ...dialogConfig,
+                        });
+                        break;
+                    default:
+                        this.dialog.open(SideOrderModalComponent, {
+                            data: { category: Category.SIDE, product },
+                            ...dialogConfig,
+                        });
+                        break;
+                }
+            }
+        });
     }
 }

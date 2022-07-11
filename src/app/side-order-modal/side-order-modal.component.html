@@ -1,29 +1,21 @@
-<mat-dialog-content class="mat-typography">
+<mat-dialog-content>
     <h2>Choose Your Sides</h2>
     <div class="con">
         <div class="rec">
-            <div class="img">
+            <div class="img" *ngFor="let product of products">
                 <div class="imgCon">
-                    <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2022/05/steak-n-shake-7x7-steakburger.jpg?quality=82&strip=1&w=640" alt="">
+                    <img [src]="product.imageUrl" alt="" />
                 </div>
                 <div class="detail">
                     <div class="info">
-                        <p>Steamed Cabbage and Saltfish</p>
-                        <p>$1000</p>
+                        <p>{{ product.name }}</p>
+                        <p>{{ product.price | currency }}</p>
                     </div>
-                    <div class="button"><button mat-raised-button >Add</button></div>
-                </div>
-            </div>
-            <div class="img">
-                <div class="imgCon">
-                    <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2022/05/steak-n-shake-7x7-steakburger.jpg?quality=82&strip=1&w=640" alt="">
-                </div>
-                <div class="detail">
-                    <div class="info">
-                        <p>Steamed Cabbage and Saltfish</p>
-                        <p>$1000</p>
+                    <div class="button">
+                        <button mat-raised-button (click)="addSide(product.id)">
+                            Add
+                        </button>
                     </div>
-                    <div class="button"><button mat-raised-button >Add</button></div>
                 </div>
             </div>
         </div>
@@ -32,17 +24,14 @@
             <div class="card">
                 <div class="orderDet">
                     <div class="header">
-                        <h3>Burder</h3>
-                        <div>
-                            <i class="fa-solid fa-star"></i> 8
-                        </div>
+                        <h3>{{ product.name }}</h3>
+                        <div><i class="fa-solid fa-star"></i> 8</div>
                     </div>
-                    <span>ufhisdvwdcasca shcushcius qchiuhwcw cwecwweci</span>
+                    <span>{{ product.description | slice: 0:50 }}</span>
                 </div>
-                <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2022/05/steak-n-shake-7x7-steakburger.jpg?quality=82&strip=1&w=640" alt="">
+                <img [src]="product.imageUrl" alt="" />
             </div>
-            <a href="">Return to Menu</a>
+            <button mat-dialog-close class="close-btn">Return to Menu</button>
         </div>
     </div>
 </mat-dialog-content>
-
