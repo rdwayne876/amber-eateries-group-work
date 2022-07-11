@@ -10,46 +10,46 @@
     </div>
 
     <div class="w-[85%] m-auto">
-        <div class="grid grid-cols-[6fr_4fr] mx-32 py-24 gap-10">
+        <div class="grid grid-cols-[7fr_3fr] py-24 gap-[1vw]">
             <table class="w-full">
                 <div class="scroll-table">
                     <thead
                         class="bg-[#5F462B] text-white uppercase font-medium tracking-widest"
                     >
-                        <th class="p-10">Products</th>
-                        <th class="p-10 text-center">Price</th>
-                        <th class="p-10 text-center">Quantity</th>
-                        <th class="p-10 text-center">Total</th>
+                        <th class="p-[1vw] text-[1vw]">Products</th>
+                        <th class="p-[1vw] text-[1vw] text-center">Price</th>
+                        <th class="p-[1vw] text-[1vw] text-center">Quantity</th>
+                        <th class="p-[1vw] text-[1vw] text-center">Total</th>
                     </thead>
                     <tbody>
                         <tr
                             *ngFor="let cItem of cart; let i = index"
                             class="relative border-b-2"
                         >
-                            <td class="flex my-4 gap-10">
-                                <div class="w-96">
+                            <td class="flex my-[0.5vw] gap-10">
+                                <div class="w-[15vw] h-[10vw]">
                                     <img
-                                        class="object-cover w-full h-[180px]"
+                                        class="object-cover w-full h-full"
                                         src="{{ cItem.imageUrl }}"
                                         alt=""
                                     />
                                 </div>
-                                <div class="w-[31rem] space-y-10 pr-32">
+                                <div class="w-[30vw] pr-[8vw] flex flex-col">
                                     <div>
-                                        <h3 class="text-3xl font-semibold">
+                                        <h3 class="text-[1.2vw] font-semibold">
                                             {{ cItem.name }}
                                         </h3>
                                     </div>
                                     <div>
-                                        <p class="text-lg prose">
+                                        <p class="text-[0.8vw] prose">
                                             {{ cItem.description }}
                                         </p>
                                     </div>
 
-                                    <div class="mt-4 sm:mt-0 sm:pr-9">
+                                    <div class="mt-auto">
                                         <button
                                             type="button"
-                                            class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
+                                            class="text-[0.9vw] p-[0.3vw] inline-flex text-gray-400 hover:text-gray-500"
                                             (click)="deleteProduct(cItem.id)"
                                         >
                                             Remove
@@ -57,7 +57,7 @@
                                         <div class="absolute top-0 right-0 m-4">
                                             <button
                                                 type="button"
-                                                class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
+                                                class="text-[0.9vw]  p-[0.3vw] inline-flex text-gray-400 hover:text-gray-500"
                                                 (click)="
                                                     deleteProduct(cItem.id)
                                                 "
@@ -70,7 +70,7 @@
                             </td>
 
                             <td class="text-center">
-                                <div class="font-medium">
+                                <div class="font-medium text-[1vw]">
                                     <div class="font-medium" #itemUnitPrices>
                                         {{ cItem.price | currency }}
                                     </div>
@@ -79,7 +79,7 @@
 
                             <td>
                                 <div
-                                    class="font-medium m-auto flex flex-col justify-center items-center"
+                                    class="font-medium m-auto flex flex-col justify-center items-center text-[1vw]"
                                 >
                                     <i
                                         class="fa-solid fa-angle-up"
@@ -97,7 +97,7 @@
 
                             <td>
                                 <div
-                                    class="font-bold flex justify-center items-center"
+                                    class="font-bold flex justify-center items-center text-[1vw]"
                                 >
                                     {{ cItem.price * cItem.amount | currency }}
                                 </div>
@@ -110,16 +110,16 @@
             <!-- purchase summary -->
             <div>
                 <div
-                    class="bg-[#5F462B] w-full flex-flex-col space-y-8 text-white px-12 pb-10"
+                    class="bg-[#5F462B] w-full flex-flex-col  text-white px-[1.2vw] pb-[1vw] text-[1vw]"
                 >
-                    <div class="border-b border-white mb-12 w-64 mx-auto">
-                        <div class="text-center font-medium pt-6">
+                    <div class="border-b border-white mb-[1.1vw] w-[12vw] mx-auto">
+                        <div class="text-center font-medium pt-[1.1vw]">
                             Purchase Summary
                         </div>
                     </div>
 
                     <div
-                        class="flex justify-between items-center border-b border-white"
+                        class="flex justify-between items-center border-b border-white py-[0.5vw]"
                     >
                         <div>Subtotal</div>
                         <div>
@@ -129,13 +129,13 @@
                         </div>
                     </div>
                     <div
-                        class="flex justify-between items-center border-b border-white"
+                        class="flex justify-between items-center border-b border-white py-[0.5vw]"
                     >
                         <div>Sales Tax(1.5%)</div>
                         <div>{{ (grandTotal / 100) * 1.5 | currency }}</div>
                     </div>
                     <div
-                        class="flex justify-between items-center border-b border-white"
+                        class="flex justify-between items-center border-b border-white py-[0.4vw] my-[0.2vw]"
                     >
                         <div>Total Due</div>
                         <div>{{ grandTotal | currency }}</div>
@@ -143,7 +143,7 @@
 
                     <button
                         routerLink="/checkout"
-                        class="flex justify-center mx-auto py-2 uppercase bg-[#EF4F43] text-white text-center w-64"
+                        class="flex justify-center mx-auto py-[0.3vw] mt-[0.8vw] uppercase bg-[#EF4F43] text-white text-center w-64"
                     >
                         check out
                     </button>
@@ -151,10 +151,10 @@
                 <!-- cards -->
                 <div>
                     <div
-                        class="border-b-2 flex justify-center text-center mx-auto border-black mt-10 w-96"
+                        class="border-b-[0.15vw] flex justify-center text-center mx-auto border-[#333] mt-10 w-96"
                     >
                         <div
-                            class="uppercase font-medium text-4xl w-[35rem] mb-2"
+                            class="uppercase font-medium text-[1.2vw] text-[#333] w-[35rem] mb-2"
                         >
                             Accepted Cards
                         </div>
@@ -163,21 +163,21 @@
                     <div class="justify-between flex items-center px-20">
                         <div>
                             <img
-                                class="w-24"
+                                class="w-[3.4vw]"
                                 src="https://www.7krave.com/img/cards/visa.png"
                                 alt=""
                             />
                         </div>
                         <div>
                             <img
-                                class="w-24"
+                                class="w-[3.4vw]"
                                 src="https://www.7krave.com/img/cards/mastercard.png"
                                 alt=""
                             />
                         </div>
                         <div>
                             <img
-                                class="w-24"
+                                class="w-[4vw]"
                                 src="https://www.7krave.com/img/cards/keycard.png"
                                 alt=""
                             />
