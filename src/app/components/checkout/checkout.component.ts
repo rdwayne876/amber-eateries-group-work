@@ -253,9 +253,10 @@ export class CheckoutComponent implements OnInit {
     }
 
     onMinus(id: number) {
-        this.Cart.find((item) => item.id == id).amount--;
-        if (this.Cart.find((item) => item.id == id).amount <= 0) {
-            this.Cart.find((item) => item.id == id).amount++;
+        let item = this.Cart.find((item) => item.id == id);
+        item.amount--;
+        if (item.amount <= 0) {
+            item.amount++;
             return;
         } else {
             this.cartService.updateCart(this.Cart);
@@ -264,9 +265,10 @@ export class CheckoutComponent implements OnInit {
     }
 
     onAdd(id: number) {
-        this.Cart.find((item) => item.id == id).amount++;
-        if (this.Cart.find((item) => item.id == id).amount > 10) {
-            this.Cart.find((item) => item.id == id).amount--;
+        let item = this.Cart.find((item) => item.id == id);
+        item.amount++;
+        if (item.amount > 10) {
+            item.amount--;
             return;
         } else {
             this.cartService.updateCart(this.Cart);

@@ -21,15 +21,18 @@ import { CartService } from '../cart.service';
                 <mat-toolbar>
                     <div class="main-container p-10">
                         <div class="m-h-inner flex flex-wrap ">
-                            <div class="logo">
-                                <a href="/"><span>Amber Eateries</span></a>
+                            <div class="logo relative">
+                                <a href="/"
+                                    ><span class="text-[50px] absolute"
+                                        >Amber Eats</span
+                                    ></a
+                                >
                             </div>
-                            <div class="navigation  ">
+                            <div class="navigation">
                                 <button mat-button routerLink="/">Home</button>
                                 <button mat-button routerLink="/menu">
-                                    Menus
+                                    Menu
                                 </button>
-
                                 <button mat-button routerLink="/gallery">
                                     Gallery
                                 </button>
@@ -52,8 +55,6 @@ import { CartService } from '../cart.service';
     `,
     styles: [
         `
-            @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600&display=swap');
-
             .header {
                 width: 100%;
                 position: fixed;
@@ -117,16 +118,26 @@ import { CartService } from '../cart.service';
                 padding-right: 8px !important;
             }
 
+            .logo {
+                width: fit-content;
+            }
+
             .logo a {
                 text-decoration: none;
             }
 
             .logo span {
-                font-family: 'Permanent Marker', cursive;
-                font-size: 28px;
+                font-family: 'Sacramento', cursive;
                 color: white;
+                bottom: 0;
+                transform: translate(0, 65%);
             }
-
+            .navigation button {
+                font-size: 16px;
+                font-family: 'Italiana', serif;
+                font-weight: bold;
+                letter-spacing: 2px;
+            }
             .navigation ::ng-deep .mat-button {
                 color: white;
             }
@@ -142,12 +153,11 @@ import { CartService } from '../cart.service';
 
             .sticky-nav {
                 background: white !important;
-                color: black !important;
             }
 
             .sticky-nav .logo span,
             .sticky-nav .navigation ::ng-deep .mat-button {
-                color: black;
+                color: #463420;
             }
             .header-change {
                 background: #5f462b;

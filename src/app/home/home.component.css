@@ -168,7 +168,7 @@ margin-top: auto;
 }
 .m-price {
   font-weight: 700;
-  color: #c94a30;
+  color: hsl(31, 38%, 50%);
   line-height: 2;
 }
 
@@ -191,7 +191,7 @@ margin-top: auto;
 }
 
 .control-section button {
-  background: #fd935c;
+  background: #5f462b;
   border: 0;
   border-bottom: 2px solid #cf7e3b;
   border-radius: 3px;
