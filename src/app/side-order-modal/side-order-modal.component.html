@@ -27,7 +27,7 @@
                         <h3>{{ product.name }}</h3>
                         <div><i class="fa-solid fa-star"></i> 8</div>
                     </div>
-                    <span>{{ product.description | slice: 0:50 }}</span>
+                    <span>{{ product.description | slice: 0:255 }}</span>
                 </div>
                 <img [src]="product.imageUrl" alt="" />
             </div>
