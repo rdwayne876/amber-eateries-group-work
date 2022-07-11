@@ -139,10 +139,6 @@ import { CartService } from '../cart.service';
                 background-color: transparent;
             }
 
-            ::ng-deep .mat-button:last-child {
-                padding-right: 8px !important;
-            }
-
             .logo {
                 width: fit-content;
             }
@@ -166,8 +162,7 @@ import { CartService } from '../cart.service';
             }
 
             .navigation ::ng-deep .mat-button:hover {
-                color: #cf8c4a;
-                background-color: #fff !important;
+                color: #e0a04f;
             }
 
             ::ng-deep .mat-button-ripple.mat-ripple {
