@@ -28,20 +28,19 @@ import { CartService } from '../cart.service';
                                     ></a
                                 >
                             </div>
-                            <div class="navigation  ">
-                                <button mat-button routerLink="/">Home</button>
-                                <button mat-button routerLink="/menu">
-                                    Menus
+                            <div class="navigation">
+                                <button mat-button class="no-hover-effect" routerLink="/">Home</button>
+                                <button mat-button class="no-hover-effect" routerLink="/menu">
+                                    Menu
                                 </button>
-
-                                <button mat-button routerLink="/gallery">
+                                <button mat-button class="no-hover-effect" routerLink="/gallery">
                                     Gallery
                                 </button>
-                                <button mat-button routerLink="/about">
+                                <button mat-button class="no-hover-effect" routerLink="/about">
                                     About
                                 </button>
 
-                                <button mat-button routerLink="/cart">
+                                <button mat-button class="no-hover-effect" routerLink="/cart">
                                     <mat-icon
                                         [matBadge]=" cartService.getCartCount() > 0 ? cartService.getCartCount() : null"
                                         >shopping_cart</mat-icon
@@ -56,8 +55,6 @@ import { CartService } from '../cart.service';
     `,
     styles: [
         `
-            @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600&display=swap');
-
             .header {
                 width: 100%;
                 position: fixed;
@@ -138,14 +135,16 @@ import { CartService } from '../cart.service';
             .navigation button {
                 font-size: 16px;
                 font-family: 'Italiana', serif;
+                font-weight: bold;
+                letter-spacing: 2px;
             }
             .navigation ::ng-deep .mat-button {
                 color: white;
             }
 
             .navigation ::ng-deep .mat-button:hover {
-                color: #00b5ad;
-                background-color: transparent !important;
+                color: #cf8c4a;
+                background-color: #fff !important;
             }
 
             ::ng-deep .mat-button-ripple.mat-ripple {
@@ -154,12 +153,11 @@ import { CartService } from '../cart.service';
 
             .sticky-nav {
                 background: white !important;
-                color: black !important;
             }
 
             .sticky-nav .logo span,
             .sticky-nav .navigation ::ng-deep .mat-button {
-                color: black;
+                color: #463420;
             }
             .header-change {
                 background: #5f462b;
