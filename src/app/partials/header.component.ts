@@ -28,7 +28,7 @@ import { CartService } from '../cart.service';
                                     ></a
                                 >
                             </div>
-                            <div class="navigation  ">
+                            <div class="navigation">
                                 <button mat-button routerLink="/">Home</button>
                                 <button mat-button routerLink="/menu">
                                     Menus
@@ -56,8 +56,6 @@ import { CartService } from '../cart.service';
     `,
     styles: [
         `
-            @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600&display=swap');
-
             .header {
                 width: 100%;
                 position: fixed;
@@ -138,6 +136,8 @@ import { CartService } from '../cart.service';
             .navigation button {
                 font-size: 16px;
                 font-family: 'Italiana', serif;
+                font-weight: bold;
+                letter-spacing: 2px;
             }
             .navigation ::ng-deep .mat-button {
                 color: white;
