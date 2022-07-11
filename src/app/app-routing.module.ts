@@ -17,6 +17,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RecieptComponent } from './components/reciept/reciept.component';
 import { CheckoutGuard } from './guards/checkout.guard'
 import { RecieptGuard } from './guards/reciept.guard'
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -35,6 +36,7 @@ const routes: Routes = [
     { path: 'checkout', component: CheckoutComponent, canActivate: [CheckoutGuard] },
     { path: 'receipt', component: RecieptComponent, canActivate: [RecieptGuard] },
     { path: 'hero', component: HeroComponent },
+    {path: 'aboutus', component: AboutusComponent},
 
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', redirectTo: 'home'}
