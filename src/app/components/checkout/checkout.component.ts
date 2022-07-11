@@ -98,7 +98,7 @@ export class CheckoutComponent implements OnInit {
     ngOnInit(): void {
         // Get cart info
         this.Cart = this.cartService.getCart();
-        this.paymentAmount = this.cartService.getCartTotal(this.Cart);
+        this.paymentAmount = this.cartService.getCartTotal();
 
         // Disable forms initially
         this.accountTypeForm.disable();
@@ -261,7 +261,7 @@ export class CheckoutComponent implements OnInit {
         } else {
             this.cartService.updateCart(this.Cart);
         }
-        this.paymentAmount = this.cartService.getCartTotal(this.Cart);
+        this.paymentAmount = this.cartService.getCartTotal();
     }
 
     onQuantity(id: number, value: number) {
@@ -276,7 +276,7 @@ export class CheckoutComponent implements OnInit {
         } else {
             this.cartService.updateCart(this.Cart);
         }
-        this.paymentAmount = this.cartService.getCartTotal(this.Cart);
+        this.paymentAmount = this.cartService.getCartTotal();
     }
 
     onAdd(id: number) {
@@ -288,7 +288,7 @@ export class CheckoutComponent implements OnInit {
         } else {
             this.cartService.updateCart(this.Cart);
         }
-        this.paymentAmount = this.cartService.getCartTotal(this.Cart);
+        this.paymentAmount = this.cartService.getCartTotal();
     }
 
     setFill(event: Event) {

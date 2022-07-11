@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { MatPaginator } from '@angular/material/paginator';
 
-
-import { Product } from '../product';
+import { Category, Product } from '../product';
 import { CartService } from '../cart.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SideOrderModalComponent } from '../side-order-modal/side-order-modal.component';
@@ -16,17 +14,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+    tabChangeEvent?: MatTabChangeEvent;
     products: Product[] = [];
+    cart: any[] = [];
     currentPage = 0;
     pageLimit = 9;
-    
-    cart: any[] = [];
-    tabChangeEvent?: MatTabChangeEvent;
 
     constructor(
         private dataService: DataService,
         private cartService: CartService,
-        private snackBar: MatSnackBar,
+        private succcessPopup: MatSnackBar,
         public dialog: MatDialog
     ) {}
 
@@ -36,40 +33,49 @@ export class HomeComponent implements OnInit {
         });
     }
     changePage(event: any) {
-        console.log(event);
         this.currentPage = event.pageIndex;
         this.pageLimit = event.pageSize;
     }
-
 
     tabChangeEventHandler(event: MatTabChangeEvent): void {
         this.tabChangeEvent = event;
     }
 
     addProduct(id: number): void {
-        this.snackBar.open('Product added to cart', undefined, {
-            duration: 2000,
-        });
-
         this.cartService.addCartItem(id);
 
-        // DO NOT DELETE - Roshane
-        // TODO Create feature to limit sides modal popup on selected tabs
-        const event = this.tabChangeEvent;
+        this.succcessPopup.open('Added to cart', 'ok', {
+            panelClass: ['hazel-snackbar'],
+        });
 
         if (
-            event &&
-            event.tab.isActive &&
-            // If starters is the original tab this check is valid
-            event.tab.origin == -1 &&
-            // Hard coded to match the starter tab
-            event.tab.textLabel.match(/starters/i)
+            this.tabChangeEvent == undefined ||
+            this.tabChangeEvent.tab.origin == -1
         ) {
-            this.dialog.open(SideOrderModalComponent);
+            // Use here to select the products category to upsell for the first tab
+            this.dialog.open(SideOrderModalComponent, {
+                data: Category.SIDE,
+            });
         }
 
-        if (!event) {
-            this.dialog.open(SideOrderModalComponent);
+        if (this.tabChangeEvent) {
+            switch (this.tabChangeEvent.tab.textLabel.toLowerCase()) {
+                // Use above where `this.tabChangeEvent.tab.origin == -1` is for the first tab.
+                case 'sides':
+                case 'beverage':
+                case 'apptezier':
+                    this.dialog.open(SideOrderModalComponent, {
+                        data: Category.ENTREE,
+                    });
+                    break;
+                case 'desert':
+                    this.dialog.open(SideOrderModalComponent, {
+                        data: Category.BEVERAGE,
+                    });
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

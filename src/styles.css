@@ -44,3 +44,14 @@ textarea {
     width: 78%;
     margin: 0 auto;
 }
+
+.hazel-snackbar {
+    background: #5f462b;
+    color: white;
+}
+
+.hazel-snackbar button {
+    background-color: #5f462b;
+    color: white;
+    border: none;
+}
