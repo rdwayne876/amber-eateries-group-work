@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+    AfterViewInit,
+    Component,
+    Input,
+    OnChanges,
+    OnInit,
+    ViewChild,
+} from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -30,7 +39,10 @@ import { CartService } from '../cart.service';
 
                                 <button mat-button routerLink="/cart">
                                     <i class="fa-solid fa-cart-shopping "></i>
-                                    <span *ngIf="cartService.getCartCount() > 0" class="badge bg-danger">
+                                    <span
+                                        *ngIf="cartService.getCartCount() > 0"
+                                        class="badge bg-danger"
+                                    >
                                         {{ cartService.getCartCount() }}
                                     </span>
                                 </button>
@@ -136,22 +148,41 @@ import { CartService } from '../cart.service';
             .sticky-nav .navigation ::ng-deep .mat-button {
                 color: black;
             }
+            .header-change {
+                background: #231942;
+            }
         `,
     ],
 })
 export class HeaderComponent implements OnInit {
-    constructor(public cartService: CartService) {}
+    constructor(public cartService: CartService, private router: Router) { }
 
     ngOnInit() {
-        window.onscroll = () => {
-            let navMenu = document.querySelector('.header');
-            let body = document.querySelector('body') as HTMLBodyElement;
-            if (window.pageYOffset > 600) {
-                navMenu?.classList.add('sticky-nav');
-            } else {
-                navMenu?.classList.remove('sticky-nav');
-                body.style.margin = '0';
-            }
-        };
+        this.routerCheck();
+    }
+
+    routerCheck() {
+        this.router.events
+            .pipe(filter((event) => event instanceof NavigationEnd))
+            .subscribe(() => {
+                if (this.router.url == '/home') {
+                    let navMenu = document.querySelector('.header');
+                    navMenu?.classList.remove('header-change');
+                    window.onscroll = () => {
+                        let body = document.querySelector(
+                            'body'
+                        ) as HTMLBodyElement;
+                        if (window.pageYOffset > 600 && true) {
+                            navMenu?.classList.add('sticky-nav');
+                        } else {
+                            navMenu?.classList.remove('sticky-nav');
+                            body.style.margin = '0';
+                        }
+                    };
+                } else {
+                    let navMenu = document.querySelector('.header');
+                    navMenu?.classList.add('header-change');
+                }
+            });
     }
 }
