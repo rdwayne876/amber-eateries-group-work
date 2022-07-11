@@ -29,10 +29,9 @@ import { CartService } from '../cart.service';
                                 </button>
 
                                 <button mat-button routerLink="/cart">
-                                    <i class="fa-solid fa-cart-shopping "></i>
-                                    <span *ngIf="cartService.getCartCount() > 0" class="badge bg-danger">
-                                        {{ cartService.getCartCount() }}
-                                    </span>
+                                    <!-- <i class="fa-solid fa-cart-shopping "></i> -->
+                                    <mat-icon matBadge=" {{ cartService.getCartCount() }}" >shopping_cart</mat-icon>
+                                    
                                 </button>
                             </div>
                         </div>
@@ -50,6 +49,11 @@ import { CartService } from '../cart.service';
                 position: fixed;
                 z-index: 999;
                 top: 0;
+            }
+            ::ng-deep 
+            .mat-badge-content {
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
             }
             .main-container {
                 width: 78%;
