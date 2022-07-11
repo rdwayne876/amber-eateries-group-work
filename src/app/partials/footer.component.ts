@@ -11,37 +11,37 @@ import { Component, OnInit } from '@angular/core';
                 <!------ CONTAINER-1 / LEFT ------>
                 <div class="flex gap-20 w-full">
                     <div class="w-full">
-                        <h1 class="text-4xl font-bold">Quick Links</h1>
+                        <h1 class="text-[1.5vw] font-bold">Quick Links</h1>
                         <ul class="w-full">
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="/"
                                     >Home</a
                                 >
                             </li>
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="/menu"
                                     >Menu</a
                                 >
                             </li>
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="/about"
                                     >About Us and more</a
                                 >
                             </li>
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="/gallery"
                                     >Gallary</a
                                 >
                             </li>
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="/addproduct"
@@ -52,23 +52,23 @@ import { Component, OnInit } from '@angular/core';
                     </div>
 
                     <div class="w-full">
-                        <h4 class="text-4xl font-bold">For You</h4>
+                        <h4 class="text-[1.5vw] font-bold">For You</h4>
                         <ul class="footer-links">
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="#"
                                     >Terms of Use</a
                                 >
                             </li>
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="#"
                                     >Fequently Asked Questions</a
                                 >
                             </li>
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="#"
@@ -79,16 +79,16 @@ import { Component, OnInit } from '@angular/core';
                     </div>
 
                     <div class="w-full">
-                        <h5 class="text-4xl font-bold">Find Us</h5>
+                        <h5 class="text-[1.5vw] font-bold">Find Us</h5>
                         <ul class="footer-links">
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 123 Nowhere Street<br />Somewhere City<br />Jamaica
                                 W.I.
                             </li>
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 Email: ambereats@domain.com
                             </li>
-                            <li class="py-2 my-2 text-2xl">
+                            <li class="py-2 my-2 text-[1vw]">
                                 Telephone: (876) 478 - 9423
                             </li>
                         </ul>
@@ -97,30 +97,35 @@ import { Component, OnInit } from '@angular/core';
 
                 <!------ CONTAINER-1 /RIGHT ------>
                 <div class="w-full flex justify-center items-center">
-                    <div class="w-[30%]">
+                    <div class="w-[50%]">
                         <h1
-                            class="text-center text-3xl py-2 border-b-2 border-b-white"
+                            class="text-center text-[1.2vw] py-2 border-b-2 border-b-white"
                         >
                             Accepted Cards
                         </h1>
-                        <div class="flex gap-5 justify-center">
+                        <div class="justify-between flex items-center px-20">
+                        <div>
                             <img
-                                alt="Visa"
+                                class="w-[4.4vw]"
                                 src="https://www.7krave.com/img/cards/visa.png"
-                                width="60px"
-                            />
-                            <img
-                                alt="Mastercard"
-                                src="https://www.7krave.com/img/cards/mastercard.png"
-                                data-src="/img/cards/mastercard.png"
-                                width="60px"
-                            />
-                            <img
-                                alt="Mastercard"
-                                src="https://www.7krave.com/img/cards/keycard.png"
-                                class="px-2 object-contain"
+                                alt=""
                             />
                         </div>
+                        <div>
+                            <img
+                                class="w-[4.4vw]"
+                                src="https://www.7krave.com/img/cards/mastercard.png"
+                                alt=""
+                            />
+                        </div>
+                        <div>
+                            <img
+                                class="w-[4vw]"
+                                src="https://www.7krave.com/img/cards/keycard.png"
+                                alt=""
+                            />
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -129,12 +134,12 @@ import { Component, OnInit } from '@angular/core';
             <div
                 class="flex justify-between mt-10 pt-10 px-20 border-t-2 border-t-white"
             >
-                <p class="copyright-text">
+                <p class="copyright-text text-[1vw]">
                     Copyright &copy; 2022 All Rights Reserved by
                     <a routerLink="#">Amber Eateries</a>.
                 </p>
 
-                <div class="flex gap-20 text-5xl">
+                <div class="flex gap-20 text-[1.5vw]">
                     <a class="facebook" routerLink="#"
                         ><i class="fa-brands fa-facebook"></i
                     ></a>
