@@ -40,7 +40,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBadgeModule } from '@angular/material/badge';
 import { SafePipe } from './safe.pipe';
 import { MapComponent } from './components/map/map.component';
 import { RecieptComponent } from './components/reciept/reciept.component';
@@ -73,7 +73,6 @@ import { RatingComponent } from './rating/rating.component';
         MapComponent,
         RecieptComponent,
         RatingComponent,
-
     ],
 
     imports: [
@@ -98,7 +97,7 @@ import { RatingComponent } from './rating/rating.component';
         MatTabsModule,
         MatStepperModule,
         MatRadioModule,
-        MatBadgeModule
+        MatBadgeModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
