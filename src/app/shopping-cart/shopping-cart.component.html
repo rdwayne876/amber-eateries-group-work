@@ -20,7 +20,7 @@
                 </thead>
 
                 <tbody>
-                    <tr *ngFor="let cItem of cart" class="relative border-b-2">
+                    <tr *ngFor="let cItem of cart; let i = index" class="relative border-b-2">
 
                         <td class="flex my-4 gap-10">
                             <div class="w-96">
@@ -73,16 +73,11 @@
 
                         <td>
                             <div
-                                class="font-medium m-auto flex justify-center items-center"
+                                class="font-medium m-auto flex flex-col justify-center items-center"
                             >
-                                <input
-                                    class="w-16 text-center border-none bg-transparent"
-                                    type="number"
-                                    id="quantity"
-                                    name="quantity"
-                                    value="{{ cItem.amount }}"
-                                    (change)="amountChanged($event, cItem.id)"
-                                />
+                                <i class="fa-solid fa-angle-up" style="cursor: pointer;" (click)="onAdd(cItem.id)"></i>
+                                <span>{{cItem.amount}}</span>
+                                <i class="fa-solid fa-angle-down" style="cursor: pointer;" (click)="onMinus(cItem.id)"></i>
                             </div>
                         </td>
 
