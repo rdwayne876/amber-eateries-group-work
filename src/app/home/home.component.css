@@ -79,7 +79,7 @@ section {
 }
 
 ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
-    background-color: rgb(0, 181, 173);
+    background-color: #5f462b;
 }
 
 .meal-section {
