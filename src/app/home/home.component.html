@@ -72,7 +72,7 @@
                                             <div class="flex justify-end">
                                                 <button 
                                                 class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl"
-                                                (click)="addProduct(entrees[5].id)">
+                                                (click)="addProduct(product.id)">
                                                     Add To Cart
                                                     <mat-icon>add</mat-icon>
                                                 </button>
@@ -141,7 +141,7 @@
                                             <div class="flex justify-end">
                                                 <button 
                                                 class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl"
-                                                (click)="addProduct(entrees[5].id)">
+                                                (click)="addProduct(product.id)">
                                                     Add To Cart
                                                     <mat-icon>add</mat-icon>
                                                 </button>
@@ -192,9 +192,12 @@
                                             {{product.name | lowercase}}
                                         </div>
 
-                                        <p class="px-8 text-[#5F462B]">
-                                            {{product.description | slice: 0:130}}<span *ngIf="product.description.length > 130">...</span>
-                                        </p>
+                                                <div class="meal-info">
+                                                    <div class="meal-price">
+                                                        <span class="m-price">{{
+                                                            product.price
+                                                                | currency
+                                                        }}</span>
 
                                         
                                         <div class="mt-auto">
@@ -209,7 +212,7 @@
                                             <div class="flex justify-end">
                                                 <button 
                                                 class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl"
-                                                (click)="addProduct(entrees[5].id)">
+                                                (click)="addProduct(product.id)">
                                                     Add To Cart
                                                     <mat-icon>add</mat-icon>
                                                 </button>
@@ -277,7 +280,7 @@
                                             <div class="flex justify-end">
                                                 <button 
                                                 class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl"
-                                                (click)="addProduct(entrees[5].id)">
+                                                (click)="addProduct(product.id)">
                                                     Add To Cart
                                                     <mat-icon>add</mat-icon>
                                                 </button>
@@ -291,14 +294,14 @@
                             </div>
 
                             <mat-paginator
-                                [length]="sides.length"
-                                [pageSize]="sides_pageLimit"
+                                [length]="desserts.length"
+                                [pageSize]="desserts_pageLimit"
                                 [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event, 'sides')"
+                                (page)="changePage($event, 'desserts')"
                                 aria-label="Select page"
                             >
                                 <mat-spinner
-                                    *ngIf="sides.length === 0"
+                                    *ngIf="desserts.length === 0"
                                 ></mat-spinner>
                             </mat-paginator>
                         </mat-tab>
@@ -345,7 +348,7 @@
                                             <div class="flex justify-end">
                                                 <button 
                                                 class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl"
-                                                (click)="addProduct(entrees[5].id)">
+                                                (click)="addProduct(product.id)">
                                                     Add To Cart
                                                     <mat-icon>add</mat-icon>
                                                 </button>
