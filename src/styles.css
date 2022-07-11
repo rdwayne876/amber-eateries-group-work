@@ -1,6 +1,5 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Sacramento&family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Italiana&family=Sacramento&display=swap");
 
 @tailwind base;
 @tailwind components;
