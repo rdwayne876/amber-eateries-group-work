@@ -55,7 +55,7 @@ import { CartService } from '../cart.service';
                                     class="no-hover-effect"
                                     routerLink="/about"
                                 >
-                                    About
+                                    Contact Us
                                 </button>
 
                                 <button
