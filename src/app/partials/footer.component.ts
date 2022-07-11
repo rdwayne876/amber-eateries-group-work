@@ -140,13 +140,13 @@ import { Component, OnInit } from '@angular/core';
                 </p>
 
                 <div class="flex gap-20 text-[1.5vw]">
-                    <a class="facebook" routerLink="#"
+                    <a class="facebook hover:text-[#e0a04f]" routerLink="#"
                         ><i class="fa-brands fa-facebook"></i
                     ></a>
-                    <a class="twitter" routerLink="#"
+                    <a class="twitter hover:text-[#e0a04f]" routerLink="#"
                         ><i class="fa fa-twitter"></i
                     ></a>
-                    <a class="insta" routerLink="#"
+                    <a class="insta hover:text-[#e0a04f]" routerLink="#"
                         ><i class="fa-brands fa-instagram"></i
                     ></a>
                 </div>
