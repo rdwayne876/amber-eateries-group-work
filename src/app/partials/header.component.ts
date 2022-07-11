@@ -39,9 +39,7 @@ import { CartService } from '../cart.service';
 
                                 <button mat-button routerLink="/cart">
                                     <mat-icon
-                                        matBadge=" {{
-                                            cartService.getCartCount()
-                                        }}"
+                                        [matBadge]=" cartService.getCartCount() > 0 ? cartService.getCartCount() : null"
                                         >shopping_cart</mat-icon
                                     >
                                 </button>
