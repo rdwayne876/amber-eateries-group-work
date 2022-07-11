@@ -1,96 +1,112 @@
 <section class="bg-[#F5F5F5]">
-    <div class="w-[80%] m-auto py-10">
-        <div
-            class="flex justify-center items-center w-full h-[400px] capitalize bg-[url('https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1493775538141-BLDK7ZNSG5KNXEQLQJPY/sepia-1-16-1517116rt.jpg?format=1500w')] bg-cover bg-center bg-no-repeat"
-        >
-            <h1 class="text-white text-center text-8xl pb-3">Your Cart</h1>
+    
+    <div class="relative w-[100%]">
+        <div class="absolute z-10 flex justify-center items-center w-full h-full capitalize">
+            <div class="border-b-4 border-b-white w-[60%] m-auto">
+                <h1 class="text-white text-center text-[3vw] pb-3">Your Cart</h1>
+            </div>
         </div>
+        <img class="w-full h-[30vh] object-cover brightness-75" src="https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1493775538141-BLDK7ZNSG5KNXEQLQJPY/sepia-1-16-1517116rt.jpg?format=1500w" alt="" />
     </div>
 
     <div class="w-[85%] m-auto">
         <div class="grid grid-cols-[6fr_4fr] mx-32 py-24 gap-10">
             <table class="w-full">
-                <thead
-                    class="bg-[#5F462B] text-white uppercase font-medium tracking-widest"
-                >
-                    <th class="p-10">Products</th>
-                    <th class="p-10 text-center">Price</th>
-                    <th class="p-10 text-center">Quantity</th>
-                    <th class="p-10 text-center">Total</th>
-                </thead>
-
-                <tbody>
-                    <tr *ngFor="let cItem of cart; let i = index" class="relative border-b-2">
-
-                        <td class="flex my-4 gap-10">
-                            <div class="w-96">
-                                <img
-                                    class="object-cover w-full h-[180px]"
-                                    src="{{ cItem.imageUrl }}"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="w-[31rem] space-y-10 pr-32">
-                                <div>
-                                    <h3 class="text-3xl font-semibold">
-                                        {{ cItem.name }}
-                                    </h3>
+                <div class="scroll-table">
+                    <thead
+                        class="bg-[#5F462B] text-white uppercase font-medium tracking-widest"
+                    >
+                        <th class="p-10">Products</th>
+                        <th class="p-10 text-center">Price</th>
+                        <th class="p-10 text-center">Quantity</th>
+                        <th class="p-10 text-center">Total</th>
+                    </thead>
+                    <tbody>
+                        <tr
+                            *ngFor="let cItem of cart; let i = index"
+                            class="relative border-b-2"
+                        >
+                            <td class="flex my-4 gap-10">
+                                <div class="w-96">
+                                    <img
+                                        class="object-cover w-full h-[180px]"
+                                        src="{{ cItem.imageUrl }}"
+                                        alt=""
+                                    />
                                 </div>
-                                <div>
-                                    <p class="text-lg prose">
-                                        {{ cItem.description }}
-                                    </p>
-                                </div>
+                                <div class="w-[31rem] space-y-10 pr-32">
+                                    <div>
+                                        <h3 class="text-3xl font-semibold">
+                                            {{ cItem.name }}
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <p class="text-lg prose">
+                                            {{ cItem.description }}
+                                        </p>
+                                    </div>
 
-                                <div class="mt-4 sm:mt-0 sm:pr-9">
-                                    <button
-                                        type="button"
-                                        class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
-                                        (click)="deleteProduct(cItem.id)"
-                                    >Remove</button>
-                                    <div class="absolute top-0 right-0 m-4">
-
+                                    <div class="mt-4 sm:mt-0 sm:pr-9">
                                         <button
                                             type="button"
                                             class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
                                             (click)="deleteProduct(cItem.id)"
                                         >
-                                            <i class="fa-solid fa-x"></i>
-
+                                            Remove
                                         </button>
+                                        <div class="absolute top-0 right-0 m-4">
+                                            <button
+                                                type="button"
+                                                class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500"
+                                                (click)="
+                                                    deleteProduct(cItem.id)
+                                                "
+                                            >
+                                                <i class="fa-solid fa-x"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </td>
+                            </td>
 
-                        <td class="text-center">
-                            <div class="font-medium">
-                                <div class="font-medium" #itemUnitPrices>
-                                    {{ cItem.price | currency }}
+                            <td class="text-center">
+                                <div class="font-medium">
+                                    <div class="font-medium" #itemUnitPrices>
+                                        {{ cItem.price | currency }}
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
+                            </td>
 
-                        <td>
-                            <div
-                                class="font-medium m-auto flex flex-col justify-center items-center"
-                            >
-                                <i class="fa-solid fa-angle-up" style="cursor: pointer;" (click)="onAdd(cItem.id)"></i>
-                                <span>{{cItem.amount}}</span>
-                                <i class="fa-solid fa-angle-down" style="cursor: pointer;" (click)="onMinus(cItem.id)"></i>
-                            </div>
-                        </td>
+                            <td>
+                                <div
+                                    class="font-medium m-auto flex flex-col justify-center items-center"
+                                >
+                                    <i
+                                        class="fa-solid fa-angle-up"
+                                        style="cursor: pointer"
+                                        (click)="onAdd(cItem.id)"
+                                    ></i>
+                                    <span>{{ cItem.amount }}</span>
+                                    <i
+                                        class="fa-solid fa-angle-down"
+                                        style="cursor: pointer"
+                                        (click)="onMinus(cItem.id)"
+                                    ></i>
+                                </div>
+                            </td>
 
-                        <td>
-                            <div
-                                class="font-bold flex justify-center items-center"
-                            >
-                                {{ cItem.price * cItem.amount | currency }}
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+                            <td>
+                                <div
+                                    class="font-bold flex justify-center items-center"
+                                >
+                                    {{ cItem.price * cItem.amount | currency }}
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </div>
             </table>
+
             <!-- purchase summary -->
             <div>
                 <div
@@ -107,7 +123,6 @@
                     >
                         <div>Subtotal</div>
                         <div>
-
                             {{
                                 grandTotal - (grandTotal / 100) * 1.5 | currency
                             }}
@@ -173,4 +188,3 @@
         </div>
     </div>
 </section>
-

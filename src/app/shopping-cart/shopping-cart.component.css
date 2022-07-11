@@ -1,0 +1,13 @@
+.scroll-table {
+    height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.scroll-table thead {
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+}
