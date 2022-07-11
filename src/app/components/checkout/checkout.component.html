@@ -196,6 +196,7 @@
                                             <mat-form-field appearance="fill">
                                                 <mat-label>Card Holder Name</mat-label>
                                                 <input
+                                                    type="text"
                                                     matInput
                                                     formControlName="cardholder"
                                                 />
@@ -292,43 +293,44 @@
 
                         <mat-step>
                             <ng-template matStepLabel>Confirm your order</ng-template>
-                            <div>
-                                <p>
-                                    Account Type:
-                                    {{ userTypeForm.controls["type"].value | titlecase }}
-                                </p>
-
-                                <p>
-                                    Delivery Type:
-                                    {{ deliveryTypeForm.controls["type"].value | titlecase }}
-                                </p>
-
-                                <p *ngIf="addressForm.enabled">
-                                    Delivery Address:
-                                    {{
-                                        [
-                                            addressForm.controls["street_address"]?.value +
-                                                addressForm.controls["street_address2"]?.value,
-                                            addressForm.controls["city_town"]?.value,
-                                            addressForm.controls["parish"]?.value
-                                        ].join(", ") | titlecase
-                                    }}
-                                </p>
-
-                                <p>
-                                    Payment Type:
-                                    {{ paymentTypeForm.controls["type"].value | titlecase }}
-                                </p>
-
-                                <p>
-                                    Amount Owed:
-                                    {{paymentAmount | currency}}
-                                </p>
-                            </div>
-
-                            <div>
-                                <button mat-raised-button matStepperPrevious >Go Back</button>
-                                <button mat-raised-button class="nextbtn" matStepperNext (click)="dataCollect()">Confirm Order</button>
+                            <div class="review-section">
+                                <div class="review-col">
+                                    <div class="review-row">
+                                        <span class="review-label">Account Type:</span>
+                                        <span>{{ userTypeForm.controls["type"].value | titlecase }}</span>
+                                    </div>
+                                    <div class="review-row">
+                                        <span class="review-label">Delivery Type:</span>
+                                        <span>{{ deliveryTypeForm.controls["type"].value | titlecase }}</span>
+                                    </div>
+                                    <div class="review-row"  *ngIf="addressForm.enabled">
+                                        <span class="review-label">Delivery Address:</span>
+                                        <span>
+                                            {{
+                                            [
+                                                addressForm.controls["street_address"]?.value +
+                                                    addressForm.controls["street_address2"]?.value,
+                                                addressForm.controls["city_town"]?.value,
+                                                addressForm.controls["parish"]?.value
+                                            ].join(", ") | titlecase
+                                            }}
+                                    </span>
+                                    </div>
+                                    <div class="review-row">
+                                        <span class="review-label">Payment Type:</span>
+                                        <span>{{ paymentTypeForm.controls["type"].value | titlecase }}</span>
+                                    </div>
+                                    <div class="review-row">
+                                        <span class="review-label">Amount Owed:</span>
+                                        <span>{{paymentAmount | currency}}</span>
+                                    </div>
+                                    <div class="review-row">
+                                        <div>
+                                            <button mat-raised-button matStepperPrevious >Go Back</button>
+                                            <button mat-raised-button class="nextbtn" matStepperNext (click)="dataCollect()">Confirm Order</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </mat-step>
                     </mat-stepper>

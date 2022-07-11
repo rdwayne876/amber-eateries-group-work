@@ -1,51 +1,65 @@
-<div class=" min-h-screen overflow-hidden flex justify-center items-center border-red-600 p-20 mt-20">
-  
+<div
+    class="min-h-screen overflow-hidden flex justify-center items-center border-red-600 p-10"
+>
+    <div class="grid grid-flow-col grid-cols-2 min-w-[900px] min-h-[500px]">
+        <!-- map is the left container with the map -->
+        <div
+            class="grid grid-flow-row justify-center bg-[url('https://www.acouplecooks.com/wp-content/uploads/2020/04/Sidecar-Cocktail-006s.jpg')] bg-no-repeat bg-cover bg-center h-full p-7"
+        >
+            <br />
 
+            <div class="text-white text-center text-6xl font-semibold mt-5">
+                <h1>We'd Love to <br />Hear From You</h1>
+            </div>
 
-  <div class=" grid grid-flow-col grid-cols-2  min-w-[900px] min-h-[500px] ">
+            <div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <h4 class="text-center text-white pb-4">Find us here</h4>
 
-    <!-- map is the left container with the map -->
-    <div class=" grid  grid-flow-row justify-center bg-[url('https://www.acouplecooks.com/wp-content/uploads/2020/04/Sidecar-Cocktail-006s.jpg')] bg-no-repeat bg-cover bg-center  h-full p-7" >
-      <br>
+                <iframe
+                    [src]="mapsURL | safe"
+                    width="370px"
+                    height="400px"
+                    frameborder="0"
+                    class="mx-auto mt-auto"
+                >
+                </iframe>
+            </div>
+        </div>
 
-      <div class="text-white text-center text-6xl font-semibold   mt-5 ">
-
-        <h1 >We'd Love to <br>Hear From You</h1>
-      </div>
-     
-       
-       
-       <div >
-        <br>
-        <br>
-        <br>
-        <br>
-        <h4 class="text-center  text-white pb-4
-        ">Find us here</h4>
-        
-        <iframe  [src]="mapsURL | safe" width="370px" height="400px" frameborder="0" class="mx-auto mt-auto">
-         </iframe>
-
-       </div>
+        <div class="w-full">
+            <form
+                action=""
+                class="about-form grid grid-flow-row py-20 px-28 h-full"
+            >
+                <h3 class="text-[25px] text-center">Contact Us</h3>
+                <br /><label for="">Name</label>
+                <input
+                    type="text"
+                    placeholder=""
+                    class="rounded-xl border"
+                /><label for="">Email</label>
+                <input type="text" placeholder="" class="rounded-xl border" />
+                <label for="">Message</label>
+                <textarea
+                    name="address"
+                    id=""
+                    cols="30"
+                    rows="10"
+                    placeholder="what do you wanna say?"
+                    A
+                    class="border rounded-xl"
+                ></textarea>
+                <br />
+                <button
+                    class="shadow-sm max-w-[134px] mx-auto px-5 py-3 border-none"
+                >
+                    Submit
+                </button>
+            </form>
+        </div>
     </div>
-  
-    <div class="  w-full  ">
-      <form action="" class="about-form grid grid-flow-row py-20 px-28 h-full">
-        <h3 class="text-[25px] text-center">Contact Us</h3><br><label for="">Name</label>
-          <input type="text" placeholder="" class="rounded-xl border" /><label for="">Email</label>
-          <input type="text" placeholder="" class="rounded-xl border"/>
-<label for="">Message</label>        <textarea
-          name="address"
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="what do you wanna say?" A
-       class="border rounded-xl" ></textarea>
-       <br>
-        <button class="shadow-sm  max-w-[134px] mx-auto px-5 py-3 border-none">Submit</button>
-
-      </form>
-
-    </div>
-  </div>
-</div> 
+</div>
