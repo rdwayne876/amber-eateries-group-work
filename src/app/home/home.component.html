@@ -39,9 +39,11 @@
                                     *ngFor="
                                         let product of appetizers
                                             | slice
-                                                : currentPage * pageLimit
-                                                : currentPage * pageLimit +
-                                                      pageLimit
+                                                : appetizers_currentPage *
+                                                      appetizers_pageLimit
+                                                : appetizers_currentPage *
+                                                      appetizers_pageLimit +
+                                                      appetizers_pageLimit
                                     "
                                 >
                                     <div class="meal-card">
@@ -128,9 +130,9 @@
 
                             <mat-paginator
                                 [length]="appetizers.length"
-                                [pageSize]="pageLimit"
+                                [pageSize]="appetizers_pageLimit"
                                 [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event)"
+                                (page)="changePage($event, 'appetizers')"
                                 aria-label="Select page"
                             >
                                 <mat-spinner
@@ -148,9 +150,11 @@
                                     *ngFor="
                                         let product of entrees
                                             | slice
-                                                : currentPage * pageLimit
-                                                : currentPage * pageLimit +
-                                                      pageLimit
+                                                : entrees_currentPage *
+                                                      entrees_pageLimit
+                                                : entrees_currentPage *
+                                                      entrees_pageLimit +
+                                                      entrees_pageLimit
                                     "
                                 >
                                     <div class="meal-card">
@@ -237,9 +241,9 @@
 
                             <mat-paginator
                                 [length]="entrees.length"
-                                [pageSize]="pageLimit"
+                                [pageSize]="entrees_pageLimit"
                                 [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event)"
+                                (page)="changePage($event, 'entrees')"
                                 aria-label="Select page"
                             >
                                 <mat-spinner
@@ -257,9 +261,11 @@
                                     *ngFor="
                                         let product of desserts
                                             | slice
-                                                : currentPage * pageLimit
-                                                : currentPage * pageLimit +
-                                                      pageLimit
+                                                : desserts_currentPage *
+                                                      desserts_pageLimit
+                                                : desserts_currentPage *
+                                                      desserts_pageLimit +
+                                                      desserts_pageLimit
                                     "
                                 >
                                     <div class="meal-card">
@@ -346,9 +352,9 @@
 
                             <mat-paginator
                                 [length]="desserts.length"
-                                [pageSize]="pageLimit"
+                                [pageSize]="desserts_pageLimit"
                                 [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event)"
+                                (page)="changePage($event, 'desserts')"
                                 aria-label="Select page"
                             >
                                 <mat-spinner
@@ -366,16 +372,20 @@
                                     *ngFor="
                                         let product of sides
                                             | slice
-                                                : currentPage * pageLimit
-                                                : currentPage * pageLimit +
-                                                      pageLimit
+                                                : sides_currentPage *
+                                                      sides_pageLimit
+                                                : sides_currentPage *
+                                                      sides_pageLimit +
+                                                      sides_pageLimit
                                     "
                                 >
                                     <div class="meal-card">
                                         <div class="meal-details-section">
                                             <div class="meal-details">
                                                 <div class="meal-title">
-                                                    <span>{{ product.name }}</span>
+                                                    <span>{{
+                                                        product.name
+                                                    }}</span>
                                                 </div>
                                                 <div class="meal-desc">
                                                     <span>{{
@@ -383,13 +393,14 @@
                                                             | slice: 0:255
                                                     }}</span>
                                                 </div>
-    
+
                                                 <div class="meal-info">
                                                     <div class="meal-price">
                                                         <span class="m-price">{{
-                                                            product.price | currency
+                                                            product.price
+                                                                | currency
                                                         }}</span>
-    
+
                                                         <span class="qty"
                                                             >/{{
                                                                 product.quantity
@@ -397,8 +408,10 @@
                                                             }}</span
                                                         >
                                                     </div>
-    
-                                                    <div class="control-section">
+
+                                                    <div
+                                                        class="control-section"
+                                                    >
                                                         <button
                                                             class="atc-btn"
                                                             (click)="
@@ -418,7 +431,8 @@
                                                                     viewBox="0 0 60 60"
                                                                     style="
                                                                         enable-background: new
-                                                                            0 0 60
+                                                                            0 0
+                                                                            60
                                                                             60;
                                                                     "
                                                                     xml:space="preserve"
@@ -428,7 +442,10 @@
                                                                     />
                                                                 </svg>
                                                             </span>
-                                                            <span>Add To Cart</span>
+                                                            <span
+                                                                >Add To
+                                                                Cart</span
+                                                            >
                                                         </button>
                                                     </div>
                                                 </div>
@@ -443,12 +460,12 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                             <mat-paginator
                                 [length]="sides.length"
-                                [pageSize]="pageLimit"
+                                [pageSize]="sides_pageLimit"
                                 [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event)"
+                                (page)="changePage($event, 'sides')"
                                 aria-label="Select page"
                             >
                                 <mat-spinner
@@ -466,16 +483,20 @@
                                     *ngFor="
                                         let product of beverages
                                             | slice
-                                                : currentPage * pageLimit
-                                                : currentPage * pageLimit +
-                                                      pageLimit
+                                                : beverages_currentPage *
+                                                      beverages_pageLimit
+                                                : beverages_currentPage *
+                                                      beverages_pageLimit +
+                                                      beverages_pageLimit
                                     "
                                 >
                                     <div class="meal-card">
                                         <div class="meal-details-section">
                                             <div class="meal-details">
                                                 <div class="meal-title">
-                                                    <span>{{ product.name }}</span>
+                                                    <span>{{
+                                                        product.name
+                                                    }}</span>
                                                 </div>
                                                 <div class="meal-desc">
                                                     <span>{{
@@ -483,13 +504,14 @@
                                                             | slice: 0:255
                                                     }}</span>
                                                 </div>
-    
+
                                                 <div class="meal-info">
                                                     <div class="meal-price">
                                                         <span class="m-price">{{
-                                                            product.price | currency
+                                                            product.price
+                                                                | currency
                                                         }}</span>
-    
+
                                                         <span class="qty"
                                                             >/{{
                                                                 product.quantity
@@ -497,8 +519,10 @@
                                                             }}</span
                                                         >
                                                     </div>
-    
-                                                    <div class="control-section">
+
+                                                    <div
+                                                        class="control-section"
+                                                    >
                                                         <button
                                                             class="atc-btn"
                                                             (click)="
@@ -518,7 +542,8 @@
                                                                     viewBox="0 0 60 60"
                                                                     style="
                                                                         enable-background: new
-                                                                            0 0 60
+                                                                            0 0
+                                                                            60
                                                                             60;
                                                                     "
                                                                     xml:space="preserve"
@@ -528,7 +553,10 @@
                                                                     />
                                                                 </svg>
                                                             </span>
-                                                            <span>Add To Cart</span>
+                                                            <span
+                                                                >Add To
+                                                                Cart</span
+                                                            >
                                                         </button>
                                                     </div>
                                                 </div>
@@ -543,12 +571,12 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                             <mat-paginator
                                 [length]="beverages.length"
-                                [pageSize]="pageLimit"
+                                [pageSize]="beverages_pageLimit"
                                 [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event)"
+                                (page)="changePage($event, 'beverages')"
                                 aria-label="Select page"
                             >
                                 <mat-spinner

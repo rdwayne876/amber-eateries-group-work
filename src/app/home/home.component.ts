@@ -15,12 +15,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class HomeComponent implements OnInit {
     tabChangeEvent?: MatTabChangeEvent;
-    products: Product[] = [];
     appetizers: Product[] = [];
+    appetizers_currentPage = 0;
+    appetizers_pageLimit = 9;
     entrees: Product[] = [];
+    entrees_currentPage = 0;
+    entrees_pageLimit = 9;
     sides: Product[] = [];
-    beverages: Product[] = [];
+    sides_currentPage = 0;
+    sides_pageLimit = 9;
+    beverages: Product[] = [];    
+    beverages_currentPage = 0;
+    beverages_pageLimit = 9;
     desserts: Product[] = [];
+    desserts_currentPage = 0;
+    desserts_pageLimit = 9;
     cart: any[] = [];
     currentPage = 0;
     pageLimit = 9;
@@ -34,7 +43,6 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         this.dataService.sendGetRequest().subscribe((data: Product[]) => {
-            this.products = data;
             this.appetizers = data.filter((value) => {
                 return value.category == Category.APPETIZER
             });
@@ -52,9 +60,9 @@ export class HomeComponent implements OnInit {
             });
         });
     }
-    changePage(event: any) {
-        this.currentPage = event.pageIndex;
-        this.pageLimit = event.pageSize;
+    changePage(event: any, property: string) {
+        this[property + "_currentPage" as keyof this] = event.pageIndex;
+        this[property + "_pageLimit" as keyof this] = event.pageSize;
     }
 
     tabChangeEventHandler(event: MatTabChangeEvent): void {
