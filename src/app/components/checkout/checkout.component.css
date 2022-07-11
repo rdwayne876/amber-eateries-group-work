@@ -61,6 +61,12 @@
     width: 100%!important;
   }
 
+  ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: transparent;
+}
+
+
+
   .nextbtn {
     margin-top: 4rem;
     background-color: #fd935c!important;
@@ -72,6 +78,26 @@
 ::ng-deep   .nextbtn.mat-raised-button {
     color: #FFF!important;
   }
+
+
+  .form-row{
+    display: flex;
+    width: 100%;
+  }
+
+  .form-row .form-row-col-1 {
+    flex: 1;
+    padding-right: 1rem ;
+  }
+  .form-row .form-row-col-2 {
+    flex: 1;
+    padding-left: 1rem ;
+  }
+  .form-row .form-row-col-middle {
+    flex: 1;
+    padding-left: 0 1rem;
+  }
+
 
 .summary-section {
     margin-bottom: 2rem;
