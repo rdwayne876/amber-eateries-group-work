@@ -1,9 +1,10 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Sacramento&family=Source+Code+Pro&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 html,
 body {
@@ -12,8 +13,7 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background-color: #EAEAE6;
-
+    background-color: #eaeae6;
 }
 
 * {

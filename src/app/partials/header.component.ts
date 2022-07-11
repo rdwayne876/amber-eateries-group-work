@@ -22,7 +22,11 @@ import { CartService } from '../cart.service';
                     <div class="main-container p-10">
                         <div class="m-h-inner flex flex-wrap ">
                             <div class="logo">
-                                <a href="/"><span>Amber Eateries</span></a>
+                                <a href="/"
+                                    ><span class="text-[50px] "
+                                        >Amber Eats</span
+                                    ></a
+                                >
                             </div>
                             <div class="navigation  ">
                                 <button mat-button routerLink="/">Home</button>
@@ -124,11 +128,13 @@ import { CartService } from '../cart.service';
             }
 
             .logo span {
-                font-family: 'Permanent Marker', cursive;
-                font-size: 28px;
+                font-family: 'Sacramento', cursive;
                 color: white;
             }
-
+            .navigation button {
+                font-size: 16px;
+                font-family: 'Italiana', serif;
+            }
             .navigation ::ng-deep .mat-button {
                 color: white;
             }
