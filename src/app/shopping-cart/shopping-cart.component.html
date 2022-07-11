@@ -84,13 +84,13 @@
                                     <i
                                         class="fa-solid fa-angle-up p-2 rounded-full hover:bg-[#0002]"
                                         style="cursor: pointer"
-                                        (click)="onAdd(cItem.id)"
+                                        (click)="onQuantity(cItem.id, 1)"
                                     ></i>
                                     <span>{{ cItem.amount }}</span>
                                     <i
                                         class="fa-solid fa-angle-down p-2 rounded-full hover:bg-[#0002]"
                                         style="cursor: pointer"
-                                        (click)="onMinus(cItem.id)"
+                                        (click)="onQuantity(cItem.id, -1)"
                                     ></i>
                                 </div>
                             </td>

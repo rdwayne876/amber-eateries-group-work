@@ -264,6 +264,21 @@ export class CheckoutComponent implements OnInit {
         this.paymentAmount = this.cartService.getCartTotal(this.Cart);
     }
 
+    onQuantity(id: number, value: number) {
+        let item = this.Cart.find((item) => item.id == id);
+        item.amount += value;
+        if (item.amount <= 0) {
+            item.amount -= value;
+            return;
+        } else if (item.amount > 10) {
+            item.amount--;
+            return;
+        } else {
+            this.cartService.updateCart(this.Cart);
+        }
+        this.paymentAmount = this.cartService.getCartTotal(this.Cart);
+    }
+
     onAdd(id: number) {
         let item = this.Cart.find((item) => item.id == id);
         item.amount++;
@@ -335,22 +350,19 @@ export class CheckoutComponent implements OnInit {
         clearTimeout(this.rateLimitRetry);
 
         this.mapService.address = {
-            street_address:
-                form.controls['street_address'].value,
-            street_address2:
-                form.controls['street_address2'].value,
+            street_address: form.controls['street_address'].value,
+            street_address2: form.controls['street_address2'].value,
             city_town: form.controls['city_town'].value,
             parish: form.controls['parish'].value,
         };
 
         if (!this.map.setMapLocation()) {
             //Rate limit response logic
-            console.log("Rate limited. Try again");
+            console.log('Rate limited. Try again');
             this.rateLimitRetry = setTimeout(() => {
                 this.map.setMapLocation();
             }, 1000);
         }
-
     }
 
     deliveryFill = (event: MatRadioChange) => {};
