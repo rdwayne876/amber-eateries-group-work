@@ -31,16 +31,8 @@ export class ShoppingCartComponent implements OnInit {
         if (item.amount <= 0) {
             item.amount -= value;
             return;
-        } else {
-            this.cartService.updateCart(this.cart);
-        }
-        this.grandTotal = this.cartService.getCartTotal();
-    }
-
-    onAdd(id: number) {
-        this.cart.find((item) => item.id == id).amount++;
-        if (this.cart.find((item) => item.id == id).amount > 10) {
-            this.cart.find((item) => item.id == id).amount--;
+        } else if (item.amount > 10) {
+            item.amount -= value;
             return;
         } else {
             this.cartService.updateCart(this.cart);
