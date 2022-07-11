@@ -36,6 +36,9 @@ import { CartService } from '../cart.service';
                                 >
                                     Home
                                 </button>
+                                <button mat-button
+                                    class="no-hover-effect"
+                                    routerLink="/aboutus">About</button>
                                 <button
                                     mat-button
                                     class="no-hover-effect"
@@ -55,7 +58,7 @@ import { CartService } from '../cart.service';
                                     class="no-hover-effect"
                                     routerLink="/about"
                                 >
-                                    About
+                                    Contact Us
                                 </button>
 
                                 <button
@@ -80,7 +83,7 @@ import { CartService } from '../cart.service';
         </header>
     `,
     styles: [
-        `
+        `.active{color:blue}
             .header {
                 width: 100%;
                 position: fixed;
@@ -186,7 +189,7 @@ import { CartService } from '../cart.service';
     ],
 })
 export class HeaderComponent implements OnInit {
-    constructor(public cartService: CartService, private router: Router) {}
+    constructor(public cartService: CartService, private router: Router) { }
 
     ngOnInit() {
         this.routerCheck();

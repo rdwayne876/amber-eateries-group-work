@@ -37,28 +37,27 @@
                 action=""
                 class="about-form grid grid-flow-row py-20 px-28 h-full"
             >
-                <h3 class="text-[25px] text-center">Contact Us</h3>
-                <br /><label for="">Name</label>
-                <input
-                    type="text"
-                    placeholder=""
-                    class="rounded-xl border"
-                /><label for="">Email</label>
-                <input type="text" placeholder="" class="rounded-xl border" />
-                <label for="">Message</label>
-                <textarea
-                    name="address"
-                    id=""
-                    cols="30"
-                    rows="10"
-                    placeholder="what do you wanna say?"
-                    A
-                    class="border rounded-xl"
-                ></textarea>
+                <h3 class="text-[50px] text-center font-['Italiana'] font-bold"  id="contact">Contact Us</h3>
+                <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input type="text" name="" id="" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input type="text" name="" id="" matInput>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input type="text" name="" id="" matInput>
+                </mat-form-field>     
+                <mat-form-field class="example-full-width">
+                    <mat-label>Leave a comment</mat-label>
+                    <textarea matInput placeholder="C30"></textarea>
+                  </mat-form-field>
                 <br />
                 <button
-                    class="shadow-sm max-w-[134px] mx-auto px-5 py-3 border-none"
-                >
+                    class="font-['Italiana'] font-bold text-4xl tracking-[.2em] bg-[#5F462B] text-white p-4"
+                 >
                     Submit
                 </button>
             </form>
