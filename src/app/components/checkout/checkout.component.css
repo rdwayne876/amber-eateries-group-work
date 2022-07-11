@@ -24,7 +24,7 @@
     width: 310px!important;
 }
 ::ng-deep .mat-step-header .mat-step-icon-selected, ::ng-deep .mat-horizontal-stepper-header .mat-step-icon {
-    background-color: #fd935c;
+    background-color: #e0a04f;
 }
 ::ng-deep .mat-horizontal-content-container {
     margin-top:  25px!important;
@@ -38,11 +38,11 @@
 }
 
 ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-    background-color: #fd935c!important;
+    background-color: #e0a04f!important;
 }
 
 ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-    border-color: #fd935c!important;
+    border-color: #e0a04f!important;
 }
 
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
@@ -50,10 +50,10 @@
   }
 
 ::ng-deep .mat-focused .mat-form-field-underline .mat-form-field-ripple{
-    background-color: #fd935c!important;
+    background-color: #e0a04f!important;
   }
 ::ng-deep .mat-badge-warn .mat-badge-content{
-    background-color: #fd935c!important;
+    background-color: #e0a04f!important;
   }
 
   ::ng-deep .mat-form-field {
@@ -69,7 +69,7 @@
 
   .nextbtn {
     margin-top: 4rem;
-    background-color: #fd935c!important;
+    background-color: #e0a04f!important;
   }
 
 ::ng-deep .mat-raised-button {
@@ -213,7 +213,7 @@
 }
 
 .summary-meal-quantity button {
-    background-color: #fd935c;
+    background-color: #e0a04f;
     color: #FFF;
     padding: 2px 9px;
     border-radius: 4px;
