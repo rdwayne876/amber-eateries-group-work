@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CartService } from '../cart.service';
 import { DataService } from '../data.service';
 import { Category, Product } from '../product';
@@ -11,7 +12,8 @@ import { Category, Product } from '../product';
 export class SideOrderModalComponent implements OnInit {
     constructor(
         private cartService: CartService,
-        private dataService: DataService
+        private dataService: DataService,
+        @Inject(MAT_DIALOG_DATA) public category: Category
     ) {}
 
     products: Product[] = [];
@@ -20,7 +22,7 @@ export class SideOrderModalComponent implements OnInit {
         this.dataService.sendGetRequest().subscribe((resp: Product[]) => {
             let _products: Product[] = resp;
             _products = _products.filter(
-                (product: Product) => product.category == Category.SIDE
+                (product: Product) => product.category == this.category
             );
             this.products = _products;
         });
