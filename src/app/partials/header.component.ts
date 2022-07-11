@@ -31,9 +31,8 @@ import { CartService } from '../cart.service';
                             <div class="navigation">
                                 <button mat-button routerLink="/">Home</button>
                                 <button mat-button routerLink="/menu">
-                                    Menus
+                                    Menu
                                 </button>
-
                                 <button mat-button routerLink="/gallery">
                                     Gallery
                                 </button>
