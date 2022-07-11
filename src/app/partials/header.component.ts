@@ -38,7 +38,12 @@ import { CartService } from '../cart.service';
                                 </button>
 
                                 <button mat-button routerLink="/cart">
-                                    <mat-icon matBadge=" {{ cartService.getCartCount() }}" >shopping_cart</mat-icon>
+                                    <mat-icon
+                                        matBadge=" {{
+                                            cartService.getCartCount()
+                                        }}"
+                                        >shopping_cart</mat-icon
+                                    >
                                 </button>
                             </div>
                         </div>
@@ -57,8 +62,7 @@ import { CartService } from '../cart.service';
                 z-index: 999;
                 top: 0;
             }
-            ::ng-deep 
-            .mat-badge-content {
+            ::ng-deep .mat-badge-content {
                 background: rgba(0, 0, 0, 0.5);
                 color: white;
             }
@@ -148,13 +152,15 @@ import { CartService } from '../cart.service';
                 color: black;
             }
             .header-change {
-                background: #231942;
+                background: #5f462b;
+                display: block;
+                position: relative;
             }
         `,
     ],
 })
 export class HeaderComponent implements OnInit {
-    constructor(public cartService: CartService, private router: Router) { }
+    constructor(public cartService: CartService, private router: Router) {}
 
     ngOnInit() {
         this.routerCheck();
