@@ -38,7 +38,7 @@
                                     <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
                                 </div>
                             </form>
-                            <form [formGroup]="accountTypeForm">
+                            <form [formGroup]="accountTypeForm" *ngIf="userTypeForm.controls['type'].value === 'account'">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Email Address</mat-label>
                                     <input
@@ -92,7 +92,7 @@
                                 <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
                                 </div>
                             </form>
-                            <form [formGroup]="addressForm">
+                            <form [formGroup]="addressForm" *ngIf="deliveryTypeForm.controls['type'].value === 'delivery'">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Street Address</mat-label>
                                     <input
@@ -102,7 +102,7 @@
                                         (input)="updateMap(addressForm)"
                                     />
                                 </mat-form-field>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="fill">
                                     <mat-label>Street Address 2</mat-label>
                                     <input
                                         matInput
@@ -111,7 +111,7 @@
                                         (input)="updateMap(addressForm)"
                                     />
                                 </mat-form-field>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="fill">
                                     <mat-label>City</mat-label>
                                     <input
                                         matInput
@@ -120,7 +120,7 @@
                                         (input)="updateMap(addressForm)"
                                     />
                                 </mat-form-field>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="fill">
                                     <mat-label>Parish</mat-label>
                                     <input
                                         matInput
@@ -177,7 +177,7 @@
                                     <button mat-raised-button class="nextbtn" matStepperNext>Next</button>
                                 </div>
                             </form>
-                            <form [formGroup]="cardForm">
+                            <form [formGroup]="cardForm" *ngIf="paymentTypeForm.controls['type'].value === 'card'">
                                 <mat-form-field appearance="fill">
                                     <mat-label>Card Holder Name</mat-label>
                                     <input
@@ -186,7 +186,7 @@
                                         placeholder="1 Main St"
                                     />
                                 </mat-form-field>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="fill">
                                     <mat-label>Card Number</mat-label>
                                     <input
                                         matInput
@@ -194,7 +194,7 @@
                                         placeholder="1 Main St"
                                     />
                                 </mat-form-field>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="fill">
                                     <mat-label>Expiry Date</mat-label>
                                     <input
                                         matInput
@@ -202,7 +202,7 @@
                                         placeholder="1 Main St"
                                     />
                                 </mat-form-field>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="fill">
                                     <mat-label>CVV</mat-label>
                                     <input
                                         matInput
@@ -210,7 +210,7 @@
                                         placeholder="1 Main St"
                                     />
                                 </mat-form-field>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="fill">
                                     <mat-label>Street Address</mat-label>
                                     <input
                                         matInput
@@ -218,7 +218,7 @@
                                         placeholder="1 Main St"
                                     />
                                 </mat-form-field>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="fill">
                                     <mat-label>Street Address 2</mat-label>
                                     <input
                                         matInput
@@ -226,7 +226,7 @@
                                         placeholder="Cedar Grove"
                                     />
                                 </mat-form-field>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="fill">
                                     <mat-label>City</mat-label>
                                     <input
                                         matInput
@@ -234,7 +234,7 @@
                                         placeholder="Jones Town"
                                     />
                                 </mat-form-field>
-                                <mat-form-field appearance="outline">
+                                <mat-form-field appearance="fill">
                                     <mat-label>Parish</mat-label>
                                     <input
                                         matInput
@@ -293,9 +293,8 @@
                             </div>
 
                             <div>
-                                <button mat-button matStepperPrevious >Go Back</button>
+                                <button mat-raised-button matStepperPrevious >Go Back</button>
                                 <button mat-raised-button class="nextbtn" matStepperNext (click)="dataCollect()">Confirm Order</button>
-                                <button >Confirm Order</button>
                             </div>
                         </mat-step>
                     </mat-stepper>
@@ -307,27 +306,29 @@
                             <span>Order Summary</span>
                             <a href="#"><mat-icon [matBadge]="Cart.length" matBadgeColor="warn">add_shopping_cart</mat-icon></a>
                         </div>
-                        <div class="orders"  *ngFor="let data of Cart">
-                            <div class="summary-product-image">
-                             <img [src]="data.imageUrl">
-                            </div>
-                            <div class="summary-meal-details-section">
-                                <div class="summary-meal-details">
-                                    <div class="details-header">
-                                        <div class="summary-meal-title">
-                                            <span>{{ data.name }}</span>
-                                        </div>
-                                        <div class="summary-meal-quantity">
-                                            <div class="qty-control">
-                                                <button (click)="onMinus(data.id)">&minus;</button>
-                                                <span>{{ data.amount }}</span>
-                                                <button (click)="onAdd(data.id)">&plus;</button>
+                        <div class="orders-section">
+                            <div class="orders"  *ngFor="let data of Cart">
+                                <div class="summary-product-image">
+                                <img [src]="data.imageUrl">
+                                </div>
+                                <div class="summary-meal-details-section">
+                                    <div class="summary-meal-details">
+                                        <div class="details-header">
+                                            <div class="summary-meal-title">
+                                                <span>{{ data.name }}</span>
+                                            </div>
+                                            <div class="summary-meal-quantity">
+                                                <div class="qty-control">
+                                                    <button (click)="onMinus(data.id)">&minus;</button>
+                                                    <span>{{ data.amount }}</span>
+                                                    <button (click)="onAdd(data.id)">&plus;</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="summary-meal-price">
-                                        <span>{{ data.price | currency }}</span>
+                                        <div class="summary-meal-price">
+                                            <span>{{ data.price | currency }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

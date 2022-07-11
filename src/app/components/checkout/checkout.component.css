@@ -76,30 +76,22 @@
 .summary-section {
     margin-bottom: 2rem;
     width: 100%;
-    max-height: 535px;
+    height: auto;
     background-color: #FFF;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     padding: 0 2rem 2rem 2rem;
-    overflow: auto;
     position: relative;
 }
-
+.orders-section {
+    max-height: 235px;
+    overflow: auto;
+}
 .orders {
-    padding-bottom: 2rem;
     margin-bottom: 2rem;
 }
-.orders:first-child {
-    padding-bottom: 0!important;
-    border-bottom: 0!important;
-    margin-bottom: 0!important;
-}
-.orders:last-child {
-    padding-bottom: 0;
-    border-bottom: 0;
-    margin-bottom: 0;
-}
+
 
 .order-total-section {
     width: 100%;
@@ -149,6 +141,7 @@
     width: 100%;
     font-size: 12px;
     margin-bottom: .5rem;
+    padding-right: .5rem;
 }
 
 .summary-product-image {
@@ -162,7 +155,7 @@
 }
 
 .summary-meal-details-section{
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -187,7 +180,7 @@
 .summary-meal-quantity {
     display: flex;
     align-items: center;
-    min-width: 70px;
+    min-width: 80px;
 }
 
 .summary-meal-quantity button {
