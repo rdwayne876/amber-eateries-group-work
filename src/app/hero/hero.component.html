@@ -1,44 +1,38 @@
 <!-- hero -->
 <div
-    class="flex justify-center items-center min-h-[691px] bg-no-repeat bg-cover text-white"
+    class="relative text-white h-[691px] flex justify-center items-center overflow-hidden"
 >
-    <div
-        class="relative w-full min-h-[691px] flex justify-center items-center overflow-hidden"
-    >
-        <div class="absolute w-full h-full top-0 bottom-0 left-0">
-            <app-slider
-                [images]="images"
-                [autoSlide]="true"
-                [controls]="false"
-            ></app-slider>
-        </div>
-        <!-- welcome-text -->
-        <div>
-            <h1
-                class="max-w-[700px] text-[80px] text-center font-bold drop-shadow-2xl font-['Italiana'] font-bold"
-            >
-                WELCOME <br />TO <br />
-                AMBER EATS
-            </h1>
-        </div>
-        <!-- welcome-text-end -->
+    <div class="absolute top-0 left-0 bottom-0 right-0">
+        <app-slider
+            [images]="images"
+            [autoSlide]="true"
+            [controls]="false"
+        ></app-slider>
     </div>
+    <!-- welcome-text -->
+    <div>
+        <h1
+            class="max-w-[700px] text-[80px] text-center font-bold drop-shadow-2xl font-['Italiana']"
+        >
+            WELCOME <br />TO <br />
+            AMBER EATS
+        </h1>
+    </div>
+    <!-- welcome-text-end -->
 </div>
 
-<main class="p-14">
+<main>
     <!-- order-section -->
     <section
-        class="grid grid-flow-row text-center bg-[#463420] text-[#fff3b0] font-bold h-full mb-20"
+        class="text-center bg-[#463420] text-[#fff3b0] font-bold h-full mb-20"
     >
-        <div class="w-4/5 mx-auto">
-            <p
-                class="border-b-[6px] border-white pt-[40px] text-[40px] m-auto text-white"
-            >
+        <div class="w-4/5 mx-auto py-16">
+            <p class="border-b-[6px] border-b-white text-[40px] text-white">
                 IN-STORE PICKUP, CURBSIDE OR DELIVERY <br />
                 <span class="font-bold"> START YOUR ORDER NOW </span>
             </p>
             <button
-                class="bg-[#5F462B] py-7 px-16 w-[314px] my-[43px] text-[17px] text-white"
+                class="bg-[#5F462B] py-7 px-16 max-w-[350px] m-10 text-[20px] shadow-md text-white"
             >
                 ORDER NOW
             </button>
@@ -47,20 +41,20 @@
     <!-- order-section-end -->
 
     <!-- view-menu -->
-    <section class="grid grid-cols-2">
-        <div class="grid grid-flow-row gap-10 items-center justify-center">
+    <section class="grid sm:grid-cols-2 gap-10 px-20 py-32">
+        <div class="w-full">
             <div class="flex items-center justify-between">
                 <p class="text-[#463420] text-6xl">
                     WHAT'S ON <br />
                     <span class="font-bold">OUR MENU</span>
                 </p>
-                <div class="w-[300px] h-3 bg-[#463420]"></div>
+                <div class="min-w-[200px] h-3 bg-[#463420]"></div>
             </div>
 
             <div>
-                <p class="max-w-[570px] text-[15px] font-semibold">
-                    “<span class="text-4xl italic">The Fastest Treat</span>, as
-                    you order you seet". Feelin for an exquisite dishes or urban
+                <p class="max-w-[500px] text-[17px] font-semibold">
+                    “<span class="text-4xl">The Fastest Treat</span>, as you
+                    order you seet". Feelin for an exquisite dishes or urban
                     style street foods? Amber eats has a menu just for you.
                 </p>
             </div>
@@ -70,7 +64,7 @@
                 VIEW MENU
             </button>
         </div>
-        <div class="max-w-[700px] mx-auto">
+        <div class="mx-auto">
             <img
                 src="https://s3-alpha-sig.figma.com/img/2922/1f95/bb95a4a7e1a3fd1ad00feb7274898a6a?Expires=1658102400&Signature=PQEQ~3KQ~~dy8ggDI1DiC03xbUm9xDiHqA1EM8BC~ok-IIqzJZiSnj4UJaErN8mJbhASRMyTpOpXhNnaRfkFjrqHD9ANirirHHIE0MClEGbmMkYdl31cenm7qee8zOGCIJjKKYUOx~rhS8BiVwW6O30hdXlRAqTPZbDj08I~QR7dEfEMuDJkI2gWA6CbcUjpRE2rycjz5auBdf0KNO-rH7jIVbezdgxH~I6k5TGyde440zAbCnn7l19Bfm5LiAajQSHj2zNmOq2lnK7OqKL68t8mq21fB469ZkM07IbNOAtPl5dpkYytZ9Cgk0sd7Ap-wydMBZm~PLpSWzpA9qu4Cg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
                 alt=""

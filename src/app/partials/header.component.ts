@@ -15,34 +15,60 @@ import { CartService } from '../cart.service';
     template: `
         <header>
             <div
-                class="header transition-all shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048]"
-                id="main-nav"
+                class="header transition-all shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048] p-12"
+                id="main-nav "
             >
                 <mat-toolbar>
-                    <div class="main-container p-10">
-                        <div class="m-h-inner flex flex-wrap ">
-                            <div class="logo relative">
+                    <div class="main-container">
+                        <div class="m-h-inner flex flex-wrap p-2">
+                            <div class="logo ">
                                 <a href="/"
-                                    ><span class="text-[50px] absolute"
+                                    ><span class="text-[50px] "
                                         >Amber Eats</span
                                     ></a
                                 >
                             </div>
                             <div class="navigation">
-                                <button mat-button class="no-hover-effect" routerLink="/">Home</button>
-                                <button mat-button class="no-hover-effect" routerLink="/menu">
+                                <button
+                                    mat-button
+                                    class="no-hover-effect"
+                                    routerLink="/"
+                                >
+                                    Home
+                                </button>
+                                <button
+                                    mat-button
+                                    class="no-hover-effect"
+                                    routerLink="/menu"
+                                >
                                     Menu
                                 </button>
-                                <button mat-button class="no-hover-effect" routerLink="/gallery">
+                                <button
+                                    mat-button
+                                    class="no-hover-effect"
+                                    routerLink="/gallery"
+                                >
                                     Gallery
                                 </button>
-                                <button mat-button class="no-hover-effect" routerLink="/about">
+                                <button
+                                    mat-button
+                                    class="no-hover-effect"
+                                    routerLink="/about"
+                                >
                                     About
                                 </button>
 
-                                <button mat-button class="no-hover-effect" routerLink="/cart">
+                                <button
+                                    mat-button
+                                    class="no-hover-effect"
+                                    routerLink="/cart"
+                                >
                                     <mat-icon
-                                        [matBadge]=" cartService.getCartCount() > 0 ? cartService.getCartCount() : null"
+                                        [matBadge]="
+                                            cartService.getCartCount() > 0
+                                                ? cartService.getCartCount()
+                                                : null
+                                        "
                                         >shopping_cart</mat-icon
                                     >
                                 </button>
@@ -72,7 +98,6 @@ import { CartService } from '../cart.service';
 
             .secondary-header {
                 width: 100%;
-                height: auto;
                 background-color: #231942;
                 font-size: 14px;
                 color: #fff;
@@ -94,7 +119,7 @@ import { CartService } from '../cart.service';
                 justify-content: space-between;
                 align-items: center;
             }
-
+            /* 
             .header-location {
                 display: flex;
                 align-items: center;
@@ -104,7 +129,7 @@ import { CartService } from '../cart.service';
                 width: 15px;
                 fill: #fff;
                 margin-right: 0.5rem;
-            }
+            } */
 
             ::ng-deep .mat-toolbar-row,
             .mat-toolbar-single-row {
@@ -129,8 +154,6 @@ import { CartService } from '../cart.service';
             .logo span {
                 font-family: 'Sacramento', cursive;
                 color: white;
-                bottom: 0;
-                transform: translate(0, 65%);
             }
             .navigation button {
                 font-size: 16px;

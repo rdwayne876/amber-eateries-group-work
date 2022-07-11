@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-footer',
     template: `
-        <footer
-            class="bg-[#5F462B] text-white p-20 bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048]"
-        >
+        <footer class="bg-[#5F462B] text-white p-20 ">
             <!------ CONTAINER-1 ------>
             <div class="flex justify-between">
                 <!------ CONTAINER-1 / LEFT ------>
