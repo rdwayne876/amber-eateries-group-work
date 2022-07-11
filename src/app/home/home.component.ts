@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     constructor(
         private dataService: DataService,
         private cartService: CartService,
-        private snackBar: MatSnackBar,
+        private succcessPopup: MatSnackBar,
         public dialog: MatDialog
     ) {}
 
@@ -44,8 +44,8 @@ export class HomeComponent implements OnInit {
     addProduct(id: number): void {
         this.cartService.addCartItem(id);
 
-        this.snackBar.open('Added to cart', undefined, {
-            duration: 2000,
+        this.succcessPopup.open('Added to cart', 'ok', {
+            panelClass: ['hazel-snackbar'],
         });
 
         if (
