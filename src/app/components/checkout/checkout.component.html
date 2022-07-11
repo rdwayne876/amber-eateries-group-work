@@ -355,9 +355,9 @@
                                             </div>
                                             <div class="summary-meal-quantity">
                                                 <div class="qty-control">
-                                                    <button (click)="onQuantity(data.id, 1)">&minus;</button>
+                                                    <button (click)="onQuantity(data.id, -1)">&minus;</button>
                                                     <span>{{ data.amount }}</span>
-                                                    <button (click)="onQuantity(data.id, -1)">&plus;</button>
+                                                    <button (click)="onQuantity(data.id, 1)">&plus;</button>
                                                 </div>
                                             </div>
                                         </div>
