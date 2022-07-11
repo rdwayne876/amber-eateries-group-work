@@ -19,21 +19,34 @@ export class ShoppingCartComponent implements OnInit {
         this.grandTotal = this.cartService.getCartTotal(this.cart);
     }
 
-    amountChanged(event: any, cItemID: number): void {
-        this.cart.find((item) => item.id == cItemID).amount = parseInt(
-            event.target.value
-        );
-
-        this.cartService.updateCart(this.cart);
-        this.grandTotal = this.cartService.getCartTotal(this.cart);
-    }
-
     deleteProduct(product_id: number) {
         this.cartService.updateCart(
             this.cartService.removeCartItem(product_id)
         );
 
         this.cart = this.cartService.getCart() ?? [];
+        this.grandTotal = this.cartService.getCartTotal(this.cart);
+    }
+
+    onMinus(id: number) {
+        this.cart.find((item) => item.id == id).amount--;
+        if (this.cart.find((item) => item.id == id).amount <= 0) {
+            this.cart.find((item) => item.id == id).amount++;
+            return;
+        } else {
+            this.cartService.updateCart(this.cart);
+        }
+        this.grandTotal = this.cartService.getCartTotal(this.cart);
+    }
+
+    onAdd(id: number) {
+        this.cart.find((item) => item.id == id).amount++;
+        if (this.cart.find((item) => item.id == id).amount > 10) {
+            this.cart.find((item) => item.id == id).amount--;
+            return;
+        } else {
+            this.cartService.updateCart(this.cart);
+        }
         this.grandTotal = this.cartService.getCartTotal(this.cart);
     }
 }
