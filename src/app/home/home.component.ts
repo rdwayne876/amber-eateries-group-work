@@ -55,6 +55,9 @@ export class HomeComponent implements OnInit {
             // Use here to select the products category to upsell for the first tab
             this.dialog.open(SideOrderModalComponent, {
                 data: Category.SIDE,
+                panelClass: 'modal',
+                height:'fit-content',
+                width:'60%',
             });
         }
 
@@ -66,11 +69,18 @@ export class HomeComponent implements OnInit {
                 case 'apptezier':
                     this.dialog.open(SideOrderModalComponent, {
                         data: Category.ENTREE,
+                        panelClass: 'modal',
+                        height:'fit-content',
+                        width:'60%',
+
                     });
                     break;
                 case 'desert':
                     this.dialog.open(SideOrderModalComponent, {
                         data: Category.BEVERAGE,
+                        panelClass: 'modal',
+                        height:'fit-content',
+                        width:'60%',
                     });
                     break;
                 default:
