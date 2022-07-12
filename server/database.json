@@ -18,7 +18,7 @@
             "category": "entree",
             "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Ackee-and-Saltfish-683x1024.jpg",
             "price": 900,
-            "quantity": 195,
+            "quantity": 200,
             "ratings": []
         },
         {
@@ -38,7 +38,7 @@
             "category": "entree",
             "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Beef-Patties-683x1024.jpg",
             "price": 300,
-            "quantity": 98,
+            "quantity": 100,
             "rating": []
         },
         {
@@ -68,7 +68,7 @@
             "category": "entree",
             "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Oxtail-683x1024.jpg",
             "price": 1900,
-            "quantity": 98,
+            "quantity": 100,
             "rating": []
         },
         {
@@ -88,7 +88,7 @@
             "category": "appetizer",
             "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Fried-Dumplings-768x1152.jpg",
             "price": 100,
-            "quantity": 498,
+            "quantity": 500,
             "rating": []
         },
         {

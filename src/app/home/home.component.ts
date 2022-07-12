@@ -81,13 +81,13 @@ export class HomeComponent implements OnInit {
                 width: '70%',
             };
 
-            if (this.tabChangeEvent == undefined) {
-                // Use here to select the products category to upsell for the first tab
-                this.dialog.open(SideOrderModalComponent, {
-                    data: { category: Category.SIDE, product },
-                    ...dialogConfig,
-                });
-            }
+            // if (this.tabChangeEvent == undefined) {
+            //     // Use here to select the products category to upsell for the first tab
+            //     this.dialog.open(SideOrderModalComponent, {
+            //         data: { category: Category.SIDE, product },
+            //         ...dialogConfig,
+            //     });
+            // }
 
             if (this.tabChangeEvent) {
                 console.log(this.tabChangeEvent.tab.textLabel);
