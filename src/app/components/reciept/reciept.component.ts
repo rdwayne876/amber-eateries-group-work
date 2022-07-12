@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/cart.service';
-import { Order, Transaction } from 'src/app/interfaces/checkout';
+import { Order, PaymentMethod, Transaction } from 'src/app/interfaces/checkout';
 
 @Component({
     selector: 'app-reciept',
@@ -9,13 +9,27 @@ import { Order, Transaction } from 'src/app/interfaces/checkout';
     styleUrls: ['./reciept.component.css'],
 })
 export class RecieptComponent implements OnInit {
-    transaction: Transaction;
-    order: Order;
+    transaction: Transaction = {
+        id: 0,
+        user_id: 0,
+        order_id: 0,
+        payment_method: PaymentMethod.CASH,
+        payment_amount: 0,
+        date: '',
+        delivery: false,
+        address: {
+            street_address: '',
+            street_address2: '',
+            city_town: '',
+            parish: '',
+        },
+    };
+    order: Order = { id: 0, orders: [] };
 
     constructor(private router: Router) {
-      let data = this.router.getCurrentNavigation()!.extras.state!['reciept'];
-      this.transaction = {...data.transaction};
-      this.order = {...data.order};
+        let data = this.router.getCurrentNavigation()?.extras.state!['reciept'];
+        this.transaction = { ...data.transaction };
+        this.order = { ...data.order };
     }
 
     ngOnInit(): void {}
