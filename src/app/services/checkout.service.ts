@@ -16,7 +16,7 @@ import { DataService } from '../data.service';
 })
 export class CheckoutService {
     private API = 'http://localhost:3000/';
-    reciept!: Transaction;
+    receipt!: Transaction;
 
     //Create
     private executeTransaction(
@@ -39,7 +39,7 @@ export class CheckoutService {
                 })
                 .subscribe({
                     next: (data) => {
-                        this.reciept = data;
+                        this.receipt = data;
                         observer.next(true);
                     },
                     error: (err) => {

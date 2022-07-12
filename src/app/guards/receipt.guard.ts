@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 @Injectable({
     providedIn: 'root',
 })
-export class RecieptGuard implements CanActivate {
+export class ReceiptGuard implements CanActivate {
     constructor(private router: Router) {}
 
     canActivate(
@@ -22,9 +22,9 @@ export class RecieptGuard implements CanActivate {
         | Promise<boolean | UrlTree>
         | boolean
         | UrlTree {
-        // Prevents navigation to the reciept page unless through checkout
+        // Prevents navigation to the receipt page unless through checkout
         let data =
-            this.router.getCurrentNavigation()?.extras.state?.['reciept'];
+            this.router.getCurrentNavigation()?.extras.state?.['receipt'];
 
         if (
             this.router.getCurrentNavigation()?.trigger !== 'imperative' ||

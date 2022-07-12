@@ -239,8 +239,8 @@ export class CheckoutComponent implements OnInit {
 
                     this.router.navigateByUrl('/receipt', {
                         state: {
-                            reciept: {
-                                transaction: this.checkoutService.reciept,
+                            Receipt: {
+                                transaction: this.checkoutService.receipt,
                                 order: this.Cart,
                             },
                         },

@@ -14,9 +14,9 @@ import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { MenuEditComponent } from './menu-edit/menu-edit.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-import { RecieptComponent } from './components/reciept/reciept.component';
+import { ReceiptComponent } from './components/receipt/receipt.component';
 import { CheckoutGuard } from './guards/checkout.guard';
-import { RecieptGuard } from './guards/reciept.guard';
+import { ReceiptGuard } from './guards/receipt.guard';
 import { AboutusComponent } from './aboutus/aboutus.component';
 
 const routes: Routes = [
@@ -40,8 +40,8 @@ const routes: Routes = [
     },
     {
         path: 'receipt',
-        component: RecieptComponent,
-        canActivate: [RecieptGuard],
+        component: ReceiptComponent,
+        canActivate: [ReceiptGuard],
     },
     { path: 'hero', component: HeroComponent },
     { path: 'aboutus', component: AboutusComponent },

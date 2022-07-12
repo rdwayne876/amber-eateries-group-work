@@ -4,11 +4,11 @@ import { CartService } from 'src/app/cart.service';
 import { Order, PaymentMethod, Transaction } from 'src/app/interfaces/checkout';
 
 @Component({
-    selector: 'app-reciept',
-    templateUrl: './reciept.component.html',
-    styleUrls: ['./reciept.component.css'],
+    selector: 'app-Receipt',
+    templateUrl: './receipt.component.html',
+    styleUrls: ['./receipt.component.css'],
 })
-export class RecieptComponent implements OnInit {
+export class ReceiptComponent implements OnInit {
     transaction: Transaction = {
         id: 0,
         user_id: 0,
@@ -27,7 +27,7 @@ export class RecieptComponent implements OnInit {
     order: Order = { id: 0, orders: [] };
 
     constructor(private router: Router) {
-        let data = this.router.getCurrentNavigation()?.extras.state!['reciept'];
+        let data = this.router.getCurrentNavigation()?.extras.state!['receipt'];
         this.transaction = { ...data.transaction };
         this.order = { ...data.order };
     }
