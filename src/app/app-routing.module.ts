@@ -59,7 +59,6 @@ export class AppRoutingModule {
 
     constructor(router: Router) {
         router.events
-            .pipe(filter((event) => event instanceof NavigationEnd))
             .subscribe(() => {
                 window.scrollTo(0, 0);
             });
