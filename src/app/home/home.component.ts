@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren } from '@angular/core';
 import { DataService } from '../data.service';
 
 import { Category, Product } from '../product';
@@ -7,6 +7,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { SideOrderModalComponent } from '../side-order-modal/side-order-modal.component';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
     selector: 'app-home',
@@ -33,7 +34,8 @@ export class HomeComponent implements OnInit {
         private cartService: CartService,
         private succcessPopup: MatSnackBar,
         public dialog: MatDialog
-    ) {}
+    ) {
+    }
 
     ngOnInit() {
         this.dataService.sendGetRequest().subscribe((data: Product[]) => {
@@ -54,9 +56,9 @@ export class HomeComponent implements OnInit {
             });
         });
     }
-    changePage(event: any, property: string) {
+    changePage(event: any, property: string) {        
         this[(property + '_currentPage') as keyof this] = event.pageIndex;
-        this[(property + '_pageLimit') as keyof this] = event.pageSize;
+        this.pageLimit = event.pageSize;
     }
 
     tabChangeEventHandler(event: MatTabChangeEvent): void {

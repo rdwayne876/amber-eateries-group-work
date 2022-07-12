@@ -230,7 +230,7 @@
                                 aria-label="Select page"
                             >
                                 <mat-spinner
-                                    *ngIf="desserts.length === 0"
+                                    *ngIf="sides.length === 0"
                                 ></mat-spinner>
                             </mat-paginator>
                         </mat-tab>
@@ -291,10 +291,10 @@
                             </div>
 
                             <mat-paginator
-                                [length]="entrees.length"
+                                [length]="desserts.length"
                                 [pageSize]="pageLimit"
                                 [pageSizeOptions]="[8, 16, 32, 64]"
-                                (page)="changePage($event, 'entrees')"
+                                (page)="changePage($event, 'desserts')"
                                 aria-label="Select page"
                             >
                                 <mat-spinner
