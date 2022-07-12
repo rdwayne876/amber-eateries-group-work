@@ -27,6 +27,7 @@ export class ShoppingCartComponent implements OnInit {
 
     emptyCart() {
         this.cartService.clearCart();
+        this.cart = [];
     }
 
     onQuantity(id: number, value: number) {
