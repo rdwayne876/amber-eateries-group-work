@@ -15,7 +15,7 @@ import { CartService } from '../cart.service';
     template: `
         <header>
             <div
-                class="header transition-all shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048] p-12"
+                class="header transition-all shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048] "
                 id="main-nav "
             >
                 <mat-toolbar>
