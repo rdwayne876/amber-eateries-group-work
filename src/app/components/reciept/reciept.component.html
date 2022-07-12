@@ -1,48 +1,73 @@
-<div
-    class="min-h-[298px] max-w-[1596px] bg-[url('https://s3-alpha-sig.figma.com/img/e37a/7dba/2fefd2de31983b05a50b86548ac61770?Expires=1658707200&Signature=Nz2GkxivatiPCBEXwHxDUE9qFN03utsVwnNbwiucQM~xixjGG1QIZ~LVPsKs3ZEiiDTSGVQYT72kehCf5vDOGo-49oaV9XQqmgikslTc2ipyDHO1MGXVxECNd~sGfDawwkrNS9SO6Pw-O8cIDzIzP8g1hwQl5CWlnHVqGiudU1jcnyvmjcH55tHrdNPKxcM86X3~0x798bWhk382Akhxf5u-ChDaRMuPALe2upS6qGnX6cQ-Y98LRWWAvCOxLNYzyelPSmDTFJW75M9~SUoh39LKGSargcX5PlTSXYoro6ZTcMewYi7dRFopkrqhAxwiLlBsEaNp4jyBGwL7gKs9jg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA')]"
-></div>
-<div class="h-screen">
-    <div>
-        <!-- Back Button -->
-        <div>
-            <button>&leftarrow;</button>
-        </div>
-
-        <!-- Order info -->
-        <div>
-            <h3>
-                Transaction ID #{{ transaction.id.toString().padStart(3, "0") }}
-            </h3>
-            <p>{{ transaction.date | date }}</p>
-        </div>
-
-        <div>
-            <h2>Your order is on its way</h2>
-
-            <img src="" alt="" />
-        </div>
-
-        <h2>Here's your receipt</h2>
-
-        <div class="max-h-[20rem] overflow-y-auto">
-            <div *ngFor="let item of order.orders">
-                <p>{{ item.name }}</p>
+<div>
+    <div
+        class="min-h-[200px] min-w-[1596px] mx-auto bg-center bg-cover bg-[url('https://s3-alpha-sig.figma.com/img/e37a/7dba/2fefd2de31983b05a50b86548ac61770?Expires=1658707200&Signature=Nz2GkxivatiPCBEXwHxDUE9qFN03utsVwnNbwiucQM~xixjGG1QIZ~LVPsKs3ZEiiDTSGVQYT72kehCf5vDOGo-49oaV9XQqmgikslTc2ipyDHO1MGXVxECNd~sGfDawwkrNS9SO6Pw-O8cIDzIzP8g1hwQl5CWlnHVqGiudU1jcnyvmjcH55tHrdNPKxcM86X3~0x798bWhk382Akhxf5u-ChDaRMuPALe2upS6qGnX6cQ-Y98LRWWAvCOxLNYzyelPSmDTFJW75M9~SUoh39LKGSargcX5PlTSXYoro6ZTcMewYi7dRFopkrqhAxwiLlBsEaNp4jyBGwL7gKs9jg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA')] flex flex-wrap justify-center items-center"
+    >
+        <h1
+            class="w-4/5 mx-auto text-center text-6xl text-white border-b-[5px] border-white"
+        >
+            Purchase Successful
+        </h1>
+    </div>
+    <div class="w-full h-full flex justify-center items-center p-20">
+        <div class="min-h-[700px] w-[600px] bg-white rounded-lg">
+            <div class="grid grid-flow-row gap-1 p-20">
+                <!-- Back Button -->
                 <div>
-                    <p>{{ item.quantity | number }}</p>
-                    <p>{{ item.price | currency }}</p>
+                    <button class="tect-white bg-red-400 rounded-full px-2">
+                        &leftarrow;
+                    </button>
                 </div>
+
+                <!-- Order info -->
+                <div>
+                    <h3>
+                        Transaction ID #{{
+                            transaction.id.toString().padStart(3, "0")
+                        }}
+                    </h3>
+                    <p>{{ transaction.date | date }}</p>
+                </div>
+
+                <div class="grid justify-center gap-5 items-center">
+                    <h2>Your order is on its way</h2>
+
+                    <img src="/assets/lf20_q5evpnci.json].png" alt="" />
+                </div>
+
+                <h2>Here's your receipt</h2>
+
+                <div class="overflow-y-auto">
+                    <div
+                        *ngFor="let item of order.orders"
+                        class="grid grid-cols-3 grid-flow-row"
+                    >
+                        <p>{{ item.name }}</p>
+                        <div>
+                            <p>{{ item.quantity | number }}</p>
+                            <p>{{ item.price | currency }}</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="font-semibold text-right p-2">
+                    Total:<span>{{
+                        transaction.payment_amount | currency
+                    }}</span>
+                </h3>
+                <div class="justify-center flex items-center">
+                    <button
+                        type="submit"
+                        class="px-20 py-5 rounded-3xl text-white bg-[#5F462B] text-2xl"
+                    >
+                        Track Your Order
+                    </button>
+                </div>
+
+                <p class="text-center">
+                    Have any troubles? please contact<span
+                        ><a href="" class="text-red-500"> the support</a></span
+                    >
+                </p>
             </div>
         </div>
-        <h3>
-            Total:<span>{{ transaction.payment_amount | currency }}</span>
-        </h3>
-
-        <button type="submit">Track Your Order</button>
-
-        <p>
-            Have any troubles? please contact<span
-                ><a href="">the support</a></span
-            >
-        </p>
     </div>
 </div>
