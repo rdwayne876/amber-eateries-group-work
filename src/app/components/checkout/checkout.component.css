@@ -22,7 +22,7 @@
 
 .col-2 {
     padding-left: 0.5rem;
-    width: 275px !important;
+    width: 290px !important;
 }
 ::ng-deep .mat-step-header .mat-step-icon-selected,
 ::ng-deep .mat-horizontal-stepper-header .mat-step-icon {
