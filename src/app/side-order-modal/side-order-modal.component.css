@@ -1,0 +1,147 @@
+h2 {
+    width: 100%;
+    color: white;
+    background-color: #5f462b;
+    height: 6.3rem;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    margin: 0;
+}
+
+mat-dialog-content {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+h2::after {
+    content: "";
+    width: 60%;
+    background-color: white;
+    height: 2px;
+    position: absolute;
+    top: 75%;
+}
+
+.con {
+    width: 100%;
+    height: 450px;
+    padding: 15px;
+    display: flex;
+    background: #eaeae6;
+}
+
+.rec {
+    height: 323px;
+    overflow-y: auto;
+    width: 44%;
+    padding: 20px;
+    row-gap: 5px;
+}
+
+.order {
+    width: 56%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: inherit;
+}
+
+.order > h3 {
+    margin-bottom: 2rem;
+}
+
+.card {
+    width: 87%;
+    height: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: 0px 5px 7px -3px rgba(0, 0, 0, 0.479);
+}
+
+i {
+    color: rgb(255, 255, 0);
+}
+
+.img {
+    padding: 10px;
+    position: relative;
+}
+
+.detail {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    column-gap: 8px;
+    border-radius: 0 0 4px 4px;
+}
+
+.imgCon {
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+
+.imgCon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info p {
+    font-weight: 500;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.orderDet {
+    width: 60%;
+    height: 100%;
+    position: relative;
+    padding: 15px;
+}
+
+.card img {
+    width: 40%;
+    object-fit: cover;
+}
+
+.orderDet .header {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-between;
+}
+
+.header h3 {
+    font-weight: 700;
+}
+
+span {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.order .close-btn {
+    text-decoration: none;
+    position: absolute;
+    top: 81%;
+    left: 78%;
+    color: blue;
+}

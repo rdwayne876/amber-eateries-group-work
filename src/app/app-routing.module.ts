@@ -1,6 +1,6 @@
 import { HeroComponent } from './hero/hero.component';
 import { Input, NgModule, OnChanges, SimpleChanges } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NavigationEnd, Router, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -17,6 +17,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { RecieptComponent } from './components/reciept/reciept.component';
 import { CheckoutGuard } from './guards/checkout.guard';
 import { RecieptGuard } from './guards/reciept.guard';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -43,6 +44,9 @@ const routes: Routes = [
         canActivate: [RecieptGuard],
     },
     { path: 'hero', component: HeroComponent },
+    { path: 'aboutus', component: AboutusComponent },
+
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', redirectTo: 'home' },
 ];
 
@@ -50,4 +54,12 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+
+    constructor(router: Router) {
+        router.events
+            .subscribe(() => {
+                window.scrollTo(0, 0);
+            });
+    }
+}

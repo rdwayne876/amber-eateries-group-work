@@ -1,85 +1,37 @@
-<h2 mat-dialog-title>Would you like a side?</h2>
-<mat-dialog-content class="mat-typography">
-    <div class="grid grid-cols-3 gap-10 pt-10 pb-32 px-10">
-        <div
-            class="max-w-sm bg-white rounded-lg shadow-md"
-            *ngFor="let product of products"
-        >
-            <a href="#">
-                <div class="w-[25rem] h-[17rem]">
-                    <img
-                        class="p-8 rounded-t-lg w-full h-full object-cover"
-                        [src]="product.imageUrl"
-                        alt="product image"
-                    />
+<mat-dialog-content>
+    <h2>Choose Your Sides</h2>
+    <div class="con">
+        <div class="rec">
+            <div class="img" *ngFor="let product of products">
+                <div class="imgCon">
+                    <img [src]="product.imageUrl" alt="" />
                 </div>
-            </a>
-            <div class="px-5 pb-5">
-                <a href="#">
-                    <h5
-                        class="text-xl font-semibold tracking-tight text-gray-900"
-                    >
-                        {{ product.name | slice: 0:50 }}
-                    </h5>
-                </a>
-
-                <div class="flex justify-between items-center">
-                    <span class="text-3xl font-bold text-gray-900">
-                        {{ product.price | currency }}
-                    </span>
-                    <button
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center :bg-blue-700 :ring-blue-800"
-                        (click)="addSide(product.id)"
-                    >
-                        Add Side to cart
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- <div>
-        <div class="meal-card-container" *ngFor="let product of products">
-            <div class="meal-card">
-                <div class="meal-details-section">
-                    <div class="meal-details">
-                        <div class="meal-title">
-                            <span>{{ product.name }}</span>
-                        </div>
-                        <div class="meal-desc">
-                            <span>{{
-                                product.description | slice: 0:255
-                            }}</span>
-                        </div>
-
-                        <div class="meal-info">
-                            <div class="meal-price">
-                                <span class="m-price">{{
-                                    product.price | currency
-                                }}</span>
-
-                                <span class="qty"
-                                    >/{{ product.quantity | number }}</span
-                                >
-                            </div>
-
-                            <div
-                                class="control-section bg-blue-700 text-white px-10 py-6"
-                            >
-                                <button
-                                    class="atc-btn"
-                                    (click)="addSide(product.id)"
-                                >
-                                    <span>Add To Cart</span>
-                                </button>
-                            </div>
-                        </div>
+                <div class="detail">
+                    <div class="info">
+                        <p>{{ product.name }}</p>
+                        <p>{{ product.price | currency }}</p>
+                    </div>
+                    <div class="button">
+                        <button mat-raised-button (click)="addSide(product.id)">
+                            Add
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
+        <div class="order">
+            <h3>Your Order</h3>
+            <div class="card">
+                <div class="orderDet">
+                    <div class="header">
+                        <h3>{{ product.name }}</h3>
+                        <div><i class="fa-solid fa-star"></i> 8</div>
+                    </div>
+                    <span>{{ product.description | slice: 0:255 }}</span>
+                </div>
+                <img [src]="product.imageUrl" alt="" />
+            </div>
+            <button mat-dialog-close class="close-btn">Return to Menu</button>
+        </div>
+    </div>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button mat-button color="warn" mat-dialog-close>Cancel</button>
-    <button mat-button mat-dialog-close color="primary">Done</button>
-</mat-dialog-actions>

@@ -29,21 +29,14 @@ import { Component, OnInit } from '@angular/core';
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="/about"
-                                    >About Us and more</a
+                                    >About Us</a
                                 >
                             </li>
                             <li class="py-2 my-2 text-[1vw]">
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="/gallery"
-                                    >Gallary</a
-                                >
-                            </li>
-                            <li class="py-2 my-2 text-[1vw]">
-                                <a
-                                    class="hover:border-b-2 hover:border-b-white hover:text-white"
-                                    routerLink="/addproduct"
-                                    >Add New Product</a
+                                    >Gallery</a
                                 >
                             </li>
                         </ul>
@@ -70,7 +63,7 @@ import { Component, OnInit } from '@angular/core';
                                 <a
                                     class="hover:border-b-2 hover:border-b-white hover:text-white"
                                     routerLink="#"
-                                    >Contact</a
+                                    >Contact Us</a
                                 >
                             </li>
                         </ul>
