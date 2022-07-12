@@ -93,32 +93,26 @@ export class HomeComponent implements OnInit {
                 console.log(this.tabChangeEvent.tab.textLabel);
                 switch (this.tabChangeEvent.tab.textLabel.toLowerCase()) {
                     // Use above where `this.tabChangeEvent == undefined` is for the first tab.
-                    case 'sides':
-                    case 'beverages':
-                    case 'appetizers':
-                        this.dialog.open(SideOrderModalComponent, {
-                            data: { category: Category.ENTREE, product },
-                            ...dialogConfig,
-                        });
-                        break;
+                    // case 'sides':
+                    // case 'beverages':
+                    // case 'appetizers':
+                    //     this.dialog.open(SideOrderModalComponent, {
+                    //         data: { category: Category.ENTREE, product },
+                    //         ...dialogConfig,
+                    //     });
+                    //     break;
                     case 'entrees':
                         this.dialog.open(SideOrderModalComponent, {
                             data: { category: Category.SIDE, product },
                             ...dialogConfig,
                         });
                         break;
-                    case 'desserts':
-                        this.dialog.open(SideOrderModalComponent, {
-                            data: { category: Category.BEVERAGE, product },
-                            ...dialogConfig,
-                        });
-                        break;
-                    default:
-                        this.dialog.open(SideOrderModalComponent, {
-                            data: { category: Category.SIDE, product },
-                            ...dialogConfig,
-                        });
-                        break;
+                    // case 'desserts':
+                    //     this.dialog.open(SideOrderModalComponent, {
+                    //         data: { category: Category.BEVERAGE, product },
+                    //         ...dialogConfig,
+                    //     });
+                    //     break;
                 }
             }
         });
