@@ -12,9 +12,9 @@
                                     : accountTypeForm
                             "
                         >
-                            <ng-template matStepLabel
-                                >Checkout Service</ng-template
-                            >
+                            <ng-template matStepLabel>{{
+                                stepper.selectedIndex == 0 ? "Do you have an account?" : "Account"
+                            }}</ng-template>
 
                             <form [formGroup]="userTypeForm">
                                 <mat-radio-group
@@ -74,7 +74,9 @@
                             "
                         >
                             <ng-template matStepLabel
-                                >How will you get your food?</ng-template
+                                >{{
+                                    stepper.selectedIndex == 1 ? "How will you get your food?" : "Delivery"
+                                }}</ng-template
                             >
 
                             <form [formGroup]="deliveryTypeForm">
@@ -197,7 +199,9 @@
                             "
                         >
                             <ng-template matStepLabel
-                                >How would you like to pay?</ng-template
+                                >{{
+                                    stepper.selectedIndex == 2 ? "How would you like to pay?" : "Transaction"
+                                }}</ng-template
                             >
                             <form [formGroup]="paymentTypeForm">
                                 <mat-radio-group
@@ -355,8 +359,10 @@
                         </mat-step>
 
                         <mat-step>
-                            <ng-template matStepLabel
-                                >Confirm your order</ng-template
+                            <ng-template matStepLabel   
+                                >{{
+                                    stepper.selectedIndex == 3 ? "Please confirm your order" : "Submit"
+                                }}</ng-template
                             >
                             <div class="review-section">
                                 <div class="review-col">

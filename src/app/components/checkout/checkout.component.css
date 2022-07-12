@@ -24,10 +24,6 @@
     padding-left: 0.5rem;
     width: 290px !important;
 }
-::ng-deep .mat-horizontal-stepper-header {
-    height: fit-content !important;
-    margin-bottom: 2rem;
-}
 ::ng-deep .mat-step-header .mat-step-icon-selected,
 ::ng-deep .mat-horizontal-stepper-header .mat-step-icon {
     background-color: #e0a04f;
