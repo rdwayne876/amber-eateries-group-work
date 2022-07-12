@@ -18,7 +18,6 @@ import { RecieptComponent } from './components/reciept/reciept.component';
 import { CheckoutGuard } from './guards/checkout.guard';
 import { RecieptGuard } from './guards/reciept.guard';
 import { AboutusComponent } from './aboutus/aboutus.component';
-import { filter } from 'rxjs';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },

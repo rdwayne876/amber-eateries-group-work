@@ -20,13 +20,9 @@ import { CartService } from '../cart.service';
             >
                 <mat-toolbar>
                     <div class="main-container">
-                        <div class="m-h-inner flex flex-wrap p-2">
-                            <div class="logo ">
-                                <a href="/"
-                                    ><span class="text-[50px] "
-                                        >Amber Eats</span
-                                    ></a
-                                >
+                        <div class="m-h-inner flex flex-wrap ">
+                            <div class="logo w-fit">
+                                <a href="/" class="text-[50px] ">Amber Eats</a>
                             </div>
                             <div class="navigation">
                                 <!-- <button
@@ -145,21 +141,16 @@ import { CartService } from '../cart.service';
                 background-color: transparent;
             }
 
-            .logo {
-                width: fit-content;
-            }
-
             .logo a {
-                text-decoration: none;
-            }
-
-            .logo span {
+                display: block;
+                width: 100%;
+                height: 100%;
                 font-family: 'Sacramento', cursive;
                 color: white;
+                text-decoration: none;
             }
             .navigation button {
                 font-size: 16px;
-                font-family: 'Italiana', serif;
                 font-weight: bold;
                 letter-spacing: 2px;
             }
@@ -179,7 +170,7 @@ import { CartService } from '../cart.service';
                 background: white !important;
             }
 
-            .sticky-nav .logo span,
+            .sticky-nav .logo a,
             .sticky-nav .navigation ::ng-deep .mat-button {
                 color: #463420;
             }

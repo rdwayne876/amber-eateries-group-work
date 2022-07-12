@@ -10,7 +10,9 @@
         ></app-slider>
     </div>
     <!-- welcome-text -->
-    <div>
+    <div
+        class="z-10 flex w-full h-full justify-center items-center bg-gradient-to-r from-[#0000003f] via-[#00000060] to-[#0000003b]"
+    >
         <h1
             class="max-w-[700px] text-[80px] text-center font-bold drop-shadow-2xl font-['Italiana']"
         >
@@ -47,18 +49,19 @@
         <!-- view-menu -->
         <div class="flex flex-wrap items-center w-4/5 justify-self-center">
             <div class="flex items-center justify-around w-full">
-                <p class="text-[#463420] text-6xl">
+                <h2 class="text-[#463420] text-6xl font-['Italiana']">
                     WHAT'S ON <br />
                     <span class="font-bold">OUR MENU</span>
-                </p>
-                <p class="w-[250px] h-3 bg-[#463420] mx-auto"></p>
+                </h2>
+                <p class="w-[250px] h-3 bg-[#463420] mx-auto shadow-2xl"></p>
             </div>
 
-            <p class="text-[18px] w-max">
-                “<span class="text-4xl uppercase">The Fastest Treat</span>, as
-                you order you seet". Feelin for an exquisite dishes or urban
-                style street foods? Amber eats has a menu just for you.
-            </p>
+            <div class="text-[18px] w-max text-justify font-sans">
+                <span class="text-4xl italic">The Fastest Treat</span>, as
+                <span class="italic"> you order you see-it. </span><br /><br />
+                Craving an exquisite dish? Maybe local street foods? Amber eats
+                has a menu just for you.
+            </div>
             <button
                 class="bg-[#5F462B] py-5 px-12 w-[250px] text-[16px] text-white font-bold h-[74px] mb-20"
                 routerLink="/menu"
@@ -68,7 +71,7 @@
         </div>
         <div class="w-4/5 mx-auto">
             <img
-                src="https://s3-alpha-sig.figma.com/img/2922/1f95/bb95a4a7e1a3fd1ad00feb7274898a6a?Expires=1658102400&Signature=PQEQ~3KQ~~dy8ggDI1DiC03xbUm9xDiHqA1EM8BC~ok-IIqzJZiSnj4UJaErN8mJbhASRMyTpOpXhNnaRfkFjrqHD9ANirirHHIE0MClEGbmMkYdl31cenm7qee8zOGCIJjKKYUOx~rhS8BiVwW6O30hdXlRAqTPZbDj08I~QR7dEfEMuDJkI2gWA6CbcUjpRE2rycjz5auBdf0KNO-rH7jIVbezdgxH~I6k5TGyde440zAbCnn7l19Bfm5LiAajQSHj2zNmOq2lnK7OqKL68t8mq21fB469ZkM07IbNOAtPl5dpkYytZ9Cgk0sd7Ap-wydMBZm~PLpSWzpA9qu4Cg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+                src="https://flavorverse.com/wp-content/uploads/2022/05/Jamaican-Food-640x480.jpg"
                 alt=""
                 class="w-full h-full object-cover"
             />
@@ -87,22 +90,23 @@
             <div
                 class="flex items-center justify-between w-full flex-row-reverse"
             >
-                <p class="text-[#463420] text-5xl mx-auto">
-                    CONTACT
-                    <span class="font-bold">US</span>
-                </p>
-                <p class="w-[250px] h-3 bg-[#463420]"></p>
+                <h3 class="text-[#463420] text-6xl mx-auto font-['Italiana']">
+                    GET
+                    <span class="font-bold">IN TOUCH</span>
+                </h3>
+                <p class="w-[250px] h-3 bg-[#463420] shadow-2xl"></p>
             </div>
 
-            <p class="text-[17px] w-max">
-                From our very first day, we’ve always tried to make decisions
-                that our customers could be proud of. <br />
-                <br />
-                We provide the <span class="italic"> fastest </span>and safest
-                delivery to make sure you are satisfied and are certified by
-                Amber Group International. We offer products that are suitable
-                for vegetarians and vegans alike.
-            </p>
+            <div class="text-[17px] w-max">
+                <p class="text-justify font-sans">
+                    From our very first day, we’ve always tried to make
+                    decisions that our customers could be proud of. As such we
+                    ensure
+                    <span class="italic font-semibold"> fastest & safest </span>
+                    delivery services to make sure you, our satisfied customer
+                    is satisfied.
+                </p>
+            </div>
             <button
                 class="bg-[#5F462B] py-5 px-16 max-w-[250px] text-[16px] text-white font-bold h-[74px] mb-20"
                 routerLink="/about"

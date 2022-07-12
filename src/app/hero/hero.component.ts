@@ -28,6 +28,11 @@ export class HeroComponent implements OnInit {
             'https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1493775536169-NHL7W2XEILCX32552IFJ/charcuterie-lite.jpg?format=1500w',
         imageAlt: 'person2',
     },
+    {
+        imageSrc:
+            'https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1493775536169-NHL7W2XEILCX32552IFJ/charcuterie-lite.jpg?format=1500w',
+        imageAlt: 'person2',
+    },
 ];
 // slider images array end
 
