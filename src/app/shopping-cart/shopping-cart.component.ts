@@ -25,6 +25,10 @@ export class ShoppingCartComponent implements OnInit {
         this.grandTotal = this.cartService.getCartTotal();
     }
 
+    emptyCart() {
+        this.cartService.clearCart();
+    }
+
     onQuantity(id: number, value: number) {
         let item = this.cart.find((item) => item.id == id);
         item.amount += value;
