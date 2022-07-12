@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    margin-top: -32px;
 }
 
 .rating-list{
@@ -9,24 +10,15 @@
 
 .rating-list li{
     font-size: 50px;
-    color: white;
-    padding:  10px 2px;
+    color: gray;
 }
 
 .rating-list li:hover > mat-icon{
-    color: white;
-    background-color: #ffd700;
+    color: #ffd700;
+    background-color: whitesmoke;
 }
 
 .rating-list li.selected > mat-icon{
-    color: white;
-    background-color: #ffd700;
-}
-
-mat-icon{
-    border: 1px solid lightgray;
-    background-color: lightgray;
-    padding: 0px;
-    margin: 3px;
-    border-radius: 5px;
+    color: #ffd700;
+    background-color: whitesmoke;
 }
