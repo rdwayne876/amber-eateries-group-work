@@ -213,8 +213,9 @@
 
 .summary-meal-quantity {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    min-width: 80px;
+    min-width: 85px;
 }
 
 .summary-meal-quantity button {
