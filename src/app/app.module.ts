@@ -46,6 +46,7 @@ import { MapComponent } from './components/map/map.component';
 import { RecieptComponent } from './components/reciept/reciept.component';
 import { SideOrderModalComponent } from './side-order-modal/side-order-modal.component';
 import { RatingComponent } from './rating/rating.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 @NgModule({
     declarations: [
@@ -73,6 +74,7 @@ import { RatingComponent } from './rating/rating.component';
         MapComponent,
         RecieptComponent,
         RatingComponent,
+        AboutusComponent,
     ],
 
     imports: [
