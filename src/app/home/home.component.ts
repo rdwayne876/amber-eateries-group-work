@@ -17,22 +17,20 @@ export class HomeComponent implements OnInit {
     tabChangeEvent?: MatTabChangeEvent;
     appetizers: Product[] = [];
     appetizers_currentPage = 0;
-    appetizers_pageLimit = 9;
+    appetizers_pageLimit = 8;
     entrees: Product[] = [];
     entrees_currentPage = 0;
-    entrees_pageLimit = 9;
+    entrees_pageLimit = 8;
     sides: Product[] = [];
     sides_currentPage = 0;
-    sides_pageLimit = 9;
+    sides_pageLimit = 8;
     beverages: Product[] = [];
     beverages_currentPage = 0;
-    beverages_pageLimit = 9;
+    beverages_pageLimit = 8;
     desserts: Product[] = [];
     desserts_currentPage = 0;
-    desserts_pageLimit = 9;
+    desserts_pageLimit = 8;
     cart: any[] = [];
-    currentPage = 0;
-    pageLimit = 9;
 
     constructor(
         private dataService: DataService,
