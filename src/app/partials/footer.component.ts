@@ -13,28 +13,28 @@ import { Component, OnInit } from '@angular/core';
                         <ul class="w-full">
                             <li class="py-2 my-2 text-[1vw]">
                                 <a
-                                    class="hover:border-b-2 hover:border-b-white hover:text-white"
+                                    class="hover:text-[#e0a04f]"
                                     routerLink="/"
                                     >Home</a
                                 >
                             </li>
                             <li class="py-2 my-2 text-[1vw]">
                                 <a
-                                    class="hover:border-b-2 hover:border-b-white hover:text-white"
+                                    class="hover:text-[#e0a04f]"
                                     routerLink="/menu"
                                     >Menu</a
                                 >
                             </li>
                             <li class="py-2 my-2 text-[1vw]">
                                 <a
-                                    class="hover:border-b-2 hover:border-b-white hover:text-white"
+                                    class="hover:text-[#e0a04f]"
                                     routerLink="/about"
                                     >About Us</a
                                 >
                             </li>
                             <li class="py-2 my-2 text-[1vw]">
                                 <a
-                                    class="hover:border-b-2 hover:border-b-white hover:text-white"
+                                    class="hover:text-[#e0a04f]"
                                     routerLink="/gallery"
                                     >Gallery</a
                                 >
@@ -47,21 +47,21 @@ import { Component, OnInit } from '@angular/core';
                         <ul class="footer-links">
                             <li class="py-2 my-2 text-[1vw]">
                                 <a
-                                    class="hover:border-b-2 hover:border-b-white hover:text-white"
+                                    class="hover:text-[#e0a04f]"
                                     routerLink="#"
                                     >Terms of Use</a
                                 >
                             </li>
                             <li class="py-2 my-2 text-[1vw]">
                                 <a
-                                    class="hover:border-b-2 hover:border-b-white hover:text-white"
+                                    class="hover:text-[#e0a04f]"
                                     routerLink="#"
                                     >Fequently Asked Questions</a
                                 >
                             </li>
                             <li class="py-2 my-2 text-[1vw]">
                                 <a
-                                    class="hover:border-b-2 hover:border-b-white hover:text-white"
+                                    class="hover:text-[#e0a04f]"
                                     routerLink="#"
                                     >Contact Us</a
                                 >
