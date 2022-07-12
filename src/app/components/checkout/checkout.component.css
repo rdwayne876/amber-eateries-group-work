@@ -12,7 +12,7 @@
 }
 
 .form-section {
-    padding: 3rem 2rem 6rem 2rem;
+    padding: 2rem 2rem 2rem 2rem;
     background-color: #fff;
     border-radius: 8px;
     overflow: hidden;
@@ -23,6 +23,10 @@
 .col-2 {
     padding-left: 0.5rem;
     width: 290px !important;
+}
+::ng-deep .mat-horizontal-stepper-header {
+    height: fit-content !important;
+    margin-bottom: 2rem;
 }
 ::ng-deep .mat-step-header .mat-step-icon-selected,
 ::ng-deep .mat-horizontal-stepper-header .mat-step-icon {

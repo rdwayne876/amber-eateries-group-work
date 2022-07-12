@@ -16,7 +16,7 @@
                     <thead
                         class="bg-[#5F462B] text-white uppercase font-medium tracking-widest"
                     >
-                        <th class="p-[1vw] text-[1vw]">Products <i class="fa-solid fa-trash-can hover:cursor-pointer" (click)="emptyCart()"></i></th>
+                        <th class="p-[1vw] text-[1vw]">Products <i *ngIf="cart.length > 0" class="fa-solid fa-trash-can hover:cursor-pointer" (click)="emptyCart()"></i></th>
                         <th class="p-[1vw] text-[1vw] text-center">Price</th>
                         <th class="p-[1vw] text-[1vw] text-center">Quantity</th>
                         <th class="p-[1vw] text-[1vw] text-center">Total</th>
