@@ -43,8 +43,6 @@ const routes: Routes = [
         canActivate: [RecieptGuard],
     },
     { path: 'hero', component: HeroComponent },
-
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: '**', redirectTo: 'home' },
 ];
 
