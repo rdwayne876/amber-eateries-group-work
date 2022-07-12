@@ -29,16 +29,14 @@ import { CartService } from '../cart.service';
                                 >
                             </div>
                             <div class="navigation">
-                                <button
+                                <!-- <button
                                     mat-button
                                     class="no-hover-effect"
                                     routerLink="/"
                                 >
                                     Home
-                                </button>
-                                <button mat-button
-                                    class="no-hover-effect"
-                                    routerLink="/aboutus">About</button>
+                                </button> -->
+                               
                                 <button
                                     mat-button
                                     class="no-hover-effect"
@@ -52,6 +50,11 @@ import { CartService } from '../cart.service';
                                     routerLink="/gallery"
                                 >
                                     Gallery
+                                </button>
+                                <button mat-button
+                                    class="no-hover-effect"
+                                    routerLink="/aboutus">
+                                    About
                                 </button>
                                 <button
                                     mat-button
