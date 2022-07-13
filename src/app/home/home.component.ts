@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 	desserts: Product[] = [];
 	desserts_currentPage = 0;
 	cart: any[] = [];
-	pageLimit = 8;
+	pageLimit = 9;
 
 	
 	public get height() : number {
