@@ -28,8 +28,8 @@ export class ReceiptComponent implements OnInit {
 
     constructor(private router: Router) {
         let data = this.router.getCurrentNavigation()?.extras.state!['receipt'];
-        this.transaction = { ...data.transaction };
-        this.order = { ...data.order };
+        this.transaction = data.transaction;
+        this.order = data.order;     
     }
 
     ngOnInit(): void {}

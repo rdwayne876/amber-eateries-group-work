@@ -7,7 +7,9 @@
         (ngSubmit)="editProductForm()"
       >
         <mat-form-field class="form-control-group">
-          <mat-label>Product Name</mat-label>
+          <mat-label style="  text-transform: uppercase;
+          font-size: 25px;" >Product Name</mat-label>
+          <br>
           <input
             type="text"
             [(ngModel)]="product.name"
@@ -17,7 +19,9 @@
           />
         </mat-form-field>
         <mat-form-field class="form-control-group">
-          <mat-label>Description</mat-label>
+          <mat-label style="  text-transform: uppercase;
+          font-size: 25px;">Description</mat-label>
+          <br>
           <textarea
             [(ngModel)]="product.description"
             name="description"
@@ -28,7 +32,9 @@
           ></textarea>
         </mat-form-field>
         <mat-form-field class="form-control-group">
-          <mat-label>Price</mat-label>
+          <mat-label style="  text-transform: uppercase;
+          font-size: 25px;">Price</mat-label>
+          <br>
           <input
             type="number"
             [(ngModel)]="product.price"
@@ -38,7 +44,9 @@
           />
         </mat-form-field>
         <mat-form-field class="form-control-group">
-          <mat-label>Image</mat-label>
+          <mat-label style="  text-transform: uppercase;
+          font-size: 25px;">Image</mat-label>
+          <br>
           <input
             type="url"
             [(ngModel)]="product.imageUrl"
@@ -48,7 +56,9 @@
           />
         </mat-form-field>
         <mat-form-field class="form-control-group">
-          <mat-label>Quantity</mat-label>
+          <mat-label style="  text-transform: uppercase;
+          font-size: 25px;">Quantity</mat-label>
+          <br>
           <input
             type="number"
             [(ngModel)]="product.quantity"
