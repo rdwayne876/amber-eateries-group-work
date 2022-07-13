@@ -35,9 +35,9 @@ export class HomeComponent implements OnInit {
 	}
 	
 	public set pageLimit(v : number) {		
-		if (this.width > this.height && this.width > 1024) this.pageLimit2 = v;
-		else if (this.width <= 1024 && this.width > this.height) this.pageLimit1 = v;
-		else this.pageLimit2 = v;
+		if (this.width > this.height && this.width > 1024) this.pageLimit1 = v;
+		else if (this.width <= 1024 && this.width < this.height) this.pageLimit2 = v;
+		else this.pageLimit1 = v;
 	}
 
 	
