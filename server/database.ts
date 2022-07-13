@@ -34,7 +34,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -52,7 +52,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -70,7 +70,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -88,7 +88,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -106,7 +106,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -124,7 +124,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -142,7 +142,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -160,7 +160,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -178,7 +178,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -196,7 +196,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -215,7 +215,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -234,7 +234,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -253,7 +253,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -272,7 +272,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -291,7 +291,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -310,7 +310,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -329,7 +329,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -348,7 +348,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -367,7 +367,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -386,7 +386,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -405,7 +405,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -424,7 +424,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -443,7 +443,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -462,7 +462,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -481,7 +481,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -500,7 +500,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -519,7 +519,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -538,7 +538,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -556,7 +556,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -575,7 +575,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -594,7 +594,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -613,7 +613,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -632,7 +632,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -651,7 +651,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -669,7 +669,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -688,7 +688,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -706,7 +706,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -725,7 +725,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -744,7 +744,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -763,7 +763,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -782,7 +782,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -801,7 +801,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -820,7 +820,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -838,7 +838,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -857,7 +857,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -876,7 +876,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -894,7 +894,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -912,7 +912,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -930,7 +930,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -948,7 +948,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -966,7 +966,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -984,7 +984,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
@@ -1002,7 +1002,7 @@ database.products = [
         ratings: [...((): number[] => {
             let buffer = [];
             for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 5));
+                buffer.push(Math.round(Math.random() * 3) + 2);
             }
             return buffer;
         })()],
