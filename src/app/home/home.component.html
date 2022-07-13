@@ -19,7 +19,7 @@
 				<div class="meal-list">
 					<mat-tab-group (selectedTabChange)="tabChangeEventHandler($event)" mat-align-tabs="center" disableRipple="true">
 						<mat-tab label="Appetizers">
-							<div [class]=" width > height ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
+							<div [class]="width <= 1024 && width > height ? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]'] : width > height && width > 1024 ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
 								<mat-spinner *ngIf="appetizers.length === 0"></mat-spinner>
 								<div *ngFor="let product of appetizers | slice: appetizers_currentPage * pageLimit:appetizers_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
@@ -61,7 +61,7 @@
 							</mat-paginator>
 						</mat-tab>
 						<mat-tab label="Entrees">
-							<div [class]=" width > height ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'py-[1vw]']">
+							<div [class]="width <= 1024 && width > height ? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]'] : width > height && width > 1024 ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
 								<mat-spinner *ngIf="entrees.length === 0"></mat-spinner>
 								<div *ngFor="let product of entrees | slice: entrees_currentPage * pageLimit:entrees_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
@@ -103,7 +103,7 @@
 							</mat-paginator>
 						</mat-tab>
 						<mat-tab label="Sides">
-							<div [class]=" width > height ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'py-[1vw]']">
+							<div [class]="width <= 1024 && width > height ? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]'] : width > height && width > 1024 ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
 								<mat-spinner *ngIf="sides.length === 0"></mat-spinner>
 								<div *ngFor="let product of sides | slice: sides_currentPage * pageLimit:sides_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
@@ -145,7 +145,7 @@
 							</mat-paginator>
 						</mat-tab>
 						<mat-tab label="Desserts">
-							<div [class]=" width > height ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'py-[1vw]']">
+							<div [class]="width <= 1024 && width > height ? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]'] : width > height && width > 1024 ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
 								<mat-spinner *ngIf="desserts.length === 0"></mat-spinner>
 								<div *ngFor="let product of desserts | slice: desserts_currentPage * pageLimit:desserts_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
@@ -187,7 +187,7 @@
 							</mat-paginator>
 						</mat-tab>
 						<mat-tab label="Beverages">
-							<div [class]=" width > height ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'py-[1vw]']">
+							<div [class]="width <= 1024 && width > height ? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]'] : width > height && width > 1024 ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
 								<mat-spinner *ngIf="beverages.length === 0"></mat-spinner>
 								<div *ngFor="let product of beverages | slice: beverages_currentPage * pageLimit:beverages_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
