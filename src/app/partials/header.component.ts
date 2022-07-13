@@ -30,7 +30,7 @@ import { CartService } from '../cart.service';
                             >
                         </div>
                         <div
-                            class="navigation flex md:justify-end mx-auto md:mx-0  "
+                            class="navigation grid  grid-flow-col md:justify-end mx-auto md:mx-0   "
                         >
                             <!-- <button
                                     mat-button
@@ -104,10 +104,6 @@ import { CartService } from '../cart.service';
                 background: rgba(0, 0, 0, 0.5);
                 color: white;
             }
-            .main-container {
-                min-width: 7;
-                margin: 0 auto;
-            }
 
             /* .secondary-header {
                 width: 100%;
@@ -161,9 +157,9 @@ import { CartService } from '../cart.service';
                 text-decoration: none;
             }
             .navigation button {
-                font-size: 14px;
+                font-size: min(1em, 12px);
                 font-weight: bold;
-                letter-spacing: 2px;
+                /* letter-spacing: 2px; */
             }
             .navigation ::ng-deep .mat-button {
                 color: white;

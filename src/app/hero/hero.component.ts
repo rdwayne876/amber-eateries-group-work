@@ -18,11 +18,11 @@ export class HeroComponent implements OnInit {
                 'https://images.squarespace-cdn.com/content/v1/5a38c222cf81e0e408821378/1626482951777-LIBTINY0ETRP8YNYWZB1/image-asset.jpeg',
             imageAlt: 'nature1',
         },
-        {
-            imageSrc:
-                'https://jccint.org/listings/wp-content/uploads/sites/5/listing-uploads/gallery/2020/10/Jamaican_Food_Uper.jpg',
-            imageAlt: 'nature1',
-        },
+        // {
+        //     imageSrc:
+        //         'https://jccint.org/listings/wp-content/uploads/sites/5/listing-uploads/gallery/2020/10/Jamaican_Food_Uper.jpg',
+        //     imageAlt: 'nature1',
+        // },
 
         // {
         //     imageSrc:
