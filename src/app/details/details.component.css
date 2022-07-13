@@ -1,12 +1,101 @@
-.hero {
-  padding: 5rem;
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-mat-card {
-  margin-inline: auto;
-  width: clamp(30rem, 100%, 50rem);
+.details-contain{
+  width: 100%;
+  margin-bottom: 5vw;
 }
 
-mat-spinner {
-  margin-inline: auto;
+.details-contain .detHeading{
+  text-align: center;
+  font-size: 3vw;
+  margin-top: 2vw;
+}
+
+.details-contain .flexBx{
+  width: 50%;
+  margin: 10vw auto 10vw auto;
+  display: flex;
+  justify-content: center;
+}
+
+.flexBx .left{
+  width: 50vw;
+  height: 25vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2vw;
+  box-shadow: 0px 2px 7px 3px rgba(22, 22, 22, 0.342);
+}
+
+.left img{
+  width: 100%;
+  float: right;
+}
+
+.right{
+  width: 40vw;
+}
+
+.right .prodName{
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.prodPrice{
+  color: #885d0e;
+  font-size: 1.8vw;
+  font-weight: 700;
+  margin-bottom: 1vw;
+}
+
+.right .prodQty{
+  margin-bottom: 1vw;
+  font-size: 1vw;
+  font-weight: 500;
+  color: rgb(100, 100, 100);
+}
+
+.prodDesc{
+  width: 100%;
+  color: rgb(53, 53, 53); 
+  font-size: 1vw;
+  margin: 1vw 0;
+}
+
+.btn-contain{
+  margin-top: 2vw;
+}
+
+.details-btn1{
+  font-size: 1.2vw;
+  border-radius: 5px;
+  padding: 0.5vw 1vw;
+  background: rgb(15, 90, 189);
+  color: rgb(255, 255, 255);
+  margin-right: 0.3vw;
+}
+
+.details-btn2{
+  font-size: 1.2vw;
+  border-radius: 5px;
+  padding: 0.5vw 1vw;
+  color: #835705;
+}
+
+.details-btn1:hover{
+  background: rgb(50, 123, 218);
+  color: rgb(255, 255, 255);
+}
+
+.details-btn2:hover{
+  background: rgb(218, 218, 218);
+  color: rgb(29, 29, 29);
 }

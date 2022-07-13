@@ -9,7 +9,7 @@
                 <mat-chip-list aria-label="Fish selection">
                     <mat-chip *ngFor="let size of menu.menu_size" (click)="selectSize(size)">{{size.type}}</mat-chip>
                 </mat-chip-list>
-            </div>
+            </div> 
             <div class="size-cost">
                 <p>{{menu.cost | currency}}</p>
             </div>
