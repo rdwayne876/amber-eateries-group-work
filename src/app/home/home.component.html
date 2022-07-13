@@ -19,12 +19,19 @@
 				<div class="meal-list">
 					<mat-tab-group (selectedTabChange)="tabChangeEventHandler($event)" mat-align-tabs="center" disableRipple="true">
 						<mat-tab label="Appetizers">
-							<div [class]="width <= 1024 && width > height ? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]'] : width > height && width > 1024 ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
+							<div
+								[class]="
+									width <= 1024 && width > height
+										? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]']
+										: width > height && width > 1024
+										? ['grid', 'grid-cols-4', 'gap-16', 'py-[1vw]']
+										: ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']
+								">
 								<mat-spinner *ngIf="appetizers.length === 0"></mat-spinner>
 								<div *ngFor="let product of appetizers | slice: appetizers_currentPage * pageLimit:appetizers_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
 									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-										<div class="h-[215px]" [routerLink]="'/details/' + product.id">
+										<div class="h-[215px] cursor-pointer" [routerLink]="'/details/' + product.id">
 											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
 										</div>
 
@@ -32,7 +39,10 @@
 											{{ product.name | lowercase }}
 										</div>
 
-										<p class="px-8 text-[#5F462B]">{{ product.description | slice: 0:130 }}<span *ngIf="product.description.length > 130">...</span></p>
+										<p class="px-8 text-[#5F462B]">
+											{{ height > width && width <= 1024 ? (product.description | slice: 0:260) : (product.description | slice: 0:130)
+											}}<span *ngIf="product.description.length > (height > width && width <= 1024 ? 260 : 130)">...</span>
+										</p>
 
 										<div class="mt-auto">
 											<div class="flex justify-between items-center">
@@ -44,11 +54,10 @@
 												</span>
 											</div>
 											<div class="flex justify-end">
-												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl" (click)="addProduct(product.id)">
+												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-full ml-7 shadow-xl" (click)="addProduct(product.id)">
 													Add To Cart
 													<mat-icon>add</mat-icon>
 												</button>
-												<div></div>
 											</div>
 										</div>
 									</div>
@@ -56,17 +65,29 @@
 								</div>
 							</div>
 
-							<mat-paginator [length]="appetizers.length" [pageSize]="pageLimit" [pageSizeOptions]="[9, 15, 30, 60]" (page)="changePage($event, 'appetizers')" aria-label="Select page">
+							<mat-paginator
+								[length]="appetizers.length"
+								[pageSize]="pageLimit"
+								[pageSizeOptions]="width <= 1024 && width > height ? [8, 16, 32, 64] : width > height && width > 1024 ? [8, 16, 32, 64] : [5, 10, 15, 30]"
+								(page)="changePage($event, 'appetizers')"
+								aria-label="Select page">
 								<mat-spinner *ngIf="appetizers.length === 0"></mat-spinner>
 							</mat-paginator>
 						</mat-tab>
 						<mat-tab label="Entrees">
-							<div [class]="width <= 1024 && width > height ? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]'] : width > height && width > 1024 ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
+							<div
+								[class]="
+									width <= 1024 && width > height
+										? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]']
+										: width > height && width > 1024
+										? ['grid', 'grid-cols-4', 'gap-16', 'py-[1vw]']
+										: ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']
+								">
 								<mat-spinner *ngIf="entrees.length === 0"></mat-spinner>
 								<div *ngFor="let product of entrees | slice: entrees_currentPage * pageLimit:entrees_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
 									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-										<div class="h-[215px]" [routerLink]="'/details/' + product.id">
+										<div class="h-[215px] cursor-pointer" [routerLink]="'/details/' + product.id">
 											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
 										</div>
 
@@ -86,11 +107,10 @@
 												</span>
 											</div>
 											<div class="flex justify-end">
-												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl" (click)="addProduct(product.id)">
+												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-full ml-7 shadow-xl" (click)="addProduct(product.id)">
 													Add To Cart
 													<mat-icon>add</mat-icon>
 												</button>
-												<div></div>
 											</div>
 										</div>
 									</div>
@@ -98,17 +118,29 @@
 								</div>
 							</div>
 
-							<mat-paginator [length]="entrees.length" [pageSize]="pageLimit" [pageSizeOptions]="[9, 15, 30, 60]" (page)="changePage($event, 'entrees')" aria-label="Select page">
+							<mat-paginator
+								[length]="entrees.length"
+								[pageSize]="pageLimit"
+								[pageSizeOptions]="width <= 1024 && width > height ? [8, 16, 32, 64] : width > height && width > 1024 ? [8, 16, 32, 64] : [5, 10, 15, 30]"
+								(page)="changePage($event, 'entrees')"
+								aria-label="Select page">
 								<mat-spinner *ngIf="entrees.length === 0"></mat-spinner>
 							</mat-paginator>
 						</mat-tab>
 						<mat-tab label="Sides">
-							<div [class]="width <= 1024 && width > height ? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]'] : width > height && width > 1024 ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
+							<div
+								[class]="
+									width <= 1024 && width > height
+										? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]']
+										: width > height && width > 1024
+										? ['grid', 'grid-cols-4', 'gap-16', 'py-[1vw]']
+										: ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']
+								">
 								<mat-spinner *ngIf="sides.length === 0"></mat-spinner>
 								<div *ngFor="let product of sides | slice: sides_currentPage * pageLimit:sides_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
 									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-										<div class="h-[215px]" [routerLink]="'/details/' + product.id">
+										<div class="h-[215px] cursor-pointer" [routerLink]="'/details/' + product.id">
 											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
 										</div>
 
@@ -128,11 +160,10 @@
 												</span>
 											</div>
 											<div class="flex justify-end">
-												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl" (click)="addProduct(product.id)">
+												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-full ml-7 shadow-xl" (click)="addProduct(product.id)">
 													Add To Cart
 													<mat-icon>add</mat-icon>
 												</button>
-												<div></div>
 											</div>
 										</div>
 									</div>
@@ -140,17 +171,29 @@
 								</div>
 							</div>
 
-							<mat-paginator [length]="sides.length" [pageSize]="pageLimit" [pageSizeOptions]="[9, 15, 30, 60]" (page)="changePage($event, 'sides')" aria-label="Select page">
+							<mat-paginator
+								[length]="sides.length"
+								[pageSize]="pageLimit"
+								[pageSizeOptions]="width <= 1024 && width > height ? [8, 16, 32, 64] : width > height && width > 1024 ? [8, 16, 32, 64] : [5, 10, 15, 30]"
+								(page)="changePage($event, 'sides')"
+								aria-label="Select page">
 								<mat-spinner *ngIf="sides.length === 0"></mat-spinner>
 							</mat-paginator>
 						</mat-tab>
 						<mat-tab label="Desserts">
-							<div [class]="width <= 1024 && width > height ? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]'] : width > height && width > 1024 ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
+							<div
+								[class]="
+									width <= 1024 && width > height
+										? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]']
+										: width > height && width > 1024
+										? ['grid', 'grid-cols-4', 'gap-16', 'py-[1vw]']
+										: ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']
+								">
 								<mat-spinner *ngIf="desserts.length === 0"></mat-spinner>
 								<div *ngFor="let product of desserts | slice: desserts_currentPage * pageLimit:desserts_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
 									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-										<div class="h-[215px]" [routerLink]="'/details/' + product.id">
+										<div class="h-[215px] cursor-pointer" [routerLink]="'/details/' + product.id">
 											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
 										</div>
 
@@ -170,11 +213,10 @@
 												</span>
 											</div>
 											<div class="flex justify-end">
-												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl" (click)="addProduct(product.id)">
+												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-full ml-7 shadow-xl" (click)="addProduct(product.id)">
 													Add To Cart
 													<mat-icon>add</mat-icon>
 												</button>
-												<div></div>
 											</div>
 										</div>
 									</div>
@@ -182,17 +224,29 @@
 								</div>
 							</div>
 
-							<mat-paginator [length]="desserts.length" [pageSize]="pageLimit" [pageSizeOptions]="[9, 15, 30, 60]" (page)="changePage($event, 'desserts')" aria-label="Select page">
+							<mat-paginator
+								[length]="desserts.length"
+								[pageSize]="pageLimit"
+								[pageSizeOptions]="width <= 1024 && width > height ? [8, 16, 32, 64] : width > height && width > 1024 ? [8, 16, 32, 64] : [5, 10, 15, 30]"
+								(page)="changePage($event, 'desserts')"
+								aria-label="Select page">
 								<mat-spinner *ngIf="entrees.length === 0"></mat-spinner>
 							</mat-paginator>
 						</mat-tab>
 						<mat-tab label="Beverages">
-							<div [class]="width <= 1024 && width > height ? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]'] : width > height && width > 1024 ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
+							<div
+								[class]="
+									width <= 1024 && width > height
+										? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]']
+										: width > height && width > 1024
+										? ['grid', 'grid-cols-4', 'gap-16', 'py-[1vw]']
+										: ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']
+								">
 								<mat-spinner *ngIf="beverages.length === 0"></mat-spinner>
 								<div *ngFor="let product of beverages | slice: beverages_currentPage * pageLimit:beverages_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
 									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-										<div class="h-[215px]" [routerLink]="'/details/' + product.id">
+										<div class="h-[215px] cursor-pointer" [routerLink]="'/details/' + product.id">
 											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
 										</div>
 
@@ -212,11 +266,10 @@
 												</span>
 											</div>
 											<div class="flex justify-end">
-												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl" (click)="addProduct(product.id)">
+												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-full ml-7 shadow-xl" (click)="addProduct(product.id)">
 													Add To Cart
 													<mat-icon>add</mat-icon>
 												</button>
-												<div></div>
 											</div>
 										</div>
 									</div>
@@ -224,7 +277,12 @@
 								</div>
 							</div>
 
-							<mat-paginator [length]="beverages.length" [pageSize]="pageLimit" [pageSizeOptions]="[9, 15, 30, 60]" (page)="changePage($event, 'beverages')" aria-label="Select page">
+							<mat-paginator
+								[length]="beverages.length"
+								[pageSize]="pageLimit"
+								[pageSizeOptions]="width <= 1024 && width > height ? [8, 16, 32, 64] : width > height && width > 1024 ? [8, 16, 32, 64] : [5, 10, 15, 30]"
+								(page)="changePage($event, 'beverages')"
+								aria-label="Select page">
 								<mat-spinner *ngIf="beverages.length === 0"></mat-spinner>
 							</mat-paginator>
 						</mat-tab>
