@@ -40,7 +40,7 @@
 													{{ product.price | currency }}
 												</p>
 												<span class="rating">
-													<app-rating [starsArr]="product.ratings"></app-rating>
+													<app-rating [starsArr]="product.ratings" [id]="product.id" (click)="startUp()"></app-rating>
 												</span>
 											</div>
 											<div class="flex justify-end">
