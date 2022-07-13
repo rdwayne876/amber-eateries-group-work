@@ -19,7 +19,7 @@
 				<div class="meal-list">
 					<mat-tab-group (selectedTabChange)="tabChangeEventHandler($event)" mat-align-tabs="center" disableRipple="true">
 						<mat-tab label="Appetizers">
-							<div [class]=" width > height ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'py-[1vw]']">
+							<div [class]=" width > height ? ['grid', 'grid-cols-4', 'gap-4', 'py-[1vw]'] : ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']">
 								<mat-spinner *ngIf="appetizers.length === 0"></mat-spinner>
 								<div *ngFor="let product of appetizers | slice: appetizers_currentPage * pageLimit:appetizers_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
