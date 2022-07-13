@@ -1,379 +1,237 @@
 <section>
-    <section>
-        <div class="relative w-[100%]">
-            <div
-                class="absolute z-10 flex justify-center items-center w-full h-full capitalize"
-            >
-                <div class="border-b-4 border-b-white w-[60%] m-auto">
-                    <h1
-                        class="text-white text-center text-[3vw] pb-3 font-['Italiana'] font-bold"
-                    >
-                        Check out our tantalizing menu options
-                    </h1>
-                </div>
-            </div>
-            <img
-                class="w-full h-[30vh] object-cover brightness-50"
-                src="https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1493775536169-NHL7W2XEILCX32552IFJ/charcuterie-lite.jpg?format=1500w"
-                alt=""
-            />
-        </div>
-    </section>
+	<section>
+		<div class="relative w-[100%]">
+			<div class="absolute z-10 flex justify-center items-center w-full h-full capitalize">
+				<div class="border-b-4 border-b-white w-[60%] m-auto">
+					<h1 class="text-white text-center text-[3vw] pb-3 font-['Italiana'] font-bold">Check out our tantalizing menu options</h1>
+				</div>
+			</div>
+			<img
+				class="w-full h-[30vh] object-cover brightness-50"
+				src="https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1493775536169-NHL7W2XEILCX32552IFJ/charcuterie-lite.jpg?format=1500w"
+				alt="" />
+		</div>
+	</section>
 
-    <section>
-        <div class="main-container">
-            <div class="content">
-                <div class="meal-list">
-                    <mat-tab-group
-                        (selectedTabChange)="tabChangeEventHandler($event)"
-                        mat-align-tabs="center"
-                        disableRipple="true"
-                    >
-                        <mat-tab label="Appetizer">
-                            <div class="grid grid-cols-4 gap-4 py-[1vw]">
-                                <mat-spinner
-                                    *ngIf="appetizers.length === 0"
-                                ></mat-spinner>
-                                <div                          
-                                    *ngFor="
-                                        let product of appetizers
-                                            | slice
-                                                : appetizers_currentPage *
-                                                      appetizers_pageLimit
-                                                : appetizers_currentPage *
-                                                      appetizers_pageLimit +
-                                                      appetizers_pageLimit
-                                    "
-                                >
-                                    <!-- New Card Design Starts -->
-                                    <div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-                                        <div class="h-[215px]">
-                                            <img src="{{product.imageUrl}}" alt="" class="w-full h-full object-cover">
-                                        </div>
+	<section>
+		<div class="main-container">
+			<div class="content">
+				<div class="meal-list">
+					<mat-tab-group (selectedTabChange)="tabChangeEventHandler($event)" mat-align-tabs="center" disableRipple="true">
+						<mat-tab label="Appetizers">
+							<div class="grid grid-cols-4 gap-4 py-[1vw]">
+								<mat-spinner *ngIf="appetizers.length === 0"></mat-spinner>
+								<div *ngFor="let product of appetizers | slice: appetizers_currentPage * pageLimit:appetizers_currentPage * pageLimit + pageLimit">
+									<!-- New Card Design Starts -->
+									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
+										<div class="h-[215px]">
+											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
+										</div>
 
-                                        <div class="py-5 pl-8 text-3xl font-bold text-[#5F462B] capitalize">
-                                            {{product.name | lowercase}}
-                                        </div>
+										<div class="py-5 pl-8 text-3xl font-bold text-[#5F462B] capitalize">
+											{{ product.name | lowercase }}
+										</div>
 
-                                        <p class="px-8 text-[#5F462B]">
-                                            {{product.description | slice: 0:130}}<span *ngIf="product.description.length > 130">...</span>
-                                        </p>
+										<p class="px-8 text-[#5F462B]">{{ product.description | slice: 0:130 }}<span *ngIf="product.description.length > 130">...</span></p>
 
-                                        
-                                        <div class="mt-auto">
-                                            <div class="flex justify-between">
-                                                <p class="text-[#5F462B] font-bold py-1 pl-7">{{product.price | currency}}</p>
-                                                <span class="pr-7">
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                </span>
-                                            </div>
-                                            <div class="flex justify-end">
-                                                <button 
-                                                class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl"
-                                                (click)="addProduct(product.id)">
-                                                    Add To Cart
-                                                    <mat-icon>add</mat-icon>
-                                                </button>
-                                                <div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- New Card Design Ends -->
+										<div class="mt-auto">
+											<div class="flex justify-between items-center">
+												<p class="text-[#5F462B] font-bold py-1 pl-7">
+													{{ product.price | currency }}
+												</p>
+												<span class="rating">
+													<app-rating [starsArr]="product.ratings"></app-rating>
+												</span>
+											</div>
+											<div class="flex justify-end">
+												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl" (click)="addProduct(product.id)">
+													Add To Cart
+													<mat-icon>add</mat-icon>
+												</button>
+												<div></div>
+											</div>
+										</div>
+									</div>
+									<!-- New Card Design Ends -->
+								</div>
+							</div>
 
-                                </div>
-                            </div>
+							<mat-paginator [length]="appetizers.length" [pageSize]="pageLimit" [pageSizeOptions]="[8, 16, 32, 64]" (page)="changePage($event, 'appetizers')" aria-label="Select page">
+								<mat-spinner *ngIf="appetizers.length === 0"></mat-spinner>
+							</mat-paginator>
+						</mat-tab>
+						<mat-tab label="Entrees">
+							<div class="grid grid-cols-4 gap-4 py-[1vw]">
+								<mat-spinner *ngIf="entrees.length === 0"></mat-spinner>
+								<div *ngFor="let product of entrees | slice: entrees_currentPage * pageLimit:entrees_currentPage * pageLimit + pageLimit">
+									<!-- New Card Design Starts -->
+									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
+										<div class="h-[215px]">
+											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
+										</div>
 
-                            <mat-paginator
-                                [length]="appetizers.length"
-                                [pageSize]="appetizers_pageLimit"
-                                [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event, 'appetizers')"
-                                aria-label="Select page"
-                            >
-                                <mat-spinner
-                                    *ngIf="appetizers.length === 0"
-                                ></mat-spinner>
-                            </mat-paginator>
-                        </mat-tab>
-                        <mat-tab label="Entree">
-                            <div class="grid grid-cols-4 gap-4 py-[1vw]">
-                                <mat-spinner
-                                    *ngIf="entrees.length === 0"
-                                ></mat-spinner>
-                                <div
-                                    *ngFor="
-                                        let product of entrees
-                                            | slice
-                                                : entrees_currentPage *
-                                                      entrees_pageLimit
-                                                : entrees_currentPage *
-                                                      entrees_pageLimit +
-                                                      entrees_pageLimit
-                                    "
-                                >
-                                    <!-- New Card Design Starts -->
-                                    <div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-                                        <div class="h-[215px]">
-                                            <img src="{{product.imageUrl}}" alt="" class="w-full h-full object-cover">
-                                        </div>
+										<div class="py-5 pl-8 text-3xl font-bold text-[#5F462B] capitalize">
+											{{ product.name | lowercase }}
+										</div>
 
-                                        <div class="py-5 pl-8 text-3xl font-bold text-[#5F462B] capitalize">
-                                            {{product.name | lowercase}}
-                                        </div>
+										<p class="px-8 text-[#5F462B]">{{ product.description | slice: 0:130 }}<span *ngIf="product.description.length > 130">...</span></p>
 
-                                        <p class="px-8 text-[#5F462B]">
-                                            {{product.description | slice: 0:130}}<span *ngIf="product.description.length > 130">...</span>
-                                        </p>
+										<div class="mt-auto">
+											<div class="flex justify-between items-center">
+												<p class="text-[#5F462B] font-bold py-1 pl-7">
+													{{ product.price | currency }}
+												</p>
+												<span class="rating">
+													<app-rating [starsArr]="product.ratings"></app-rating>
+												</span>
+											</div>
+											<div class="flex justify-end">
+												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl" (click)="addProduct(product.id)">
+													Add To Cart
+													<mat-icon>add</mat-icon>
+												</button>
+												<div></div>
+											</div>
+										</div>
+									</div>
+									<!-- New Card Design Ends -->
+								</div>
+							</div>
 
-                                        
-                                        <div class="mt-auto">
-                                            <div class="flex justify-between">
-                                                <p class="text-[#5F462B] font-bold py-1 pl-7">{{product.price | currency}}</p>
-                                                <span class="pr-7">
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                </span>
-                                            </div>
-                                            <div class="flex justify-end">
-                                                <button 
-                                                class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl"
-                                                (click)="addProduct(product.id)">
-                                                    Add To Cart
-                                                    <mat-icon>add</mat-icon>
-                                                </button>
-                                                <div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- New Card Design Ends -->
-                                </div>
-                            </div>
+							<mat-paginator [length]="entrees.length" [pageSize]="pageLimit" [pageSizeOptions]="[8, 16, 32, 64]" (page)="changePage($event, 'entrees')" aria-label="Select page">
+								<mat-spinner *ngIf="entrees.length === 0"></mat-spinner>
+							</mat-paginator>
+						</mat-tab>
+						<mat-tab label="Sides">
+							<div class="grid grid-cols-4 gap-4 py-[1vw]">
+								<mat-spinner *ngIf="sides.length === 0"></mat-spinner>
+								<div *ngFor="let product of sides | slice: sides_currentPage * pageLimit:sides_currentPage * pageLimit + pageLimit">
+									<!-- New Card Design Starts -->
+									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
+										<div class="h-[215px]">
+											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
+										</div>
 
-                            <mat-paginator
-                                [length]="entrees.length"
-                                [pageSize]="entrees_pageLimit"
-                                [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event, 'entrees')"
-                                aria-label="Select page"
-                            >
-                                <mat-spinner
-                                    *ngIf="entrees.length === 0"
-                                ></mat-spinner>
-                            </mat-paginator>
-                        </mat-tab>
-                        <mat-tab label="Dessert">
-                            <div class="grid grid-cols-4 gap-4 py-[1vw]">
-                                <mat-spinner
-                                    *ngIf="desserts.length === 0"
-                                ></mat-spinner>
-                                <div
-                                    *ngFor="
-                                        let product of desserts
-                                            | slice
-                                                : desserts_currentPage *
-                                                      desserts_pageLimit
-                                                : desserts_currentPage *
-                                                      desserts_pageLimit +
-                                                      desserts_pageLimit
-                                    "
-                                >
-                                    <!-- New Card Design Starts -->
-                                    <div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-                                        <div class="h-[215px]">
-                                            <img src="{{product.imageUrl}}" alt="" class="w-full h-full object-cover">
-                                        </div>
+										<div class="py-5 pl-8 text-3xl font-bold text-[#5F462B] capitalize">
+											{{ product.name | lowercase }}
+										</div>
 
-                                        <div class="py-5 pl-8 text-3xl font-bold text-[#5F462B] capitalize">
-                                            {{product.name | lowercase}}
-                                        </div>
+										<p class="px-8 text-[#5F462B]">{{ product.description | slice: 0:130 }}<span *ngIf="product.description.length > 130">...</span></p>
 
-                                        <p class="px-8 text-[#5F462B]">
-                                            {{product.description | slice: 0:130}}<span *ngIf="product.description.length > 130">...</span>
-                                        </p>
+										<div class="mt-auto">
+											<div class="flex justify-between items-center">
+												<p class="text-[#5F462B] font-bold py-1 pl-7">
+													{{ product.price | currency }}
+												</p>
+												<span class="rating">
+													<app-rating [starsArr]="product.ratings"></app-rating>
+												</span>
+											</div>
+											<div class="flex justify-end">
+												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl" (click)="addProduct(product.id)">
+													Add To Cart
+													<mat-icon>add</mat-icon>
+												</button>
+												<div></div>
+											</div>
+										</div>
+									</div>
+									<!-- New Card Design Ends -->
+								</div>
+							</div>
 
-                                        
-                                        <div class="mt-auto">
-                                            <div class="flex justify-between">
-                                                <p class="text-[#5F462B] font-bold py-1 pl-7">{{product.price | currency}}</p>
-                                                <span class="pr-7">
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                </span>
-                                            </div>
-                                            <div class="flex justify-end">
-                                                <button 
-                                                class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl"
-                                                (click)="addProduct(product.id)">
-                                                    Add To Cart
-                                                    <mat-icon>add</mat-icon>
-                                                </button>
-                                                <div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- New Card Design Ends -->
-                                </div>
-                            </div>
+							<mat-paginator [length]="sides.length" [pageSize]="pageLimit" [pageSizeOptions]="[8, 16, 32, 64]" (page)="changePage($event, 'sides')" aria-label="Select page">
+								<mat-spinner *ngIf="sides.length === 0"></mat-spinner>
+							</mat-paginator>
+						</mat-tab>
+						<mat-tab label="Desserts">
+							<div class="grid grid-cols-4 gap-4 py-[1vw]">
+								<mat-spinner *ngIf="desserts.length === 0"></mat-spinner>
+								<div *ngFor="let product of desserts | slice: desserts_currentPage * pageLimit:desserts_currentPage * pageLimit + pageLimit">
+									<!-- New Card Design Starts -->
+									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
+										<div class="h-[215px]">
+											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
+										</div>
 
-                            <mat-paginator
-                                [length]="entrees.length"
-                                [pageSize]="entrees_pageLimit"
-                                [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event, 'entrees')"
-                                aria-label="Select page"
-                            >
-                                <mat-spinner
-                                    *ngIf="entrees.length === 0"
-                                ></mat-spinner>
-                            </mat-paginator>
-                        </mat-tab>
-                        <mat-tab label="Sides">
-                            <div class="grid grid-cols-4 gap-4 py-[1vw]">
-                                <mat-spinner
-                                    *ngIf="sides.length === 0"
-                                ></mat-spinner>
-                                <div
-                                    *ngFor="
-                                        let product of sides
-                                            | slice
-                                                : sides_currentPage *
-                                                      sides_pageLimit
-                                                : sides_currentPage *
-                                                      sides_pageLimit +
-                                                      sides_pageLimit
-                                    "
-                                >
-                                    <!-- New Card Design Starts -->
-                                    <div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-                                        <div class="h-[215px]">
-                                            <img src="{{product.imageUrl}}" alt="" class="w-full h-full object-cover">
-                                        </div>
+										<div class="py-5 pl-8 text-3xl font-bold text-[#5F462B] capitalize">
+											{{ product.name | lowercase }}
+										</div>
 
-                                        <div class="py-5 pl-8 text-3xl font-bold text-[#5F462B] capitalize">
-                                            {{product.name | lowercase}}
-                                        </div>
+										<p class="px-8 text-[#5F462B]">{{ product.description | slice: 0:130 }}<span *ngIf="product.description.length > 130">...</span></p>
 
-                                        <p class="px-8 text-[#5F462B]">
-                                            {{product.description | slice: 0:130}}<span *ngIf="product.description.length > 130">...</span>
-                                        </p>
+										<div class="mt-auto">
+											<div class="flex justify-between items-center">
+												<p class="text-[#5F462B] font-bold py-1 pl-7">
+													{{ product.price | currency }}
+												</p>
+												<span class="rating">
+													<app-rating [starsArr]="product.ratings"></app-rating>
+												</span>
+											</div>
+											<div class="flex justify-end">
+												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl" (click)="addProduct(product.id)">
+													Add To Cart
+													<mat-icon>add</mat-icon>
+												</button>
+												<div></div>
+											</div>
+										</div>
+									</div>
+									<!-- New Card Design Ends -->
+								</div>
+							</div>
 
-                                        
-                                        <div class="mt-auto">
-                                            <div class="flex justify-between">
-                                                <p class="text-[#5F462B] font-bold py-1 pl-7">{{product.price | currency}}</p>
-                                                <span class="pr-7">
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                </span>
-                                            </div>
-                                            <div class="flex justify-end">
-                                                <button 
-                                                class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl"
-                                                (click)="addProduct(product.id)">
-                                                    Add To Cart
-                                                    <mat-icon>add</mat-icon>
-                                                </button>
-                                                <div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- New Card Design Ends -->
-                                </div>
-                            </div>
+							<mat-paginator [length]="desserts.length" [pageSize]="pageLimit" [pageSizeOptions]="[8, 16, 32, 64]" (page)="changePage($event, 'desserts')" aria-label="Select page">
+								<mat-spinner *ngIf="entrees.length === 0"></mat-spinner>
+							</mat-paginator>
+						</mat-tab>
+						<mat-tab label="Beverages">
+							<div class="grid grid-cols-4 gap-4 py-[1vw]">
+								<mat-spinner *ngIf="beverages.length === 0"></mat-spinner>
+								<div *ngFor="let product of beverages | slice: beverages_currentPage * pageLimit:beverages_currentPage * pageLimit + pageLimit">
+									<!-- New Card Design Starts -->
+									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
+										<div class="h-[215px]">
+											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
+										</div>
 
-                            <mat-paginator
-                                [length]="desserts.length"
-                                [pageSize]="desserts_pageLimit"
-                                [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event, 'desserts')"
-                                aria-label="Select page"
-                            >
-                                <mat-spinner
-                                    *ngIf="desserts.length === 0"
-                                ></mat-spinner>
-                            </mat-paginator>
-                        </mat-tab>
-                        <mat-tab label="Beverages">
-                            <div class="grid grid-cols-4 gap-4 py-[1vw]">
-                                <mat-spinner
-                                    *ngIf="beverages.length === 0"
-                                ></mat-spinner>
-                                <div
-                                    *ngFor="
-                                        let product of beverages
-                                            | slice
-                                                : beverages_currentPage *
-                                                      beverages_pageLimit
-                                                : beverages_currentPage *
-                                                      beverages_pageLimit +
-                                                      beverages_pageLimit
-                                    "
-                                >
-                                    <!-- New Card Design Starts -->
-                                    <div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-                                        <div class="h-[215px]">
-                                            <img src="{{product.imageUrl}}" alt="" class="w-full h-full object-cover">
-                                        </div>
+										<div class="py-5 pl-8 text-3xl font-bold text-[#5F462B] capitalize">
+											{{ product.name | lowercase }}
+										</div>
 
-                                        <div class="py-5 pl-8 text-3xl font-bold text-[#5F462B] capitalize">
-                                            {{product.name | lowercase}}
-                                        </div>
+										<p class="px-8 text-[#5F462B]">{{ product.description | slice: 0:130 }}<span *ngIf="product.description.length > 130">...</span></p>
 
-                                        <p class="px-8 text-[#5F462B]">
-                                            {{product.description | slice: 0:130}}<span *ngIf="product.description.length > 130">...</span>
-                                        </p>
+										<div class="mt-auto">
+											<div class="flex justify-between items-center">
+												<p class="text-[#5F462B] font-bold py-1 pl-7">
+													{{ product.price | currency }}
+												</p>
+												<span class="rating">
+													<app-rating [starsArr]="product.ratings"></app-rating>
+												</span>
+											</div>
+											<div class="flex justify-end">
+												<button class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl" (click)="addProduct(product.id)">
+													Add To Cart
+													<mat-icon>add</mat-icon>
+												</button>
+												<div></div>
+											</div>
+										</div>
+									</div>
+									<!-- New Card Design Ends -->
+								</div>
+							</div>
 
-                                        
-                                        <div class="mt-auto">
-                                            <div class="flex justify-between">
-                                                <p class="text-[#5F462B] font-bold py-1 pl-7">{{product.price | currency}}</p>
-                                                <span class="pr-7">
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                    <mat-icon class="text-[#FFBC10]">star</mat-icon>
-                                                </span>
-                                            </div>
-                                            <div class="flex justify-end">
-                                                <button 
-                                                class="text-[#FFBC10] flex justify-between p-3 bg-[#5F462B] items-center w-[280px] shadow-xl"
-                                                (click)="addProduct(product.id)">
-                                                    Add To Cart
-                                                    <mat-icon>add</mat-icon>
-                                                </button>
-                                                <div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- New Card Design Ends -->
-                                </div>
-                            </div>
-
-                            <mat-paginator
-                                [length]="beverages.length"
-                                [pageSize]="beverages_pageLimit"
-                                [pageSizeOptions]="[9, 15, 30, 50]"
-                                (page)="changePage($event, 'beverages')"
-                                aria-label="Select page"
-                            >
-                                <mat-spinner
-                                    *ngIf="beverages.length === 0"
-                                ></mat-spinner>
-                            </mat-paginator>
-                        </mat-tab>
-                    </mat-tab-group>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="hero" style="padding: 13px"></div>
+							<mat-paginator [length]="beverages.length" [pageSize]="pageLimit" [pageSizeOptions]="[8, 16, 32, 64]" (page)="changePage($event, 'beverages')" aria-label="Select page">
+								<mat-spinner *ngIf="beverages.length === 0"></mat-spinner>
+							</mat-paginator>
+						</mat-tab>
+					</mat-tab-group>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="hero" style="padding: 13px"></div>
 </section>

@@ -43,7 +43,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatBadgeModule } from '@angular/material/badge';
 import { SafePipe } from './safe.pipe';
 import { MapComponent } from './components/map/map.component';
-import { RecieptComponent } from './components/reciept/reciept.component';
+import { ReceiptComponent } from './components/receipt/receipt.component';
 import { SideOrderModalComponent } from './side-order-modal/side-order-modal.component';
 import { RatingComponent } from './rating/rating.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -72,7 +72,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
         SliderComponent,
         SideOrderModalComponent,
         MapComponent,
-        RecieptComponent,
+        ReceiptComponent,
         RatingComponent,
         AboutusComponent,
     ],

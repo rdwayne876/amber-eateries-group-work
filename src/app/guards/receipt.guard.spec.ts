@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RecieptGuard } from './reciept.guard';
+import { ReceiptGuard } from './receipt.guard';
 
-describe('RecieptGuard', () => {
-  let guard: RecieptGuard;
+describe('ReceiptGuard', () => {
+  let guard: ReceiptGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    guard = TestBed.inject(RecieptGuard);
+    guard = TestBed.inject(ReceiptGuard);
   });
 
   it('should be created', () => {

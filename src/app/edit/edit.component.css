@@ -17,16 +17,25 @@ main {
   width: 50%;
   justify-content: flex-end;
   display: flex;
+  left: 10em;
+  position: relative;
 }
 
 .form-container {
   background-color: #fff;
-  width: 380px;
+  /* width: 380px; */
   padding: 2rem 2rem;
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, */
-    /* rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
-    box-shadow: 0 0 0.3rem #00B5AD;
+    box-shadow: 0 0 0.2rem #2c2c2e;
     border-radius: 5px;
+    /* padding-top: 1.5rem; */
+    height: calc(100vh - 120px);
+    padding: 10px 8px;
+    color: #2c2c2e;
+    margin-bottom: 1.5rem;
+    width: 50%;
+   height: 100%;
+    border-radius: 5px;
+    border: 1.5px solid black;
 }
 
 
@@ -36,6 +45,7 @@ form {
   height: 100%;
   display: flex;
   flex-direction: column;
+  
 }
 
 .form-control-group {
@@ -75,7 +85,8 @@ button {
   /* background-color: #219ebc; */
   background-color: #00B5AD;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 5px;
+  padding: 5px 8px;
   box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
   box-sizing: border-box;
   color: #fff;
@@ -87,15 +98,17 @@ button {
   margin: 0;
   outline: none;
   padding: 8px 0.8em;
-  position: relative;
+   position: relative;
   text-align: center;
   text-decoration: none;
   user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  -webkit-user-select: none; 
+  /* touch-action: manipulation;
   vertical-align: baseline;
-  white-space: nowrap;
+  white-space: nowrap; */
   transition: 0.2s all ease-in-out;
+  width: 10em;
+  left: 7em;
 }
 
 button:hover {
@@ -112,6 +125,13 @@ button:hover {
   box-shadow: 0 0 0.2rem #00B5AD;
   border-radius: 5px;
   margin-bottom: 1rem;
+
+  position: relative;
+  right: 2vh;
+  width: 68%;
+  margin-bottom: 0rem;
+  
+  
 }
 
 .img-n-name img { 
@@ -122,5 +142,9 @@ button:hover {
 .img-n-name p {
   text-align: center;
   padding: 10px 5px 0 5px;
+  
 }
+
+
+
 

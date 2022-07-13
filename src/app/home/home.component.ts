@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren } from '@angular/core';
 import { DataService } from '../data.service';
 
 import { Category, Product } from '../product';
@@ -7,6 +7,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { SideOrderModalComponent } from '../side-order-modal/side-order-modal.component';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
     selector: 'app-home',
@@ -17,29 +18,24 @@ export class HomeComponent implements OnInit {
     tabChangeEvent?: MatTabChangeEvent;
     appetizers: Product[] = [];
     appetizers_currentPage = 0;
-    appetizers_pageLimit = 9;
     entrees: Product[] = [];
     entrees_currentPage = 0;
-    entrees_pageLimit = 9;
     sides: Product[] = [];
     sides_currentPage = 0;
-    sides_pageLimit = 9;
     beverages: Product[] = [];
     beverages_currentPage = 0;
-    beverages_pageLimit = 9;
     desserts: Product[] = [];
     desserts_currentPage = 0;
-    desserts_pageLimit = 9;
     cart: any[] = [];
-    currentPage = 0;
-    pageLimit = 9;
+    pageLimit = 8;
 
     constructor(
         private dataService: DataService,
         private cartService: CartService,
         private succcessPopup: MatSnackBar,
         public dialog: MatDialog
-    ) {}
+    ) {
+    }
 
     ngOnInit() {
         this.dataService.sendGetRequest().subscribe((data: Product[]) => {
@@ -60,9 +56,9 @@ export class HomeComponent implements OnInit {
             });
         });
     }
-    changePage(event: any, property: string) {
+    changePage(event: any, property: string) {        
         this[(property + '_currentPage') as keyof this] = event.pageIndex;
-        this[(property + '_pageLimit') as keyof this] = event.pageSize;
+        this.pageLimit = event.pageSize;
     }
 
     tabChangeEventHandler(event: MatTabChangeEvent): void {
@@ -83,44 +79,38 @@ export class HomeComponent implements OnInit {
                 width: '70%',
             };
 
-            if (this.tabChangeEvent == undefined) {
-                // Use here to select the products category to upsell for the first tab
-                this.dialog.open(SideOrderModalComponent, {
-                    data: { category: Category.SIDE, product },
-                    ...dialogConfig,
-                });
-            }
+            // if (this.tabChangeEvent == undefined) {
+            //     // Use here to select the products category to upsell for the first tab
+            //     this.dialog.open(SideOrderModalComponent, {
+            //         data: { category: Category.SIDE, product },
+            //         ...dialogConfig,
+            //     });
+            // }
 
             if (this.tabChangeEvent) {
                 console.log(this.tabChangeEvent.tab.textLabel);
                 switch (this.tabChangeEvent.tab.textLabel.toLowerCase()) {
                     // Use above where `this.tabChangeEvent == undefined` is for the first tab.
-                    case 'sides':
-                    case 'beverages':
-                    case 'appetizers':
-                        this.dialog.open(SideOrderModalComponent, {
-                            data: { category: Category.ENTREE, product },
-                            ...dialogConfig,
-                        });
-                        break;
+                    // case 'sides':
+                    // case 'beverages':
+                    // case 'appetizers':
+                    //     this.dialog.open(SideOrderModalComponent, {
+                    //         data: { category: Category.ENTREE, product },
+                    //         ...dialogConfig,
+                    //     });
+                    //     break;
                     case 'entrees':
                         this.dialog.open(SideOrderModalComponent, {
                             data: { category: Category.SIDE, product },
                             ...dialogConfig,
                         });
                         break;
-                    case 'desserts':
-                        this.dialog.open(SideOrderModalComponent, {
-                            data: { category: Category.BEVERAGE, product },
-                            ...dialogConfig,
-                        });
-                        break;
-                    default:
-                        this.dialog.open(SideOrderModalComponent, {
-                            data: { category: Category.SIDE, product },
-                            ...dialogConfig,
-                        });
-                        break;
+                    // case 'desserts':
+                    //     this.dialog.open(SideOrderModalComponent, {
+                    //         data: { category: Category.BEVERAGE, product },
+                    //         ...dialogConfig,
+                    //     });
+                    //     break;
                 }
             }
         });
