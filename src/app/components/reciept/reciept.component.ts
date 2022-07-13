@@ -1,7 +1,10 @@
+import { Category, Product } from './../../product';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CartService } from 'src/app/cart.service';
-import { Order, PaymentMethod, Transaction } from 'src/app/interfaces/checkout';
+import { PaymentMethod, Transaction } from 'src/app/interfaces/checkout';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 
 @Component({
     selector: 'app-reciept',
@@ -24,12 +27,23 @@ export class RecieptComponent implements OnInit {
             parish: '',
         },
     };
-    order: Order = { id: 0, orders: [] };
+    order: Product[] = [
+        {
+            id: 0,
+            name: 'Product',
+            description: 'This is a thing',
+            category: Category.ENTREE,
+            imageUrl: '',
+            price: 100,
+            quantity: 4,
+            ratings: [],
+        },
+    ];
 
     constructor(private router: Router) {
         let data = this.router.getCurrentNavigation()?.extras.state!['reciept'];
-        this.transaction = { ...data.transaction };
-        this.order = { ...data.order };
+        this.transaction = data.transaction;
+        this.order = data.order;
     }
 
     ngOnInit(): void {}

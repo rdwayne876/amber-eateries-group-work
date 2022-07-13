@@ -55,11 +55,9 @@ const routes: Routes = [
     exports: [RouterModule],
 })
 export class AppRoutingModule {
-
     constructor(router: Router) {
-        router.events
-            .subscribe(() => {
-                window.scrollTo(0, 0);
-            });
+        router.events.subscribe(() => {
+            window.scrollTo(0, 0);
+        });
     }
 }

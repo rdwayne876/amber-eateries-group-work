@@ -15,66 +15,74 @@ import { CartService } from '../cart.service';
     template: `
         <header>
             <div
-                class="header transition-all shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048] "
-                id="main-nav "
+                class="header transition-all shadow-2xl bg-gradient-to-r from-[#2b2a2a38] via-[#00000044] to-[#00000048] p-5"
+                id="main-nav  "
             >
                 <mat-toolbar>
-                    <div class="main-container">
-                        <div class="m-h-inner flex flex-wrap ">
-                            <div class="logo w-fit">
-                                <a href="/" class="text-[50px] ">Amber Eats</a>
-                            </div>
-                            <div class="navigation">
-                                <!-- <button
+                    <div
+                        class="m-h-inner flex flex-wrap md:flex-nowrap md:justify-around w-full"
+                    >
+                        <div class="logo w-full md:w-fit">
+                            <a
+                                href="/"
+                                class="text-[50px] text-center md:text-left  "
+                                >Amber Eats</a
+                            >
+                        </div>
+                        <div
+                            class="navigation flex md:justify-end mx-auto md:mx-0  "
+                        >
+                            <!-- <button
                                     mat-button
                                     class="no-hover-effect"
                                     routerLink="/"
                                 >
                                     Home
                                 </button> -->
-                               
-                                <button
-                                    mat-button
-                                    class="no-hover-effect"
-                                    routerLink="/menu"
-                                >
-                                    Menu
-                                </button>
-                                <button
-                                    mat-button
-                                    class="no-hover-effect"
-                                    routerLink="/gallery"
-                                >
-                                    Gallery
-                                </button>
-                                <button mat-button
-                                    class="no-hover-effect"
-                                    routerLink="/aboutus">
-                                    About
-                                </button>
-                                <button
-                                    mat-button
-                                    class="no-hover-effect"
-                                    routerLink="/about"
-                                >
-                                    Contact Us
-                                </button>
 
-                                <button
-                                    mat-button
-                                    class="no-hover-effect"
-                                    routerLink="/cart"
+                            <button
+                                mat-button
+                                class="no-hover-effect"
+                                routerLink="/menu"
+                            >
+                                Menu
+                            </button>
+                            <button
+                                mat-button
+                                class="no-hover-effect"
+                                routerLink="/gallery"
+                            >
+                                Gallery
+                            </button>
+                            <button
+                                mat-button
+                                class="no-hover-effect"
+                                routerLink="/aboutus"
+                            >
+                                About
+                            </button>
+                            <button
+                                mat-button
+                                class="no-hover-effect "
+                                routerLink="/about"
+                            >
+                                Contact Us
+                            </button>
+
+                            <button
+                                mat-button
+                                class="no-hover-effect  "
+                                routerLink="/cart"
+                            >
+                                <mat-icon
+                                    [matBadge]="
+                                        cartService.getCartCount() > 0
+                                            ? cartService.getCartCount()
+                                            : null
+                                    "
+                                    >shopping_cart</mat-icon
                                 >
-                                    <mat-icon
-                                        [matBadge]="
-                                            cartService.getCartCount() > 0
-                                                ? cartService.getCartCount()
-                                                : null
-                                        "
-                                        >shopping_cart</mat-icon
-                                    >
-                                </button>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </mat-toolbar>
@@ -82,7 +90,10 @@ import { CartService } from '../cart.service';
         </header>
     `,
     styles: [
-        `.active{color:blue}
+        `
+            .active {
+                color: blue;
+            }
             .header {
                 width: 100%;
                 position: fixed;
@@ -94,33 +105,34 @@ import { CartService } from '../cart.service';
                 color: white;
             }
             .main-container {
-                width: 78%;
+                min-width: 7;
                 margin: 0 auto;
             }
 
-            .secondary-header {
+            /* .secondary-header {
                 width: 100%;
                 background-color: #231942;
                 font-size: 14px;
                 color: #fff;
-            }
+            } */
 
-            .s-h-inner {
+            /* .s-h-inner {
                 width: 100%;
                 height: auto;
                 padding: 0.5rem;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-            }
-
+            } */
+            /* 
             .m-h-inner {
                 width: 100%;
                 height: auto;
                 display: flex;
+
                 justify-content: space-between;
                 align-items: center;
-            }
+            } */
             /* 
             .header-location {
                 display: flex;
@@ -132,10 +144,9 @@ import { CartService } from '../cart.service';
                 fill: #fff;
                 margin-right: 0.5rem;
             } */
-
             ::ng-deep .mat-toolbar-row,
             .mat-toolbar-single-row {
-                height: 88px;
+                min-height: 88px;
                 justify-content: space-between;
                 padding: 0 !important;
                 background-color: transparent;
@@ -150,7 +161,7 @@ import { CartService } from '../cart.service';
                 text-decoration: none;
             }
             .navigation button {
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: bold;
                 letter-spacing: 2px;
             }
@@ -183,7 +194,7 @@ import { CartService } from '../cart.service';
     ],
 })
 export class HeaderComponent implements OnInit {
-    constructor(public cartService: CartService, private router: Router) { }
+    constructor(public cartService: CartService, private router: Router) {}
 
     ngOnInit() {
         this.routerCheck();
