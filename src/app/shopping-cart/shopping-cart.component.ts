@@ -11,6 +11,13 @@ export class ShoppingCartComponent implements OnInit {
     cart!: any[];
     grandTotal: number = 0;
 
+    public get height() : number {
+		return window.innerHeight;
+	}
+	public get width() : number {
+		return window.innerWidth;
+	}
+
     ngOnInit(): void {
         this.cart = this.cartService.getCart();
         this.grandTotal = this.cartService.getCartTotal();
