@@ -18,7 +18,7 @@ database.products = [
     //     imageUrl: "https://source.unsplash.com/1600x900/?food",
     //     price: number,
     //     quantity: number,
-    //     ratings: []
+    //     ratings: [///]
     // }
 
     {
@@ -31,7 +31,13 @@ database.products = [
             'https://www.sandals.com/blog/content/images/2020/04/Jamaican-Jerk-Chicken.jpg',
         price: 1200,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 2,
@@ -43,7 +49,13 @@ database.products = [
             'https://www.blackveganstoday.com/wp-content/uploads/2019/03/1553717241_maxresdefault-1024x576.jpg',
         price: 900,
         quantity: 200,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 3,
@@ -55,7 +67,13 @@ database.products = [
             'https://izzycooking.com/wp-content/uploads/2021/03/Cabbage-and-Saltfish-683x1024.jpg',
         price: 200,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 4,
@@ -67,7 +85,13 @@ database.products = [
             'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Beef-Patties-683x1024.jpg',
         price: 300,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 5,
@@ -79,7 +103,13 @@ database.products = [
             'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Curry-Chicken-683x1024.jpg',
         price: 900,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 6,
@@ -91,7 +121,13 @@ database.products = [
             'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Rice-and-Peas-683x1024.jpg',
         price: 500,
         quantity: 500,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 7,
@@ -103,7 +139,13 @@ database.products = [
             'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Oxtail-683x1024.jpg',
         price: 1900,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 8,
@@ -115,7 +157,13 @@ database.products = [
             'https://izzycooking.com/wp-content/uploads/2021/03/Brown-Stew-Chicken-683x1024.jpg',
         price: 1000,
         quantity: 1000,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 9,
@@ -127,7 +175,13 @@ database.products = [
             'https://i.pinimg.com/originals/0d/d5/e0/0dd5e0f2a15276f8d5f174569de22972.jpg',
         price: 100,
         quantity: 500,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 10,
@@ -139,7 +193,13 @@ database.products = [
             'https://izzycooking.com/wp-content/uploads/2021/03/Rum-Cake-768x1152.jpg',
         price: 1500,
         quantity: 500,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -152,7 +212,13 @@ database.products = [
             'https://www.foodstory.net/wp-content/uploads/2020/10/Beef-Fine-Dining-Presentation.jpg',
         price: 900,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -165,7 +231,13 @@ database.products = [
             'https://www.foodstory.net/wp-content/uploads/2020/10/Crounchy-Pork-Roll.jpg',
         price: 100,
         quantity: 200,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -178,7 +250,13 @@ database.products = [
             'https://res.cloudinary.com/bunch-media-library/image/upload/w_440,h_380,c_fill,q_auto,f_auto,fl_lossy/v1566361970/recipes/k9qv4c0wergq7ubq1baw.jpg',
         price: 900,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -191,7 +269,13 @@ database.products = [
             'https://izzycooking.com/wp-content/uploads/2021/03/Roti-1-683x1024.jpeg',
         price: 500,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -204,7 +288,13 @@ database.products = [
             'https://empeysworld.files.wordpress.com/2020/06/20200609_1626211.jpg?w=2000&h=1500&crop=1',
         price: 500,
         quantity: 300,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -217,7 +307,13 @@ database.products = [
             'https://izzycooking.com/wp-content/uploads/2021/03/Coco-Bread-683x1024.jpg',
         price: 200,
         quantity: 90,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -230,7 +326,13 @@ database.products = [
             'https://www.kpseafood.com/wordpress/wp-content/uploads/2018/12/jerkshrimp.jpg',
         price: 1500,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -243,7 +345,13 @@ database.products = [
             'http://georgiafoodies.com/wp-content/uploads/2020/04/2020-02-25-12-58-55-971.jpg',
         price: 600,
         quantity: 200,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -256,7 +364,13 @@ database.products = [
             'https://izzycooking.com/wp-content/uploads/2021/03/Ginger-Beer-683x1024.jpg',
         price: 110,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -269,7 +383,13 @@ database.products = [
             'https://i.pinimg.com/originals/45/e7/94/45e794e5536ee3d218984ddd741b6f04.jpg',
         price: 150,
         quantity: 300,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -282,7 +402,13 @@ database.products = [
             'https://www.hotelthechamps.com/wp-content/uploads/2019/12/AINSLEYS_CARIBBEAN_KITCHEN_Ep8_03-scaled.jpg',
         price: 140,
         quantity: 200,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -295,7 +421,13 @@ database.products = [
             'https://jamaicans.com/wp-content/uploads/The-6-Soups-Every-Jamaican-Should-Know-How-to-Cook-Red-Peas-Beef-Soup-810x608.jpeg',
         price: 300,
         quantity: 250,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -308,7 +440,13 @@ database.products = [
             'https://jamaicans.com/wp-content/uploads/2015/11/jamaican-brown-stew-fish-recipe-810x608.jpg',
         price: 900,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -321,7 +459,13 @@ database.products = [
             'https://www.beaches.com/blog/content/images/2020/03/Jamaican-Fish-Escovitch.jpg',
         price: 1000,
         quantity: 30,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -334,7 +478,13 @@ database.products = [
             'https://jamaicans.com/wp-content/uploads/2015/10/jamaican-grater-cake.jpg',
         price: 100,
         quantity: 90,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -347,7 +497,13 @@ database.products = [
             'https://onthegas.org/wp-content/uploads/2019/07/jamaican-gizzada-bite-300x200.jpg',
         price: 100,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -360,7 +516,13 @@ database.products = [
             'https://www.heineken.com/media-eu/01pfxdqq/heineken-original-bottle.png?anchor=center&mode=crop&width=712&height=1068&quality=85',
         price: 300,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -373,7 +535,13 @@ database.products = [
             'https://cdn.tasteatlas.com//images/dishes/d19d6c03d9c94dc0af2f54ed1aaf0186.jpg?w=905&h=510',
         price: 400,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -385,7 +553,13 @@ database.products = [
             'https://trulyexperiences.com/blog/wp-content/uploads/2022/02/AdobeStock_282953128_Editorial_Use_Only-768x512.jpeg',
         price: 350,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -398,7 +572,13 @@ database.products = [
             'https://www.beaches.com/blog/content/images/2021/05/Run-Down-Run-Dun-Jamaican-Food.jpg',
         price: 700,
         quantity: 300,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -411,7 +591,13 @@ database.products = [
             'https://www.beaches.com/blog/content/images/2020/03/Jamaican-Festival.jpg',
         price: 100,
         quantity: 300,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -424,7 +610,13 @@ database.products = [
             'https://cdn.tasteatlas.com//images/dishes/fc9d1afb26ec47d0b53e469a7c20fd82.jpg?w=905&h=510',
         price: 100,
         quantity: 90,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -437,7 +629,13 @@ database.products = [
             'https://www.beaches.com/blog/content/images/2020/03/Jamaican-Breadfruit.jpg',
         price: 100,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -450,7 +648,13 @@ database.products = [
             'https://cdn.tasteatlas.com//Images/Dishes/c5e9e201b9ad4ce99fca5fa71b22ce82.jpg?w=905&h=510',
         price: 400,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -462,7 +666,13 @@ database.products = [
             'https://www.bestwaywholesale.co.uk/img/products/1000/5/766200501425.jpg',
         price: 100,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -475,7 +685,13 @@ database.products = [
             'https://www.chefspencil.com/wp-content/uploads/jamaican-chicken-soup.jpg.webp',
         price: 300,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -487,7 +703,13 @@ database.products = [
             'https://cms.diageohorizon.com/Horizon_Bold/LOCAL/PR1772/235/smirnoff-ice-original.png',
         price: 500,
         quantity: 90,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -500,7 +722,13 @@ database.products = [
             'https://imgs.search.brave.com/Ww4tDH7Sb8YjT0W9DzrRPiVii1HKGV-PMgXLl_Jftik/rs:fit:600:504:1/g:ce/aHR0cDovL2N1aXNp/bmUtZXQtZGVzLXRl/bmRhbmNlcy5jb20v/d29yZHByZXNzL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE4LzA0/L0JlbHZlZGVyZS12/b2RrYS1TaW5nbGUt/RXN0YXRlLVJ5ZS5q/cGc',
         price: 1900,
         quantity: 30,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -513,7 +741,13 @@ database.products = [
             'https://imgs.search.brave.com/XN_eZKtfecaLCBgcMvFSF4X1MQyZgYE_CE4cR_DRpSU/rs:fit:316:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5C/YnU0MGdTbGlYalpf/dnlGM3pvZGxRSGFM/SCZwaWQ9QXBp',
         price: 2100,
         quantity: 30,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -526,7 +760,13 @@ database.products = [
             'https://imgs.search.brave.com/wcOYz09WkK4tlqCTupYM40hnDb3QwZc5MVx5cwTXI-c/rs:fit:1080:1080:1/g:ce/aHR0cHM6Ly9qYWNr/cXVpbm5zcHViLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MC8wNC9CdWQtTGln/aHQtMS5wbmc',
         price: 200,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -539,7 +779,13 @@ database.products = [
             'https://www.chefspencil.com/wp-content/uploads/Bammy.jpg.webp',
         price: 300,
         quantity: 30,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -552,7 +798,13 @@ database.products = [
             'https://imgs.search.brave.com/cBxzHDIfnvtBMmYR9xwbCHsmXU5TyFTs8pyRpq5TsJg/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/amFtYWljYW5wcm9k/dWN0cy5jb20uYXUv/d3AtY29udGVudC91/cGxvYWRzLzIwMTYv/MDgvUDQyNjAwMjEt/ZTE0NzEwMTY4ODgy/MDcuanBn',
         price: 200,
         quantity: 30,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -565,7 +817,13 @@ database.products = [
             'https://imgs.search.brave.com/Awfsjru-0quf4WXf1osax53jqugls_ei3paELohycmM/rs:fit:500:342:1/g:ce/aHR0cHM6Ly93d3cu/dGFzdGVlamFtYWlj/YS5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMTgvMDIvQmVl/Zi1XaXRoLUNoZWVz/ZS1QYXR0eS5wbmc',
         price: 200,
         quantity: 30,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -577,7 +835,13 @@ database.products = [
             'https://loshusansupermarket.com/product_images/p/910/600_Dry_copy__01203_zoom.jpg',
         price: 100,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -590,7 +854,13 @@ database.products = [
             'https://imgs.search.brave.com/O9Q2B-kjEhGGRjlWoWds5A9cVrmLxlqQWEakB20Kfmk/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2U0/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5y/cHh3bTNQdXhNNkpW/T2lNejZ4Y013SGFI/YSZwaWQ9QXBp',
         price: 200,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 
     {
@@ -603,7 +873,13 @@ database.products = [
             'https://imgs.search.brave.com/RJpbjuAhXZ8h4XoX0A0TysfcdQwv_axyiCHKT_HU3xk/rs:fit:1200:1200:1/g:ce/aHR0cDovL3d3dy5k/cmlua2JhaS5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTQv/MDgvc2h1dHRlcnN0/b2NrXzE2NTY4OTc0/MS5qcGc',
         price: 200,
         quantity: 100,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 47,
@@ -615,7 +891,13 @@ database.products = [
             'https://sweetandsavorymeals.com/wp-content/uploads/2019/02/Baked-BBQ-Chicken-2.jpg',
         price: 900,
         quantity: 20,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 48,
@@ -627,7 +909,13 @@ database.products = [
             'https://www.gonnawantseconds.com/wp-content/uploads/2020/01/Pork-Stew-011-768x512.jpg',
         price: 1000,
         quantity: 90,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 49,
@@ -639,7 +927,13 @@ database.products = [
             'https://static01.nyt.com/images/2021/01/15/dining/15COOKING-OLD-BEEF-STEW2/15COOKING-OLD-BEEF-STEW2-articleLarge-v2.jpg',
         price: 600,
         quantity: 90,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 50,
@@ -651,7 +945,13 @@ database.products = [
             'https://thekitchencommunity.org/wp-content/uploads/2022/02/15_chinese-recipes-500x750.jpg',
         price: 900,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 51,
@@ -663,7 +963,13 @@ database.products = [
             "https://mycookprocessor.com/wp-content/uploads/2016/03/Chocolate-Banana-Bread-1080x724.jpg",
         price: 500,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 52,
@@ -675,7 +981,13 @@ database.products = [
             'https://mycookprocessor.com/index.php/recipe/oreo-cheesecake-bars/',
         price: 700,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
     {
         id: 53,
@@ -687,7 +999,13 @@ database.products = [
             'https://mycookprocessor.com/wp-content/uploads/2017/09/Potato-Bake-1080x720.jpg',
         price: 700,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 5));
+            }
+            return buffer;
+        })()],
     },
 ];
 database.orders = [
