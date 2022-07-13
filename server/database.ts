@@ -1017,7 +1017,13 @@ database.products = [
             'http://jesswords.com/wp-content/uploads/2014/07/20140705_182021.jpg',
         price: 1700,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
     },
     {
         id: 55,
@@ -1029,7 +1035,13 @@ database.products = [
             'https://cdn.shopify.com/s/files/1/0015/5068/0152/products/image_c93d31c7-920d-4eef-80a9-7c9fe65300ab.jpg?v=1629904135',
         price: 2700,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
     },
     {
         id: 56,
@@ -1041,7 +1053,13 @@ database.products = [
         'https://caputos.com/wp-content/uploads/2016/07/IMG_5189_Large__89183.jpg',
         price: 15000,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
     },
     {
         id: 57,
@@ -1053,7 +1071,13 @@ database.products = [
             'https://3.bp.blogspot.com/-OZjhn7qJR-M/Umc_bQqGXlI/AAAAAAAAGPM/Cxk8tGQ2ra0/s1600/Tuna+Ribbons+-+JG.JPG',
         price: 700,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
     },
     {
         id: 58,
@@ -1065,7 +1089,13 @@ database.products = [
             'https://harusushi.com/wp-content/uploads/2016/05/king-crab-dumplings.jpg',
         price: 1000,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
     },
     {
         id: 59,
@@ -1077,7 +1107,13 @@ database.products = [
             'https://4.bp.blogspot.com/-t3eDHCG2O_w/WiNOgAfSr6I/AAAAAAAAYNs/IGU2o7fvb2gOhceUbFxBBHleceT51_3LACK4BGAYYCw/s1600/IMG_0104.jpg',
         price: 10000,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
     },
     {
         id: 60,
@@ -1089,7 +1125,13 @@ database.products = [
             'https://lacavesud.com/wp-content/uploads/2020/04/CBD5BD7F-C6F6-40C1-9983-8DFF41439542_1_201_a-scaled.jpeg',
         price: 10000,
         quantity: 50,
-        ratings: [],
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
     },
 ];
 database.orders = [
