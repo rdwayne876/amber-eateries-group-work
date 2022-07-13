@@ -26,9 +26,9 @@ database.products = [
         name: 'Jerk Chicken',
         description:
             'Jamaican jerk chicken is famous for its spicy, smoky taste. Recreate this dish at home using a blend of traditional herbs and spices. If you can handle it, turn it up a notch with some authentic scotch bonnet pepper sauce.',
-        category: Category.ENTREE,
+        category: Category.SIDE,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Jerk-Chicken-683x1024.jpg',
+            'https://www.sandals.com/blog/content/images/2020/04/Jamaican-Jerk-Chicken.jpg',
         price: 1200,
         quantity: 100,
         ratings: [],
@@ -38,9 +38,9 @@ database.products = [
         name: 'Ackee and Saltfish',
         description:
             "Jamaica's national dish makes a tasty breakfast or brunch. Made with the buttery, savory ackee fruit, this dish is expertly seasoned with fresh onions, peppers, garlic and thyme. Sautee with salted codfish and serve with fresh, crispy fried dumplings.",
-        category: Category.ENTREE,
+        category: Category.SIDE,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Ackee-and-Saltfish-683x1024.jpg',
+            'https://www.blackveganstoday.com/wp-content/uploads/2019/03/1553717241_maxresdefault-1024x576.jpg',
         price: 900,
         quantity: 200,
         ratings: [],
@@ -50,7 +50,7 @@ database.products = [
         name: 'Steamed Cabbage and Saltfish',
         description:
             'This tasty meal comes together quickly using inexpensive ingredients. Cabbages are shredded and steamed with fresh garlic, onion and bell peppers. If you can handle the heat, add a bit of scotch bonnet pepper to the pot. Saltfish is the finishing touch on this pescatarian-friendly dish.',
-        category: Category.ENTREE,
+        category: Category.SIDE,
         imageUrl:
             'https://izzycooking.com/wp-content/uploads/2021/03/Cabbage-and-Saltfish-683x1024.jpg',
         price: 200,
@@ -74,7 +74,7 @@ database.products = [
         name: 'Curry Chicken',
         description:
             'Many cultures have their own method of making curry. Jamaican curry chicken is well-seasoned with traditional herbs and spices and Jamaican curry powder. Add in carrots and potatoes for a hearty, wholesome weeknight dinner.',
-        category: Category.ENTREE,
+        category: Category.SIDE,
         imageUrl:
             'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Curry-Chicken-683x1024.jpg',
         price: 900,
@@ -86,7 +86,7 @@ database.products = [
         name: 'Rice and Peas',
         description:
             'Authentic Jamaican rice and peas is made with red kidney beans, creamy coconut milk and spices. This popular side dish is often served with Sunday dinner in many Jamaican households.',
-        category: Category.SIDE,
+        category: Category.APPETIZER,
         imageUrl:
             'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Rice-and-Peas-683x1024.jpg',
         price: 500,
@@ -98,7 +98,7 @@ database.products = [
         name: 'Oxtail',
         description:
             "You'll need your pressure cooker for tender, fall-off-the-bone Jamaican oxtail. This popular stew was originally brought to Jamaica by the British. Of course, Jamaicans made it their own by adding spices and seasonings. Some say the Jamaican method is the best way to prepare oxtail.",
-        category: Category.ENTREE,
+        category: Category.SIDE,
         imageUrl:
             'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Oxtail-683x1024.jpg',
         price: 1900,
@@ -110,7 +110,7 @@ database.products = [
         name: 'Brown Stew Chicken',
         description:
             'Jamaican brown stew chicken is easy to prepare with tons of payoff. Bite-size pieces of chicken are seasoned with garlic, ginger, peppers and scallions and simmered in a thick, flavorful stew.',
-        category: Category.ENTREE,
+        category: Category.SIDE,
         imageUrl:
             'https://izzycooking.com/wp-content/uploads/2021/03/Brown-Stew-Chicken-683x1024.jpg',
         price: 1000,
@@ -119,12 +119,12 @@ database.products = [
     },
     {
         id: 9,
-        name: ' FRIED DUMPLINGS',
+        name: ' Lamb Loins',
         description:
-            'Also known as Johnny Cakes, Jamaican fried dumplings are crispy on the outside, but warm and fluffy on the inside. These savory dumplings are the ultimate comfort food to be enjoyed with your favorite Jamaican meals.',
+                'Lamb is such a special treat! We serve lamb at least a few times per year! If you find a lamb saddle, or the whole loin, including the bone, it will be much cheaper per pound! And it is easy to remove the bone.',
         category: Category.APPETIZER,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Fried-Dumplings-768x1152.jpg',
+            'https://i.pinimg.com/originals/0d/d5/e0/0dd5e0f2a15276f8d5f174569de22972.jpg',
         price: 100,
         quantity: 500,
         ratings: [],
@@ -144,12 +144,12 @@ database.products = [
 
     {
         id: 11,
-        name: 'Steam Cabbage',
+        name: 'Beef Fillet',
         description:
-            "Here's a traditional Jamaican meal that vegans are sure to love. Jamaican steamed cabbage is seasoned with onion, garlic and thyme. If you're feeling bold, add some scotch bonnet pepper.",
-        category: Category.SIDE,
+            "A little crispy on the outside and extremely tender and juicy on the inside, this steak goes along with a side of baby carrots, poached mushrooms, sweet corn, and celeriac mash",
+        category: Category.APPETIZER,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Cabbage-683x1024.jpg',
+            'https://www.foodstory.net/wp-content/uploads/2020/10/Beef-Fine-Dining-Presentation.jpg',
         price: 900,
         quantity: 100,
         ratings: [],
@@ -157,12 +157,12 @@ database.products = [
 
     {
         id: 12,
-        name: 'Fried Dumplings',
+        name: 'Pork Rolls',
         description:
-            'Also known as Johnny Cakes, Jamaican fried dumplings are crispy on the outside, but warm and fluffy on the inside. These savory dumplings are the ultimate comfort food to be enjoyed with your favorite Jamaican meals.',
-        category: Category.SIDE,
+            "Crispy on the outside and tender on the inside, this crunchy pork roll with sweet potatoes and red cabbage salad is every steak lover's dream",
+        category: Category.APPETIZER,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Fried-Dumplings-683x1024.jpg',
+            'https://www.foodstory.net/wp-content/uploads/2020/10/Crounchy-Pork-Roll.jpg',
         price: 100,
         quantity: 200,
         ratings: [],
@@ -175,7 +175,7 @@ database.products = [
             'This dish is a popular menu item in any Jamaican restaurant. Succulent pieces of goat meat are slow-cooked to perfection in a spicy curry sauce. Serve with your favorite side for a hearty Jamaican dinner.',
         category: Category.ENTREE,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Curry-Goat-683x1024.jpg',
+            'https://res.cloudinary.com/bunch-media-library/image/upload/w_440,h_380,c_fill,q_auto,f_auto,fl_lossy/v1566361970/recipes/k9qv4c0wergq7ubq1baw.jpg',
         price: 900,
         quantity: 100,
         ratings: [],
@@ -201,7 +201,7 @@ database.products = [
             'Nothing says comfort like chicken soup made by your Jamaican grandma. For the next best thing, cook up a simmering pot of spicy, flavorful Jamaican chicken soup',
         category: Category.APPETIZER,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Chicken-Soup-768x1152.jpg',
+            'https://empeysworld.files.wordpress.com/2020/06/20200609_1626211.jpg?w=2000&h=1500&crop=1',
         price: 500,
         quantity: 300,
         ratings: [],
@@ -227,7 +227,7 @@ database.products = [
             'Seafood lovers are sure to love this spicy, sweet Jerk Shrimp recipe. Plump, juicy shrimp are seasoned with an authentic jerk seasoning blend, then seared to perfection. How about a zesty summer salad featuring Jamaican jerk shrimp?',
         category: Category.ENTREE,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Jerk-Shrimp-683x1024.jpg',
+            'https://www.kpseafood.com/wordpress/wp-content/uploads/2018/12/jerkshrimp.jpg',
         price: 1500,
         quantity: 100,
         ratings: [],
@@ -237,11 +237,11 @@ database.products = [
         id: 18,
         name: 'Jamaican Blue mountain Coffee',
         description:
-            'Coffee lovers favorite hot beverage in jamaica, The Blue Mountain Coffee',
+            "Coffee lovers favorite hot beverage in jamaica, The Blue Mountain Coffee",
         category: Category.BEVERAGE,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Blue-Mountain-Coffee-683x1024.jpg',
-        price: 400,
+            'http://georgiafoodies.com/wp-content/uploads/2020/04/2020-02-25-12-58-55-971.jpg',
+        price: 600,
         quantity: 200,
         ratings: [],
     },
@@ -266,7 +266,7 @@ database.products = [
             "It doesn't get more authentic than this! Jamaican hot chocolate is made using real cacao for a rich, smooth taste. Stir in cinnamon and nutmeg for a cup of hot cocoa tha's far from average.",
         category: Category.BEVERAGE,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Hot-Chocolate-Tea-683x1024.jpg',
+            'https://i.pinimg.com/originals/45/e7/94/45e794e5536ee3d218984ddd741b6f04.jpg',
         price: 150,
         quantity: 300,
         ratings: [],
@@ -276,10 +276,10 @@ database.products = [
         id: 21,
         name: 'Jamaican Sorrel',
         description:
-            'This drink is traditionally enjoyed by Jamaicans during Christmas, but can be enjoyed all year long. This unique beverage is similar to cranberry juice in color with a unique, sour, berry-like taste. Add sweetener and ginger for a refreshing Jamaican drink.',
+            "This drink is traditionally enjoyed by Jamaicans during Christmas, but can be enjoyed all year long. This unique beverage is similar to cranberry juice in color with a unique, sour, berry-like taste. Add sweetener and ginger for a refreshing Jamaican drink.",
         category: Category.BEVERAGE,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Sorrel-683x1024.jpg',
+            'https://www.hotelthechamps.com/wp-content/uploads/2019/12/AINSLEYS_CARIBBEAN_KITCHEN_Ep8_03-scaled.jpg',
         price: 140,
         quantity: 200,
         ratings: [],
@@ -650,6 +650,42 @@ database.products = [
         imageUrl:
             'https://thekitchencommunity.org/wp-content/uploads/2022/02/15_chinese-recipes-500x750.jpg',
         price: 900,
+        quantity: 50,
+        ratings: [],
+    },
+    {
+        id: 51,
+        name: 'Chocolate Banana Bread',
+        description:
+            'Chocolate and banana make a perfect combination and the result is a bread that is not too dense and will keep you going back for more.',
+        category: Category.DESSERT,
+        imageUrl: 
+            "https://mycookprocessor.com/wp-content/uploads/2016/03/Chocolate-Banana-Bread-1080x724.jpg",
+        price: 500,
+        quantity: 50,
+        ratings: [],
+    },
+    {
+        id: 52,
+        name: 'Oreo Cheesecake Bars',
+        description:
+            "Oreos. Cheesecake. Chocolate. Pretty top combination right there. I was super worried these would be way to rich but they were right on the mark.",
+        category: Category.DESSERT,
+        imageUrl: 
+            'https://mycookprocessor.com/index.php/recipe/oreo-cheesecake-bars/',
+        price: 700,
+        quantity: 50,
+        ratings: [],
+    },
+    {
+        id: 53,
+        name: 'Potato Bake',
+        description:
+            "Potatos baked in cheese and cream to perfection",
+        category: Category.APPETIZER,
+        imageUrl: 
+            'https://mycookprocessor.com/wp-content/uploads/2017/09/Potato-Bake-1080x720.jpg',
+        price: 700,
         quantity: 50,
         ratings: [],
     },

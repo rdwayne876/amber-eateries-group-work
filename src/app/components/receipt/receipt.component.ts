@@ -7,11 +7,11 @@ import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 
 @Component({
-    selector: 'app-reciept',
-    templateUrl: './reciept.component.html',
-    styleUrls: ['./reciept.component.css'],
+    selector: 'app-Receipt',
+    templateUrl: './receipt.component.html',
+    styleUrls: ['./receipt.component.css'],
 })
-export class RecieptComponent implements OnInit {
+export class ReceiptComponent implements OnInit {
     transaction: Transaction = {
         id: 0,
         user_id: 0,
@@ -41,9 +41,9 @@ export class RecieptComponent implements OnInit {
     ];
 
     constructor(private router: Router) {
-        let data = this.router.getCurrentNavigation()?.extras.state!['reciept'];
+        let data = this.router.getCurrentNavigation()?.extras.state!['receipt'];
         this.transaction = data.transaction;
-        this.order = data.order;
+        this.order = data.order;     
     }
 
     ngOnInit(): void {}

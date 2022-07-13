@@ -574,13 +574,6 @@
           "category": "appetizer",
           "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Roti-1-683x1024.jpeg",
           "price": 500
-        },
-        {
-          "name": "Rice and Peas",
-          "description": "Authentic Jamaican rice and peas is made with red kidney beans, creamy coconut milk and spices. This popular side dish is often served with Sunday dinner in many Jamaican households.",
-          "category": "side",
-          "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Rice-and-Peas-683x1024.jpg",
-          "price": 500
         }
       ],
       "id": 6

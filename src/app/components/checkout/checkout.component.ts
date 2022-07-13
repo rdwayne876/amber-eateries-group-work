@@ -11,7 +11,6 @@ import { UserService } from 'src/app/services/user.service';
 import { CartService } from 'src/app/cart.service';
 import { AsyncValidatorFn } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Address } from 'src/app/interfaces/checkout';
 import { MatRadioChange, MatRadioGroup } from '@angular/material/radio';
 import { Router } from '@angular/router';
 import { MapService } from 'src/app/map.service';
@@ -240,8 +239,8 @@ export class CheckoutComponent implements OnInit {
 
                     this.router.navigateByUrl('/receipt', {
                         state: {
-                            reciept: {
-                                transaction: this.checkoutService.reciept,
+                            receipt: {  
+                                transaction: this.checkoutService.receipt,
                                 order: this.Cart,
                             },
                         },

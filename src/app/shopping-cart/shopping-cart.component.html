@@ -1,12 +1,21 @@
 <section class="bg-[#F5F5F5]">
-    
     <div class="relative w-[100%]">
-        <div class="absolute z-10 flex justify-center items-center w-full h-full capitalize">
+        <div
+            class="absolute z-10 flex justify-center items-center w-full h-full capitalize"
+        >
             <div class="border-b-4 border-b-white w-[60%] m-auto">
-                <h1 class="text-white text-center text-[3vw] pb-3 font-['Italiana']">Your Cart</h1>
+                <h1
+                    class="text-white text-center text-[3vw] pb-3 font-['Italiana'] font-bold"
+                >
+                    Your Cart
+                </h1>
             </div>
         </div>
-        <img class="w-full h-[30vh] object-cover brightness-75" src="https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1493775538141-BLDK7ZNSG5KNXEQLQJPY/sepia-1-16-1517116rt.jpg?format=1500w" alt="" />
+        <img
+            class="w-full h-[30vh] object-cover brightness-75"
+            src="https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1493775538141-BLDK7ZNSG5KNXEQLQJPY/sepia-1-16-1517116rt.jpg?format=1500w"
+            alt=""
+        />
     </div>
 
     <div class="w-[85%] m-auto">
@@ -16,7 +25,24 @@
                     <thead
                         class="bg-[#5F462B] text-white uppercase font-medium tracking-widest"
                     >
-                        <th class="p-[1vw] text-[1vw]">Products</th>
+                        <th class="p-[1vw] text-[1vw]">
+                            Products
+                            <i
+                                #can
+                                *ngIf="cart.length > 0"
+                                class="fa-solid fa-trash hover:cursor-pointer"
+                                (click)="emptyCart()"
+                                (mouseenter)="
+                                    can.classList.remove('fa-trash');
+                                    can.classList.add('fa-trash-arrow-up')
+                                "
+                                (mouseleave)="
+                                    can.classList.add('fa-trash');
+                                    can.classList.remove('fa-trash-arrow-up')
+                                "
+                                routerLink="/menu"
+                            ></i>
+                        </th>
                         <th class="p-[1vw] text-[1vw] text-center">Price</th>
                         <th class="p-[1vw] text-[1vw] text-center">Quantity</th>
                         <th class="p-[1vw] text-[1vw] text-center">Total</th>
@@ -57,7 +83,7 @@
                                         <div class="absolute top-0 right-0 m-4">
                                             <button
                                                 type="button"
-                                                class="text-[0.9vw]  p-[0.3vw] inline-flex text-gray-400 hover:text-gray-500"
+                                                class="text-[0.9vw] p-[0.3vw] inline-flex text-gray-400 hover:text-gray-500"
                                                 (click)="
                                                     deleteProduct(cItem.id)
                                                 "
@@ -110,9 +136,11 @@
             <!-- purchase summary -->
             <div>
                 <div
-                    class="bg-[#5F462B] w-full flex-flex-col  text-white px-[1.2vw] pb-[1vw] text-[1vw]"
+                    class="bg-[#5F462B] w-full flex-flex-col text-white px-[1.2vw] pb-[1vw] text-[1vw]"
                 >
-                    <div class="border-b border-white mb-[1.1vw] w-[12vw] mx-auto">
+                    <div
+                        class="border-b border-white mb-[1.1vw] w-[12vw] mx-auto"
+                    >
                         <div class="text-center font-medium pt-[1.1vw]">
                             Purchase Summary
                         </div>
