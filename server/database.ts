@@ -1007,6 +1007,132 @@ database.products = [
             return buffer;
         })()],
     },
+    {
+        id: 54,
+        name: 'Crispy Tasmanian Sea Trout Sushi',
+        description:
+            "Petuna’s Tasmanian Ocean Trout has a creamy, velvet-like texture with excellent mouth feel. Even though it looks like salmon it tastes similar to trout but with its own unique umami flavor.",
+        category: Category.APPETIZER,
+        imageUrl: 
+            'http://jesswords.com/wp-content/uploads/2014/07/20140705_182021.jpg',
+        price: 1700,
+        quantity: 50,
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
+    },
+    {
+        id: 55,
+        name: 'Sweet Corn VeloutÉ',
+        description:
+            "Potatos baked in cheese and cream to perfection",
+        category: Category.APPETIZER,
+        imageUrl: 
+            'https://cdn.shopify.com/s/files/1/0015/5068/0152/products/image_c93d31c7-920d-4eef-80a9-7c9fe65300ab.jpg?v=1629904135',
+        price: 2700,
+        quantity: 50,
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
+    },
+    {
+        id: 56,
+        name: 'Black Truffle',
+        description:
+        "In the age-old battle between black and white truffles, there are opinions as there are stars in the sky. But if you love the earthy, chocolatey flavor of black truffles, well, you’ve come to the right place! There’s a reason these are called black diamonds that enveloping aroma, that intense flavor that coats a dish and your sense alike.",
+        category: Category.SIDE,
+        imageUrl: 
+        'https://caputos.com/wp-content/uploads/2016/07/IMG_5189_Large__89183.jpg',
+        price: 15000,
+        quantity: 50,
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
+    },
+    {
+        id: 57,
+        name: 'Yellowfin Tuna Ribbons',
+        description:
+            "The fish is immaculately fresh and tender but with a selicate bie, almost like aldente pasta",
+        category: Category.APPETIZER,
+        imageUrl: 
+            'https://3.bp.blogspot.com/-OZjhn7qJR-M/Umc_bQqGXlI/AAAAAAAAGPM/Cxk8tGQ2ra0/s1600/Tuna+Ribbons+-+JG.JPG',
+        price: 700,
+        quantity: 50,
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
+    },
+    {
+        id: 58,
+        name: 'King Crab Dumplings',
+        description:
+            "Lorem Ipsum is simply dummy text",
+        category: Category.DESSERT,
+        imageUrl: 
+            'https://harusushi.com/wp-content/uploads/2016/05/king-crab-dumplings.jpg',
+        price: 1000,
+        quantity: 50,
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
+    },
+    {
+        id: 59,
+        name: 'Grenache 16',
+        description:
+            "Domaine La Colombette, `Notorious Pink`, France 2018",
+        category: Category.BEVERAGE,
+        imageUrl: 
+            'https://4.bp.blogspot.com/-t3eDHCG2O_w/WiNOgAfSr6I/AAAAAAAAYNs/IGU2o7fvb2gOhceUbFxBBHleceT51_3LACK4BGAYYCw/s1600/IMG_0104.jpg',
+        price: 10000,
+        quantity: 50,
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
+    },
+    {
+        id: 60,
+        name: 'CÔtes De Provence 20',
+        description:
+            "Whispering Angel, Chateau d'Esclans, France 2020",
+        category: Category.BEVERAGE,
+        imageUrl: 
+            'https://lacavesud.com/wp-content/uploads/2020/04/CBD5BD7F-C6F6-40C1-9983-8DFF41439542_1_201_a-scaled.jpeg',
+        price: 10000,
+        quantity: 50,
+        ratings: [...((): number[] => {
+            let buffer = [];
+            for (let i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })()],
+    },
 ];
 database.orders = [
     // {
