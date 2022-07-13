@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
 
 	addProduct(id: number): void {
 		this.cartService.addCartItem(id);
-		this.succcessPopup.open('Added to cart', 'ok', {
+		this.succcessPopup.open('Added to cart', 'Okay', {
 			panelClass: ['hazel-snackbar'],
 			duration: 2000,
 		});
