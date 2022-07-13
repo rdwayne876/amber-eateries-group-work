@@ -24,7 +24,7 @@
 								<div *ngFor="let product of appetizers | slice: appetizers_currentPage * pageLimit:appetizers_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
 									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-										<div class="h-[215px]" [routerLink]="'/details/' + product.id">
+										<div class="h-[215px] cursor-pointer" [routerLink]="'/details/' + product.id">
 											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
 										</div>
 
@@ -66,7 +66,7 @@
 								<div *ngFor="let product of entrees | slice: entrees_currentPage * pageLimit:entrees_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
 									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-										<div class="h-[215px]" [routerLink]="'/details/' + product.id">
+										<div class="h-[215px] cursor-pointer" [routerLink]="'/details/' + product.id">
 											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
 										</div>
 
@@ -108,7 +108,7 @@
 								<div *ngFor="let product of sides | slice: sides_currentPage * pageLimit:sides_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
 									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-										<div class="h-[215px]" [routerLink]="'/details/' + product.id">
+										<div class="h-[215px] cursor-pointer" [routerLink]="'/details/' + product.id">
 											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
 										</div>
 
@@ -150,7 +150,7 @@
 								<div *ngFor="let product of desserts | slice: desserts_currentPage * pageLimit:desserts_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
 									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-										<div class="h-[215px]" [routerLink]="'/details/' + product.id">
+										<div class="h-[215px] cursor-pointer" [routerLink]="'/details/' + product.id">
 											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
 										</div>
 
@@ -192,7 +192,7 @@
 								<div *ngFor="let product of beverages | slice: beverages_currentPage * pageLimit:beverages_currentPage * pageLimit + pageLimit">
 									<!-- New Card Design Starts -->
 									<div class="w-full h-[460px] bg-[#F5F5F5] border flex flex-col shadow-lg">
-										<div class="h-[215px]" [routerLink]="'/details/' + product.id">
+										<div class="h-[215px] cursor-pointer" [routerLink]="'/details/' + product.id">
 											<img src="{{ product.imageUrl }}" alt="" class="w-full h-full object-cover" />
 										</div>
 
