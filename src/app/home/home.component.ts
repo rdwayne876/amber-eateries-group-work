@@ -27,7 +27,18 @@ export class HomeComponent implements OnInit {
 	desserts: Product[] = [];
 	desserts_currentPage = 0;
 	cart: any[] = [];
-	pageLimit = 9;
+	pageLimit1 = 8;
+	pageLimit2 = 5;
+	
+	public get pageLimit() : number {
+		return this.width <= 1024 && this.width > this.height ? this.pageLimit1 : this.width > this.height && this.width > 1024 ? this.pageLimit1 : this.pageLimit2;
+	}
+	
+	public set pageLimit(v : number) {		
+		if (this.width > this.height && this.width > 1024) this.pageLimit2 = v;
+		else if (this.width <= 1024 && this.width > this.height) this.pageLimit1 = v;
+		else this.pageLimit2 = v;
+	}
 
 	
 	public get height() : number {
