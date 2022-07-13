@@ -418,7 +418,7 @@ database.products = [
             'A thick and flavorful stew of beef or pork, yams, potatoes, red peas, and dumplings that is usually flavored with pimento and thyme.',
         category: Category.ENTREE,
         imageUrl:
-            'https://jamaicans.com/wp-content/uploads/The-6-Soups-Every-Jamaican-Should-Know-How-to-Cook-Red-Peas-Beef-Soup-810x608.jpeg',
+            'https://i.pinimg.com/originals/3a/2a/b1/3a2ab11f8e294735a5beb855c05f7f5d.jpg',
         price: 300,
         quantity: 250,
         ratings: [...((): number[] => {
@@ -437,7 +437,7 @@ database.products = [
             'A stew featuring a combination of marinated and fried fish fillets with a brown sauce made from onions, garlic, ginger, tomatoes, butter, and water. Often seasoned with thyme and different kinds of hot peppers and traditionally served with rice and peas.',
         category: Category.ENTREE,
         imageUrl:
-            'https://jamaicans.com/wp-content/uploads/2015/11/jamaican-brown-stew-fish-recipe-810x608.jpg',
+            'https://i.pinimg.com/originals/2e/9c/3e/2e9c3ea6d3af7d2148345943a909ab81.jpg',
         price: 900,
         quantity: 100,
         ratings: [...((): number[] => {
