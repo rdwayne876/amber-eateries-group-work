@@ -26,7 +26,7 @@ database.products = [
         name: 'Jerk Chicken',
         description:
             'Jamaican jerk chicken is famous for its spicy, smoky taste. Recreate this dish at home using a blend of traditional herbs and spices. If you can handle it, turn it up a notch with some authentic scotch bonnet pepper sauce.',
-        category: Category.SIDE,
+        category: Category.ENTREE,
         imageUrl:
             'https://www.sandals.com/blog/content/images/2020/04/Jamaican-Jerk-Chicken.jpg',
         price: 1200,
@@ -44,7 +44,7 @@ database.products = [
         name: 'Ackee and Saltfish',
         description:
             "Jamaica's national dish makes a tasty breakfast or brunch. Made with the buttery, savory ackee fruit, this dish is expertly seasoned with fresh onions, peppers, garlic and thyme. Sautee with salted codfish and serve with fresh, crispy fried dumplings.",
-        category: Category.SIDE,
+        category: Category.ENTREE,
         imageUrl:
             'https://www.blackveganstoday.com/wp-content/uploads/2019/03/1553717241_maxresdefault-1024x576.jpg',
         price: 900,
@@ -64,7 +64,7 @@ database.products = [
             'This tasty meal comes together quickly using inexpensive ingredients. Cabbages are shredded and steamed with fresh garlic, onion and bell peppers. If you can handle the heat, add a bit of scotch bonnet pepper to the pot. Saltfish is the finishing touch on this pescatarian-friendly dish.',
         category: Category.SIDE,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Cabbage-and-Saltfish-683x1024.jpg',
+            'https://i.pinimg.com/originals/50/32/b6/5032b6e7b91e7fcbaac48c609917cbb4.jpg',
         price: 200,
         quantity: 100,
         ratings: [...((): number[] => {
@@ -80,9 +80,9 @@ database.products = [
         name: 'Jamaican Beef Patties',
         description:
             'When in Jamaica, a visit to a patty shop is a must. Jamaican beef patties are made with a crispy, golden flaky pastry filled with seasoned meat.',
-        category: Category.ENTREE,
+        category: Category.APPETIZER,
         imageUrl:
-            'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Beef-Patties-683x1024.jpg',
+            'http://iheartrecipes.com/wp-content/uploads/2014/03/IMG_2825.jpg',
         price: 300,
         quantity: 100,
         ratings: [...((): number[] => {
@@ -98,7 +98,7 @@ database.products = [
         name: 'Curry Chicken',
         description:
             'Many cultures have their own method of making curry. Jamaican curry chicken is well-seasoned with traditional herbs and spices and Jamaican curry powder. Add in carrots and potatoes for a hearty, wholesome weeknight dinner.',
-        category: Category.SIDE,
+        category: Category.ENTREE,
         imageUrl:
             'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Curry-Chicken-683x1024.jpg',
         price: 900,
@@ -134,7 +134,7 @@ database.products = [
         name: 'Oxtail',
         description:
             "You'll need your pressure cooker for tender, fall-off-the-bone Jamaican oxtail. This popular stew was originally brought to Jamaica by the British. Of course, Jamaicans made it their own by adding spices and seasonings. Some say the Jamaican method is the best way to prepare oxtail.",
-        category: Category.SIDE,
+        category: Category.ENTREE,
         imageUrl:
             'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Oxtail-683x1024.jpg',
         price: 1900,
@@ -152,7 +152,7 @@ database.products = [
         name: 'Brown Stew Chicken',
         description:
             'Jamaican brown stew chicken is easy to prepare with tons of payoff. Bite-size pieces of chicken are seasoned with garlic, ginger, peppers and scallions and simmered in a thick, flavorful stew.',
-        category: Category.SIDE,
+        category: Category.ENTREE,
         imageUrl:
             'https://izzycooking.com/wp-content/uploads/2021/03/Brown-Stew-Chicken-683x1024.jpg',
         price: 1000,
@@ -170,7 +170,7 @@ database.products = [
         name: ' Lamb Loins',
         description:
                 'Lamb is such a special treat! We serve lamb at least a few times per year! If you find a lamb saddle, or the whole loin, including the bone, it will be much cheaper per pound! And it is easy to remove the bone.',
-        category: Category.APPETIZER,
+        category: Category.ENTREE,
         imageUrl:
             'https://i.pinimg.com/originals/0d/d5/e0/0dd5e0f2a15276f8d5f174569de22972.jpg',
         price: 100,
@@ -207,7 +207,7 @@ database.products = [
         name: 'Beef Fillet',
         description:
             "A little crispy on the outside and extremely tender and juicy on the inside, this steak goes along with a side of baby carrots, poached mushrooms, sweet corn, and celeriac mash",
-        category: Category.APPETIZER,
+        category: Category.ENTREE,
         imageUrl:
             'https://www.foodstory.net/wp-content/uploads/2020/10/Beef-Fine-Dining-Presentation.jpg',
         price: 900,
@@ -226,7 +226,7 @@ database.products = [
         name: 'Pork Rolls',
         description:
             "Crispy on the outside and tender on the inside, this crunchy pork roll with sweet potatoes and red cabbage salad is every steak lover's dream",
-        category: Category.APPETIZER,
+        category: Category.ENTREE,
         imageUrl:
             'https://www.foodstory.net/wp-content/uploads/2020/10/Crounchy-Pork-Roll.jpg',
         price: 100,
