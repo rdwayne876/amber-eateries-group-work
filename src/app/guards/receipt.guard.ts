@@ -22,15 +22,11 @@ export class ReceiptGuard implements CanActivate {
         | Promise<boolean | UrlTree>
         | boolean
         | UrlTree {
+        console.log(this.router.getCurrentNavigation()?.extras.state?.['receipt']);
+        
         // Prevents navigation to the receipt page unless through checkout
-        let data =
-            this.router.getCurrentNavigation()?.extras.state?.['receipt'];
-
-        if (
-            this.router.getCurrentNavigation()?.trigger !== 'imperative' ||
-            !data
-        )
+        if (!this.router.getCurrentNavigation()?.extras.state?.['receipt'])
             return this.router.parseUrl('/home');
-        return true;
+        else return true;
     }
 }
