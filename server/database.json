@@ -329,7 +329,7 @@
       "category": "beverage",
       "imageUrl": "https://www.hotelthechamps.com/wp-content/uploads/2019/12/AINSLEYS_CARIBBEAN_KITCHEN_Ep8_03-scaled.jpg",
       "price": 140,
-      "quantity": 200,
+      "quantity": 190,
       "ratings": [
         4,
         4,
@@ -612,7 +612,7 @@
       "category": "appetizer",
       "imageUrl": "https://www.chefspencil.com/wp-content/uploads/jamaican-chicken-soup.jpg.webp",
       "price": 300,
-      "quantity": 50,
+      "quantity": 49,
       "ratings": [
         4,
         5,
@@ -894,7 +894,43 @@
       ]
     }
   ],
-  "orders": [],
-  "transactions": [],
+  "orders": [
+    {
+      "orders": [
+        {
+          "name": "Chicken Foot Soup",
+          "description": "Soups in Jamaica are thick and often served as complete meals mainly for lunch. This tasty soup is prepared using chicken feet, pumpkin, chochos, turnips, carrots, yellow yam, and flour dumplings, and seasoned with a soup mix and a medley of herbs and spices.",
+          "category": "appetizer",
+          "imageUrl": "https://www.chefspencil.com/wp-content/uploads/jamaican-chicken-soup.jpg.webp",
+          "price": 300
+        },
+        {
+          "name": "Jamaican Sorrel",
+          "description": "This drink is traditionally enjoyed by Jamaicans during Christmas, but can be enjoyed all year long. This unique beverage is similar to cranberry juice in color with a unique, sour, berry-like taste. Add sweetener and ginger for a refreshing Jamaican drink.",
+          "category": "beverage",
+          "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Sorrel-683x1024.jpg",
+          "price": 140
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "transactions": [
+    {
+      "address": {
+        "street_address": "",
+        "street_address2": "",
+        "city_town": "",
+        "parish": ""
+      },
+      "date": "2022-07-13T18:12:23.393Z",
+      "delivery": true,
+      "user_id": 0,
+      "payment_method": "cash",
+      "payment_amount": 1700,
+      "order_id": 1,
+      "id": 1
+    }
+  ],
   "users": []
 }
