@@ -23,7 +23,6 @@ export class SideOrderModalComponent implements OnInit {
 	product!: Product;
 
 	ngOnInit(): void {
-		console.log(this.matData);
 		this.dataService.sendGetRequest().subscribe((resp: Product[]) => {
 			let _products: Product[] = resp;
 			_products = _products.filter((product: Product) => product.category == this.matData.category);

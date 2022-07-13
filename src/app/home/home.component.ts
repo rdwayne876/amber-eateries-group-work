@@ -86,7 +86,6 @@ export class HomeComponent implements OnInit {
 			// }
 
 			if (this.tabChangeEvent) {
-				console.log(this.tabChangeEvent.tab.textLabel);
 				switch (this.tabChangeEvent.tab.textLabel.toLowerCase()) {
 					// Use above where `this.tabChangeEvent == undefined` is for the first tab.
 					// case 'sides':
