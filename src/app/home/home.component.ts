@@ -27,7 +27,16 @@ export class HomeComponent implements OnInit {
 	desserts: Product[] = [];
 	desserts_currentPage = 0;
 	cart: any[] = [];
-	pageLimit = 8;
+	pageLimit = 9;
+
+	
+	public get height() : number {
+		return window.innerHeight;
+	}
+	public get width() : number {
+		return window.innerWidth;
+	}
+	
 
 	constructor(private dataService: DataService, private cartService: CartService, private succcessPopup: MatSnackBar, public dialog: MatDialog) {}
 
@@ -65,7 +74,7 @@ export class HomeComponent implements OnInit {
 
 	addProduct(id: number): void {
 		this.cartService.addCartItem(id);
-		this.succcessPopup.open('Added to cart', 'ok', {
+		this.succcessPopup.open('Added to cart', 'Okay', {
 			panelClass: ['hazel-snackbar'],
 			duration: 2000,
 		});
@@ -86,7 +95,6 @@ export class HomeComponent implements OnInit {
 			// }
 
 			if (this.tabChangeEvent) {
-				console.log(this.tabChangeEvent.tab.textLabel);
 				switch (this.tabChangeEvent.tab.textLabel.toLowerCase()) {
 					// Use above where `this.tabChangeEvent == undefined` is for the first tab.
 					// case 'sides':

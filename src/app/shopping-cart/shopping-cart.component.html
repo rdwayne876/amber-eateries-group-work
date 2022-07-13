@@ -12,7 +12,7 @@
             </div>
         </div>
         <img
-            class="w-full h-[30vh] object-cover brightness-75"
+        [class]="['w-full', width > height ? 'h-[30vh]' : 'h-[15vh]', 'object-cover', 'brightness-50']"
             src="https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1493775538141-BLDK7ZNSG5KNXEQLQJPY/sepia-1-16-1517116rt.jpg?format=1500w"
             alt=""
         />
