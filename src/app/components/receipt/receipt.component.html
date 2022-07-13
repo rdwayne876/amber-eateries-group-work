@@ -48,16 +48,16 @@
                         class="grid grid-cols-4 text-right text-xl px-10"
                     >
                         <p class="text-left col-span-2">{{ item.name }}</p>
-                        <p>{{ item.quantity | number }}</p>
+                        <p>{{ item.amount | number }}</p>
                         <p>
-                            {{ item.price | currency: "JMD" }}
+                            {{ item.price | currency: "JMD":"JMD$" }}
                         </p>
                     </div>
                 </div>
                 <h3 class="font-semibold text-right p-2">
                     Total:<span>{{
                         transaction.payment_amount
-                            | currency: "JMD":"symbol":"3.2-2":"fr"
+                            | currency: "JMD":"JMD$":"3.2-2":"en-US"
                     }}</span>
                 </h3>
                 <div class="justify-center flex items-center">
