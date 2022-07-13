@@ -32,7 +32,7 @@
 											{{ product.name | lowercase }}
 										</div>
 
-										<p class="px-8 text-[#5F462B]">{{ product.description | slice: 0:130 }}<span *ngIf="product.description.length > 130">...</span></p>
+										<p class="px-8 text-[#5F462B]">{{(height > width) && (width <= 1024) ? (product.description | slice: 0:260) : (product.description | slice: 0:130)  }}<span *ngIf="product.description.length > ((height > width) && (width <= 1024) ? 260:130)">...</span></p>
 
 										<div class="mt-auto">
 											<div class="flex justify-between items-center">
