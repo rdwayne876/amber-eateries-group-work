@@ -29,6 +29,15 @@ export class HomeComponent implements OnInit {
 	cart: any[] = [];
 	pageLimit = 8;
 
+	
+	public get height() : number {
+		return window.innerHeight;
+	}
+	public get width() : number {
+		return window.innerWidth;
+	}
+	
+
 	constructor(private dataService: DataService, private cartService: CartService, private succcessPopup: MatSnackBar, public dialog: MatDialog) {}
 
 	ngOnInit() {
