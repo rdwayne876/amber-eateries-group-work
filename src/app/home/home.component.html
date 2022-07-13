@@ -56,7 +56,7 @@
 								</div>
 							</div>
 
-							<mat-paginator [length]="appetizers.length" [pageSize]="pageLimit" [pageSizeOptions]="[8, 16, 32, 64]" (page)="changePage($event, 'appetizers')" aria-label="Select page">
+							<mat-paginator [length]="appetizers.length" [pageSize]="pageLimit" [pageSizeOptions]="[9, 15, 30, 60]" (page)="changePage($event, 'appetizers')" aria-label="Select page">
 								<mat-spinner *ngIf="appetizers.length === 0"></mat-spinner>
 							</mat-paginator>
 						</mat-tab>
@@ -98,7 +98,7 @@
 								</div>
 							</div>
 
-							<mat-paginator [length]="entrees.length" [pageSize]="pageLimit" [pageSizeOptions]="[8, 16, 32, 64]" (page)="changePage($event, 'entrees')" aria-label="Select page">
+							<mat-paginator [length]="entrees.length" [pageSize]="pageLimit" [pageSizeOptions]="[9, 15, 30, 60]" (page)="changePage($event, 'entrees')" aria-label="Select page">
 								<mat-spinner *ngIf="entrees.length === 0"></mat-spinner>
 							</mat-paginator>
 						</mat-tab>
@@ -140,7 +140,7 @@
 								</div>
 							</div>
 
-							<mat-paginator [length]="sides.length" [pageSize]="pageLimit" [pageSizeOptions]="[8, 16, 32, 64]" (page)="changePage($event, 'sides')" aria-label="Select page">
+							<mat-paginator [length]="sides.length" [pageSize]="pageLimit" [pageSizeOptions]="[9, 15, 30, 60]" (page)="changePage($event, 'sides')" aria-label="Select page">
 								<mat-spinner *ngIf="sides.length === 0"></mat-spinner>
 							</mat-paginator>
 						</mat-tab>
@@ -182,7 +182,7 @@
 								</div>
 							</div>
 
-							<mat-paginator [length]="desserts.length" [pageSize]="pageLimit" [pageSizeOptions]="[8, 16, 32, 64]" (page)="changePage($event, 'desserts')" aria-label="Select page">
+							<mat-paginator [length]="desserts.length" [pageSize]="pageLimit" [pageSizeOptions]="[9, 15, 30, 60]" (page)="changePage($event, 'desserts')" aria-label="Select page">
 								<mat-spinner *ngIf="entrees.length === 0"></mat-spinner>
 							</mat-paginator>
 						</mat-tab>
@@ -224,7 +224,7 @@
 								</div>
 							</div>
 
-							<mat-paginator [length]="beverages.length" [pageSize]="pageLimit" [pageSizeOptions]="[8, 16, 32, 64]" (page)="changePage($event, 'beverages')" aria-label="Select page">
+							<mat-paginator [length]="beverages.length" [pageSize]="pageLimit" [pageSizeOptions]="[9, 15, 30, 60]" (page)="changePage($event, 'beverages')" aria-label="Select page">
 								<mat-spinner *ngIf="beverages.length === 0"></mat-spinner>
 							</mat-paginator>
 						</mat-tab>

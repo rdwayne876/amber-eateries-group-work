@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 	desserts: Product[] = [];
 	desserts_currentPage = 0;
 	cart: any[] = [];
-	pageLimit = 8;
+	pageLimit = 9;
 
 	constructor(private dataService: DataService, private cartService: CartService, private succcessPopup: MatSnackBar, public dialog: MatDialog) {}
 
