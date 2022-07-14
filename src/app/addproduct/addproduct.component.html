@@ -1,16 +1,20 @@
 <div class="form-container">
-    <form class="form" #addProduct="ngForm" (ngSubmit)="getProductForm(addProduct.value)">
-        <h1 class="head-text">Add a product</h1>
-        <input type="text" hidden="true" ngModel name="id" /><br />
-        <input type="text" ngModel name="name" placeholder="Product Name" /><br />
-        <textarea type="text" ngModel name="description" placeholder="Description" rows="5"></textarea>
+	<form class="form" #addProduct="ngForm" (ngSubmit)="getProductForm(addProduct.value)">
+		<h1 class="head-text">Add a product</h1>
+		<input type="text" hidden="true" ngModel name="id" /><br />
+		<input type="text" ngModel name="name" placeholder="Product Name" /><br />
+		<textarea type="text" ngModel name="description" placeholder="Description" rows="5"></textarea>
 
-        <br />
-        <input type="text" ngModel name="price" placeholder="Price" /><br />
-        <input type="text" ngModel name="imageUrl" placeholder="ImageUrl" /><br />
-        <input type="text" ngModel name="category" placeholder="Category" /><br />
+		<br />
+		<input type="text" ngModel name="price" placeholder="Price" /><br />
+		<input type="text" ngModel name="imageUrl" placeholder="ImageUrl" /><br />
 
-        <input type="number" ngModel name="quantity" placeholder="Quantity" /><br />
-        <button>Add Product</button>
-    </form>
+		<select [(ngModel)]="cat" name="category">
+			<option value="select" disabled>-- Select a category --</option>
+			<option *ngFor="let category of categories" [value]="category | lowercase">{{ category | titlecase }}</option>
+		</select>
+
+		<input type="number" ngModel name="quantity" placeholder="Quantity" /><br />
+		<button class="dfg">Add Product</button>
+	</form>
 </div>

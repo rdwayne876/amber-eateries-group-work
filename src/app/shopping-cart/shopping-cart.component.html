@@ -18,7 +18,7 @@
         />
     </div>
 
-    <div class="w-[85%] m-auto">
+    <div class="w-[85%] m-auto" *ngIf="cart.length > 0">
         <div class="grid grid-cols-[7fr_3fr] py-24 gap-[1vw]">
             <table class="w-full">
                 <div class="scroll-table">
@@ -47,6 +47,14 @@
                         <th class="p-[1vw] text-[1vw] text-center">Quantity</th>
                         <th class="p-[1vw] text-[1vw] text-center">Total</th>
                     </thead>
+<<<<<<< HEAD
+=======
+
+                    <!-- <tr *ngIf="cart.length < 1" >
+                        <img src="https://careerindex.co.in/assets/images/emptycart.png" alt="" style="margin: 3vw 0 0 50%; width: 30vw;">
+                    </tr> -->
+                    
+>>>>>>> 7fc1594546b61fb032c0de9d7f965466220a9742
                     <tbody>
                         <tr
                             *ngFor="let cItem of cart; let i = index"
@@ -215,4 +223,16 @@
             </div>
         </div>
     </div>
+
+     <section *ngIf="cart.length < 1" class="bg-[#EAEAE6] h-[100vh] flex justify-center flex-col">
+        <h1 class="text-5xl text-center text-[#5F462B] py-10">Your Cart is Empty</h1>
+        <div class="mx-auto ">
+            <img src="/assets/img/trolly.svg" alt="trolly" class="pl-[175px]">
+        </div>
+        <div class="flex justify-center py-10 mt-10 border-t-2 border-t-[#5F462B] w-[40%] mx-auto">
+            <button routerLink="/menu"
+            class="py-10 px-20 bg-[#5F462B] block w-fit text-white font-medium text-4xl"
+            >Order Now</button>
+        </div>
+     </section>
 </section>

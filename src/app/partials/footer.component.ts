@@ -12,16 +12,19 @@ import { Component, OnInit } from '@angular/core';
 						<h1 class="text-[1.5vw] font-bold">Quick Links</h1>
 						<ul class="w-full">
 							<li class="py-2 my-2 text-[1vw]">
-								<a class="hover:text-[#e0a04f]" routerLink="/">Home</a>
+								<a class="hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="/">Home</a>
 							</li>
 							<li class="py-2 my-2 text-[1vw]">
-								<a class="hover:text-[#e0a04f]" routerLink="/menu">Menu</a>
+								<a class="hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="/menu">Menu</a>
 							</li>
 							<li class="py-2 my-2 text-[1vw]">
-								<a class="hover:text-[#e0a04f]" routerLink="/about">About Us</a>
+								<a class="hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="/about">About Us</a>
 							</li>
 							<li class="py-2 my-2 text-[1vw]">
-								<a class="hover:text-[#e0a04f]" routerLink="/gallery">Gallery</a>
+								<a class="hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="/gallery">Gallery</a>
+							</li>
+							<li class="py-2 my-2 text-[1vw]">
+								<a class="hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="/addproduct">Add</a>
 							</li>
 						</ul>
 					</div>
@@ -30,13 +33,13 @@ import { Component, OnInit } from '@angular/core';
 						<h4 class="text-[1.5vw] font-bold">For You</h4>
 						<ul class="footer-links">
 							<li class="py-2 my-2 text-[1vw]">
-								<a class="hover:text-[#e0a04f]" routerLink="#">Terms of Use</a>
+								<a class="hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="#">Terms of Use</a>
 							</li>
 							<li class="py-2 my-2 text-[1vw]">
-								<a class="hover:text-[#e0a04f]" routerLink="#">Fequently Asked Questions</a>
+								<a class="hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="#">Fequently Asked Questions</a>
 							</li>
 							<li class="py-2 my-2 text-[1vw]">
-								<a class="hover:text-[#e0a04f]" routerLink="#">Contact Us</a>
+								<a class="hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="#">Contact Us</a>
 							</li>
 						</ul>
 					</div>
@@ -75,9 +78,9 @@ import { Component, OnInit } from '@angular/core';
 				<p class="copyright-text text-[1vw]">Copyright &copy; {{ currentYear }} All Rights Reserved by <a routerLink="#">Amber Eats</a>.</p>
 
 				<div class="flex gap-20 text-[1.5vw]">
-					<a class="facebook hover:text-[#e0a04f]" routerLink="#"><i class="fa-brands fa-facebook"></i></a>
-					<a class="twitter hover:text-[#e0a04f]" routerLink="#"><i class="fa fa-twitter"></i></a>
-					<a class="insta hover:text-[#e0a04f]" routerLink="#"><i class="fa-brands fa-instagram"></i></a>
+					<a class="facebook hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="#"><i class="fa-brands fa-facebook"></i></a>
+					<a class="twitter hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="#"><i class="fa fa-twitter"></i></a>
+					<a class="insta hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="#"><i class="fa-brands fa-instagram"></i></a>
 				</div>
 			</div>
 		</footer>
