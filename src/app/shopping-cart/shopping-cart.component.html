@@ -27,26 +27,12 @@
                     >
                         <th class="p-[1vw] text-[1vw]">
                             Products
-                            <i
-                                #can
-                                *ngIf="cart.length > 0"
-                                class="fa-solid fa-trash hover:cursor-pointer"
-                                (click)="emptyCart()"
-                                (mouseenter)="
-                                    can.classList.remove('fa-trash');
-                                    can.classList.add('fa-trash-arrow-up')
-                                "
-                                (mouseleave)="
-                                    can.classList.add('fa-trash');
-                                    can.classList.remove('fa-trash-arrow-up')
-                                "
-                                routerLink="/menu"
-                            ></i>
                         </th>
                         <th class="p-[1vw] text-[1vw] text-center">Price</th>
                         <th class="p-[1vw] text-[1vw] text-center">Quantity</th>
                         <th class="p-[1vw] text-[1vw] text-center">Total</th>
                     </thead>
+                                    
                     <tbody>
                         <tr
                             *ngFor="let cItem of cart; let i = index"
@@ -184,7 +170,20 @@
                     </button>
                     </div>
                 </div>
+
+                <div class="text-center pt-[2vw]">
+                    <button 
+                    class=" bg-[#FFBC10] text-[#5F462B] p-[0.3vw] text-[1vw] w-full flex items-center justify-center"
+                        (click)="emptyCart()"
+                        routerLink="/menu"
+                    >
+                        Empty Cart
+                        <mat-icon
+                        >delete</mat-icon>
+                    </button>
+                </div>
                 <!-- cards -->
+
                 <div>
                     <div
                         class="border-b-[0.15vw] flex justify-center text-center mx-auto border-[#333] mt-10 w-[20vw]"
