@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
     selector: 'app-rating',
@@ -6,7 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./rating.component.css'],
 })
 export class RatingComponent implements OnInit {
-    @Input() starsArr: number[] = [];
+    @Input() starsArr!: number[];
+    @Input() id!: number;
     stars: number[] = [1, 2, 3, 4, 5];
     selectedValue: number = 1;
     isMouseOver = true;
@@ -15,14 +17,19 @@ export class RatingComponent implements OnInit {
     displayedValue!: number;
 
     countStar(star: number) {
-        this.sum = 0;
-        this.starsArr.push(this.selectedValue);
+        // this.sum = 0;
+        // this.starsArr.push(this.selectedValue);
 
-        this.starsArr.forEach((el) => {
-            this.sum += el;
+        // this.starsArr.forEach((el) => {
+        //     this.sum += el;
+        // });
+
+        // this.avg = Math.round(this.sum / this.starsArr.length);
+        this.products.rate(star, this.id).subscribe((data) => {
+            if (!data) {
+                //Error handling logic
+            }
         });
-
-        this.avg = Math.ceil(this.sum / this.starsArr.length);
     }
 
     removeStar(star: number) {
@@ -43,7 +50,7 @@ export class RatingComponent implements OnInit {
         }
     }
 
-    constructor() {}
+    constructor(private products: DataService) {}
 
     ngOnInit(): void {
         this.starsArr.forEach((el) => {

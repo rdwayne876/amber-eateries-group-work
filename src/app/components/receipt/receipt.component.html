@@ -1,6 +1,6 @@
 <div>
     <div
-        class="min-h-[200px] min-w-[1596px] mx-auto bg-center bg-cover bg-[url('https://s3-alpha-sig.figma.com/img/e37a/7dba/2fefd2de31983b05a50b86548ac61770?Expires=1658707200&Signature=Nz2GkxivatiPCBEXwHxDUE9qFN03utsVwnNbwiucQM~xixjGG1QIZ~LVPsKs3ZEiiDTSGVQYT72kehCf5vDOGo-49oaV9XQqmgikslTc2ipyDHO1MGXVxECNd~sGfDawwkrNS9SO6Pw-O8cIDzIzP8g1hwQl5CWlnHVqGiudU1jcnyvmjcH55tHrdNPKxcM86X3~0x798bWhk382Akhxf5u-ChDaRMuPALe2upS6qGnX6cQ-Y98LRWWAvCOxLNYzyelPSmDTFJW75M9~SUoh39LKGSargcX5PlTSXYoro6ZTcMewYi7dRFopkrqhAxwiLlBsEaNp4jyBGwL7gKs9jg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA')] flex flex-wrap justify-center items-center"
+        class="min-h-[200px] max-w-[1596px] mx-auto bg-center bg-cover bg-[url('https://s3-alpha-sig.figma.com/img/e37a/7dba/2fefd2de31983b05a50b86548ac61770?Expires=1658707200&Signature=Nz2GkxivatiPCBEXwHxDUE9qFN03utsVwnNbwiucQM~xixjGG1QIZ~LVPsKs3ZEiiDTSGVQYT72kehCf5vDOGo-49oaV9XQqmgikslTc2ipyDHO1MGXVxECNd~sGfDawwkrNS9SO6Pw-O8cIDzIzP8g1hwQl5CWlnHVqGiudU1jcnyvmjcH55tHrdNPKxcM86X3~0x798bWhk382Akhxf5u-ChDaRMuPALe2upS6qGnX6cQ-Y98LRWWAvCOxLNYzyelPSmDTFJW75M9~SUoh39LKGSargcX5PlTSXYoro6ZTcMewYi7dRFopkrqhAxwiLlBsEaNp4jyBGwL7gKs9jg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA')] flex flex-wrap justify-center items-center"
     >
         <h1
             class="w-4/5 mx-auto text-center text-6xl text-white border-b-[5px] border-white"
@@ -12,14 +12,13 @@
         <div class="min-h-[700px] w-[600px] bg-white rounded-lg">
             <div class="grid grid-flow-row gap-1 p-20">
                 <!-- Back Button -->
-                <div>
-                    <button class="tect-white bg-red-400 rounded-full px-2">
+                <!-- <div>
+                    <button class="text-white bg-gray-400 rounded-full px-2">
                         &leftarrow;
                     </button>
-                </div>
-
+                </div> -->
                 <!-- Order info -->
-                <div>
+                <div class="my-10">
                     <h3>
                         Transaction ID #{{
                             transaction.id.toString().padStart(3, "0")
@@ -34,31 +33,39 @@
                     <img src="/assets/lf20_q5evpnci.json].png" alt="" />
                 </div>
 
-                <h2>Here's your receipt</h2>
+                <h2 class="text-3xl m-5 text-amber-700">Here's your receipt</h2>
 
-                <div class="overflow-y-auto">
+                <div class="min-h-[100px]">
+                    <div class="grid grid-cols-4 italic">
+                        <p class="col-span-2 text-left">Product Description</p>
+                        <p class="text-right">Quantity</p>
+                        <p class="text-center">Amount</p>
+                    </div>
+                    <hr />
                     <div
-                        *ngFor="let item of order.orders"
-                        class="grid grid-cols-3 grid-flow-row"
+                        *ngFor="let item of order"
+                        class="grid grid-cols-4 text-right text-xl px-10"
                     >
-                        <p>{{ item.name }}</p>
-                        <div>
-                            <p>{{ item.quantity | number }}</p>
-                            <p>{{ item.price | currency }}</p>
-                        </div>
+                        <p class="text-left col-span-2">{{ item.name }}</p>
+                        <p>{{ item.amount | number }}</p>
+                        <p>
+                            {{ item.price | currency: "JMD":"JMD$" }}
+                        </p>
                     </div>
                 </div>
                 <h3 class="font-semibold text-right p-2">
                     Total:<span>{{
-                        transaction.payment_amount | currency
+                        transaction.payment_amount
+                            | currency: "JMD":"JMD$":"3.2-2":"en-US"
                     }}</span>
                 </h3>
                 <div class="justify-center flex items-center">
                     <button
+                    routerLink="/home"
                         type="submit"
-                        class="px-20 py-5 rounded-3xl text-white bg-[#5F462B] text-2xl"
+                        class="px-20 py-5 rounded-3xl text-white bg-[#5F462B] text-2xl my-10"
                     >
-                        Track Your Order
+                        Back to Home
                     </button>
                 </div>
 

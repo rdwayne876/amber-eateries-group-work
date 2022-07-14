@@ -1,0 +1,12 @@
+.hero {
+  padding: 5rem;
+}
+
+mat-card {
+  margin-inline: auto;
+  width: clamp(30rem, 100%, 50rem);
+}
+
+mat-spinner {
+  margin-inline: auto;
+}

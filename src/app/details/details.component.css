@@ -1,12 +1,105 @@
-.hero {
-  padding: 5rem;
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-mat-card {
-  margin-inline: auto;
-  width: clamp(30rem, 100%, 50rem);
+.details-contain{
+  width: 100%;
+  margin-bottom: 5vw;
 }
 
-mat-spinner {
-  margin-inline: auto;
+.details-contain .flexBx{
+  width: 80%;
+  margin: 7vw auto 10vw auto;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+}
+
+.flexBx .left{
+  width: 40%;
+  height: 25vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2vw;
+}
+
+.left img{
+  width: 100%;
+}
+
+.right{
+  width: 35%;
+}
+
+.right .prodName{
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.prodName::after{
+  content: "";
+  height: 0.3vw;
+  width: 2vw;
+  margin: 0.5vw 0 0 0;
+  background: #5f462b; 
+  display: block;
+}
+.prodPrice{
+  color: #5f462b;
+  font-size: 1.8vw;
+  font-weight: 700;
+  margin-bottom: 1vw;
+}
+
+.right .prodQty{
+  margin-bottom: 1vw;
+  font-size: 1vw;
+  font-weight: 500;
+  color: rgb(100, 100, 100);
+}
+
+.prodDesc{
+  width: 100%;
+  color: rgb(53, 53, 53); 
+  font-size: 1vw;
+  margin: 1vw 0;
+}
+
+.btn-contain{
+  margin-top: 2vw;
+}
+
+.details-btn1{
+  font-size: 1.2vw;
+  border-radius: 5px;
+  padding: 0.5vw 1vw;
+  background: #5f462b;
+  border: 0.1vw solid #5f462b;
+  color: rgb(255, 255, 255);
+  margin-right: 0.3vw;
+}
+
+.details-btn2{
+  font-size: 1.2vw;
+  border-radius: 5px;
+  padding: 0.5vw 1vw;
+  color: #835705;
+  border: 0.1vw solid #5f462b36;
+}
+
+.details-btn1:hover{
+  background: #5f462be7;
+  /* color: rgb(255, 255, 255); */
+  border: 0.1vw solid #5f462be7;
+}
+
+.details-btn2:hover{
+  background: rgb(228, 228, 228);
+  color: rgb(29, 29, 29);
 }
