@@ -46,5 +46,12 @@ export class ReceiptComponent implements OnInit {
         this.order = data.order;     
     }
 
+    public get height() : number {
+		return window.innerHeight;
+	}
+	public get width() : number {
+		return window.innerWidth;
+	}
+
     ngOnInit(): void {}
 }

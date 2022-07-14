@@ -17,14 +17,14 @@ export class RatingComponent implements OnInit {
     displayedValue!: number;
 
     countStar(star: number) {
-        // this.sum = 0;
-        // this.starsArr.push(this.selectedValue);
+        this.sum = 0;
+        this.starsArr.push(this.selectedValue);
 
-        // this.starsArr.forEach((el) => {
-        //     this.sum += el;
-        // });
+        this.starsArr.forEach((el) => {
+            this.sum += el;
+        });
 
-        // this.avg = Math.round(this.sum / this.starsArr.length);
+        this.avg = Math.round(this.sum / this.starsArr.length);
         this.products.rate(star, this.id).subscribe((data) => {
             if (!data) {
                 //Error handling logic
@@ -52,7 +52,7 @@ export class RatingComponent implements OnInit {
 
     constructor(private products: DataService) {}
 
-    ngOnInit(): void {
+    ngOnInit(): void {        
         this.starsArr.forEach((el) => {
             this.sum += el;
         });

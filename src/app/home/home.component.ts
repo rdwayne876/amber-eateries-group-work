@@ -27,7 +27,27 @@ export class HomeComponent implements OnInit {
 	desserts: Product[] = [];
 	desserts_currentPage = 0;
 	cart: any[] = [];
-	pageLimit = 8;
+	pageLimit1 = 8;
+	pageLimit2 = 5;
+	
+	public get pageLimit() : number {
+		return this.width <= 1024 && this.width > this.height ? this.pageLimit1 : this.width > this.height && this.width > 1024 ? this.pageLimit1 : this.pageLimit2;
+	}
+	
+	public set pageLimit(v : number) {		
+		if (this.width > this.height && this.width > 1024) this.pageLimit1 = v;
+		else if (this.width <= 1024 && this.width < this.height) this.pageLimit2 = v;
+		else this.pageLimit1 = v;
+	}
+
+	
+	public get height() : number {
+		return window.innerHeight;
+	}
+	public get width() : number {
+		return window.innerWidth;
+	}
+	
 
 	constructor(private dataService: DataService, private cartService: CartService, private succcessPopup: MatSnackBar, public dialog: MatDialog) {}
 
@@ -65,7 +85,7 @@ export class HomeComponent implements OnInit {
 
 	addProduct(id: number): void {
 		this.cartService.addCartItem(id);
-		this.succcessPopup.open('Added to cart', 'ok', {
+		this.succcessPopup.open('Added to cart', 'Okay', {
 			panelClass: ['hazel-snackbar'],
 			duration: 2000,
 		});
@@ -86,7 +106,6 @@ export class HomeComponent implements OnInit {
 			// }
 
 			if (this.tabChangeEvent) {
-				console.log(this.tabChangeEvent.tab.textLabel);
 				switch (this.tabChangeEvent.tab.textLabel.toLowerCase()) {
 					// Use above where `this.tabChangeEvent == undefined` is for the first tab.
 					// case 'sides':

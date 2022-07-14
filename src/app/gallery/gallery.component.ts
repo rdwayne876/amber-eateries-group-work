@@ -22,6 +22,13 @@ export class GalleryComponent implements OnInit {
     {imgSrc: 'https://images.squarespace-cdn.com/content/v1/54fb1c14e4b0a61cf908cda9/1583509920034-0XR6GQ9B6PJ9PATPPN6T/sepia_crw2020_chocmousse1.jpg?format=1000w'}
   ];
 
+  public get height() : number {
+		return window.innerHeight;
+	}
+	public get width() : number {
+		return window.innerWidth;
+	}
+
   constructor() { }
 
   ngOnInit(): void {
