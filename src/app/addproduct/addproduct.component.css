@@ -1,71 +1,64 @@
-*{
-  background: #fff;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-image: url(https://t4.ftcdn.net/jpg/02/99/19/53/360_F_299195350_MoiUt3FECcKAwlc2Oeu5E2Kr2NXtJHpW.jpg);
-  
+* {
+	background: #fff;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-image: url(https://t4.ftcdn.net/jpg/02/99/19/53/360_F_299195350_MoiUt3FECcKAwlc2Oeu5E2Kr2NXtJHpW.jpg);
 }
 .form-container {
-  
-
-  padding-top: 1.5rem;
-  height: calc(100vh - 120px);
-  
+	padding-top: 1.5rem;
+	height: calc(100vh - 120px);
 }
 
 .head-text {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 29px;
-  margin: 1rem 0;
-  color: #5f462b;
-   font-weight: bold;
-   background-image: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 29px;
+	margin: 1rem 0;
+	color: #5f462b;
+	font-weight: bold;
+	background-image: none;
 }
 
 .form {
-  box-shadow: 0 0 0.2rem #2c2c2e;
-  margin: 0 auto;
-  /* background: #edf7ee; */
-  /* background: rgb(204, 220, 253); */
-  background: #fff;
-  padding: 20px;
-  width: 350px;
-  border-radius: 5px;
-  
-  
+	box-shadow: 0 0 0.2rem #2c2c2e;
+	margin: 0 auto;
+	/* background: #edf7ee; */
+	/* background: rgb(204, 220, 253); */
+	background: #fff;
+	padding: 20px;
+	width: 350px;
+	border-radius: 5px;
 }
 
 .form input,
-.form textarea {
-  padding: 10px 8px;
-  color: #2c2c2e;
-  margin-bottom: 1.5rem;
-  width: 100%;
-  outline: none;
-  border-radius: 5px;
-  border: 1.5px solid black;
-  background-image: none;
+.form textarea,
+.form select {
+	padding: 10px 8px;
+	color: #2c2c2e;
+	margin-bottom: 1.5rem;
+	width: 100%;
+	outline: none;
+	border-radius: 5px;
+	border: 1.5px solid black;
+	background-image: none;
 }
 
-.form :hover{
-  opacity: 0.5;
-  background-color: #b7732b;
+.form :hover {
+	opacity: 0.5;
+	background-color: #b7732b;
 }
 
 .form button:hover {
-  opacity: 0.5;
-}
-.dfg{
-  
-  padding: 5px 8px;
-  /* background: #04aa6d; */
-  color: #eae3dd;
-  background:#5f462b;
-  border-radius: 5px;
-  left: 7em;
-  position: relative;
-  bottom: 1.5vh;
+	opacity: 0.5;
 }
 
+.dfg {
+	padding: 5px 8px;
+	/* background: #04aa6d; */
+	color: #eae3dd;
+	background: #5f462b;
+	border-radius: 5px;
+	left: 7em;
+	position: relative;
+}
