@@ -16,15 +16,15 @@
 	<section>
 		<div class="main-container">
 			<div class="content">
-				<div class="meal-list">
-					<mat-tab-group (selectedTabChange)="tabChangeEventHandler($event)" mat-align-tabs="center" disableRipple="true">
+				<div class="meal-list flex justify-center">
+					<mat-tab-group [class]="width <= 1024 ? ['w-[100%]'] : ['w-[80%]']" (selectedTabChange)="tabChangeEventHandler($event)" mat-align-tabs="center" disableRipple="true">
 						<mat-tab label="Appetizers">
 							<div
 								[class]="
 									width <= 1024 && width > height
 										? ['grid', 'grid-cols-2', 'gap-16', 'py-[1vw]']
 										: width > height && width > 1024
-										? ['grid', 'grid-cols-4', 'gap-16', 'py-[1vw]']
+										? ['grid', 'grid-cols-4', 'gap-8', 'py-[1vw]']
 										: ['grid', 'grid-cols-1', 'gap-16', 'py-[1vw]']
 								">
 								<mat-spinner *ngIf="appetizers.length === 0"></mat-spinner>
@@ -40,8 +40,7 @@
 										</div>
 
 										<p class="px-8 text-[#5F462B]">
-											{{ height > width && width <= 1024 ? (product.description | slice: 0:260) : (product.description | slice: 0:130)
-											}}<span *ngIf="product.description.length > (height > width && width <= 1024 ? 260 : 130)">...</span>
+											{{(product.description | slice: 0:130)}}<span *ngIf="product.description.length > 130">...</span>
 										</p>
 
 										<div class="mt-auto">
@@ -96,8 +95,7 @@
 										</div>
 
 										<p class="px-8 text-[#5F462B]">
-											{{ height > width && width <= 1024 ? (product.description | slice: 0:260) : (product.description | slice: 0:130)
-											}}<span *ngIf="product.description.length > (height > width && width <= 1024 ? 260 : 130)">...</span>
+											{{(product.description | slice: 0:130)}}<span *ngIf="product.description.length > 130">...</span>
 										</p>
 
 										<div class="mt-auto">
@@ -152,8 +150,7 @@
 										</div>
 
 										<p class="px-8 text-[#5F462B]">
-											{{ height > width && width <= 1024 ? (product.description | slice: 0:260) : (product.description | slice: 0:130)
-											}}<span *ngIf="product.description.length > (height > width && width <= 1024 ? 260 : 130)">...</span>
+											{{(product.description | slice: 0:130)}}<span *ngIf="product.description.length > 130">...</span>
 										</p>
 
 										<div class="mt-auto">
@@ -208,8 +205,7 @@
 										</div>
 
 										<p class="px-8 text-[#5F462B]">
-											{{ height > width && width <= 1024 ? (product.description | slice: 0:260) : (product.description | slice: 0:130)
-											}}<span *ngIf="product.description.length > (height > width && width <= 1024 ? 260 : 130)">...</span>
+											{{(product.description | slice: 0:130)}}<span *ngIf="product.description.length > 130">...</span>
 										</p>
 
 										<div class="mt-auto">
@@ -264,8 +260,7 @@
 										</div>
 
 										<p class="px-8 text-[#5F462B]">
-											{{ height > width && width <= 1024 ? (product.description | slice: 0:260) : (product.description | slice: 0:130)
-											}}<span *ngIf="product.description.length > (height > width && width <= 1024 ? 260 : 130)">...</span>
+											{{(product.description | slice: 0:130)}}<span *ngIf="product.description.length > 130">...</span>
 										</p>
 
 										<div class="mt-auto">
