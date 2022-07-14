@@ -19,8 +19,8 @@
     </div>
 
     <div class="w-[85%] m-auto" *ngIf="cart.length > 0">
-        <div class="grid grid-cols-[7fr_3fr] py-24 gap-[1vw]">
-            <table class="w-full">
+        <div class="grid grid-cols-[8fr_2fr] py-24 gap-[1vw]">
+            <table class="w-full" >
                 <div class="scroll-table">
                     <thead
                         class="bg-[#5F462B] text-white uppercase font-medium tracking-widest"
@@ -47,14 +47,6 @@
                         <th class="p-[1vw] text-[1vw] text-center">Quantity</th>
                         <th class="p-[1vw] text-[1vw] text-center">Total</th>
                     </thead>
-<<<<<<< HEAD
-=======
-
-                    <!-- <tr *ngIf="cart.length < 1" >
-                        <img src="https://careerindex.co.in/assets/images/emptycart.png" alt="" style="margin: 3vw 0 0 50%; width: 30vw;">
-                    </tr> -->
-                    
->>>>>>> 7fc1594546b61fb032c0de9d7f965466220a9742
                     <tbody>
                         <tr
                             *ngFor="let cItem of cart; let i = index"
@@ -144,50 +136,58 @@
             <!-- purchase summary -->
             <div>
                 <div
-                    class="bg-[#5F462B] w-full flex-flex-col text-white px-[1.2vw] pb-[1vw] text-[1vw]"
+                    class="summary bg-white w-[20vw] flex-flex-col text-[#5F462B] text-[1vw] shadow-md flex flex-col"
                 >
                     <div
-                        class="border-b border-white mb-[1.1vw] w-[12vw] mx-auto"
+                        class="mb-[1.1vw] w-[12vw] mx-auto"
                     >
-                        <div class="text-center font-medium pt-[1.1vw]">
+                        <h1 class="text-center pt-[1.5vw] text-[#5F462B] text-[1.3vw] font-medium">
                             Purchase Summary
-                        </div>
+                        </h1>
+                    </div>
+                    <div class="text-center py-[3vw] text-[#FFBC10] text-[4vw]">
+                        $
                     </div>
 
+                   <div class="px-[1.2vw] pb-[2vw]">
                     <div
-                        class="flex justify-between items-center border-b border-white py-[0.5vw]"
-                    >
-                        <div>Subtotal</div>
-                        <div>
-                            {{
-                                grandTotal - (grandTotal / 100) * 1.5 | currency
-                            }}
-                        </div>
+                    class="flex justify-between items-center border-b border-[#5F462B] py-[0.5vw]"
+                >
+                    <div>Subtotal</div>
+                    <div>
+                        {{
+                            grandTotal - (grandTotal / 100) * 1.5 | currency
+                        }}
                     </div>
-                    <div
-                        class="flex justify-between items-center border-b border-white py-[0.5vw]"
-                    >
-                        <div>Sales Tax(1.5%)</div>
-                        <div>{{ (grandTotal / 100) * 1.5 | currency }}</div>
-                    </div>
-                    <div
-                        class="flex justify-between items-center border-b border-white py-[0.4vw] my-[0.2vw]"
-                    >
-                        <div>Total Due</div>
-                        <div>{{ grandTotal | currency }}</div>
-                    </div>
+                </div>
+                <div
+                    class="flex justify-between items-center border-b border-[#5F462B] py-[0.5vw]"
+                >
+                    <div>Tax(1.5%)</div>
+                    <div>{{ (grandTotal / 100) * 1.5 | currency }}</div>
+                </div>
+                <div
+                    class="flex justify-between items-center border-b border-[#5F462B] py-[0.4vw] my-[0.2vw] font-bold"
+                >
+                    <div>Total Due</div>
+                    <div>{{ grandTotal | currency }}</div>
+                </div>
 
-                    <button
+                   </div>
+                    <div class="flex justify-end mt-auto">
+                        <button
                         routerLink="/checkout"
-                        class="flex justify-center mx-auto px-[0.9vw] py-[0.3vw] mt-[0.8vw] uppercase bg-[#B0814F] text-white text-center"
+                        class="text-[#FFBC10] flex justify-between py-[0.4vw] px-[0.6vw] bg-[#5F462B] items-center w-full ml-7 shadow-xl"
                     >
-                        check out
+                        Check Out
+                        <mat-icon>check</mat-icon>
                     </button>
+                    </div>
                 </div>
                 <!-- cards -->
                 <div>
                     <div
-                        class="border-b-[0.15vw] flex justify-center text-center mx-auto border-[#333] mt-10 w-96"
+                        class="border-b-[0.15vw] flex justify-center text-center mx-auto border-[#333] mt-10 w-[20vw]"
                     >
                         <div
                             class="uppercase font-medium text-[1.2vw] text-[#333] w-[35rem] mb-2"
