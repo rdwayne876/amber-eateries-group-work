@@ -1,3 +1,10 @@
+*{
+  /* background: #fff;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url(https://t4.ftcdn.net/jpg/02/99/19/53/360_F_299195350_MoiUt3FECcKAwlc2Oeu5E2Kr2NXtJHpW.jpg); */
+}
 main {
   width: 100%;
   min-height: calc(100vh - 64px);
@@ -36,6 +43,7 @@ main {
    height: 100%;
     border-radius: 5px;
     border: 1.5px solid black;
+    
 }
 
 
@@ -83,7 +91,7 @@ form {
 
 button {
   /* background-color: #219ebc; */
-  background-color: #00B5AD;
+  background-color: #5f462b;
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 5px 8px;

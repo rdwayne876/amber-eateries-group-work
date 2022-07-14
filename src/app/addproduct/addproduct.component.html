@@ -8,9 +8,19 @@
         <br />
         <input type="text" ngModel name="price" placeholder="Price" /><br />
         <input type="text" ngModel name="imageUrl" placeholder="ImageUrl" /><br />
-        <input type="text" ngModel name="category" placeholder="Category" /><br />
+    
+
+        <input type="text" ngModel name="category" list="browsers" placeholder="Category" /><br />
+        <datalist id="browsers">
+            <option value="Appetizers">
+            <option value="Entrees">
+            <option value="Sides">
+            <option value="Desserts">
+            <option value="Beverages">
+            
+          </datalist>
 
         <input type="number" ngModel name="quantity" placeholder="Quantity" /><br />
-        <button>Add Product</button>
+        <button class="dfg">Add Product</button>
     </form>
 </div>
