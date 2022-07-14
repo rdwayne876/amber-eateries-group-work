@@ -4,15 +4,15 @@
       "id": 1,
       "name": "Jerk Chicken",
       "description": "Jamaican jerk chicken is famous for its spicy, smoky taste. Recreate this dish at home using a blend of traditional herbs and spices. If you can handle it, turn it up a notch with some authentic scotch bonnet pepper sauce.",
-      "category": "side",
+      "category": "entree",
       "imageUrl": "https://www.sandals.com/blog/content/images/2020/04/Jamaican-Jerk-Chicken.jpg",
       "price": 1200,
       "quantity": 100,
       "ratings": [
-        5,
+        3,
+        3,
         4,
         3,
-        2,
         4
       ]
     },
@@ -20,16 +20,16 @@
       "id": 2,
       "name": "Ackee and Saltfish",
       "description": "Jamaica's national dish makes a tasty breakfast or brunch. Made with the buttery, savory ackee fruit, this dish is expertly seasoned with fresh onions, peppers, garlic and thyme. Sautee with salted codfish and serve with fresh, crispy fried dumplings.",
-      "category": "side",
+      "category": "entree",
       "imageUrl": "https://www.blackveganstoday.com/wp-content/uploads/2019/03/1553717241_maxresdefault-1024x576.jpg",
       "price": 900,
       "quantity": 200,
       "ratings": [
         2,
+        2,
         5,
-        4,
         3,
-        2
+        4
       ]
     },
     {
@@ -37,30 +37,30 @@
       "name": "Steamed Cabbage and Saltfish",
       "description": "This tasty meal comes together quickly using inexpensive ingredients. Cabbages are shredded and steamed with fresh garlic, onion and bell peppers. If you can handle the heat, add a bit of scotch bonnet pepper to the pot. Saltfish is the finishing touch on this pescatarian-friendly dish.",
       "category": "side",
-      "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Cabbage-and-Saltfish-683x1024.jpg",
+      "imageUrl": "https://i.pinimg.com/originals/50/32/b6/5032b6e7b91e7fcbaac48c609917cbb4.jpg",
       "price": 200,
       "quantity": 100,
       "ratings": [
-        2,
         4,
         3,
         3,
-        2
+        3,
+        4
       ]
     },
     {
       "id": 4,
       "name": "Jamaican Beef Patties",
       "description": "When in Jamaica, a visit to a patty shop is a must. Jamaican beef patties are made with a crispy, golden flaky pastry filled with seasoned meat.",
-      "category": "entree",
-      "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Beef-Patties-683x1024.jpg",
+      "category": "appetizer",
+      "imageUrl": "http://iheartrecipes.com/wp-content/uploads/2014/03/IMG_2825.jpg",
       "price": 300,
       "quantity": 100,
       "ratings": [
         4,
-        3,
-        3,
+        4,
         2,
+        3,
         3
       ]
     },
@@ -68,16 +68,16 @@
       "id": 5,
       "name": "Curry Chicken",
       "description": "Many cultures have their own method of making curry. Jamaican curry chicken is well-seasoned with traditional herbs and spices and Jamaican curry powder. Add in carrots and potatoes for a hearty, wholesome weeknight dinner.",
-      "category": "side",
+      "category": "entree",
       "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Curry-Chicken-683x1024.jpg",
       "price": 900,
       "quantity": 100,
       "ratings": [
-        5,
-        2,
+        3,
         4,
-        5,
-        4
+        4,
+        3,
+        5
       ]
     },
     {
@@ -89,10 +89,10 @@
       "price": 500,
       "quantity": 500,
       "ratings": [
+        2,
+        3,
         5,
         4,
-        3,
-        3,
         4
       ]
     },
@@ -100,48 +100,48 @@
       "id": 7,
       "name": "Oxtail",
       "description": "You'll need your pressure cooker for tender, fall-off-the-bone Jamaican oxtail. This popular stew was originally brought to Jamaica by the British. Of course, Jamaicans made it their own by adding spices and seasonings. Some say the Jamaican method is the best way to prepare oxtail.",
-      "category": "side",
+      "category": "entree",
       "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Oxtail-683x1024.jpg",
       "price": 1900,
       "quantity": 100,
       "ratings": [
-        3,
         4,
+        2,
+        2,
         3,
-        3,
-        2
+        5
       ]
     },
     {
       "id": 8,
       "name": "Brown Stew Chicken",
       "description": "Jamaican brown stew chicken is easy to prepare with tons of payoff. Bite-size pieces of chicken are seasoned with garlic, ginger, peppers and scallions and simmered in a thick, flavorful stew.",
-      "category": "side",
+      "category": "entree",
       "imageUrl": "https://izzycooking.com/wp-content/uploads/2021/03/Brown-Stew-Chicken-683x1024.jpg",
       "price": 1000,
       "quantity": 1000,
       "ratings": [
+        3,
         5,
-        2,
+        4,
         5,
-        2,
-        5
+        2
       ]
     },
     {
       "id": 9,
       "name": " Lamb Loins",
       "description": "Lamb is such a special treat! We serve lamb at least a few times per year! If you find a lamb saddle, or the whole loin, including the bone, it will be much cheaper per pound! And it is easy to remove the bone.",
-      "category": "appetizer",
+      "category": "entree",
       "imageUrl": "https://i.pinimg.com/originals/0d/d5/e0/0dd5e0f2a15276f8d5f174569de22972.jpg",
       "price": 100,
       "quantity": 500,
       "ratings": [
-        2,
         3,
         5,
         5,
-        2
+        2,
+        4
       ]
     },
     {
@@ -154,9 +154,9 @@
       "quantity": 500,
       "ratings": [
         3,
-        3,
-        3,
         4,
+        5,
+        2,
         3
       ]
     },
@@ -164,14 +164,14 @@
       "id": 11,
       "name": "Beef Fillet",
       "description": "A little crispy on the outside and extremely tender and juicy on the inside, this steak goes along with a side of baby carrots, poached mushrooms, sweet corn, and celeriac mash",
-      "category": "appetizer",
+      "category": "entree",
       "imageUrl": "https://www.foodstory.net/wp-content/uploads/2020/10/Beef-Fine-Dining-Presentation.jpg",
       "price": 900,
       "quantity": 100,
       "ratings": [
-        2,
-        2,
         4,
+        3,
+        3,
         4,
         3
       ]
@@ -180,15 +180,15 @@
       "id": 12,
       "name": "Pork Rolls",
       "description": "Crispy on the outside and tender on the inside, this crunchy pork roll with sweet potatoes and red cabbage salad is every steak lover's dream",
-      "category": "appetizer",
+      "category": "entree",
       "imageUrl": "https://www.foodstory.net/wp-content/uploads/2020/10/Crounchy-Pork-Roll.jpg",
       "price": 100,
       "quantity": 200,
       "ratings": [
-        4,
+        3,
+        3,
+        3,
         2,
-        4,
-        5,
         4
       ]
     },
@@ -201,11 +201,11 @@
       "price": 900,
       "quantity": 100,
       "ratings": [
-        3,
-        3,
-        3,
-        3,
-        3
+        4,
+        4,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -217,11 +217,11 @@
       "price": 500,
       "quantity": 100,
       "ratings": [
+        5,
         2,
         4,
-        2,
         4,
-        4
+        3
       ]
     },
     {
@@ -233,9 +233,9 @@
       "price": 500,
       "quantity": 300,
       "ratings": [
+        4,
         3,
-        4,
-        4,
+        3,
         4,
         2
       ]
@@ -249,11 +249,11 @@
       "price": 200,
       "quantity": 90,
       "ratings": [
+        3,
+        2,
         4,
         3,
-        5,
-        5,
-        4
+        2
       ]
     },
     {
@@ -265,11 +265,11 @@
       "price": 1500,
       "quantity": 100,
       "ratings": [
-        5,
         3,
         2,
         4,
-        3
+        2,
+        2
       ]
     },
     {
@@ -281,11 +281,11 @@
       "price": 600,
       "quantity": 200,
       "ratings": [
-        2,
+        3,
+        3,
+        3,
         5,
-        4,
-        4,
-        3
+        4
       ]
     },
     {
@@ -298,10 +298,10 @@
       "quantity": 100,
       "ratings": [
         3,
-        2,
-        2,
-        2,
-        3
+        3,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -313,9 +313,9 @@
       "price": 150,
       "quantity": 300,
       "ratings": [
+        3,
+        5,
         2,
-        4,
-        4,
         4,
         3
       ]
@@ -330,10 +330,10 @@
       "quantity": 200,
       "ratings": [
         4,
-        4,
         3,
-        3,
-        4
+        2,
+        5,
+        2
       ]
     },
     {
@@ -341,14 +341,14 @@
       "name": "Red Peas Soup",
       "description": "A thick and flavorful stew of beef or pork, yams, potatoes, red peas, and dumplings that is usually flavored with pimento and thyme.",
       "category": "entree",
-      "imageUrl": "https://jamaicans.com/wp-content/uploads/The-6-Soups-Every-Jamaican-Should-Know-How-to-Cook-Red-Peas-Beef-Soup-810x608.jpeg",
+      "imageUrl": "https://i.pinimg.com/originals/3a/2a/b1/3a2ab11f8e294735a5beb855c05f7f5d.jpg",
       "price": 300,
       "quantity": 250,
       "ratings": [
         4,
-        2,
         3,
-        3,
+        4,
+        4,
         5
       ]
     },
@@ -357,15 +357,15 @@
       "name": "Brown Stew Fish",
       "description": "A stew featuring a combination of marinated and fried fish fillets with a brown sauce made from onions, garlic, ginger, tomatoes, butter, and water. Often seasoned with thyme and different kinds of hot peppers and traditionally served with rice and peas.",
       "category": "entree",
-      "imageUrl": "https://jamaicans.com/wp-content/uploads/2015/11/jamaican-brown-stew-fish-recipe-810x608.jpg",
+      "imageUrl": "https://i.pinimg.com/originals/2e/9c/3e/2e9c3ea6d3af7d2148345943a909ab81.jpg",
       "price": 900,
       "quantity": 100,
       "ratings": [
-        3,
         5,
+        2,
         4,
-        4,
-        5
+        5,
+        3
       ]
     },
     {
@@ -377,10 +377,10 @@
       "price": 1000,
       "quantity": 30,
       "ratings": [
+        4,
         3,
-        3,
-        2,
-        3,
+        5,
+        4,
         4
       ]
     },
@@ -393,10 +393,10 @@
       "price": 100,
       "quantity": 90,
       "ratings": [
-        3,
-        3,
+        2,
         5,
-        5,
+        2,
+        3,
         4
       ]
     },
@@ -411,9 +411,9 @@
       "ratings": [
         4,
         4,
+        5,
         3,
-        3,
-        3
+        4
       ]
     },
     {
@@ -428,8 +428,8 @@
         4,
         4,
         2,
-        4,
-        4
+        5,
+        2
       ]
     },
     {
@@ -441,11 +441,11 @@
       "price": 400,
       "quantity": 100,
       "ratings": [
-        3,
-        2,
+        4,
         4,
         3,
-        3
+        3,
+        4
       ]
     },
     {
@@ -458,10 +458,10 @@
       "quantity": 100,
       "ratings": [
         4,
+        4,
         3,
         2,
-        4,
-        4
+        3
       ]
     },
     {
@@ -473,9 +473,9 @@
       "price": 700,
       "quantity": 300,
       "ratings": [
-        3,
-        3,
-        2,
+        4,
+        5,
+        4,
         3,
         4
       ]
@@ -489,11 +489,11 @@
       "price": 100,
       "quantity": 300,
       "ratings": [
-        3,
-        2,
-        5,
         4,
-        3
+        4,
+        4,
+        4,
+        4
       ]
     },
     {
@@ -505,11 +505,11 @@
       "price": 100,
       "quantity": 90,
       "ratings": [
-        4,
-        4,
         2,
-        4,
-        3
+        2,
+        2,
+        3,
+        5
       ]
     },
     {
@@ -521,10 +521,10 @@
       "price": 100,
       "quantity": 100,
       "ratings": [
+        4,
         2,
         4,
-        4,
-        4,
+        3,
         2
       ]
     },
@@ -537,8 +537,8 @@
       "price": 400,
       "quantity": 100,
       "ratings": [
-        3,
         4,
+        3,
         3,
         3,
         4
@@ -553,10 +553,10 @@
       "price": 100,
       "quantity": 50,
       "ratings": [
-        5,
-        2,
         2,
         3,
+        5,
+        4,
         4
       ]
     },
@@ -569,11 +569,11 @@
       "price": 300,
       "quantity": 50,
       "ratings": [
-        4,
+        2,
         5,
         3,
         4,
-        3
+        5
       ]
     },
     {
@@ -586,10 +586,10 @@
       "quantity": 90,
       "ratings": [
         4,
+        4,
+        5,
         2,
-        3,
-        3,
-        2
+        4
       ]
     },
     {
@@ -601,11 +601,11 @@
       "price": 1900,
       "quantity": 30,
       "ratings": [
-        3,
         4,
-        2,
-        2,
-        4
+        4,
+        4,
+        4,
+        3
       ]
     },
     {
@@ -617,10 +617,10 @@
       "price": 2100,
       "quantity": 30,
       "ratings": [
+        5,
         3,
         4,
-        2,
-        2,
+        4,
         2
       ]
     },
@@ -633,11 +633,11 @@
       "price": 200,
       "quantity": 100,
       "ratings": [
+        3,
+        3,
+        2,
         5,
-        4,
-        5,
-        4,
-        5
+        4
       ]
     },
     {
@@ -649,11 +649,11 @@
       "price": 300,
       "quantity": 30,
       "ratings": [
-        5,
-        5,
+        3,
+        3,
         3,
         4,
-        5
+        4
       ]
     },
     {
@@ -666,10 +666,10 @@
       "quantity": 30,
       "ratings": [
         5,
+        3,
         2,
         3,
-        4,
-        3
+        2
       ]
     },
     {
@@ -681,11 +681,11 @@
       "price": 200,
       "quantity": 30,
       "ratings": [
-        3,
+        4,
         3,
         5,
-        5,
-        4
+        3,
+        5
       ]
     },
     {
@@ -698,9 +698,9 @@
       "quantity": 100,
       "ratings": [
         3,
-        3,
-        3,
-        4,
+        2,
+        5,
+        2,
         3
       ]
     },
@@ -713,10 +713,10 @@
       "price": 200,
       "quantity": 100,
       "ratings": [
-        4,
         3,
         5,
         4,
+        5,
         4
       ]
     },
@@ -730,10 +730,10 @@
       "quantity": 100,
       "ratings": [
         3,
-        3,
-        5,
         4,
-        4
+        4,
+        4,
+        3
       ]
     },
     {
@@ -745,11 +745,11 @@
       "price": 900,
       "quantity": 20,
       "ratings": [
-        3,
-        3,
         4,
         3,
-        5
+        3,
+        3,
+        4
       ]
     },
     {
@@ -761,10 +761,10 @@
       "price": 1000,
       "quantity": 90,
       "ratings": [
-        5,
-        4,
-        4,
+        2,
         3,
+        3,
+        2,
         4
       ]
     },
@@ -777,10 +777,10 @@
       "price": 600,
       "quantity": 90,
       "ratings": [
-        3,
+        2,
+        2,
         4,
         4,
-        3,
         3
       ]
     },
@@ -793,11 +793,11 @@
       "price": 900,
       "quantity": 50,
       "ratings": [
-        3,
         4,
         3,
         3,
-        5
+        5,
+        4
       ]
     },
     {
@@ -809,10 +809,10 @@
       "price": 500,
       "quantity": 50,
       "ratings": [
+        3,
+        2,
+        3,
         4,
-        4,
-        5,
-        5,
         3
       ]
     },
@@ -825,9 +825,9 @@
       "price": 700,
       "quantity": 50,
       "ratings": [
-        4,
-        4,
-        4,
+        5,
+        3,
+        3,
         2,
         3
       ]
@@ -843,9 +843,121 @@
       "ratings": [
         4,
         4,
+        5,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Crispy Tasmanian Sea Trout Sushi",
+      "description": "Petuna’s Tasmanian Ocean Trout has a creamy, velvet-like texture with excellent mouth feel. Even though it looks like salmon it tastes similar to trout but with its own unique umami flavor.",
+      "category": "appetizer",
+      "imageUrl": "http://jesswords.com/wp-content/uploads/2014/07/20140705_182021.jpg",
+      "price": 1700,
+      "quantity": 50,
+      "ratings": [
+        2,
+        3,
+        3,
+        5,
+        2
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Sweet Corn VeloutÉ",
+      "description": "Potatos baked in cheese and cream to perfection",
+      "category": "appetizer",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0015/5068/0152/products/image_c93d31c7-920d-4eef-80a9-7c9fe65300ab.jpg?v=1629904135",
+      "price": 2700,
+      "quantity": 50,
+      "ratings": [
+        3,
+        2,
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Black Truffle",
+      "description": "In the age-old battle between black and white truffles, there are opinions as there are stars in the sky. But if you love the earthy, chocolatey flavor of black truffles, well, you’ve come to the right place! There’s a reason these are called black diamonds that enveloping aroma, that intense flavor that coats a dish and your sense alike.",
+      "category": "side",
+      "imageUrl": "https://caputos.com/wp-content/uploads/2016/07/IMG_5189_Large__89183.jpg",
+      "price": 15000,
+      "quantity": 50,
+      "ratings": [
         4,
+        2,
+        2,
+        5,
+        4
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Yellowfin Tuna Ribbons",
+      "description": "The fish is immaculately fresh and tender but with a selicate bie, almost like aldente pasta",
+      "category": "appetizer",
+      "imageUrl": "https://3.bp.blogspot.com/-OZjhn7qJR-M/Umc_bQqGXlI/AAAAAAAAGPM/Cxk8tGQ2ra0/s1600/Tuna+Ribbons+-+JG.JPG",
+      "price": 700,
+      "quantity": 50,
+      "ratings": [
+        5,
+        5,
+        3,
         4,
         4
+      ]
+    },
+    {
+      "id": 58,
+      "name": "King Crab Dumplings",
+      "description": "Lorem Ipsum is simply dummy text",
+      "category": "dessert",
+      "imageUrl": "https://harusushi.com/wp-content/uploads/2016/05/king-crab-dumplings.jpg",
+      "price": 1000,
+      "quantity": 50,
+      "ratings": [
+        3,
+        2,
+        3,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Grenache 16",
+      "description": "Domaine La Colombette, `Notorious Pink`, France 2018",
+      "category": "beverage",
+      "imageUrl": "https://4.bp.blogspot.com/-t3eDHCG2O_w/WiNOgAfSr6I/AAAAAAAAYNs/IGU2o7fvb2gOhceUbFxBBHleceT51_3LACK4BGAYYCw/s1600/IMG_0104.jpg",
+      "price": 10000,
+      "quantity": 50,
+      "ratings": [
+        4,
+        4,
+        4,
+        5,
+        4
+      ]
+    },
+    {
+      "id": 60,
+      "name": "CÔtes De Provence 20",
+      "description": "Whispering Angel, Chateau d'Esclans, France 2020",
+      "category": "beverage",
+      "imageUrl": "https://lacavesud.com/wp-content/uploads/2020/04/CBD5BD7F-C6F6-40C1-9983-8DFF41439542_1_201_a-scaled.jpeg",
+      "price": 10000,
+      "quantity": 50,
+      "ratings": [
+        3,
+        3,
+        3,
+        5,
+        5
       ]
     }
   ],
