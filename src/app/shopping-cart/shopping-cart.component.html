@@ -20,17 +20,16 @@
 
     <div class="w-[85%] m-auto">
         <div class="grid grid-cols-[7fr_3fr] py-24 gap-[1vw]">
-            <table class="w-full" >
+            <table class="w-full">
                 <div class="scroll-table">
                     <thead
-                        *ngIf="cart.length > 0"
                         class="bg-[#5F462B] text-white uppercase font-medium tracking-widest"
                     >
                         <th class="p-[1vw] text-[1vw]">
                             Products
                             <i
                                 #can
-                                
+                                *ngIf="cart.length > 0"
                                 class="fa-solid fa-trash hover:cursor-pointer"
                                 (click)="emptyCart()"
                                 (mouseenter)="
@@ -48,11 +47,6 @@
                         <th class="p-[1vw] text-[1vw] text-center">Quantity</th>
                         <th class="p-[1vw] text-[1vw] text-center">Total</th>
                     </thead>
-
-                    <tr *ngIf="cart.length < 1" >
-                        <img src="https://careerindex.co.in/assets/images/emptycart.png" alt="" style="margin: 3vw 0 0 50%; width: 30vw;">
-                    </tr>
-                    
                     <tbody>
                         <tr
                             *ngFor="let cItem of cart; let i = index"
