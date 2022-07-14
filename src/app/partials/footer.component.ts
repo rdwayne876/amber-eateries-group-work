@@ -23,6 +23,9 @@ import { Component, OnInit } from '@angular/core';
 							<li class="py-2 my-2 text-[1vw]">
 								<a class="hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="/gallery">Gallery</a>
 							</li>
+							<li class="py-2 my-2 text-[1vw]">
+								<a class="hover:text-[#e0a04f] focus:text-[#e0a04f]" routerLink="/addproduct">Add</a>
+							</li>
 						</ul>
 					</div>
 
