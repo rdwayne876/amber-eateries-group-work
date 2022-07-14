@@ -14,6 +14,7 @@ export class AddproductComponent implements OnInit {
 
 	arrlen: number = 0;
 	categories?: string[] = [];
+	cat = "select";
 
 	ngOnInit(): void {
 		this.categories = Object.keys(Category);

@@ -9,8 +9,8 @@
 		<input type="text" ngModel name="price" placeholder="Price" /><br />
 		<input type="text" ngModel name="imageUrl" placeholder="ImageUrl" /><br />
 
-		<select ngModel name="category">
-			<option selected>-- Select a category --</option>
+		<select [(ngModel)]="cat" name="category">
+			<option value="select" disabled>-- Select a category --</option>
 			<option *ngFor="let category of categories" [value]="category | lowercase">{{ category | titlecase }}</option>
 		</select>
 
