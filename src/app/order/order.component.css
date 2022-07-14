@@ -1,32 +1,62 @@
-body {
-  text-align: center;
-  padding: 40px 0;
-  background: #ebf0f5;
-}
-h1 {
-  color: #88b04b;
-  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-  font-weight: 900;
-  font-size: 40px;
-  margin-bottom: 10px;
-}
+h1,
 p {
-  color: #404f5e;
-  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-  font-size: 20px;
-  margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	text-align: center;
 }
+
+h1 {
+	color: #e0a04f;
+	font-weight: 900;
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+
+p {
+	color: #404f5e;
+	font-size: 20px;
+	margin: 0;
+	margin-bottom: 2rem;
+}
+
 i {
-  color: #9abc66;
-  font-size: 100px;
-  line-height: 200px;
-  margin-left: 45px;
+	color: #e0a04f;
+	font-size: 100px;
+	line-height: 200px;
+	margin-left: 45px;
 }
+
+.section {
+	@apply min-h-[50vh] h-[80vh] grid place-items-center;
+}
+
 .card {
-  background: white;
-  padding: 60px;
-  border-radius: 4px;
-  box-shadow: 0 2px 3px #c8d0d8;
-  display: inline-block;
-  margin: 0 auto;
+	background: white;
+	padding: 60px;
+	border-radius: 4px;
+	box-shadow: 0 2px 3px #c8d0d8;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.card__checkmark-wrapper {
+	transform: scale(0.8);
+	border-radius: 200px;
+	height: 200px;
+	width: 200px;
+	background: #f8faf5;
+	margin: 0 auto;
+}
+
+.card__btn {
+	--padding-block: 20px;
+	display: block;
+	margin-inline: auto;
+	background-color: #e0a04f;
+	color: white;
+	padding-inline: calc(var(--padding-block) + 5px); /* This is padding for the X-Axis */
+	padding-block: var(--padding-block); /* This is padding for the Y-Axis */
+}
+
+.card__btn:hover {
+	color: #5f462b;
 }
