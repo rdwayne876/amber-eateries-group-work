@@ -11,3 +11,23 @@
     top: 0;
     width: 100%;
 }
+.summary{
+    position: relative;
+}
+.summary::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 14vw;
+    height: 0.3vw;
+    background: #5F462B;
+}
+.summary::before{
+    position: absolute;
+    left: 0;
+    content: '';
+    height: 5vw;
+    width: 0.3vw;
+    background: #5F462B;
+}
