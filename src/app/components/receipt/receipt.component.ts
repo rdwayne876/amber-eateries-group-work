@@ -40,6 +40,13 @@ export class ReceiptComponent implements OnInit {
         },
     ];
 
+    public get height() : number {
+		return window.innerHeight;
+	}
+	public get width() : number {
+		return window.innerWidth;
+	}
+
     constructor(private router: Router) {
         let data = this.router.getCurrentNavigation()?.extras.state!['receipt'];
         this.transaction = data.transaction;
