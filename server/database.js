@@ -844,7 +844,7 @@ database.products = [
         name: 'Oreo Cheesecake Bars',
         description: "Oreos. Cheesecake. Chocolate. Pretty top combination right there. I was super worried these would be way to rich but they were right on the mark.",
         category: product_1.Category.DESSERT,
-        imageUrl: 'https://mycookprocessor.com/index.php/recipe/oreo-cheesecake-bars/',
+        imageUrl: 'https://i.pinimg.com/originals/13/0a/0c/130a0c48dd6ce6cd3647853448145ccc.jpg',
         price: 700,
         quantity: 50,
         ratings: __spreadArray([], (function () {
@@ -874,7 +874,7 @@ database.products = [
     {
         id: 54,
         name: 'Crispy Tasmanian Sea Trout Sushi',
-        description: "Petuna’s Tasmanian Ocean Trout has a creamy, velvet-like texture with excellent mouth feel. Even though it looks like salmon it tastes similar to trout but with its own unique umami flavor.",
+        description: "Petuna's Tasmanian Ocean Trout has a creamy, velvet-like texture with excellent mouth feel. Even though it looks like salmon it tastes similar to trout but with its own unique umami flavor.",
         category: product_1.Category.APPETIZER,
         imageUrl: 'http://jesswords.com/wp-content/uploads/2014/07/20140705_182021.jpg',
         price: 1700,
