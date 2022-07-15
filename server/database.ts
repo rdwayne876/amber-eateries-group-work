@@ -46,7 +46,7 @@ database.products = [
             "Our traditional gyoza start with house-made dough, thinly rolled and filled with fresh, savoury ingredients. From there, we steam each batch to seal in the juicy perfection. Great as an appetizer or served as an accompaniment to your favourite noodles.",
         category: Category.ENTREE,
         imageUrl:
-            'https://d2kmm3vx031a1h.cloudfront.net/9tPrSnzpQ2uY0fAca10I_20160413_130243-01.jpeg',
+            'https://i.pinimg.com/originals/96/88/81/968881e6428abf2b7d3aedd9afb012f5.jpg',
         price: 1900,
         quantity: 200,
         ratings: [...((): number[] => {
