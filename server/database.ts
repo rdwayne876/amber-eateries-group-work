@@ -451,9 +451,9 @@ database.products = [
 
     {
         id: 24,
-        name: 'Fish Escovitch',
+        name: 'Escovitch Fish',
         description:
-            'The making of the Jamaican Fish Escovitch dish begins with a fried whole fish, usually Red Snapper. It is then topped with pickled vegetables, including carrots, onions, peppers, pimentos and chayote. Jamaican Fish Escovitch is often paired with bammy (see Jamaican side dishes, further down this article), and inspiration for this dish is said to have been brought to the island with Spanish Jewish settlers hundreds of years ago. Eating this meal, the day after it is prepared is recommended by some, so the flavors have some time to sink in. This is a popular Easter lunch inclusion in Jamaica.',
+            'The making of the Jamaican Escovitch Fish dish begins with a fried whole fish, usually Red Snapper. It is then topped with pickled vegetables, including carrots, onions, peppers, pimentos and chayote. Jamaican Fish Escovitch is often paired with bammy (see Jamaican side dishes, further down this article), and inspiration for this dish is said to have been brought to the island with Spanish Jewish settlers hundreds of years ago. Eating this meal, the day after it is prepared is recommended by some, so the flavors have some time to sink in. This is a popular Easter lunch inclusion in Jamaica.',
         category: Category.ENTREE,
         imageUrl:
             'https://www.beaches.com/blog/content/images/2020/03/Jamaican-Fish-Escovitch.jpg',
@@ -677,13 +677,13 @@ database.products = [
 
     {
         id: 36,
-        name: 'Chicken Foot Soup',
+        name: 'Seared Maitake Mushrooms',
         description:
-            'Soups in Jamaica are thick and often served as complete meals mainly for lunch. This tasty soup is prepared using chicken feet, pumpkin, chochos, turnips, carrots, yellow yam, and flour dumplings, and seasoned with a soup mix and a medley of herbs and spices.',
-        category: Category.APPETIZER,
+            'has an earthy aroma and a wholesome taste. Rich in vitamin D, it helps everything from cancer support to bone health. Its distinctive shape has earned it the nickname “hen-of-the-woods.” It’s also known as sheep head and king of the mushrooms, with its most common name — maitake — meaning “dancing mushroom.”',
+        category: Category.ENTREE,
         imageUrl:
-            'https://www.chefspencil.com/wp-content/uploads/jamaican-chicken-soup.jpg.webp',
-        price: 300,
+            'https://assets.bonappetit.com/photos/57adf933f1c801a1038bce0a/1:1/w_1920,c_limit/seared-maitake-mushrooms.jpg',
+        price: 2300,
         quantity: 50,
         ratings: [...((): number[] => {
             let buffer = [];
@@ -790,12 +790,12 @@ database.products = [
 
     {
         id: 42,
-        name: 'jamaica chicken patty',
+        name: 'MADAI SASHIMI',
         description:
-            'When in Jamaica, a visit to a patty shop is a must. Jamaican chicken patties are made with a crispy, golden flaky pastry filled with seasoned meat.',
-        category: Category.APPETIZER,
+            'Madai is often called red sea bream or Japanese sea bream. It’s considered a type of shiromi, or white fish. Sushi restaurants often offer madai as nigiri or sashimi. Grilled, simmered, and fried madai are also popular. ',
+        category: Category.ENTREE,
         imageUrl:
-            'https://imgs.search.brave.com/cBxzHDIfnvtBMmYR9xwbCHsmXU5TyFTs8pyRpq5TsJg/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/amFtYWljYW5wcm9k/dWN0cy5jb20uYXUv/d3AtY29udGVudC91/cGxvYWRzLzIwMTYv/MDgvUDQyNjAwMjEt/ZTE0NzEwMTY4ODgy/MDcuanBn',
+            'https://i.pinimg.com/originals/3e/41/89/3e41894d877f80ff7a560239de7055c5.jpg',
         price: 200,
         quantity: 30,
         ratings: [...((): number[] => {
@@ -807,24 +807,24 @@ database.products = [
         })()],
     },
 
-    {
-        id: 43,
-        name: 'jamaica cheese patty',
-        description:
-            'When in Jamaica, a visit to a patty shop is a must. Jamaican cheese patties are made with a crispy, golden flaky pastry filled with seasoned meat.',
-        category: Category.APPETIZER,
-        imageUrl:
-            'https://imgs.search.brave.com/Awfsjru-0quf4WXf1osax53jqugls_ei3paELohycmM/rs:fit:500:342:1/g:ce/aHR0cHM6Ly93d3cu/dGFzdGVlamFtYWlj/YS5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMTgvMDIvQmVl/Zi1XaXRoLUNoZWVz/ZS1QYXR0eS5wbmc',
-        price: 200,
-        quantity: 30,
-        ratings: [...((): number[] => {
-            let buffer = [];
-            for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 3) + 2);
-            }
-            return buffer;
-        })()],
-    },
+    // {
+    //     id: 43,
+    //     name: 'jamaica cheese patty',
+    //     description:
+    //         'When in Jamaica, a visit to a patty shop is a must. Jamaican cheese patties are made with a crispy, golden flaky pastry filled with seasoned meat.',
+    //     category: Category.APPETIZER,
+    //     imageUrl:
+    //         'https://imgs.search.brave.com/Awfsjru-0quf4WXf1osax53jqugls_ei3paELohycmM/rs:fit:500:342:1/g:ce/aHR0cHM6Ly93d3cu/dGFzdGVlamFtYWlj/YS5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMTgvMDIvQmVl/Zi1XaXRoLUNoZWVz/ZS1QYXR0eS5wbmc',
+    //     price: 200,
+    //     quantity: 30,
+    //     ratings: [...((): number[] => {
+    //         let buffer = [];
+    //         for (let i = 0; i < 5; i++) {
+    //             buffer.push(Math.round(Math.random() * 3) + 2);
+    //         }
+    //         return buffer;
+    //     })()],
+    // },
 
     {
         id: 44,
@@ -989,24 +989,24 @@ database.products = [
             return buffer;
         })()],
     },
-    {
-        id: 53,
-        name: 'Potato Bake',
-        description:
-            "Potatos baked in cheese and cream to perfection",
-        category: Category.APPETIZER,
-        imageUrl: 
-            'https://mycookprocessor.com/wp-content/uploads/2017/09/Potato-Bake-1080x720.jpg',
-        price: 700,
-        quantity: 50,
-        ratings: [...((): number[] => {
-            let buffer = [];
-            for (let i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 3) + 2);
-            }
-            return buffer;
-        })()],
-    },
+    // {
+    //     id: 53,
+    //     name: 'Potato Bake',
+    //     description:
+    //         "Potatos baked in cheese and cream to perfection",
+    //     category: Category.APPETIZER,
+    //     imageUrl: 
+    //         'https://mycookprocessor.com/wp-content/uploads/2017/09/Potato-Bake-1080x720.jpg',
+    //     price: 700,
+    //     quantity: 50,
+    //     ratings: [...((): number[] => {
+    //         let buffer = [];
+    //         for (let i = 0; i < 5; i++) {
+    //             buffer.push(Math.round(Math.random() * 3) + 2);
+    //         }
+    //         return buffer;
+    //     })()],
+    // },
     {
         id: 54,
         name: 'Crispy Tasmanian Sea Trout Sushi',
