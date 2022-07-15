@@ -489,12 +489,12 @@ database.products = [
 
     {
         id: 26,
-        name: 'Gizzada',
+        name: 'Crispy Avocado Sushi',
         description:
-            'A dessert that consists of a pastry shell with a sweet and slightly spicy coconut filling. Its characteristic feature is its pinched crust, which gives the name “gizzada” or “pinch-me-round.” Thought to be of Portuguese or Jewish origin.',
-        category: Category.DESSERT,
+            'Sushi, as the world knows, is a famous Japanese dish whose main ingredients include vinegar rice. Avocado sushi, as the name suggests, includes avocado which makes the dish even more incredible. Along with cucumber as an ingredient,',
+        category: Category.APPETIZER,
         imageUrl:
-            'https://onthegas.org/wp-content/uploads/2019/07/jamaican-gizzada-bite-300x200.jpg',
+            'https://i.pinimg.com/originals/d6/64/80/d664806cca6ab5c1ac275b98d1b51357.png',
         price: 100,
         quantity: 50,
         ratings: [...((): number[] => {
@@ -508,12 +508,12 @@ database.products = [
 
     {
         id: 27,
-        name: 'Heineken',
+        name: 'Summer Pea Agnolotti',
         description:
-            'Cold, fresh, high quality Heineken. Enjoyed near and far since 1873.',
-        category: Category.BEVERAGE,
+            'Agnolotti is a sort of pillow pasta that can be filled with a variety of mixtures, farces, cheeses, etc.',
+        category: Category.ENTREE,
         imageUrl:
-            'https://www.heineken.com/media-eu/01pfxdqq/heineken-original-bottle.png?anchor=center&mode=crop&width=712&height=1068&quality=85',
+            'https://4.bp.blogspot.com/_F73REUBeLEk/TCW_AoPOLHI/AAAAAAAAAvI/TwsNbizackg/s1600/078.JPG',
         price: 300,
         quantity: 100,
         ratings: [...((): number[] => {

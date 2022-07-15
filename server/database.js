@@ -25,10 +25,10 @@ database.products = [
     // }
     {
         id: 1,
-        name: 'Jerk Chicken',
-        description: 'Jamaican jerk chicken is famous for its spicy, smoky taste. Recreate this dish at home using a blend of traditional herbs and spices. If you can handle it, turn it up a notch with some authentic scotch bonnet pepper sauce.',
-        category: product_1.Category.ENTREE,
-        imageUrl: 'https://www.sandals.com/blog/content/images/2020/04/Jamaican-Jerk-Chicken.jpg',
+        name: 'Impirial Vegetable Egg Rolls',
+        description: "Impirial Vegetable Egg Rolls wrapped in a light, paper-thin wrapper that fries to a crispy crunch.",
+        category: product_1.Category.APPETIZER,
+        imageUrl: 'https://i.pinimg.com/originals/7f/80/c1/7f80c1d0485aec58952dcccb8c0a58ca.jpg',
         price: 1200,
         quantity: 100,
         ratings: __spreadArray([], (function () {
@@ -41,11 +41,11 @@ database.products = [
     },
     {
         id: 2,
-        name: 'Ackee and Saltfish',
-        description: "Jamaica's national dish makes a tasty breakfast or brunch. Made with the buttery, savory ackee fruit, this dish is expertly seasoned with fresh onions, peppers, garlic and thyme. Sautee with salted codfish and serve with fresh, crispy fried dumplings.",
+        name: 'Chicken Gyoza (Steamed or Fried)',
+        description: "Our traditional gyoza start with house-made dough, thinly rolled and filled with fresh, savoury ingredients. From there, we steam each batch to seal in the juicy perfection. Great as an appetizer or served as an accompaniment to your favourite noodles.",
         category: product_1.Category.ENTREE,
-        imageUrl: 'https://www.blackveganstoday.com/wp-content/uploads/2019/03/1553717241_maxresdefault-1024x576.jpg',
-        price: 900,
+        imageUrl: 'https://d2kmm3vx031a1h.cloudfront.net/9tPrSnzpQ2uY0fAca10I_20160413_130243-01.jpeg',
+        price: 1900,
         quantity: 200,
         ratings: __spreadArray([], (function () {
             var buffer = [];
@@ -57,11 +57,11 @@ database.products = [
     },
     {
         id: 3,
-        name: 'Steamed Cabbage and Saltfish',
-        description: 'This tasty meal comes together quickly using inexpensive ingredients. Cabbages are shredded and steamed with fresh garlic, onion and bell peppers. If you can handle the heat, add a bit of scotch bonnet pepper to the pot. Saltfish is the finishing touch on this pescatarian-friendly dish.',
-        category: product_1.Category.SIDE,
-        imageUrl: 'https://i.pinimg.com/originals/50/32/b6/5032b6e7b91e7fcbaac48c609917cbb4.jpg',
-        price: 200,
+        name: 'Spring rolls',
+        description: 'There are few Asian foods that are as widely known and loved as the spring roll. Originating in China, spring rolls were an integral part of Spring Festival celebrations. Carrying forward these traditions, our secret family recipe uses the freshest ingredients and our light and crispy wrapper to form a winning combination.',
+        category: product_1.Category.APPETIZER,
+        imageUrl: 'https://www.summfoods.com/wp-content/uploads/2022/03/SR-plate-Homepage.png',
+        price: 1200,
         quantity: 100,
         ratings: __spreadArray([], (function () {
             var buffer = [];
@@ -73,11 +73,11 @@ database.products = [
     },
     {
         id: 4,
-        name: 'Jamaican Beef Patties',
-        description: 'When in Jamaica, a visit to a patty shop is a must. Jamaican beef patties are made with a crispy, golden flaky pastry filled with seasoned meat.',
+        name: 'Pork Potstickers',
+        description: "These pork Potstickers are filled with green onions and cilantro to the garlic and ginger, the filling is so flavorful and so tender. To top it off, I drizzle some soy sauce, sesame seeds and green onions. The filling is just so stinkin' perfect, a dipping sauce is not even needed!",
         category: product_1.Category.APPETIZER,
-        imageUrl: 'http://iheartrecipes.com/wp-content/uploads/2014/03/IMG_2825.jpg',
-        price: 300,
+        imageUrl: 'https://s23209.pcdn.co/wp-content/uploads/2018/08/Pork-PotstickersIMG_5864.jpg',
+        price: 1300,
         quantity: 100,
         ratings: __spreadArray([], (function () {
             var buffer = [];
@@ -89,42 +89,10 @@ database.products = [
     },
     {
         id: 5,
-        name: 'Curry Chicken',
-        description: 'Many cultures have their own method of making curry. Jamaican curry chicken is well-seasoned with traditional herbs and spices and Jamaican curry powder. Add in carrots and potatoes for a hearty, wholesome weeknight dinner.',
-        category: product_1.Category.ENTREE,
-        imageUrl: 'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Curry-Chicken-683x1024.jpg',
-        price: 900,
-        quantity: 100,
-        ratings: __spreadArray([], (function () {
-            var buffer = [];
-            for (var i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 3) + 2);
-            }
-            return buffer;
-        })(), true)
-    },
-    {
-        id: 6,
-        name: 'Rice and Peas',
-        description: 'Authentic Jamaican rice and peas is made with red kidney beans, creamy coconut milk and spices. This popular side dish is often served with Sunday dinner in many Jamaican households.',
+        name: 'Lobster and Shrimp Spring Roll',
+        description: 'These seafood rolls are a combination of lobster and shrimp tossed in an herb butter and celery salt.',
         category: product_1.Category.APPETIZER,
-        imageUrl: 'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Rice-and-Peas-683x1024.jpg',
-        price: 500,
-        quantity: 500,
-        ratings: __spreadArray([], (function () {
-            var buffer = [];
-            for (var i = 0; i < 5; i++) {
-                buffer.push(Math.round(Math.random() * 3) + 2);
-            }
-            return buffer;
-        })(), true)
-    },
-    {
-        id: 7,
-        name: 'Oxtail',
-        description: "You'll need your pressure cooker for tender, fall-off-the-bone Jamaican oxtail. This popular stew was originally brought to Jamaica by the British. Of course, Jamaicans made it their own by adding spices and seasonings. Some say the Jamaican method is the best way to prepare oxtail.",
-        category: product_1.Category.ENTREE,
-        imageUrl: 'https://izzycooking.com/wp-content/uploads/2021/03/Jamaican-Oxtail-683x1024.jpg',
+        imageUrl: 'https://i.pinimg.com/originals/00/91/dc/0091dc687e15bbe42a7255bf50e1e253.jpg',
         price: 1900,
         quantity: 100,
         ratings: __spreadArray([], (function () {
@@ -136,11 +104,43 @@ database.products = [
         })(), true)
     },
     {
+        id: 6,
+        name: 'Ice Creams and Sorbets',
+        description: 'Cool, sweet and refreshing, sorbets are perhaps best-known as delicious palate-cleansers',
+        category: product_1.Category.DESSERT,
+        imageUrl: 'https://taogroup.com/wp-content/uploads/2020/02/Mochi-Tao-Uptown-2.jpg',
+        price: 1500,
+        quantity: 500,
+        ratings: __spreadArray([], (function () {
+            var buffer = [];
+            for (var i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })(), true)
+    },
+    {
+        id: 7,
+        name: 'Seasonal Fresh Fruit',
+        description: "Eating fruit and vegetables when they’re in season is great for your wallet and great for the planet. Everything tastes so much fresher, too, with vegetables at their most tender and fruits at their most plump and juicy.",
+        category: product_1.Category.DESSERT,
+        imageUrl: 'http://www.fillmyrecipebook.com/wp-content/uploads/2017/08/fruit-salad_-700x575.jpg',
+        price: 1100,
+        quantity: 100,
+        ratings: __spreadArray([], (function () {
+            var buffer = [];
+            for (var i = 0; i < 5; i++) {
+                buffer.push(Math.round(Math.random() * 3) + 2);
+            }
+            return buffer;
+        })(), true)
+    },
+    {
         id: 8,
-        name: 'Brown Stew Chicken',
-        description: 'Jamaican brown stew chicken is easy to prepare with tons of payoff. Bite-size pieces of chicken are seasoned with garlic, ginger, peppers and scallions and simmered in a thick, flavorful stew.',
-        category: product_1.Category.ENTREE,
-        imageUrl: 'https://izzycooking.com/wp-content/uploads/2021/03/Brown-Stew-Chicken-683x1024.jpg',
+        name: 'Banana Pudding',
+        description: 'Banana pudding is a pudding generally consisting of layers of sweet vanilla flavored custard, cookies (usually vanilla wafers or ladyfingers) and sliced fresh bananas placed in a dish and served, topped with whipped cream or meringue.',
+        category: product_1.Category.DESSERT,
+        imageUrl: 'https://i.pinimg.com/originals/ad/36/b1/ad36b1f0104b963a31666243a53d5571.jpg',
         price: 1000,
         quantity: 1000,
         ratings: __spreadArray([], (function () {
@@ -217,11 +217,11 @@ database.products = [
     },
     {
         id: 13,
-        name: 'Curry Goat',
-        description: 'This dish is a popular menu item in any Jamaican restaurant. Succulent pieces of goat meat are slow-cooked to perfection in a spicy curry sauce. Serve with your favorite side for a hearty Jamaican dinner.',
-        category: product_1.Category.ENTREE,
-        imageUrl: 'https://res.cloudinary.com/bunch-media-library/image/upload/w_440,h_380,c_fill,q_auto,f_auto,fl_lossy/v1566361970/recipes/k9qv4c0wergq7ubq1baw.jpg',
-        price: 900,
+        name: 'Vietnamese Chicken Salad',
+        description: 'Vietnamese Chicken Salad is made by combining chopped vegetables dressed and wisked with lime juice, garlic, rice wine vinegar, sriracha, chili flakes, soy sauce/fish sauce and sesame oil',
+        category: product_1.Category.APPETIZER,
+        imageUrl: 'https://15n8co16xmh449rucu1nqnfd-wpengine.netdna-ssl.com/wp-content/uploads/2016/01/IMG_0673.jpg',
+        price: 2400,
         quantity: 100,
         ratings: __spreadArray([], (function () {
             var buffer = [];
@@ -233,11 +233,11 @@ database.products = [
     },
     {
         id: 14,
-        name: 'Roti',
-        description: 'Also popular in Trinidad, roti was brought to Jamaica by Indian migrants. This soft flatbread is thinner than naan, but is also served with rich, saucy curry dishes.',
-        category: product_1.Category.APPETIZER,
-        imageUrl: 'https://izzycooking.com/wp-content/uploads/2021/03/Roti-1-683x1024.jpeg',
-        price: 500,
+        name: 'Kung Pao Chicken',
+        description: 'Traditionally, this Chinese chicken dish is a dry-stir fry not a lot of sauce is added into Kung Pao chicken. However, with the amount of flavour explosions happening in this dish, you don’t miss OR want any more sauce. ',
+        category: product_1.Category.ENTREE,
+        imageUrl: 'https://sm.askmen.com/askmen_in/photo/default/final4_avqf.jpg',
+        price: 2500,
         quantity: 100,
         ratings: __spreadArray([], (function () {
             var buffer = [];
@@ -249,11 +249,11 @@ database.products = [
     },
     {
         id: 15,
-        name: 'Jamaican Chicken Soup',
-        description: 'Nothing says comfort like chicken soup made by your Jamaican grandma. For the next best thing, cook up a simmering pot of spicy, flavorful Jamaican chicken soup',
-        category: product_1.Category.APPETIZER,
-        imageUrl: 'https://empeysworld.files.wordpress.com/2020/06/20200609_1626211.jpg?w=2000&h=1500&crop=1',
-        price: 500,
+        name: 'Tuna Poke',
+        description: 'On the US West Coast, it is one of the “musts” of fashionable eating. The worldwide success of raw fish continues in the form of Hawaiian "poke" recipe, a salad from the Hawaii islands. ',
+        category: product_1.Category.ENTREE,
+        imageUrl: 'https://i.pinimg.com/originals/a0/f6/c5/a0f6c55444c69bef69c2f66739ceca61.png',
+        price: 2900,
         quantity: 300,
         ratings: __spreadArray([], (function () {
             var buffer = [];
@@ -265,11 +265,11 @@ database.products = [
     },
     {
         id: 16,
-        name: ' Coco Bread',
-        description: "For the full Jamaican experience, you'll need some Coco Bread with your beef patties. Coco bread is a soft, fluffy and slightly sweet bread made with a hint of coconut milk. This hearty bread can be filled with just about anything for a sandwich that's unlike any other.",
-        category: product_1.Category.SIDE,
-        imageUrl: 'https://izzycooking.com/wp-content/uploads/2021/03/Coco-Bread-683x1024.jpg',
-        price: 200,
+        name: ' Crying Tiger Hanger Steak',
+        description: "No, you're not eating a tiger, but this dish definitely has a catchy name!  The Thai name translates to 'Crying Tiger', and it got this name because the dipping sauce is suppose to be so spicy that it'll make a tiger cry. ",
+        category: product_1.Category.ENTREE,
+        imageUrl: 'https://austinot.com/wp-content/uploads/2017/09/Tiger-Cry.jpg',
+        price: 3200,
         quantity: 90,
         ratings: __spreadArray([], (function () {
             var buffer = [];
@@ -361,11 +361,11 @@ database.products = [
     },
     {
         id: 22,
-        name: 'Red Peas Soup',
-        description: 'A thick and flavorful stew of beef or pork, yams, potatoes, red peas, and dumplings that is usually flavored with pimento and thyme.',
+        name: 'Black Sea Bass',
+        description: 'A favorite fish in some of the finest dining rooms in the country, fresh black sea bass has great flavor and texture. Its tender, mouthwatering fillets fit formal occasions,',
         category: product_1.Category.ENTREE,
-        imageUrl: 'https://i.pinimg.com/originals/3a/2a/b1/3a2ab11f8e294735a5beb855c05f7f5d.jpg',
-        price: 300,
+        imageUrl: 'https://i1.wp.com/berriesandspice.com/wp-content/uploads/2016/11/Berries_and_Spice-Very-Simple-Herbal-Curry-with-Sea-Bass-and-Lemon-Rice_.jpg?fit=3790%2C2527&ssl=1',
+        price: 2300,
         quantity: 250,
         ratings: __spreadArray([], (function () {
             var buffer = [];
@@ -377,11 +377,11 @@ database.products = [
     },
     {
         id: 23,
-        name: 'Brown Stew Fish',
-        description: 'A stew featuring a combination of marinated and fried fish fillets with a brown sauce made from onions, garlic, ginger, tomatoes, butter, and water. Often seasoned with thyme and different kinds of hot peppers and traditionally served with rice and peas.',
+        name: 'Wagyu Beef Tenderlion',
+        description: 'One of our most popular cuts of Wagyu, the tenderloin is by far, as it name implies, the most tender cut of the steer, even more so thanks to the privileged genetics of Kobe cattle, which gives it extra buttery softness.',
         category: product_1.Category.ENTREE,
-        imageUrl: 'https://i.pinimg.com/originals/2e/9c/3e/2e9c3ea6d3af7d2148345943a909ab81.jpg',
-        price: 900,
+        imageUrl: 'https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/article_1200_800/public/2019-12/Dry-aged-striploin-with-seaweed-kabocha-pumpkin-and-steak-sauce-by-Richard-Ekkebus.jpg.webp?itok=MAoaEx5J',
+        price: 4900,
         quantity: 100,
         ratings: __spreadArray([], (function () {
             var buffer = [];
@@ -409,10 +409,10 @@ database.products = [
     },
     {
         id: 25,
-        name: 'Grater Cake',
-        description: 'A traditional dessert that relies on freshly grated coconut and granulated sugar for the main ingredients. These ingredients are cooked in water until the mixture becomes sticky and the coconut is soft in texture. The cake is often colored red or pink with food coloring. Also known as “grater brute” when brown sugar is used instead of white sugar',
+        name: 'Black Forest',
+        description: 'One look at this cake and its decadence is evident: every bite will unleash layers of chocolatey goodness. We are, of course, referring to the Black Forest Cake from Germany, one of the most popular and beloved cakes around the globe.',
         category: product_1.Category.DESSERT,
-        imageUrl: 'https://jamaicans.com/wp-content/uploads/2015/10/jamaican-grater-cake.jpg',
+        imageUrl: 'http://chefeddy.com/wp-content/uploads/2011/06/DSC_0578-Copy.jpg',
         price: 100,
         quantity: 90,
         ratings: __spreadArray([], (function () {
@@ -938,7 +938,7 @@ database.products = [
     {
         id: 58,
         name: 'King Crab Dumplings',
-        description: "Lorem Ipsum is simply dummy text",
+        description: "Dumplings are tasty, delicious steamed treats that is perfect for sharing with others! in this recipe, the filling is made with King Crab and served with a spicy chili sauce.",
         category: product_1.Category.DESSERT,
         imageUrl: 'https://harusushi.com/wp-content/uploads/2016/05/king-crab-dumplings.jpg',
         price: 1000,
